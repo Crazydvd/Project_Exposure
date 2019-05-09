@@ -2,7 +2,7 @@
 {
 	Properties
 	{
-		_Scale("Scale", float) = 5
+		_Scale("Scale", float) = 20
 	}
 	SubShader
 	{
@@ -52,7 +52,7 @@
 
 				//Fog:
 				float distance = i.cameraSpacePosition.z;
-				float normalized = saturate(-distance / 20);
+				float normalized = saturate(-distance / _Scale);
 				return float4(0, 1, 1, 1) * normalized + float4(1, 0, 0, 1) * (1 - normalized);
 			}
 			ENDCG
