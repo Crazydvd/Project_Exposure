@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Frequency
+public enum Frequency
 {
-    LOW = -1,
-    MEDIUM = 0,
-    HIGH = 1,
+    LOW = 0,
+    MEDIUM = 1,
+    HIGH = 2,
 }
 
 public class ShootScript : MonoBehaviour
