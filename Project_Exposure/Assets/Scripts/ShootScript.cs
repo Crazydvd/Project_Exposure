@@ -6,6 +6,8 @@ public class ShootScript : MonoBehaviour
 {
 	[SerializeField]
 	GameObject _bullet;
+    [SerializeField]
+    float _speed = 5000f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class ShootScript : MonoBehaviour
 
 		if(Input.GetMouseButtonDown(0)){
 			GameObject bullet = Instantiate(_bullet, transform.position, Quaternion.LookRotation(transform.up));
-			bullet.GetComponent<Rigidbody>().AddForce(transform.up * 1000f);
+			bullet.GetComponent<Rigidbody>().AddForce(transform.up * _speed);
 		}
 	}
 }
