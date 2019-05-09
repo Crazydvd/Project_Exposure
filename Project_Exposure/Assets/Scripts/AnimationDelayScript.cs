@@ -15,11 +15,6 @@ public class AnimationDelayScript : MonoBehaviour
     [SerializeField]
     private bool _randomized = false;
 
-    [SerializeField]
-    private Vector2Int _randomRange;
-
-    private bool _started = false;
-
     private Animator _animator;
 
     // Start is called before the first frame update
