@@ -166,6 +166,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &74023555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5755008777777822683, guid: af649d30436030749af6879f7dc050e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1310783816}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &86602327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1236,6 +1242,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &674993329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674993330}
+  m_Layer: 9
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674993330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674993329}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 74023555}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &716757561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1915,7 +1951,7 @@ PrefabInstance:
     - target: {fileID: 5755008777777822679, guid: af649d30436030749af6879f7dc050e2,
         type: 3}
       propertyPath: _speed
-      value: 5000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 5755008777777822679, guid: af649d30436030749af6879f7dc050e2,
         type: 3}
@@ -1941,6 +1977,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7302069909376473746, guid: 0bc76df0638690e4ebdf0b9792fc5ce6,
         type: 3}
+    - target: {fileID: 5755008777777822679, guid: af649d30436030749af6879f7dc050e2,
+        type: 3}
+      propertyPath: _bulletSpawnPoint
+      value: 
+      objectReference: {fileID: 674993329}
     - target: {fileID: 5755008776703691159, guid: af649d30436030749af6879f7dc050e2,
         type: 3}
       propertyPath: m_IsKinematic

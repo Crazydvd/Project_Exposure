@@ -11,6 +11,8 @@ public enum Frequency
 
 public class ShootScript : MonoBehaviour
 {
+	[SerializeField]
+	GameObject _bulletSpawnPoint;
     [SerializeField]
     GameObject _bulletType1;
     [SerializeField]
@@ -45,7 +47,7 @@ public class ShootScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bullet = Instantiate(_waves[_shootingFrequency], transform.position, Quaternion.LookRotation(transform.up));
+            GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.up), transform.parent);
             bullet.GetComponent<Rigidbody>().AddForce(transform.up * _speed);
         }
     }
