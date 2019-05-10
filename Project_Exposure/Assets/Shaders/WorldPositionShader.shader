@@ -3,6 +3,8 @@
 	Properties
 	{
 		_Scale("Scale", float) = 20
+		_FarColor("FarColor", color) = (0, 1, 1, 1)
+		_CloseColor("CloseColor", color) = (1, 0, 0, 1)
 	}
 	SubShader
 	{
@@ -38,6 +40,8 @@
 			}
 
 			float _Scale;
+			float4 _CloseColor;
+			float4 _FarColor;
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
@@ -53,7 +57,7 @@
 				//Fog:
 				float distance = i.cameraSpacePosition.z;
 				float normalized = saturate(-distance / _Scale);
-				return float4(0, 1, 1, 1) * normalized + float4(1, 0, 0, 1) * (1 - normalized);
+				return _FarColor * normalized + _CloseColor * (1 - normalized);
 			}
 			ENDCG
 		}
