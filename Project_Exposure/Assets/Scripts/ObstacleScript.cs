@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField]
-    float _speed = 1f;
+    [SerializeField] float _speed = 1f;
 
-    [SerializeField]
-    Frequency _frequency = Frequency.MEDIUM;
+    [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
-    [SerializeField]
-    Material _lowFreqMaterial;
-    [SerializeField]
-    Material _mediumFreqMaterial;
-    [SerializeField]
-    Material _highFreqMaterial;
+    [SerializeField] Material _lowFreqMaterial;
+    [SerializeField] Material _mediumFreqMaterial;
+    [SerializeField] Material _highFreqMaterial;
+	[SerializeField] GameObject[] _tutorialZones;
 
     Renderer _renderer;
     Animator _animator;
@@ -73,6 +69,10 @@ public class ObstacleScript : MonoBehaviour
     void Shatter()
 
     {
+		//if a tutorial zone is linked to this object, resume gameplay on shatter
+		if(_tutorialZones.Length > 0){
+			_tutorialZones[0].GetComponent<TutorialZoneScript>().ReenablePlayer();
+		}
         //just destroy it for now
         Destroy(gameObject);
     }
