@@ -11,7 +11,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
-	[SerializeField] GameObject[] _tutorialZones;
+	[SerializeField] List<GameObject> _tutorialZones;
 
     Renderer _renderer;
     Animator _animator;
@@ -66,11 +66,11 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
-    void Shatter()
+    public void Shatter()
 
     {
 		//if a tutorial zone is linked to this object, resume gameplay on shatter
-		if(_tutorialZones.Length > 0){
+		if(_tutorialZones.Count > 0 && _tutorialZones[0] != null){
 			_tutorialZones[0].GetComponent<TutorialZoneScript>().ReenablePlayer();
 		}
         //just destroy it for now
