@@ -23,8 +23,15 @@ public class TutorialZoneScript : MonoBehaviour
 	}
 
 	public void ReenablePlayer(){
-		_playerTrack.speed = _initialSpeed;
-		_uiElement.SetActive(false);
-		Destroy(gameObject);
+		if (_playerTrack != null)
+		{
+			_playerTrack.speed = _initialSpeed;
+			_uiElement.SetActive(false);
+			Destroy(gameObject);
+		}
+		else{
+			_uiElement.SetActive(false);
+			Destroy(gameObject);
+		}
 	}
 }
