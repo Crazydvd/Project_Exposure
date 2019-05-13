@@ -12,7 +12,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
-    [SerializeField] GameObject[] _tutorialZones;
+    [SerializeField] List<GameObject> _tutorialZones;
 
     Renderer _renderer;
     Animator _animator;
