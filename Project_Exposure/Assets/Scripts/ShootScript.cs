@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum Frequency
 {
@@ -11,17 +12,14 @@ public enum Frequency
 
 public class ShootScript : MonoBehaviour
 {
-	[SerializeField]
-	GameObject _bulletSpawnPoint;
-    [SerializeField]
-    GameObject _bulletType1;
-    [SerializeField]
-    GameObject _bulletType2;
-    [SerializeField]
-    GameObject _bulletType3;
+	[SerializeField] bool _rayMode = false;
 
-    [SerializeField]
-    float _speed = 5000f;
+	[SerializeField] GameObject _bulletSpawnPoint;
+    [SerializeField] GameObject _bulletType1;
+    [SerializeField] GameObject _bulletType2;
+    [SerializeField] GameObject _bulletType3;
+
+    [SerializeField] float _speed = 5000f;
 
     Dictionary<Frequency, GameObject> _waves = new Dictionary<Frequency, GameObject>();
 
@@ -38,35 +36,50 @@ public class ShootScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switchWave();
+        SwitchWave();
 
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 5f);
+		if (!EventSystem.current.IsPointerOverGameObject()) // check if mouse isn't hovering over button
+		{
+			Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 5f);
 
-        transform.LookAt(mouseWorldPosition);
-        transform.Rotate(Vector3.right, 90f);
+			transform.LookAt(mouseWorldPosition);
+			transform.Rotate(Vector3.right, 90f);
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.up), transform.parent);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.up * _speed);
-        }
+			if (!_rayMode)
+			{
+				if (Input.GetMouseButtonDown(0))
+				{
+					GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.up), transform.parent);
+					bullet.GetComponent<Rigidbody>().AddForce(transform.up * _speed);
+				}
+			}
+			else{
+				if (Input.GetMouseButton(0))
+				{
+					RaycastHit hit;
+					if(Physics.Raycast(transform.position, transform.up, out hit, Mathf.Infinity)){
+						Debug.Log(hit.transform.name);
+					}
+				}
+			}
+		}
     }
 
-    private void switchWave()
+    public void SwitchWave(int mode = 0)
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || mode == 1)
         {
             _shootingFrequency = Frequency.LOW;
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || mode == 2)
         {
             _shootingFrequency = Frequency.MEDIUM;
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) || mode == 3)
         {
             _shootingFrequency = Frequency.HIGH;
             return;
