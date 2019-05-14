@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    void OnCollisionEnter(Collision other)
-    {
-        Destroy(gameObject);
-    }
+    private void OnCollisionEnter(Collision other) => Destroy(gameObject);
 }

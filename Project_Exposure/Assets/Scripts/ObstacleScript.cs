@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField] float _speed = 1f;
-    [SerializeField] float _shatterForce = 10f;
+    [SerializeField] private float _speed = 1f;
+    [SerializeField] private float _shatterForce = 10f;
 
-    [SerializeField] Frequency _frequency = Frequency.MEDIUM;
+    [SerializeField] private Frequency _frequency = Frequency.MEDIUM;
 
-    [SerializeField] Material _lowFreqMaterial;
-    [SerializeField] Material _mediumFreqMaterial;
-    [SerializeField] Material _highFreqMaterial;
-    [SerializeField] List<GameObject> _tutorialZones;
+    [SerializeField] private Material _lowFreqMaterial;
+    [SerializeField] private Material _mediumFreqMaterial;
+    [SerializeField] private Material _highFreqMaterial;
+    [SerializeField] private List<GameObject> _tutorialZones;
+    private Renderer _renderer;
 
-    Renderer _renderer;
-
-
-    void Start()
+    private void Start()
     {
         _renderer = GetComponent<Renderer>();
 
@@ -37,7 +35,7 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.transform.tag == "MainCamera")
         {
@@ -49,15 +47,24 @@ public class ObstacleScript : MonoBehaviour
         {
             case Frequency.LOW:
                 if (other.transform.tag == "LowFreq")
+                {
                     Shatter();
+                }
+
                 break;
             case Frequency.MEDIUM:
                 if (other.transform.tag == "MediumFreq")
+                {
                     Shatter();
+                }
+
                 break;
             case Frequency.HIGH:
                 if (other.transform.tag == "HighFreq")
+                {
                     Shatter();
+                }
+
                 break;
             default:
                 break;

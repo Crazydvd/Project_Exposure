@@ -20,7 +20,7 @@ public class AnimationScript : MonoBehaviour
     private Animator _animator;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
         _animator.speed = Speed;
