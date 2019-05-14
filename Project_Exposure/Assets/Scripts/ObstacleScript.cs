@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField] float _speed = 1f;
     [SerializeField] float shatterForce = 10f;
 
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
@@ -15,14 +14,11 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] List<GameObject> _tutorialZones;
 
     Renderer _renderer;
-    Animator _animator;
 
 
     void Start()
     {
-        _animator = GetComponent<Animator>();
         _renderer = GetComponent<Renderer>();
-        _animator.speed = _speed;
 
         switch (_frequency)
         {
@@ -89,12 +85,12 @@ public class ObstacleScript : MonoBehaviour
 
             Vector3 direction = (childTransform.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
-
-            childRigid.AddForce(randomizedDirection * _speed, ForceMode.Impulse);
+            //TODO: for the love of god, please change this line \/\/\/\/ getting a component each iteration is literally trash
+            childRigid.AddForce(randomizedDirection * transform.parent.GetComponent<AnimationScript>().Speed, ForceMode.Impulse);
             childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
         }
 
         transform.DetachChildren();
-        Destroy(gameObject);
+        Destroy(transform.parent);
     }
 }
