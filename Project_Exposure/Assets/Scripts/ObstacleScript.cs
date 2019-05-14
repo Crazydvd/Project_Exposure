@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleScript : MonoBehaviour
 {
     [SerializeField] float _speed = 1f;
-    [SerializeField] float shatterForce = 10f;
+    [SerializeField] float _shatterForce = 10f;
 
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
@@ -90,7 +90,7 @@ public class ObstacleScript : MonoBehaviour
             Vector3 direction = (childTransform.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
 
-            childRigid.AddForce(randomizedDirection * _speed, ForceMode.Impulse);
+            childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
             childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
         }
 
