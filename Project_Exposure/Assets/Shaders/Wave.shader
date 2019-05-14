@@ -10,7 +10,7 @@
 		[MaterialToggle] _Zaxis("Z-Axis", float) = 1
 		_Amplitude("Amplitude", float) = 1
 		_Frequency("Frequency", float) = 1
-		_Unit("TimeUnit", float) = 1
+		_Unit("Length", float) = 1
 	}
 	SubShader 
 	{
