@@ -92,6 +92,6 @@ public class ObstacleScript : MonoBehaviour
         }
 
         transform.DetachChildren();
-        Destroy(transform.parent);
+        Destroy(transform.parent.gameObject);
     }
 }
