@@ -9,6 +9,7 @@
 		[MaterialToggle] _Zaxis("Z-Axis", float) = 1
 		_Amplitude("Amplitude", float) = 1
 		_Frequency("Frequency", float) = 1
+		_Unit("TimeUnit", float) = 1
 	}
 	SubShader 
 	{
@@ -37,8 +38,7 @@
 			float _Zaxis;
 			float _Amplitude;
 			float _Frequency;
-
-			float PI = 3.141592653589;
+			float _Unit;
 
 			vertexToFragment myVertexShader (vertexInput v) 
 			{
@@ -48,18 +48,21 @@
 				o.vertex = mul(UNITY_MATRIX_MVP,v.vertex);
 				o.worldPos = mul(UNITY_MATRIX_M, v.vertex);
 				float y = 0;
+				float PI = 3.141592653589;
+
+				float frequency = _Frequency * 2 * PI * (1 / _Unit);
 
 				if (_Xaxis)
 				{
-					y += _Amplitude * sin(_Frequency * o.worldPos.x);
+					y += _Amplitude * sin(frequency * o.worldPos.x);
 				}
 				if (_Yaxis)
 				{
-					o.vertex.x += _Amplitude * sin(_Frequency * o.worldPos.y);
+					o.vertex.x += _Amplitude * sin(frequency * o.worldPos.y);
 				}
 				if (_Zaxis)
 				{
-					y += _Amplitude * sin(_Frequency * o.worldPos.z);
+					y += _Amplitude * sin(frequency * o.worldPos.z);
 				}
 
 				o.vertex.y += y;
