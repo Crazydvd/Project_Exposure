@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObstacleCountScript : MonoBehaviour
 {
-
     [HideInInspector] public float TotalObstacleCount;
 
     // Start is called before the first frame update

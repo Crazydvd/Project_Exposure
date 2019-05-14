@@ -13,24 +13,21 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] private Material _mediumFreqMaterial;
     [SerializeField] private Material _highFreqMaterial;
     [SerializeField] private List<GameObject> _tutorialZones;
-    private Renderer _renderer;
 
     private void Start()
     {
-        _renderer = GetComponent<Renderer>();
+        Renderer renderer = GetComponent<Renderer>();
 
         switch (_frequency)
         {
             case Frequency.LOW:
-                _renderer.material = _lowFreqMaterial;
+                renderer.material = _lowFreqMaterial;
                 break;
             case Frequency.MEDIUM:
-                _renderer.material = _mediumFreqMaterial;
+                renderer.material = _mediumFreqMaterial;
                 break;
             case Frequency.HIGH:
-                _renderer.material = _highFreqMaterial;
-                break;
-            default:
+                renderer.material = _highFreqMaterial;
                 break;
         }
     }
@@ -43,31 +40,9 @@ public class ObstacleScript : MonoBehaviour
             Shatter();
         }
 
-        switch (_frequency)
+        if (other.transform.tag.ToUpper() == _frequency + "FREQ")
         {
-            case Frequency.LOW:
-                if (other.transform.tag == "LowFreq")
-                {
-                    Shatter();
-                }
-
-                break;
-            case Frequency.MEDIUM:
-                if (other.transform.tag == "MediumFreq")
-                {
-                    Shatter();
-                }
-
-                break;
-            case Frequency.HIGH:
-                if (other.transform.tag == "HighFreq")
-                {
-                    Shatter();
-                }
-
-                break;
-            default:
-                break;
+            Shatter();
         }
     }
 
@@ -82,13 +57,16 @@ public class ObstacleScript : MonoBehaviour
         //Shatter and destroy. Decimate and obliterate. Annihilate and eradicate. Erase from existence.
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).GetComponent<Rigidbody>() == null)
+            Transform child = transform.GetChild(i);
+            Rigidbody childRigid = child.GetComponent<Rigidbody>();
+
+            //NOTE: Earlier you used brackets for single-line if statements, pick one. Consistency is key!
+            if (childRigid == null)
                 Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
 
-            Rigidbody childRigid = transform.GetChild(i).GetComponent<Rigidbody>();
-            Transform childTransform = transform.GetChild(i).GetComponent<Transform>();
+            Transform childTransform = child.GetComponent<Transform>();
 
-            transform.GetChild(i).gameObject.SetActive(true);
+            child.gameObject.SetActive(true);
             childRigid.isKinematic = false;
 
             Vector3 direction = (childTransform.position - transform.position).normalized;

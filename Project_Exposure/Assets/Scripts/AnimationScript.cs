@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class AnimationScript : MonoBehaviour
 {
     private static System.Random _random = new System.Random();
@@ -17,25 +18,22 @@ public class AnimationScript : MonoBehaviour
     [SerializeField]
     private bool _randomized = false;
 
-    private Animator _animator;
-
     // Start is called before the first frame update
     private void Start()
     {
-        _animator = GetComponent<Animator>();
-        _animator.speed = Speed;
+        Animator animator = GetComponent<Animator>();
+
+        animator.speed = Speed;
 
         if (_randomized)
         {
             _time = (float) _random.NextDouble();
         }
 
-        AnimatorClipInfo[] _cInfo = _animator.GetCurrentAnimatorClipInfo(0);
-        AnimatorStateInfo state = _animator.GetCurrentAnimatorStateInfo(0);
-
-        if (_cInfo.Length > 0)
+        if (animator.GetCurrentAnimatorClipInfo(0).Length > 0)
         {
-            _animator.Play(state.fullPathHash, -1, _time);
+            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            animator.Play(state.fullPathHash, -1, _time);
         }
     }
 }

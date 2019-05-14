@@ -55,37 +55,34 @@ public class ShootScript : MonoBehaviour
                     bullet.GetComponent<Rigidbody>().AddForce(transform.up * _speed);
                 }
             }
-            else
+            else if (Input.GetMouseButton(0))
             {
-                if (Input.GetMouseButton(0))
+                int layerMask = LayerMask.GetMask("Obstacles");
+                if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, layerMask))
                 {
-                    int layerMask = LayerMask.GetMask("Obstacles");
-                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, layerMask))
+                    Transform hitTransform = hit.transform;
+                    transform.LookAt(hitTransform.position);
+                    transform.Rotate(Vector3.right, 90f);
+
+                    _beam.SetActive(true);
+                    if (ReferenceEquals(_previousHit, hitTransform.gameObject))
                     {
-
-                        transform.LookAt(hit.transform.position);
-                        transform.Rotate(Vector3.right, 90f);
-
-                        _beam.SetActive(true);
-                        if (GameObject.ReferenceEquals(_previousHit, hit.transform.gameObject))
+                        _rayTimer += Time.deltaTime;
+                        if (_rayTimer >= _rayTimerMax)
                         {
-                            _rayTimer += Time.deltaTime;
-                            if (_rayTimer >= _rayTimerMax)
-                            {
-                                hit.transform.GetComponent<ObstacleScript>().Shatter();
-                                _rayTimer = 0;
-                            }
-                        }
-                        else
-                        {
+                            hitTransform.GetComponent<ObstacleScript>().Shatter();
                             _rayTimer = 0;
                         }
-                        _previousHit = hit.transform.gameObject;
                     }
                     else
                     {
-                        _beam.SetActive(false);
+                        _rayTimer = 0;
                     }
+                    _previousHit = hitTransform.gameObject;
+                }
+                else
+                {
+                    _beam.SetActive(false);
                 }
             }
         }

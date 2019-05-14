@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartLevel : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         Button _button = GetComponent<Button>();
-        _button.onClick.AddListener(LoadLevel);
+        _button.onClick.AddListener(loadLevel);
     }
 
-    void LoadLevel()
-    {
-        SceneManager.LoadScene(1);
-    }
+    private void loadLevel() => SceneManager.LoadScene(1);
 }
