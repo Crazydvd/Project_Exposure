@@ -15,14 +15,11 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] List<GameObject> _tutorialZones;
 
     Renderer _renderer;
-    Animator _animator;
 
 
     void Start()
     {
-        _animator = GetComponent<Animator>();
         _renderer = GetComponent<Renderer>();
-        _animator.speed = _speed;
 
         switch (_frequency)
         {
@@ -95,6 +92,6 @@ public class ObstacleScript : MonoBehaviour
         }
 
         transform.DetachChildren();
-        Destroy(gameObject);
+        Destroy(transform.parent);
     }
 }
