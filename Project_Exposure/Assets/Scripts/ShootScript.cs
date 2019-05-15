@@ -54,8 +54,17 @@ public class ShootScript : MonoBehaviour
 			{
 				if (Input.GetMouseButtonDown(0))
 				{
+					int layerMask = LayerMask.GetMask("Obstacles");
+					RaycastHit hit;
+					if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layerMask))
+					{
+						transform.LookAt(hit.transform.position);
+						transform.Rotate(Vector3.right, 90f);
+					}
+					
 					GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.up), transform.parent);
 					bullet.GetComponent<Rigidbody>().AddForce(transform.up * _speed);
+
 				}
 			}
 			else{
