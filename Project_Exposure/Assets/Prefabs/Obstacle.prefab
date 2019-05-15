@@ -2207,10 +2207,10 @@ GameObject:
   - component: {fileID: 2335814168085500289}
   - component: {fileID: 711237491407305146}
   - component: {fileID: 1803833437627455949}
-  - component: {fileID: 3203706461112381008}
-  - component: {fileID: 3920397646488466450}
+  - component: {fileID: 7722159699272290775}
+  - component: {fileID: 5724609605885054616}
   m_Layer: 0
-  m_Name: Obstacle
+  m_Name: ShardsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2375,7 +2375,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3203706461112381008
+--- !u!65 &7722159699272290775
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2388,7 +2388,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3920397646488466450
+--- !u!114 &5724609605885054616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2397,16 +2397,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2230446549101009449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1437d4cfcde057469e3d39cf89db2c3, type: 3}
+  m_Script: {fileID: 11500000, guid: e63682d763a6dd1498c9810d3426ea8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
-  _shatterForce: 10
-  _frequency: 1
-  _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
-  _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
-  _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
-  _tutorialZones: []
 --- !u!1 &2376122349433068747
 GameObject:
   m_ObjectHideFlags: 0
@@ -8345,8 +8338,9 @@ GameObject:
   - component: {fileID: 6321368275549158661}
   - component: {fileID: 4361999126319016485}
   - component: {fileID: 7453915862444673630}
-  m_Layer: 0
-  m_Name: Obstacle (Parent)
+  - component: {fileID: 1546177997534992544}
+  m_Layer: 10
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8395,12 +8389,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 7053018738946281238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 489ff6f407f6d884d9a3270c6ce01e2b, type: 3}
+  m_Script: {fileID: 11500000, guid: daf03361e6db594449c7cc3b1af41b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 0.25
   _time: 0
   _randomized: 1
+--- !u!114 &1546177997534992544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053018738946281238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1437d4cfcde057469e3d39cf89db2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1
+  _shatterForce: 10
+  _frequency: 1
+  _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
+  _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
+  _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
+  _tutorialZones: []
 --- !u!1 &7054832084198554446
 GameObject:
   m_ObjectHideFlags: 0
