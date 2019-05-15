@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1f;
-    [SerializeField] private float _shatterForce = 10f;
+    [SerializeField] float _speed = 1f;
+    [SerializeField] float _shatterForce = 10f;
 
-    [SerializeField] private Frequency _frequency = Frequency.MEDIUM;
+    [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
-    [SerializeField] private Material _lowFreqMaterial;
-    [SerializeField] private Material _mediumFreqMaterial;
-    [SerializeField] private Material _highFreqMaterial;
-    [SerializeField] private List<GameObject> _tutorialZones;
+    [SerializeField] Material _lowFreqMaterial;
+    [SerializeField] Material _mediumFreqMaterial;
+    [SerializeField] Material _highFreqMaterial;
+    [SerializeField] List<GameObject> _tutorialZones;
 
-    private void Start()
+    void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
 
@@ -32,7 +32,7 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.transform.tag == "MainCamera")
         {
@@ -60,9 +60,10 @@ public class ObstacleScript : MonoBehaviour
             Transform child = transform.GetChild(i);
             Rigidbody childRigid = child.GetComponent<Rigidbody>();
 
-            //NOTE: Earlier you used brackets for single-line if statements, pick one. Consistency is key!
             if (childRigid == null)
+            {
                 Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
+            }
 
             Transform childTransform = child.GetComponent<Transform>();
 

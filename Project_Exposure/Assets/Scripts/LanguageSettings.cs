@@ -5,5 +5,4 @@ using UnityEngine;
 public static class LanguageSettings
 {
     public static int Language { get; set; }
-
 }
