@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class StartLevel : MonoBehaviour
 {
-    private void Start()
+    void Start()
     {
         Button _button = GetComponent<Button>();
         _button.onClick.AddListener(loadLevel);
     }
 
-    private void loadLevel() => SceneManager.LoadScene(1);
+    void loadLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

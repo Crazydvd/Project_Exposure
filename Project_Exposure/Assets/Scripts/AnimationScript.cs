@@ -19,7 +19,7 @@ public class AnimationScript : MonoBehaviour
     private bool _randomized = false;
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
         Animator animator = GetComponent<Animator>();
 

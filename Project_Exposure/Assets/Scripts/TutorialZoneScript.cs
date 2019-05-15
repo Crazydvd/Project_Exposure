@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class TutorialZoneScript : MonoBehaviour
 {
-    [SerializeField] private GameObject _uiElement;
-    private GameObject _player;
-    private Animator _playerTrack;
-    private float _initialSpeed;
+    [SerializeField] GameObject _uiElement;
+    GameObject _player;
+    Animator _playerTrack;
+    float _initialSpeed;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag.ToUpper() == "MAINCAMERA")
         {
