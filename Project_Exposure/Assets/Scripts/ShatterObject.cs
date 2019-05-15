@@ -29,6 +29,7 @@ public class ShatterObject : MonoBehaviour
             }
 
             Transform childTransform = child.GetComponent<Transform>();
+            child.gameObject.SetActive(true);
             childRigid.isKinematic = false;
 
             Vector3 direction = (childTransform.position - transform.position).normalized;
