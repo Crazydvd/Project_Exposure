@@ -2,6 +2,7 @@
 {
 	Properties
 	{
+		_Color("Color", color) = (1, 1, 1, 0)
 		_MainTex ("Texture", 2D) = "white" {}	
 
 		[MaterialToggle] _Local("ModelSpace", float) = 0
@@ -81,9 +82,11 @@
 			}
 			
 			sampler2D _MainTex;
+			float4 _Color;
+
 			fixed4 myFragmentShader(vertexToFragment i) : SV_Target
 			{
-				return tex2D(_MainTex,i.uv);
+				return _Color * tex2D(_MainTex,i.uv);
 			}
 			ENDCG
 		}

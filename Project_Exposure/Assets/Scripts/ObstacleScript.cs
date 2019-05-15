@@ -16,6 +16,7 @@ public class ObstacleScript : MonoBehaviour
 
     void Start()
     {
+        /**
         Renderer renderer = GetComponentInChildren<Renderer>();
 
         switch (_frequency)
@@ -29,6 +30,29 @@ public class ObstacleScript : MonoBehaviour
             case Frequency.HIGH:
                 renderer.material = _highFreqMaterial;
                 break;
+        }
+        /**/
+
+        //TEMPORARY:
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        Material material = null;
+
+        switch (_frequency)
+        {
+            case Frequency.LOW:
+                material = _lowFreqMaterial;
+                break;
+            case Frequency.MEDIUM:
+                material = _mediumFreqMaterial;
+                break;
+            case Frequency.HIGH:
+                material = _highFreqMaterial;
+                break;
+        }
+
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.material = material;
         }
     }
 
@@ -48,6 +72,32 @@ public class ObstacleScript : MonoBehaviour
 
     public void Shatter()
     {
+        //TEMPORARY:
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+            Rigidbody childRigid = child.GetComponent<Rigidbody>();
+
+            if (childRigid == null)
+            {
+                Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
+            }
+
+            Transform childTransform = child.GetComponent<Transform>();
+            child.gameObject.SetActive(true);
+            childRigid.isKinematic = false;
+
+            Vector3 direction = (childTransform.position - transform.position).normalized;
+            Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
+
+            childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
+            childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
+        }
+
+        transform.DetachChildren();
+        Destroy(gameObject);
+
+        /**
         //if a tutorial zone is linked to this object, resume gameplay on shatter
         if (_tutorialZones.Count > 0)
         {
@@ -79,10 +129,11 @@ public class ObstacleScript : MonoBehaviour
 
         shardsContainer.DetachChildren();
         Destroy(gameObject);
+        /**/
     }
 
     public Frequency GetFreq()
     {
         return _frequency;
-    } 
+    }
 }

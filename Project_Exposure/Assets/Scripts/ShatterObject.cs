@@ -22,7 +22,6 @@ public class ShatterObject : MonoBehaviour
             Transform child = transform.GetChild(i);
             Rigidbody childRigid = child.GetComponent<Rigidbody>();
 
-            //NOTE: Earlier you used brackets for single-line if statements, pick one. Consistency is key!
             if (childRigid == null)
             {
                 Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");

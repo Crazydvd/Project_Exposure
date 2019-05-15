@@ -3,7 +3,11 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
-		_TimeScale ("TimeScale", float) = 10 
+		_TimeScaleY("TimeScaleY", float) = 10
+		_TimeScaleX("TimeScaleX", float) = 10
+
+		[MaterialToggle] _Xaxis ("xDirection", float) = 0
+		[MaterialToggle] _Yaxis ("yDirection", float) = 1
 	}
 	SubShader
 	{
@@ -29,7 +33,10 @@
 			};
 
 			sampler2D _MainTex;
-			float _TimeScale;
+			float _TimeScaleY;
+			float _TimeScaleX;
+			float _Xaxis;
+			float _Yaxis;
 
 			v2f vert (appdata v)
 			{
@@ -37,7 +44,7 @@
 				// Transform the point to clip space:
 				o.vertex = mul(UNITY_MATRIX_MVP,v.vertex);
 				// Cycle the UVs:
-				o.uv = v.uv + float2(0,_Time.x * _TimeScale);
+				o.uv = v.uv + float2(_Time.x * _TimeScaleX * _Xaxis, _Time.x * _TimeScaleY * _Yaxis);
 				return o;
 			}
 			
