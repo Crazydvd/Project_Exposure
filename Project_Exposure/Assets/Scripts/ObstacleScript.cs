@@ -4,43 +4,35 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField] float _speed = 1f;
-    [SerializeField] float shatterForce = 10f;
+    [SerializeField] private float _speed = 1f;
+    [SerializeField] private float _shatterForce = 10f;
 
-    [SerializeField] Frequency _frequency = Frequency.MEDIUM;
+    [SerializeField] private Frequency _frequency = Frequency.MEDIUM;
 
-    [SerializeField] Material _lowFreqMaterial;
-    [SerializeField] Material _mediumFreqMaterial;
-    [SerializeField] Material _highFreqMaterial;
-    [SerializeField] List<GameObject> _tutorialZones;
+    [SerializeField] private Material _lowFreqMaterial;
+    [SerializeField] private Material _mediumFreqMaterial;
+    [SerializeField] private Material _highFreqMaterial;
+    [SerializeField] private List<GameObject> _tutorialZones;
 
-    Renderer _renderer;
-    Animator _animator;
-
-
-    void Start()
+    private void Start()
     {
-        _animator = GetComponent<Animator>();
-        _renderer = GetComponent<Renderer>();
-        _animator.speed = _speed;
+        Renderer renderer = GetComponent<Renderer>();
 
         switch (_frequency)
         {
             case Frequency.LOW:
-                _renderer.material = _lowFreqMaterial;
+                renderer.material = _lowFreqMaterial;
                 break;
             case Frequency.MEDIUM:
-                _renderer.material = _mediumFreqMaterial;
+                renderer.material = _mediumFreqMaterial;
                 break;
             case Frequency.HIGH:
-                _renderer.material = _highFreqMaterial;
-                break;
-            default:
+                renderer.material = _highFreqMaterial;
                 break;
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.transform.tag == "MainCamera")
         {
@@ -48,22 +40,9 @@ public class ObstacleScript : MonoBehaviour
             Shatter();
         }
 
-        switch (_frequency)
+        if (other.transform.tag.ToUpper() == _frequency + "FREQ")
         {
-            case Frequency.LOW:
-                if (other.transform.tag == "LowFreq")
-                    Shatter();
-                break;
-            case Frequency.MEDIUM:
-                if (other.transform.tag == "MediumFreq")
-                    Shatter();
-                break;
-            case Frequency.HIGH:
-                if (other.transform.tag == "HighFreq")
-                    Shatter();
-                break;
-            default:
-                break;
+            Shatter();
         }
     }
 
@@ -78,23 +57,26 @@ public class ObstacleScript : MonoBehaviour
         //Shatter and destroy. Decimate and obliterate. Annihilate and eradicate. Erase from existence.
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).GetComponent<Rigidbody>() == null)
+            Transform child = transform.GetChild(i);
+            Rigidbody childRigid = child.GetComponent<Rigidbody>();
+
+            //NOTE: Earlier you used brackets for single-line if statements, pick one. Consistency is key!
+            if (childRigid == null)
                 Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
 
-            Rigidbody childRigid = transform.GetChild(i).GetComponent<Rigidbody>();
-            Transform childTransform = transform.GetChild(i).GetComponent<Transform>();
+            Transform childTransform = child.GetComponent<Transform>();
 
-            transform.GetChild(i).gameObject.SetActive(true);
+            child.gameObject.SetActive(true);
             childRigid.isKinematic = false;
 
             Vector3 direction = (childTransform.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
 
-            childRigid.AddForce(randomizedDirection * _speed, ForceMode.Impulse);
+            childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
             childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
         }
 
         transform.DetachChildren();
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

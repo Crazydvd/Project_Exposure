@@ -6,24 +6,28 @@ public class ShatterObject : MonoBehaviour
 {
     [SerializeField]
     float _speed = 10f;
-
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Shatter();
+            shatter();
         }
     }
 
-    private void Shatter()
+    private void shatter()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).GetComponent<Rigidbody>() == null)            
+            Transform child = transform.GetChild(i);
+            Rigidbody childRigid = child.GetComponent<Rigidbody>();
+
+            //NOTE: Earlier you used brackets for single-line if statements, pick one. Consistency is key!
+            if (childRigid == null)            
                 Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
             
-            Rigidbody childRigid = transform.GetChild(i).GetComponent<Rigidbody>();
-            Transform childTransform = transform.GetChild(i).GetComponent<Transform>();
+            
+            Transform childTransform = child.GetComponent<Transform>();
             childRigid.isKinematic = false;
 
             Vector3 direction = (childTransform.position - transform.position).normalized;

@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class AnimationScript : MonoBehaviour
 {
     private static System.Random _random = new System.Random();
+
+    [Tooltip("How fast the animation should be")]
+    public float Speed = 1;
 
     [SerializeField]
     [Tooltip("At what time (percentage) the animation should start")]
@@ -12,43 +16,24 @@ public class AnimationScript : MonoBehaviour
     private float _time = 0;
 
     [SerializeField]
-    private Vector3 _delta = new Vector3(0, 0, 0);
-
-    [SerializeField]
     private bool _randomized = false;
 
-    private Animator _animator;
-
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _animator = GetComponent<Animator>();
+        Animator animator = GetComponent<Animator>();
+
+        animator.speed = Speed;
 
         if (_randomized)
         {
             _time = (float) _random.NextDouble();
         }
 
-        AnimatorClipInfo[] _cInfo = _animator.GetCurrentAnimatorClipInfo(0);
-
-        if (_cInfo.Length > 0)
+        if (animator.GetCurrentAnimatorClipInfo(0).Length > 0)
         {
-            AnimationClip clip = _cInfo[0].clip;
-            _animator.Play(clip.name, 0, _time);
-
-            _time *= 2;
-            _time = Mathf.PingPong(_time, 1);
-            transform.position += _delta * _time;
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AnimatorClipInfo[] _cInfo = _animator.GetCurrentAnimatorClipInfo(0);
-            AnimationClip clip = _cInfo[0].clip;
-            _animator.Play(clip.name, 0, _time);
+            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            animator.Play(state.fullPathHash, -1, _time);
         }
     }
 }

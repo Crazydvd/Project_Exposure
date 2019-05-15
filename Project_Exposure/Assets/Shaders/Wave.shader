@@ -2,14 +2,15 @@
 {
 	Properties
 	{
-		_MainTex ("Texture", 2D) = "white" {}
-		
+		_MainTex ("Texture", 2D) = "white" {}	
+
+		[MaterialToggle] _Local("ModelSpace", float) = 0
 		[MaterialToggle] _Xaxis("X-Axis", float) = 1
 		[MaterialToggle] _Yaxis("Y-Axis", float) = 0
 		[MaterialToggle] _Zaxis("Z-Axis", float) = 1
 		_Amplitude("Amplitude", float) = 1
 		_Frequency("Frequency", float) = 1
-		_Unit("TimeUnit", float) = 1
+		_Unit("Length", float) = 1
 	}
 	SubShader 
 	{
@@ -35,6 +36,7 @@
 				float4 worldPos : TEXCOORD1;
 			};
 
+			float _Local;
 			float _Xaxis;
 			float _Yaxis;
 			float _Zaxis;
@@ -48,7 +50,14 @@
 				o.uv = v.uv;
 				// Transform the point to clip space:
 				o.vertex = mul(UNITY_MATRIX_MVP,v.vertex);
-				o.worldPos = mul(UNITY_MATRIX_M, v.vertex);
+				if (_Local)
+				{
+					o.worldPos = v.vertex;
+				}
+				else
+				{
+					o.worldPos = mul(UNITY_MATRIX_M, v.vertex);
+				}
 				float y = 0;
 				float PI = 3.141592653589;
 
