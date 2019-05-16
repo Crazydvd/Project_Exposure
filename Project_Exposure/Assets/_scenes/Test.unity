@@ -996,6 +996,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLANEPLANEPLANE (low)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1ee4f1a931830c54e9bc8322e60755cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1ee4f1a931830c54e9bc8322e60755cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3888,13 +3893,14 @@ GameObject:
   - component: {fileID: 158448306}
   - component: {fileID: 158448308}
   - component: {fileID: 158448307}
+  - component: {fileID: 158448309}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &158448306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3911,8 +3917,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -0.4000244}
+  m_AnchoredPosition: {x: 459.3, y: 455.8}
+  m_SizeDelta: {x: -918.5, y: -912.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &158448307
 MonoBehaviour:
@@ -3965,6 +3971,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158448305}
   m_CullTransparentMesh: 0
+--- !u!114 &158448309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158448305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22268e2d5e753534bba01436b603fb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &158909271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2877427172061476097, guid: abc8398cae9d85643ad430b0b2fad732,
@@ -10651,7 +10669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 1
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -11830,7 +11848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 0
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -14214,7 +14232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 1
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -14605,6 +14623,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &712295227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712295220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20956c1ac8b188c4cbad604100a4799c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: Language.json
 --- !u!1 &712582977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8933074787770598524, guid: 2fc1d337b2c9d0b42b4c69d0361df7e5,
@@ -16319,7 +16350,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: abc8398cae9d85643ad430b0b2fad732,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.38
+      value: 3.31
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: abc8398cae9d85643ad430b0b2fad732,
         type: 3}
@@ -24352,7 +24383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 0
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -32040,12 +32071,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.19
+      value: -3.0982413
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.0205607e-16
+      value: 0.56303954
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
@@ -32055,7 +32086,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
@@ -32065,12 +32096,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.5284142
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8489867
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
@@ -32090,7 +32121,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e9b88c763132f414e9e73dc4c7e20f99,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -63.797005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b88c763132f414e9e73dc4c7e20f99, type: 3}
@@ -36403,7 +36434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 0
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -36766,7 +36797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 2
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -38584,6 +38615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLANEPLANEPLANE (high)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1ee4f1a931830c54e9bc8322e60755cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1ee4f1a931830c54e9bc8322e60755cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39505,6 +39541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PLANEPLANEPLANE (medium)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1ee4f1a931830c54e9bc8322e60755cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1ee4f1a931830c54e9bc8322e60755cf,
         type: 3}
@@ -41744,7 +41785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 2
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -44975,7 +45016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 2
+  _shatterForce: 20
   _frequency: 1
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}

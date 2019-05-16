@@ -8,6 +8,6 @@ public class TutorialText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Text>().text = JsonVariables.Instance.TEST.NL;
+        GetComponent<Text>().text = JsonVariables.Instance["TUTORIALTEXT"]["BG"];
     }
 }
