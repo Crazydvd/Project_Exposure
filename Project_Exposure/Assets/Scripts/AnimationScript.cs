@@ -16,7 +16,7 @@ public class AnimationScript : MonoBehaviour
     private float _time = 0;
 
     [SerializeField]
-    private bool _randomized = false;
+    private bool _randomized = true;
 
     // Start is called before the first frame update
     void Start()
