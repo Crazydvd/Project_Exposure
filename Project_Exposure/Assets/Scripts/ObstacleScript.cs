@@ -6,13 +6,17 @@ public class ObstacleScript : MonoBehaviour
 {
     [SerializeField] float _speed = 1f;
     [SerializeField] float _shatterForce = 10f;
-
+    [SerializeField] float _shatterDelay = 0.25f;
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
     [SerializeField] List<GameObject> _tutorialZones;
+
+    Vector3 _originalShakePos;
+    float _timeBeforeShatter = 0.0f;
+    bool _shaking;
 
     void Start()
     {
@@ -56,6 +60,14 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (_shaking)
+        {
+            Shake();
+        }
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.transform.tag == "MainCamera")
@@ -66,38 +78,55 @@ public class ObstacleScript : MonoBehaviour
 
         if (other.transform.tag.ToUpper() == _frequency + "FREQ")
         {
-            Shatter();
+            EnableShake();
         }
+    }
+
+    private void Shake()
+    {
+        transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.1f, 0.1f), _originalShakePos.y + Random.Range(-0.1f, 0.1f), _originalShakePos.z + Random.Range(-0.1f, 0.1f)), transform.rotation);
+
+        _timeBeforeShatter += Time.deltaTime;
+        if (_timeBeforeShatter > _shatterDelay)
+        {
+            Shatter(); 
+        }
+    }
+
+    public void EnableShake()
+    {
+        _originalShakePos = transform.position;
+        _shaking = true;
     }
 
     public void Shatter()
     {
         //TEMPORARY:
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Transform child = transform.GetChild(i);
-            Rigidbody childRigid = child.GetComponent<Rigidbody>();
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    Transform child = transform.GetChild(i);
+        //    Rigidbody childRigid = child.GetComponent<Rigidbody>();
 
-            if (childRigid == null)
-            {
-                Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
-            }
+        //    if (childRigid == null)
+        //    {
+        //        Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
+        //    }
 
-            Transform childTransform = child.GetComponent<Transform>();
-            child.gameObject.SetActive(true);
-            childRigid.isKinematic = false;
+        //    Transform childTransform = child.GetComponent<Transform>();
+        //    child.gameObject.SetActive(true);
+        //    childRigid.isKinematic = false;
 
-            Vector3 direction = (childTransform.position - transform.position).normalized;
-            Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
+        //    Vector3 direction = (childTransform.position - transform.position).normalized;
+        //    Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
 
-            childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
-            childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
-        }
+        //    childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
+        //    childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
+        //}
 
-        transform.DetachChildren();
-        Destroy(gameObject);
+        //transform.DetachChildren();
+        //Destroy(gameObject);
 
-        /**
+
         //if a tutorial zone is linked to this object, resume gameplay on shatter
         if (_tutorialZones.Count > 0)
         {
@@ -113,12 +142,11 @@ public class ObstacleScript : MonoBehaviour
             Rigidbody childRigid = child.GetComponent<Rigidbody>();
 
             if (childRigid == null)
-            {
                 Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
-            }
 
             child.gameObject.SetActive(true);
             childRigid.isKinematic = false;
+            child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
 
             Vector3 direction = (child.position - shardsContainer.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
@@ -129,7 +157,6 @@ public class ObstacleScript : MonoBehaviour
 
         shardsContainer.DetachChildren();
         Destroy(gameObject);
-        /**/
     }
 
     public Frequency GetFreq()

@@ -21,7 +21,7 @@ public class DetectObstacleCol : MonoBehaviour
 
         if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")
         {
-            _obstacle.Shatter();
+            _obstacle.EnableShake();
         }
     }
 }
