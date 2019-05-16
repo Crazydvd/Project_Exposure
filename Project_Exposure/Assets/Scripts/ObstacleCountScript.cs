@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ObstacleCountScript : MonoBehaviour
 {
-	
-	[HideInInspector] public float TotalObstacleCount;
+    [HideInInspector] public float TotalObstacleCount;
+
     // Start is called before the first frame update
     void Start()
     {
-		TotalObstacleCount = transform.childCount;
+        TotalObstacleCount = transform.childCount;
     }
 
-	public float GetCurrentObstacleCount(){
-		return transform.childCount;
-	}
+    public float GetCurrentObstacleCount()
+    {
+        return transform.childCount;
+    }
 }

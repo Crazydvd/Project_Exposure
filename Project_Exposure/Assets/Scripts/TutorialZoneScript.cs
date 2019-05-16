@@ -5,33 +5,31 @@ using UnityEngine.UI;
 
 public class TutorialZoneScript : MonoBehaviour
 {
-	[SerializeField] GameObject _uiElement;
+    [SerializeField] GameObject _uiElement;
+    GameObject _player;
+    Animator _playerTrack;
+    float _initialSpeed;
 
-	GameObject _player;
-	Animator _playerTrack;
-	float _initialSpeed;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.ToUpper() == "MAINCAMERA")
+        {
+            _player = other.gameObject;
+            _playerTrack = _player.GetComponent<Animator>();
+            _initialSpeed = _playerTrack.speed;
+            _playerTrack.speed = 0;
+            _uiElement.SetActive(true);
+        }
+    }
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if(other.tag.ToUpper() == "MAINCAMERA"){
-			_player = other.gameObject;
-			_playerTrack = _player.GetComponent<Animator>();
-			_initialSpeed = _playerTrack.speed;
-			_playerTrack.speed = 0;
-			_uiElement.SetActive(true);
-		}
-	}
+    public void ReenablePlayer()
+    {
+        if (_playerTrack != null)
+        {
+            _playerTrack.speed = _initialSpeed;
+        }
 
-	public void ReenablePlayer(){
-		if (_playerTrack != null)
-		{
-			_playerTrack.speed = _initialSpeed;
-			_uiElement.SetActive(false);
-			Destroy(gameObject);
-		}
-		else{
-			_uiElement.SetActive(false);
-			Destroy(gameObject);
-		}
-	}
+        _uiElement.SetActive(false);
+        Destroy(gameObject);
+    }
 }

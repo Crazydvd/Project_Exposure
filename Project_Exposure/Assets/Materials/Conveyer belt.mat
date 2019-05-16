@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Conveyer belt
-  m_Shader: {fileID: 4800000, guid: 2299374ebd46b9642ba41db524c1da17, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 168c41ee375840145b504e7952f04aca, type: 3}
+  m_ShaderKeywords: _YAXIS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -71,7 +71,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TimeScale: 10
+    - _TimeScaleX: 10
+    - _TimeScaleY: 10
     - _UVSec: 0
+    - _Xaxis: 0
+    - _Yaxis: 1
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
