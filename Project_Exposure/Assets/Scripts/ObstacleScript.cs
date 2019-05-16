@@ -15,7 +15,9 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] List<GameObject> _tutorialZones;
 
     Vector3 _originalShakePos;
+    Vector3 _pointOfImpact;
     float _timeBeforeShatter = 0.0f;
+    bool _shakingNShatter;
     bool _shaking;
 
     void Start()
@@ -62,71 +64,61 @@ public class ObstacleScript : MonoBehaviour
 
     void Update()
     {
-        if (_shaking)
+        if (_shakingNShatter)
         {
-            Shake();
+            Shake(true);
+        }
+        else if (_shaking)
+        {
+            Shake(false);
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    private void Shake(bool pDestroy)
     {
-        if (other.transform.tag == "MainCamera")
+        switch (_shakingNShatter)
         {
-            Debug.Log("u dede");
-            Shatter();
+            case true:
+                transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.15f, 0.15f), _originalShakePos.y + Random.Range(-0.15f, 0.15f), _originalShakePos.z + Random.Range(-0.15f, 0.15f)), transform.rotation);
+                break;
+            case false:
+                transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.1f, 0.1f), _originalShakePos.y + Random.Range(-0.1f, 0.1f), _originalShakePos.z + Random.Range(-0.1f, 0.1f)), transform.rotation);
+                break;
         }
-
-        if (other.transform.tag.ToUpper() == _frequency + "FREQ")
-        {
-            EnableShake();
-        }
-    }
-
-    private void Shake()
-    {
-        transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.1f, 0.1f), _originalShakePos.y + Random.Range(-0.1f, 0.1f), _originalShakePos.z + Random.Range(-0.1f, 0.1f)), transform.rotation);
 
         _timeBeforeShatter += Time.deltaTime;
+
         if (_timeBeforeShatter > _shatterDelay)
         {
-            Shatter(); 
+            if (pDestroy)
+            {
+                Shatter();
+            }
+            else
+            {
+                _shaking = false;
+                _timeBeforeShatter = 0.0f;
+            }
         }
     }
 
-    public void EnableShake()
+    public void EnableShake(bool pDestroy)
     {
         _originalShakePos = transform.position;
-        _shaking = true;
+
+        switch (pDestroy)
+        {
+            case true:
+                _shakingNShatter = true;
+                break;
+            case false:
+                _shaking = true;
+                break;
+        }
     }
 
     public void Shatter()
     {
-        //TEMPORARY:
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    Transform child = transform.GetChild(i);
-        //    Rigidbody childRigid = child.GetComponent<Rigidbody>();
-
-        //    if (childRigid == null)
-        //    {
-        //        Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
-        //    }
-
-        //    Transform childTransform = child.GetComponent<Transform>();
-        //    child.gameObject.SetActive(true);
-        //    childRigid.isKinematic = false;
-
-        //    Vector3 direction = (childTransform.position - transform.position).normalized;
-        //    Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
-
-        //    childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
-        //    childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
-        //}
-
-        //transform.DetachChildren();
-        //Destroy(gameObject);
-
-
         //if a tutorial zone is linked to this object, resume gameplay on shatter
         if (_tutorialZones.Count > 0)
         {
@@ -148,7 +140,7 @@ public class ObstacleScript : MonoBehaviour
             childRigid.isKinematic = false;
             child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
 
-            Vector3 direction = (child.position - shardsContainer.position).normalized;
+            Vector3 direction = (child.position - _pointOfImpact).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
 
             childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
@@ -162,5 +154,10 @@ public class ObstacleScript : MonoBehaviour
     public Frequency GetFreq()
     {
         return _frequency;
+    }
+
+    public void SetPOI(Vector3 pVec)
+    {
+        _pointOfImpact = pVec;
     }
 }
