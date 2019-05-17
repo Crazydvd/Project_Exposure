@@ -64,7 +64,6 @@ public class ShootScript : MonoBehaviour
                     {
                         transform.LookAt(hit.point);
                         hitPoint = hit.point;
-                        Debug.Log("yep");
                     }
                     else
                     {

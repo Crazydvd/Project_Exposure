@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7834376553290974111}
   - component: {fileID: 5931876052112768616}
   - component: {fileID: 5881606824683822664}
+  - component: {fileID: 3220254772603737049}
+  - component: {fileID: 1583775286912059867}
   m_Layer: 0
   m_Name: BeltSlope_TopPart1
   m_TagString: Untagged
@@ -92,6 +94,31 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 3506908513416080814, guid: e5a44d74d99d38a4480a3fe2bf059071, type: 3}
+--- !u!65 &3220254772603737049
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063947082990969505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8256305, y: 1.2439666, z: 1.0079974}
+  m_Center: {x: 0.9128073, y: 0.6219797, z: 0.033575237}
+--- !u!114 &1583775286912059867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063947082990969505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6033762603421755858
 GameObject:
   m_ObjectHideFlags: 0
