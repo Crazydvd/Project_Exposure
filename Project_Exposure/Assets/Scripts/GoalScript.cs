@@ -10,7 +10,8 @@ public class GoalScript : MonoBehaviour
     [SerializeField] ObstacleCountScript _obstacleCountScript;
     [SerializeField] HighscoreScript _highscoreScript;
     [SerializeField] int _level = 1;
-    private void OnTriggerEnter(Collider other)
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag.ToUpper() == "MAINCAMERA")
         {

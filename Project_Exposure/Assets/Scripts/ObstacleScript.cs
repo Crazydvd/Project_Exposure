@@ -66,15 +66,15 @@ public class ObstacleScript : MonoBehaviour
     {
         if (_shakingNShatter)
         {
-            Shake(true);
+            shake(true);
         }
         else if (_shaking)
         {
-            Shake(false);
+            shake(false);
         }
     }
 
-    private void Shake(bool pDestroy)
+    void shake(bool pDestroy)
     {
         switch (_shakingNShatter)
         {
@@ -134,7 +134,9 @@ public class ObstacleScript : MonoBehaviour
             Rigidbody childRigid = child.GetComponent<Rigidbody>();
 
             if (childRigid == null)
+            {
                 Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
+            }
 
             child.gameObject.SetActive(true);
             childRigid.isKinematic = false;

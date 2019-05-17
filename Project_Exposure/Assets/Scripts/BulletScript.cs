@@ -7,6 +7,5 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Destroy(gameObject);
-
     }
 }

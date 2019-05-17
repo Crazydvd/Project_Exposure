@@ -13,10 +13,10 @@ public class AnimationScript : MonoBehaviour
     [SerializeField]
     [Tooltip("At what time (percentage) the animation should start")]
     [Range(0, 1)]
-    private float _time = 0;
+    float _time = 0;
 
     [SerializeField]
-    private bool _randomized = true;
+    bool _randomized = true;
 
     // Start is called before the first frame update
     void Start()
