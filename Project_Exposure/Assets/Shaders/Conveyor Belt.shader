@@ -6,7 +6,7 @@
 
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_BumpMap("NormalMap", 2D) = "bump" {}
-		_MetallicMap("MetallicMap", 2D) = "white" {}
+		_MetallicMap("MetallicMap (RGB), Smoothness (A)", 2D) = "white" {}
 		_HeightMap("HeightMap", 2D) = "black" {}
 		_OcclusionMap("OcclusionMap", 2D) = "white" {}
 
