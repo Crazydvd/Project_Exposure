@@ -7,6 +7,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] float _speed = 1f;
     [SerializeField] float _shatterForce = 10f;
     [SerializeField] float _shatterDelay = 0.25f;
+    [SerializeField] float _shakeForce = 0.05f;
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
     [SerializeField] Material _lowFreqMaterial;
@@ -14,7 +15,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _highFreqMaterial;
     [SerializeField] List<GameObject> _tutorialZones;
 
-    Vector3 _originalShakePos;
+    Vector3 _oldPosVector;
     Vector3 _pointOfImpact;
     float _timeBeforeShatter = 0.0f;
     bool _shakingNShatter;
@@ -22,24 +23,6 @@ public class ObstacleScript : MonoBehaviour
 
     void Start()
     {
-        /**
-        Renderer renderer = GetComponentInChildren<Renderer>();
-
-        switch (_frequency)
-        {
-            case Frequency.LOW:
-                renderer.material = _lowFreqMaterial;
-                break;
-            case Frequency.MEDIUM:
-                renderer.material = _mediumFreqMaterial;
-                break;
-            case Frequency.HIGH:
-                renderer.material = _highFreqMaterial;
-                break;
-        }
-        /**/
-
-        //TEMPORARY:
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
         Material material = null;
 
@@ -76,19 +59,15 @@ public class ObstacleScript : MonoBehaviour
 
     void shake(bool pDestroy)
     {
-        switch (_shakingNShatter)
-        {
-            case true:
-                transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.15f, 0.15f), _originalShakePos.y + Random.Range(-0.15f, 0.15f), _originalShakePos.z + Random.Range(-0.15f, 0.15f)), transform.rotation);
-                break;
-            case false:
-                transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.01f, 0.01f), _originalShakePos.y + Random.Range(-0.01f, 0.01f), _originalShakePos.z + Random.Range(-0.001f, 0.001f)), transform.rotation);
-                break;
-        }
+        Vector3 shakeVector = new Vector3(_oldPosVector.x + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
+                                          _oldPosVector.y + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
+                                          _oldPosVector.z + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2));
+
+        transform.localPosition = shakeVector;
 
         _timeBeforeShatter += Time.deltaTime;
 
-        if (_timeBeforeShatter > _shatterDelay)
+        if (_timeBeforeShatter > (pDestroy ? _shatterDelay : _shatterDelay / 2))
         {
             if (pDestroy)
             {
@@ -96,15 +75,16 @@ public class ObstacleScript : MonoBehaviour
             }
             else
             {
-                _shaking = false;
+                transform.localPosition = _oldPosVector;
                 _timeBeforeShatter = 0.0f;
+                _shaking = false;
             }
         }
     }
 
     public void EnableShake(bool pDestroy)
     {
-        _originalShakePos = transform.position;
+        _oldPosVector = transform.localPosition;
 
         switch (pDestroy)
         {
@@ -132,11 +112,6 @@ public class ObstacleScript : MonoBehaviour
         {
             Transform child = shardsContainer.GetChild(i);
             Rigidbody childRigid = child.GetComponent<Rigidbody>();
-
-            if (childRigid == null)
-            {
-                Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
-            }
 
             child.gameObject.SetActive(true);
             childRigid.isKinematic = false;
