@@ -13,6 +13,7 @@ public enum Frequency
 public class ShootScript : MonoBehaviour
 {
     [SerializeField] bool _rayMode = false;
+    [SerializeField] bool _rayCastAccuracy = true;
     [SerializeField] GameObject _beam;
 
     [SerializeField] GameObject _bulletSpawnPoint;
@@ -20,7 +21,10 @@ public class ShootScript : MonoBehaviour
     [SerializeField] GameObject _bulletType2;
     [SerializeField] GameObject _bulletType3;
 
-    [SerializeField] float _speed = 5000f;
+    [SerializeField] float _speed = 300f;
+    [SerializeField] float _minRayDistance = 2f;
+    [SerializeField] float _maxRayDistance = 15f;
+    [SerializeField] float _bulletPointDistance = 5f;
 
     GameObject _previousHit;
     float _rayTimer = 0;
@@ -45,24 +49,38 @@ public class ShootScript : MonoBehaviour
 
         if (!EventSystem.current.IsPointerOverGameObject()) // check if mouse isn't hovering over button
         {
-            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 5f);
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10f);
 
-            transform.LookAt(mouseWorldPosition);
-            //transform.Rotate(Vector3.right, 90f);
+            //transform.LookAt(mouseWorldPosition);
 
             if (!_rayMode)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    int layerMask = LayerMask.GetMask("Obstacles");
-                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, layerMask))
+                    int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
+                    Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    Vector3 hitPoint = Vector3.zero;
+                    if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
                     {
-                        transform.LookAt(hit.transform.position);
-                        transform.Rotate(Vector3.right, 90f);
+                        transform.LookAt(hit.point);
+                        hitPoint = hit.point;
+                        Debug.Log("yep");
+                    }
+                    else
+                    {
+                        hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
+                        transform.LookAt(hitPoint);
+                        Debug.DrawLine(_bulletSpawnPoint.transform.position, hitPoint, Color.red);
                     }
 
-                    GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward), transform.parent);
-                    bullet.GetComponent<Rigidbody>().AddForce(transform.forward * _speed);
+                    if((transform.position - hitPoint).magnitude < _minRayDistance){
+                        hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
+                        transform.LookAt(hitPoint);
+                    }
+
+
+                    GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
+                    bullet.GetComponent<Rigidbody>().AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
 
                 }
             }
@@ -71,7 +89,7 @@ public class ShootScript : MonoBehaviour
                 if (Input.GetMouseButton(0))
                 {
                     int layerMask = LayerMask.GetMask("Obstacles");
-                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, layerMask))
+                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, _maxRayDistance, layerMask))
                     {
                         GameObject hitObject = hit.transform.gameObject;
 
