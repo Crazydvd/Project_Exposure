@@ -24,7 +24,7 @@ public class DetectObstacleCol : MonoBehaviour
             _obstacle.SetPOI(other.GetContact(0).point);
             _obstacle.EnableShake(true);
         }
-        else
+        else if (other.gameObject.layer != 11) //layer 11 = shards
         {
             _obstacle.EnableShake(false);
         }

@@ -28,7 +28,7 @@ public class JsonVariables
     {
         get
         {
-            return getDictionary[pIndex];
+            return GetDictionary[pIndex];
         }
     }
 
@@ -44,7 +44,7 @@ public class JsonVariables
 
     Dictionary<string, Dictionary<string, string>> _dictionary = null;
 
-    public Dictionary<string, Dictionary<string, string>> getDictionary
+    public Dictionary<string, Dictionary<string, string>> GetDictionary
     {
         get
         {
