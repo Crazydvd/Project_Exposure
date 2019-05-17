@@ -227,6 +227,8 @@ GameObject:
   - component: {fileID: 5523496807308505108}
   - component: {fileID: 9002861645043343827}
   - component: {fileID: 1995798799310941466}
+  - component: {fileID: 3565172368907663231}
+  - component: {fileID: 8657410317949354201}
   m_Layer: 0
   m_Name: Belt_TopNormal2
   m_TagString: Untagged
@@ -306,3 +308,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000184, y: 0.00000015258789, z: 1.007997}
   m_Center: {x: -1.0000006, y: 0, z: -0.033575088}
+--- !u!65 &3565172368907663231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5630857073463648668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000184, y: 0.32261556, z: 1.007997}
+  m_Center: {x: -1.0000006, y: 0.12868297, z: -0.033575058}
+--- !u!114 &8657410317949354201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5630857073463648668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
