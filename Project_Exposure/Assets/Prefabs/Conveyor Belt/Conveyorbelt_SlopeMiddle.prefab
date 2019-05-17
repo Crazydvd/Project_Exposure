@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 1817786826148385142}
   - component: {fileID: 3855477239474633270}
   - component: {fileID: 5674793341573228857}
+  - component: {fileID: 4564970610205695836}
+  - component: {fileID: 4448665921054175483}
   m_Layer: 0
   m_Name: BeltSlope_MiddelPart
   m_TagString: Untagged
@@ -124,6 +126,31 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 3923246983806166094, guid: e9629c3fe5864954699b83569e57fa29, type: 3}
+--- !u!114 &4564970610205695836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691078178885159888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &4448665921054175483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691078178885159888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8256307, y: 1.2126026, z: 1.0079973}
+  m_Center: {x: -0.9128077, y: 0.60629773, z: -0.033575296}
 --- !u!1 &7836604767305317724
 GameObject:
   m_ObjectHideFlags: 0
