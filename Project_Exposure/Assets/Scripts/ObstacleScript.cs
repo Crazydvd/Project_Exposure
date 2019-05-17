@@ -82,7 +82,7 @@ public class ObstacleScript : MonoBehaviour
                 transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.15f, 0.15f), _originalShakePos.y + Random.Range(-0.15f, 0.15f), _originalShakePos.z + Random.Range(-0.15f, 0.15f)), transform.rotation);
                 break;
             case false:
-                transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.1f, 0.1f), _originalShakePos.y + Random.Range(-0.1f, 0.1f), _originalShakePos.z + Random.Range(-0.1f, 0.1f)), transform.rotation);
+                transform.SetPositionAndRotation(new Vector3(_originalShakePos.x + Random.Range(-0.01f, 0.01f), _originalShakePos.y + Random.Range(-0.01f, 0.01f), _originalShakePos.z + Random.Range(-0.001f, 0.001f)), transform.rotation);
                 break;
         }
 

@@ -48,7 +48,7 @@ public class ShootScript : MonoBehaviour
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 5f);
 
             transform.LookAt(mouseWorldPosition);
-            transform.Rotate(Vector3.right, 90f);
+            //transform.Rotate(Vector3.right, 90f);
 
             if (!_rayMode)
             {
@@ -61,8 +61,8 @@ public class ShootScript : MonoBehaviour
                         transform.Rotate(Vector3.right, 90f);
                     }
 
-                    GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.up), transform.parent);
-                    bullet.GetComponent<Rigidbody>().AddForce(transform.up * _speed);
+                    GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward), transform.parent);
+                    bullet.GetComponent<Rigidbody>().AddForce(transform.forward * _speed);
 
                 }
             }
