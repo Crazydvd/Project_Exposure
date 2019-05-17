@@ -11928,8 +11928,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6321368275549158661}
   - component: {fileID: 4361999126319016485}
-  - component: {fileID: 7453915862444673630}
   - component: {fileID: 1546177997534992544}
+  - component: {fileID: 8096098469730520425}
   m_Layer: 0
   m_Name: Obstacle_cube
   m_TagString: Untagged
@@ -11971,21 +11971,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7453915862444673630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7053018738946281238}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 489ff6f407f6d884d9a3270c6ce01e2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 1
-  _time: 0
-  _randomized: 1
 --- !u!114 &1546177997534992544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12006,6 +11991,21 @@ MonoBehaviour:
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
   _tutorialZones: []
+--- !u!114 &8096098469730520425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053018738946281238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf03361e6db594449c7cc3b1af41b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  _time: 0
+  _randomized: 1
 --- !u!1 &7067797694113743387
 GameObject:
   m_ObjectHideFlags: 0
