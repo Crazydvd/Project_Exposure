@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class JsonText
+[RequireComponent(typeof(Text))]
+public class JsonText : MonoBehaviour
 {
-    public static string GetText(string pType)
+    [SerializeField] string _textType;
+
+    void Start()
+    {
+        GetComponent<Text>().text = getText(_textType);
+    }
+
+    string getText(string pType)
     {
         return JsonVariables.Instance[pType][LanguageSettings.Language.ToString()];
     }
