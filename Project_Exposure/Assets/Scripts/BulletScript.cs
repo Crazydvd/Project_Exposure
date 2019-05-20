@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    void OnCollisionEnter(Collision other)
+    public bool PierceShotMode = false;
+
+    private void Start()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 5f);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (!PierceShotMode && LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "OBSTACLES")
+        {
+            Destroy(gameObject);
+        }
     }
 }

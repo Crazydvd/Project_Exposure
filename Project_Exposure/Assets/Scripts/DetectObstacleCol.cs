@@ -11,7 +11,7 @@ public class DetectObstacleCol : MonoBehaviour
         _obstacle = GetComponentInParent<ObstacleScript>();
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "MainCamera")
         {
@@ -21,7 +21,7 @@ public class DetectObstacleCol : MonoBehaviour
 
         if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")
         {
-            _obstacle.SetPOI(other.GetContact(0).point);
+            _obstacle.SetPOI(other.transform.position);
             _obstacle.EnableShake(true);
         }
         else if (other.gameObject.layer != 11) //layer 11 = shards

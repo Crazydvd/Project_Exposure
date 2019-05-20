@@ -3577,7 +3577,7 @@ GameObject:
   - component: {fileID: 1803833437627455949}
   - component: {fileID: 5724609605885054616}
   - component: {fileID: 3069780925258389920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShardsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3773,7 +3773,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11892,8 +11892,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
-  _shatterForce: 10
+  _shatterForce: 5
   _shatterDelay: 0.5
+  _shakeForce: 0.05
   _frequency: 1
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
