@@ -8,6 +8,7 @@ public class ConveyorScript : MonoBehaviour
     [SerializeField] bool _corner = false;
     [SerializeField] GameObject _cornerPoint;
     [SerializeField] float _rotateAngle = -20f;
+    [SerializeField] float _speed = 0.5f;
 
     void OnTriggerStay(Collider other)
     {
@@ -19,7 +20,7 @@ public class ConveyorScript : MonoBehaviour
             }
             else
             {
-                other.transform.position += (-transform.right * 0.01f);
+                other.transform.position += (-transform.right * _speed) * Time.deltaTime;
             }
         }
     }

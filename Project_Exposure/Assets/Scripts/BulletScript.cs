@@ -6,8 +6,13 @@ public class BulletScript : MonoBehaviour
 {
     public bool PierceShotMode = false;
 
-    private void Start()
+    Rigidbody _rigidbody;
+    bool _slowdown;
+    Vector3 _velocity;
+
+    void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         Destroy(gameObject, 5f);
     }
 
@@ -17,5 +22,22 @@ public class BulletScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Update()
+    {
+        if(Time.timeScale < 1 && Time.timeScale > 0){
+            if(!_slowdown && _rigidbody.velocity.magnitude > 0){
+                _velocity = _rigidbody.velocity;
+                _rigidbody.isKinematic = true;
+                _slowdown = true;
+            }
+            transform.position += _velocity * (Time.deltaTime / Time.timeScale);
+        }
+        //Debug.Log(GetComponent<Rigidbody>().velocity.magnitude);
+    }
+
+    public void SetVelocity(Vector3 pVelocity){
+        _velocity = pVelocity;
     }
 }
