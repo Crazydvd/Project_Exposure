@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField] float _speed = 1f;
+    [SerializeField] float _speed = 0.01f;
     [SerializeField] float _shatterForce = 10f;
-    [SerializeField] float _shatterDelay = 0.25f;
+    [SerializeField] float _shatterDelay = 0.5f;
     [SerializeField] float _shakeForce = 0.05f;
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
@@ -43,6 +43,11 @@ public class ObstacleScript : MonoBehaviour
         {
             renderer.material = material;
         }
+    }
+
+    private void OnValidate()
+    {
+        Start();
     }
 
     void Update()

@@ -3893,7 +3893,6 @@ GameObject:
   - component: {fileID: 158448306}
   - component: {fileID: 158448308}
   - component: {fileID: 158448307}
-  - component: {fileID: 158448309}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3971,18 +3970,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158448305}
   m_CullTransparentMesh: 0
---- !u!114 &158448309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158448305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22268e2d5e753534bba01436b603fb9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &158909271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2877427172061476097, guid: abc8398cae9d85643ad430b0b2fad732,
@@ -6973,7 +6960,7 @@ Transform:
   m_GameObject: {fileID: 318284833}
   m_LocalRotation: {x: 0.00000020861623, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -17.066013, y: 10.5, z: 19.58}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -10748,6 +10735,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 1
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -11928,6 +11916,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 0
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -14313,6 +14302,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 1
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -24465,6 +24455,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 0
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -36517,6 +36508,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 0
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -36881,6 +36873,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 2
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -41870,6 +41863,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 2
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
@@ -45102,6 +45096,7 @@ MonoBehaviour:
   _speed: 1
   _shatterForce: 20
   _shatterDelay: 0.25
+  _shakeForce: 0.05
   _frequency: 1
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}

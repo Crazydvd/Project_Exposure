@@ -10,7 +10,7 @@
 		_HeightMap("HeightMap", 2D) = "black" {}
 		_OcclusionMap("OcclusionMap", 2D) = "white" {}
 
-		_HeightMapScale("MaxHeight", Float) = 1
+		_MaxHeight("MaxHeight", Float) = 1
 		_OcclusionStrength("Occlusion Strength", float) = 1
 
 		_TimeScaleX("TimeScaleX", float) = 0
@@ -60,17 +60,17 @@
 			float _TimeScaleX;
 			float _TimeScaleY;
 
-			float _HeightMapScale;
+			float _MaxHeight;
 
 			void vert(inout appdata_full v, out Input o)
 			{
 				UNITY_INITIALIZE_OUTPUT(Input, o);
 				float4 heightMap = tex2Dlod(_HeightMap, float4(v.texcoord.xy + float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY), 0, 0));
 
-				float value = heightMap.rgb;
+				float value = saturate(heightMap.rgb);
 				value -= 0.5;
 
-				v.vertex.y += value * _HeightMapScale;
+				v.vertex.y += _MaxHeight * 2 * value, 1;
 			}
 
 			void surf(Input IN, inout SurfaceOutputStandard o)
