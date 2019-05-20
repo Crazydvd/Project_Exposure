@@ -9,13 +9,14 @@ class JsonParser : MonoBehaviour
     public string FileName = "Language.json";
 
     string _path;
-    public static string JsonString;
 
     void Start()
     {
         _path = Application.dataPath + "/Localization/" + FileName;
         JsonString = File.ReadAllText(_path);
     }
+
+    public static string JsonString { get; private set; }
 }
 
 [System.Serializable]
