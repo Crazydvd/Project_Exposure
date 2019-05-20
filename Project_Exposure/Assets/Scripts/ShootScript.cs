@@ -85,9 +85,10 @@ public class ShootScript : MonoBehaviour
 
 
                     GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
-                    bullet.GetComponent<Rigidbody>().AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
+                    Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+                    bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
 
-                    if(_pierceMode){
+                    if (_pierceMode){
                         bullet.GetComponent<BulletScript>().PierceShotMode = true;
                     }
 
