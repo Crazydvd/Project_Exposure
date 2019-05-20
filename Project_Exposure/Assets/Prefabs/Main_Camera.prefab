@@ -40,10 +40,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5755008776703691156}
   - component: {fileID: 5755008776703691163}
-  - component: {fileID: 5755008776703691162}
   - component: {fileID: 5755008776703691158}
   - component: {fileID: 5755008776703691159}
   - component: {fileID: 59542473}
+  - component: {fileID: 7140668456797546478}
+  - component: {fileID: -4195435408769920198}
   m_Layer: 9
   m_Name: Main_Camera
   m_TagString: MainCamera
@@ -109,14 +110,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5755008776703691162
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5755008776703691161}
-  m_Enabled: 1
 --- !u!135 &5755008776703691158
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -165,6 +158,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7140668456797546478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5755008776703691161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
+--- !u!114 &-4195435408769920198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5755008776703691161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a599bf2d5e392b84da5c48a3eb6bbc8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5755008777777822682
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rayMode: 0
+  _rayCastAccuracy: 1
   _beam: {fileID: 0}
   _bulletSpawnPoint: {fileID: 674993329}
   _bulletType1: {fileID: 7302069909376473746, guid: d71edac224976e0409e88a9d3bbb0867,
@@ -281,3 +300,6 @@ MonoBehaviour:
   _bulletType3: {fileID: 7302069909376473746, guid: 0bc76df0638690e4ebdf0b9792fc5ce6,
     type: 3}
   _speed: 50000
+  _minRayDistance: 2
+  _maxRayDistance: 15
+  _bulletPointDistance: 5
