@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] private GameObject _pauseScreen;
-    [SerializeField] private GameObject _button;
+    [SerializeField] GameObject _pauseScreen;
+    [SerializeField] GameObject _button;
 
     // Update is called once per frame
     void Update()

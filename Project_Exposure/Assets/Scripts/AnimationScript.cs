@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class AnimationScript : MonoBehaviour
 {
-    private static System.Random _random = new System.Random();
+    static System.Random _random = new System.Random();
 
     [Tooltip("How fast the animation should be")]
     public float Speed = 1;

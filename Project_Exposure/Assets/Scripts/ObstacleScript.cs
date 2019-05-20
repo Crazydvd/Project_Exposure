@@ -45,7 +45,7 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
-    private void OnValidate()
+    void OnValidate()
     {
         Start();
     }

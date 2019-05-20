@@ -11,7 +11,7 @@ public class DetectObstacleCol : MonoBehaviour
         _obstacle = GetComponentInParent<ObstacleScript>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.transform.tag == "MainCamera")
         {

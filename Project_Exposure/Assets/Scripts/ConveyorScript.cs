@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 public class ConveyorScript : MonoBehaviour
 {
@@ -9,17 +9,9 @@ public class ConveyorScript : MonoBehaviour
     [SerializeField] GameObject _cornerPoint;
     [SerializeField] float _rotateAngle = -20f;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerStay(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-
-     private void OnTriggerStay(Collider other)
-     {
-        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "Shards".ToUpper())
+        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "SHARDS")
         {
             if (_corner)
             {

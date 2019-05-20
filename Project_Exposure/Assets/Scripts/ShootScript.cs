@@ -49,7 +49,7 @@ public class ShootScript : MonoBehaviour
 
         if (!EventSystem.current.IsPointerOverGameObject()) // check if mouse isn't hovering over button
         {
-            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10f);
+            //Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10f);
 
             //transform.LookAt(mouseWorldPosition);
 
@@ -59,7 +59,7 @@ public class ShootScript : MonoBehaviour
                 {
                     int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
                     Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    Vector3 hitPoint = Vector3.zero;
+                    Vector3 hitPoint;
                     if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
                     {
                         transform.LookAt(hit.point);
@@ -72,7 +72,8 @@ public class ShootScript : MonoBehaviour
                         Debug.DrawLine(_bulletSpawnPoint.transform.position, hitPoint, Color.red);
                     }
 
-                    if((transform.position - hitPoint).magnitude < _minRayDistance){
+                    if ((transform.position - hitPoint).magnitude < _minRayDistance)
+                    {
                         hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
                         transform.LookAt(hitPoint);
                     }
