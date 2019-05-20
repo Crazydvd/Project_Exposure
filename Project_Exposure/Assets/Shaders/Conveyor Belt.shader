@@ -10,7 +10,7 @@
 		_HeightMap("HeightMap", 2D) = "black" {}
 		_OcclusionMap("OcclusionMap", 2D) = "white" {}
 
-		_MaxHeight("MaxHeight", Float) = 1
+		_MaxHeight("MaxHeight", float) = 0.01
 		_OcclusionStrength("Occlusion Strength", float) = 1
 
 		_TimeScaleX("TimeScaleX", float) = 0
@@ -25,7 +25,7 @@
 
 			CGPROGRAM
 			// Physically based Standard lighting model, and enable shadows on all light types
-			#pragma surface surf Standard fullforwardshadows vertex:vert
+			#pragma surface surf Standard fullforwardshadows
 
 			// Use shader model 3.0 target, to get nicer looking lighting
 			#pragma target 3.0
@@ -41,7 +41,9 @@
 				float2 uv_MainTex;
 				float2 uv_BumpMap;
 				float2 uv_MetallicMap;
+				float2 uv_HeightMap;
 				float2 uv_OcclusionMap;
+				float3 viewDir;
 			};
 
 			half _Glossiness;
@@ -62,33 +64,29 @@
 
 			float _MaxHeight;
 
-			void vert(inout appdata_full v, out Input o)
-			{
-				UNITY_INITIALIZE_OUTPUT(Input, o);
-				float4 heightMap = tex2Dlod(_HeightMap, float4(v.texcoord.xy + float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY), 0, 0));
-
-				float value = saturate(heightMap.rgb);
-				value -= 0.5;
-
-				v.vertex.y += _MaxHeight * 2 * value, 1;
-			}
-
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
+				float2 timeOffset = float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY);
+
+				//Height map gives an offset to the uvs
+				float value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
+				float2 heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
+
+
 				// Albedo comes from a texture tinted by color
-				fixed4 c = tex2D(_MainTex, IN.uv_MainTex + float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY)) * _Color;
+				fixed4 c = tex2D(_MainTex, IN.uv_MainTex + timeOffset) * _Color;
 				o.Albedo = c.rgb;
 
 				// Normal comes from a NormalMap/BumpMap
-				o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap + float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY)));
+				o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap + timeOffset + heightOffset));
 				
 				// Metallic and smoothness come from the MetallicMap
-				float4 metallicData = tex2D(_MetallicMap, IN.uv_MetallicMap + float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY));
+				float4 metallicData = tex2D(_MetallicMap, IN.uv_MetallicMap + timeOffset + heightOffset);
 				o.Metallic = metallicData.rgb;
 				o.Smoothness = metallicData.a;
 
 				//Ambient Occulusion comes from the occulusionMap
-				o.Occlusion = tex2D(_OcclusionMap, IN.uv_OcclusionMap + float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY)) * _OcclusionStrength;
+				o.Occlusion = tex2D(_OcclusionMap, IN.uv_OcclusionMap + timeOffset + heightOffset) * _OcclusionStrength;
 
 				o.Alpha = c.a;
 			}
