@@ -17,4 +17,9 @@ public class JsonText : MonoBehaviour
     {
         return JsonVariables.Instance[pType][LanguageSettings.Language.ToString()];
     }
+
+    public static string GetText(string pType)
+    {
+        return JsonVariables.Instance[pType][LanguageSettings.Language.ToString()];
+    }
 }

@@ -1054,11 +1054,12 @@ public class BreakableObjectSetupTool : EditorWindow
 	
 	GameObject CreatePrefab (string path, string nameExtension, GameObject prefabObject)
 	{
-		return PrefabUtility.CreatePrefab (path + "/" + objectName + nameExtension + ".prefab", prefabObject as GameObject);
-		
-		//we can set this up to return an string asset path if we need to
-		//return  AssetDatabase.GetAssetPath (DLPrefab);
-	}
+		//return PrefabUtility.CreatePrefab (path + "/" + objectName + nameExtension + ".prefab", prefabObject as GameObject);
+        return PrefabUtility.SaveAsPrefabAsset(prefabObject as GameObject, path + "/" + objectName + nameExtension + ".prefab");
+
+        //we can set this up to return an string asset path if we need to
+        //return  AssetDatabase.GetAssetPath (DLPrefab);
+    }
 	
 	private enum colliderOptions
 	{

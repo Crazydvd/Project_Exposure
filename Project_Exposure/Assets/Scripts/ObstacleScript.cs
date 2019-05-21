@@ -119,6 +119,12 @@ public class ObstacleScript : MonoBehaviour
             Rigidbody childRigid = child.GetComponent<Rigidbody>();
 
             child.gameObject.SetActive(true);
+            child.gameObject.layer = 11;
+            if (child.GetComponent<ShardScript>() == null)
+            {
+                child.gameObject.AddComponent<ShardScript>();
+            }
+
             childRigid.isKinematic = false;
             child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
 

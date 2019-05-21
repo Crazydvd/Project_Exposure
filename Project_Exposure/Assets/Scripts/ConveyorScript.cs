@@ -5,23 +5,41 @@ using UnityEngine;
 
 public class ConveyorScript : MonoBehaviour
 {
+    [Header("General variables")]
     [SerializeField] bool _corner = false;
-    [SerializeField] GameObject _cornerPoint;
-    [SerializeField] float _rotateAngle = -20f;
+
+    [Header("Normal variables")]
     [SerializeField] float _speed = 0.5f;
 
-    void OnTriggerStay(Collider other)
+    [Header("Corner variables")]
+    [SerializeField] float _rotateAngle = -20f;
+
+    Transform _cornerPoint;
+    ShardScript _shard;
+
+    public System.Action<Transform> Action { get; private set; }
+
+    void Start()
     {
-        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "SHARDS")
+        _cornerPoint = _corner? transform.GetChild(0) : null;
+
+        if (_corner)
         {
-            if (_corner)
-            {
-                other.transform.RotateAround(_cornerPoint.transform.position, _cornerPoint.transform.up, _rotateAngle * Time.deltaTime);
-            }
-            else
-            {
-                other.transform.position += (-transform.right * _speed) * Time.deltaTime;
-            }
+            Action = moveCorner;
         }
+        else
+        {
+            Action = moveStraight;
+        }
+    }
+
+    void moveStraight(Transform pShard)
+    {
+        pShard.position += (-transform.right * _speed) * Time.deltaTime;
+    }
+
+    void moveCorner(Transform pShard)
+    {
+       pShard.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
     }
 }
