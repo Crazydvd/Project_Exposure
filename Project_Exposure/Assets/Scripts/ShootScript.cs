@@ -26,6 +26,11 @@ public class ShootScript : MonoBehaviour
     [SerializeField] float _maxRayDistance = 15f;
     [SerializeField] float _bulletPointDistance = 5f;
 
+    [SerializeField] bool _pierceMode = false;
+    [SerializeField] float _pierceCooldownTime = 5;
+
+    float _pierceCooldownTimer = 0;
+
     GameObject _previousHit;
     float _rayTimer = 0;
     float _rayTimerMax = 0.5f;
@@ -80,9 +85,13 @@ public class ShootScript : MonoBehaviour
 
 
                     GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
-                    bullet.GetComponent<Rigidbody>().AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
+                    Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+                    bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
+		     FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
 
+                    if (_pierceMode){
+                        bullet.GetComponent<BulletScript>().PierceShotMode = true;
+                    }
                 }
             }
             else
@@ -120,6 +129,20 @@ public class ShootScript : MonoBehaviour
                 }
             }
         }
+
+        cooldownCheck();
+    }
+
+    void cooldownCheck(){
+        if(_pierceMode){
+            if(_pierceCooldownTimer > 0){
+                Debug.Log("PIERCING MODE BABY");
+                _pierceCooldownTimer -= Time.deltaTime;
+            }else{
+                _pierceCooldownTimer = 0;
+                _pierceMode = false;
+            }
+        }
     }
 
     public void SwitchWave(int pMode = 0)
@@ -141,5 +164,10 @@ public class ShootScript : MonoBehaviour
             _shootingFrequency = Frequency.HIGH;
             return;
         }
+    }
+
+    public void EnablePierceShot(){
+        _pierceMode = true;
+        _pierceCooldownTimer = _pierceCooldownTime;
     }
 }
