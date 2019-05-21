@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1921079672559737354
+--- !u!1 &571986576700776821
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1824913983617177153}
-  - component: {fileID: 4321384710549198274}
-  - component: {fileID: 7719079612788082623}
-  - component: {fileID: 4782693818551195752}
+  - component: {fileID: 247411406510085057}
+  m_Layer: 0
+  m_Name: ConveyorbeltDown_SlopeBottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &247411406510085057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571986576700776821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.657825, y: 1.049283, z: -7.731432}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4132132023678322553}
+  - {fileID: 60101286023241039}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4663173105755728960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60101286023241039}
+  - component: {fileID: 7849002540561934408}
+  - component: {fileID: 2558659774030463320}
+  - component: {fileID: 1319754177896896516}
   m_Layer: 0
   m_Name: ConveyorBeltSlope_BottomPart
   m_TagString: Untagged
@@ -19,35 +51,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &1824913983617177153
+--- !u!4 &60101286023241039
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921079672559737354}
+  m_GameObject: {fileID: 4663173105755728960}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.825612, y: -0.84811765, z: 0.00000003233079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8734480115718991304}
+  m_Father: {fileID: 247411406510085057}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4321384710549198274
+--- !u!33 &7849002540561934408
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921079672559737354}
+  m_GameObject: {fileID: 4663173105755728960}
   m_Mesh: {fileID: 7184340969947083535, guid: 54cd57c88a5a59c40904eee769ae0d43, type: 3}
---- !u!23 &7719079612788082623
+--- !u!23 &2558659774030463320
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921079672559737354}
+  m_GameObject: {fileID: 4663173105755728960}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 54cd57c88a5a59c40904eee769ae0d43, type: 3}
+  - {fileID: -1921368461716772884, guid: ca6a44206dc1b144e80f3320c7c01e98, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,13 +110,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4782693818551195752
+--- !u!64 &1319754177896896516
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921079672559737354}
+  m_GameObject: {fileID: 4663173105755728960}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -92,7 +124,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 7184340969947083535, guid: 54cd57c88a5a59c40904eee769ae0d43, type: 3}
---- !u!1 &5453993555123494808
+--- !u!1 &5225064088018187065
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,12 +132,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7417947474471045570}
-  - component: {fileID: 446644451781450893}
-  - component: {fileID: 1752206497601452478}
-  - component: {fileID: 8630579517057589153}
-  - component: {fileID: 385716384957091908}
-  - component: {fileID: 9132869856083755389}
+  - component: {fileID: 4132132023678322553}
+  - component: {fileID: 7912520051853045035}
+  - component: {fileID: 7149780132453186359}
+  - component: {fileID: 2524409895805735507}
+  - component: {fileID: 5300913805660239555}
+  - component: {fileID: 3797482421878975275}
   m_Layer: 0
   m_Name: BeltSlope_BottomPart
   m_TagString: Untagged
@@ -113,35 +145,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7417947474471045570
+--- !u!4 &4132132023678322553
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453993555123494808}
+  m_GameObject: {fileID: 5225064088018187065}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.8256124, y: -0.76268125, z: -0.034338802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8734480115718991304}
+  m_Father: {fileID: 247411406510085057}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &446644451781450893
+--- !u!33 &7912520051853045035
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453993555123494808}
+  m_GameObject: {fileID: 5225064088018187065}
   m_Mesh: {fileID: 1551372845395737472, guid: 54cd57c88a5a59c40904eee769ae0d43, type: 3}
---- !u!23 &1752206497601452478
+--- !u!23 &7149780132453186359
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453993555123494808}
+  m_GameObject: {fileID: 5225064088018187065}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -172,13 +204,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8630579517057589153
+--- !u!64 &2524409895805735507
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453993555123494808}
+  m_GameObject: {fileID: 5225064088018187065}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -186,63 +218,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 1551372845395737472, guid: 54cd57c88a5a59c40904eee769ae0d43, type: 3}
---- !u!65 &385716384957091908
+--- !u!65 &5300913805660239555
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453993555123494808}
+  m_GameObject: {fileID: 5225064088018187065}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8256298, y: 1.1601448, z: 1.0079974}
   m_Center: {x: 0.9128073, y: 0.5800688, z: 0.03357494}
---- !u!114 &9132869856083755389
+--- !u!114 &3797482421878975275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453993555123494808}
+  m_GameObject: {fileID: 5225064088018187065}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _corner: 0
-  _speed: 0.6
+  _cornerPoint: {fileID: 0}
   _rotateAngle: -20
---- !u!1 &5723022600573181915
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8734480115718991304}
-  m_Layer: 0
-  m_Name: ConveyorbeltDown_SlopeBottom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8734480115718991304
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5723022600573181915}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.657825, y: 1.049283, z: -7.731432}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7417947474471045570}
-  - {fileID: 1824913983617177153}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  _speed: 0.6

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &440254962497523089
+--- !u!1 &570232580027655220
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3478819978060398466}
-  m_Layer: 0
-  m_Name: Conveyorbelt_SlopeMiddle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3478819978060398466
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440254962497523089}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.005825, y: 1.5468829, z: -3.993032}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4192113336049762994}
-  - {fileID: 3578364205551893008}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!1 &4691078178885159888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4192113336049762994}
-  - component: {fileID: 1817786826148385142}
-  - component: {fileID: 3855477239474633270}
-  - component: {fileID: 5674793341573228857}
-  - component: {fileID: 4564970610205695836}
-  - component: {fileID: 4448665921054175483}
+  - component: {fileID: 2872433178450368950}
+  - component: {fileID: 272567459781019744}
+  - component: {fileID: 6448670285205421253}
+  - component: {fileID: 8544794792003630125}
+  - component: {fileID: 7211766347649576987}
+  - component: {fileID: 5017668976040773980}
   m_Layer: 0
   m_Name: BeltSlope_MiddelPart
   m_TagString: Untagged
@@ -53,35 +21,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4192113336049762994
+--- !u!4 &2872433178450368950
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691078178885159888}
+  m_GameObject: {fileID: 570232580027655220}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.91280746, y: -0.4122116, z: 0.032251127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3478819978060398466}
+  m_Father: {fileID: 8641878846309651503}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1817786826148385142
+--- !u!33 &272567459781019744
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691078178885159888}
+  m_GameObject: {fileID: 570232580027655220}
   m_Mesh: {fileID: 3923246983806166094, guid: e9629c3fe5864954699b83569e57fa29, type: 3}
---- !u!23 &3855477239474633270
+--- !u!23 &6448670285205421253
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691078178885159888}
+  m_GameObject: {fileID: 570232580027655220}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -112,13 +80,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5674793341573228857
+--- !u!64 &8544794792003630125
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691078178885159888}
+  m_GameObject: {fileID: 570232580027655220}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -126,35 +94,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 3923246983806166094, guid: e9629c3fe5864954699b83569e57fa29, type: 3}
---- !u!114 &4564970610205695836
+--- !u!114 &7211766347649576987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691078178885159888}
+  m_GameObject: {fileID: 570232580027655220}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _corner: 0
-  _speed: 0.6
+  _cornerPoint: {fileID: 0}
   _rotateAngle: -20
---- !u!65 &4448665921054175483
+  _speed: 0.6
+--- !u!65 &5017668976040773980
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691078178885159888}
+  m_GameObject: {fileID: 570232580027655220}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8256307, y: 1.2126026, z: 1.0079973}
   m_Center: {x: -0.9128077, y: 0.60629773, z: -0.033575296}
---- !u!1 &7836604767305317724
+--- !u!1 &1984182732136142060
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,10 +131,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3578364205551893008}
-  - component: {fileID: 2281984024698008117}
-  - component: {fileID: 7080673582252043834}
-  - component: {fileID: 443789305723387891}
+  - component: {fileID: 8196489630523884262}
+  - component: {fileID: 3641882755554964635}
+  - component: {fileID: 1834672966209186605}
+  - component: {fileID: 8902837472854889925}
   m_Layer: 0
   m_Name: ConveyorBeltSlope_MIddelPart
   m_TagString: Untagged
@@ -173,35 +142,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &3578364205551893008
+--- !u!4 &8196489630523884262
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7836604767305317724}
+  m_GameObject: {fileID: 1984182732136142060}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.91280806, y: -0.49764785, z: -0.0000007629394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3478819978060398466}
+  m_Father: {fileID: 8641878846309651503}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2281984024698008117
+--- !u!33 &3641882755554964635
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7836604767305317724}
+  m_GameObject: {fileID: 1984182732136142060}
   m_Mesh: {fileID: -4270657728106124812, guid: e9629c3fe5864954699b83569e57fa29, type: 3}
---- !u!23 &7080673582252043834
+--- !u!23 &1834672966209186605
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7836604767305317724}
+  m_GameObject: {fileID: 1984182732136142060}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -212,7 +181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: e9629c3fe5864954699b83569e57fa29, type: 3}
+  - {fileID: -1921368461716772884, guid: ca6a44206dc1b144e80f3320c7c01e98, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -232,13 +201,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &443789305723387891
+--- !u!64 &8902837472854889925
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7836604767305317724}
+  m_GameObject: {fileID: 1984182732136142060}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -246,3 +215,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -4270657728106124812, guid: e9629c3fe5864954699b83569e57fa29, type: 3}
+--- !u!1 &2392714774209304266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8641878846309651503}
+  m_Layer: 0
+  m_Name: Conveyorbelt_SlopeMiddle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8641878846309651503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2392714774209304266}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -6.005825, y: 1.5468829, z: -3.993032}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2872433178450368950}
+  - {fileID: 8196489630523884262}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}

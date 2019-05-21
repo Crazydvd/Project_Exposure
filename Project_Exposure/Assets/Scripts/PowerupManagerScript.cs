@@ -20,9 +20,12 @@ public class PowerupManagerScript : MonoBehaviour
         _playerScript.EnablePierceShot();
     }
 
+    public void ActivateBattery(){
+        _playerScript.EnableBattery();
+    }
+
     public void ActivateOvercharge(){
-        Debug.Log("ZA WARUDO");
         Time.timeScale = 0.2f;
-        Invoke("DisableOvercharge", 1f / Time.timeScale);
+        Invoke("DisableOvercharge", 15f * Time.timeScale);// / Time.timeScale);
     }
 }

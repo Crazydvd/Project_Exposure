@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public enum Frequency
 {
@@ -28,8 +29,13 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField] bool _pierceMode = false;
     [SerializeField] float _pierceCooldownTime = 5;
+    [SerializeField] bool _batteryMode = false;
+    [SerializeField] float _batteryCooldownTime = 5;
 
-    float _pierceCooldownTimer = 0;
+    [SerializeField] Text _energyCounter;
+    [SerializeField] float _startEnergy = 80;
+    float _energyCount;
+    string _originalEnergyText;
 
     GameObject _previousHit;
     float _rayTimer = 0;
@@ -42,6 +48,10 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _energyCount = _startEnergy;
+        _originalEnergyText = _energyCounter.text + ": ";
+        _energyCounter.text = _originalEnergyText + _energyCount;
+
         _waves.Add(Frequency.LOW, _bulletType1);
         _waves.Add(Frequency.MEDIUM, _bulletType2);
         _waves.Add(Frequency.HIGH, _bulletType3);
@@ -60,7 +70,7 @@ public class ShootScript : MonoBehaviour
 
             if (!_rayMode)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && _energyCount > 0)
                 {
                     int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
                     Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -87,11 +97,16 @@ public class ShootScript : MonoBehaviour
                     GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
                     Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
                     bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
+					FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
 
                     if (_pierceMode){
                         bullet.GetComponent<BulletScript>().PierceShotMode = true;
                     }
 
+                    if (!_batteryMode)
+                    {
+                        RemoveEnergy();
+                    }
                 }
             }
             else
@@ -129,20 +144,6 @@ public class ShootScript : MonoBehaviour
                 }
             }
         }
-
-        cooldownCheck();
-    }
-
-    void cooldownCheck(){
-        if(_pierceMode){
-            if(_pierceCooldownTimer > 0){
-                Debug.Log("PIERCING MODE BABY");
-                _pierceCooldownTimer -= Time.deltaTime;
-            }else{
-                _pierceCooldownTimer = 0;
-                _pierceMode = false;
-            }
-        }
     }
 
     public void SwitchWave(int pMode = 0)
@@ -166,8 +167,32 @@ public class ShootScript : MonoBehaviour
         }
     }
 
+    public void RemoveEnergy(float pAmount = 1)
+    {
+        _energyCount -= pAmount;
+        _energyCounter.text = _originalEnergyText + _energyCount;
+    }
+    public void AddEnergy(float pAmount = 1)
+    {
+        _energyCount += pAmount;
+        _energyCounter.text = _originalEnergyText + _energyCount;
+    }
+
     public void EnablePierceShot(){
         _pierceMode = true;
-        _pierceCooldownTimer = _pierceCooldownTime;
+        Invoke("DisablePierceShot", _pierceCooldownTime);
+    }
+
+    public void DisablePierceShot(){
+        _pierceMode = false;
+    }
+
+    public void EnableBattery(){
+        _batteryMode = true;
+        Invoke("DisableBattery", _batteryCooldownTime);
+    }
+
+    public void DisableBattery(){
+        _batteryMode = false;
     }
 }

@@ -6,6 +6,7 @@ public class PowerupPickupScript : MonoBehaviour
 {
     [SerializeField] bool _pierce = false;
     [SerializeField] bool _overcharge = false;
+    [SerializeField] bool _battery = false;
 
     PowerupManagerScript _powerupManagerScript;
 
@@ -22,6 +23,9 @@ public class PowerupPickupScript : MonoBehaviour
             }
             if(_overcharge){
                 _powerupManagerScript.ActivateOvercharge();
+            }
+            if(_battery){
+                _powerupManagerScript.ActivateBattery();
             }
             Destroy(gameObject);
         }   
