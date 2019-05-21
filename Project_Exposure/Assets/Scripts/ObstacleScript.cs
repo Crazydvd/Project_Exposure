@@ -129,6 +129,8 @@ public class ObstacleScript : MonoBehaviour
             childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
         }
 
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_glassplaceholder", gameObject);
         shardsContainer.DetachChildren();
         Destroy(gameObject);
     }
