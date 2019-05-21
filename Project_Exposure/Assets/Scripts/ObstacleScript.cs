@@ -130,6 +130,8 @@ public class ObstacleScript : MonoBehaviour
         }
 
         shardsContainer.DetachChildren();
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
         Destroy(gameObject);
     }
 

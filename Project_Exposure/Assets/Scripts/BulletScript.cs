@@ -26,7 +26,7 @@ public class BulletScript : MonoBehaviour
 
     void Update()
     {
-        if(Time.timeScale < 1 && Time.timeScale > 0){
+        if(Time.timeScale < 1 && Time.timeScale > 0){ // on overcharge
             if(!_slowdown && _rigidbody.velocity.magnitude > 0){
                 _velocity = _rigidbody.velocity;
                 _rigidbody.isKinematic = true;
@@ -34,7 +34,11 @@ public class BulletScript : MonoBehaviour
             }
             transform.position += _velocity * (Time.deltaTime / Time.timeScale);
         }
-        //Debug.Log(GetComponent<Rigidbody>().velocity.magnitude);
+        if(Time.timeScale == 1f && _slowdown){ // end of overcharge
+            _rigidbody.isKinematic = false;
+            _rigidbody.velocity = _velocity;
+            _slowdown = false;
+        }
     }
 
     public void SetVelocity(Vector3 pVelocity){
