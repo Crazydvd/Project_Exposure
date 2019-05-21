@@ -5,10 +5,12 @@ using UnityEngine;
 public class DetectObstacleCol : MonoBehaviour
 {
     ObstacleScript _obstacle;
+    ScreenShake _screenShake;
 
     void Start()
     {
         _obstacle = GetComponentInParent<ObstacleScript>();
+        _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -17,6 +19,7 @@ public class DetectObstacleCol : MonoBehaviour
         {
             Debug.Log("u dede");
             _obstacle.Shatter();
+            _screenShake.StartShake(0.4f, 0.2f);
         }
 
         if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")

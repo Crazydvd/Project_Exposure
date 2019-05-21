@@ -15,6 +15,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _highFreqMaterial;
     [SerializeField] List<GameObject> _tutorialZones;
 
+    ScreenShake _screenShake;
     Vector3 _oldPosVector;
     Vector3 _pointOfImpact;
     float _timeBeforeShatter = 0.0f;
@@ -24,6 +25,8 @@ public class ObstacleScript : MonoBehaviour
     void Start()
     {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
+        
         Material material = null;
 
         switch (_frequency)
@@ -129,6 +132,9 @@ public class ObstacleScript : MonoBehaviour
             childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
         }
 
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_glassplaceholder", gameObject);
+        _screenShake.StartShake(0.2f, 0.1f);
         shardsContainer.DetachChildren();
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
