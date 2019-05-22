@@ -9,6 +9,14 @@ public class KnobScript : MonoBehaviour
     Vector3 _targetRotation = Vector3.zero;
     bool _holding = false;
 
+    Animator _animator;
+
+    void Start()
+    {
+        _animator = GetComponentInParent<Animator>();
+    }
+
+
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -53,6 +61,8 @@ public class KnobScript : MonoBehaviour
         _targetRotation = new Vector3(0, 0, -90);
         _shootScript.SwitchWave(3);
         _holding = true;
+        string frequency = _shootScript.SwitchWave(2).ToString().ToLower();
+        _animator.Play(frequency + "freq");
     }
 
     public void SetMedium()
@@ -60,12 +70,15 @@ public class KnobScript : MonoBehaviour
         _targetRotation = new Vector3(0, 0, 0);
         _shootScript.SwitchWave(2);
         _holding = true;
+        string frequency = _shootScript.SwitchWave(1).ToString().ToLower();
+        _animator.Play(frequency + "freq");
     }
 
     public void SetLow()
     {
         _targetRotation = new Vector3(0, 0, 90);
-        _shootScript.SwitchWave(1);
         _holding = true;
+         string frequency = _shootScript.SwitchWave(0).ToString().ToLower();
+        _animator.Play(frequency + "freq");
     }
 }
