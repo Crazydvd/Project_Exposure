@@ -97,9 +97,10 @@ public class ShootScript : MonoBehaviour
                     GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
                     Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
                     bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
-					FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
 
-                    if (_pierceMode){
+                    if (_pierceMode)
+                    {
                         bullet.GetComponent<BulletScript>().PierceShotMode = true;
                     }
 
@@ -178,21 +179,25 @@ public class ShootScript : MonoBehaviour
         _energyCounter.text = _originalEnergyText + _energyCount;
     }
 
-    public void EnablePierceShot(){
+    public void EnablePierceShot()
+    {
         _pierceMode = true;
         Invoke("DisablePierceShot", _pierceCooldownTime);
     }
 
-    public void DisablePierceShot(){
+    public void DisablePierceShot()
+    {
         _pierceMode = false;
     }
 
-    public void EnableBattery(){
+    public void EnableBattery()
+    {
         _batteryMode = true;
         Invoke("DisableBattery", _batteryCooldownTime);
     }
 
-    public void DisableBattery(){
+    public void DisableBattery()
+    {
         _batteryMode = false;
     }
 }

@@ -15,7 +15,7 @@ public class GoalScript : MonoBehaviour
     {
         if (other.tag.ToUpper() == "MAINCAMERA")
         {
-            other.gameObject.GetComponent<Animator>().speed = 0;
+            other.GetComponent<Animator>().speed = 0;
             _obstacleScore.text = "Destroyed Obstacles: " + (_obstacleCountScript.TotalObstacleCount - _obstacleCountScript.GetCurrentObstacleCount()) + "/" + _obstacleCountScript.TotalObstacleCount;
             _endMenu.SetActive(true);
 

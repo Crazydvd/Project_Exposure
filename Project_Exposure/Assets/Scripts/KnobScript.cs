@@ -5,9 +5,10 @@ using UnityEngine;
 public class KnobScript : MonoBehaviour
 {
     [SerializeField] ShootScript _shootScript;
-    [SerializeField] float _rotationSpeed = 0.1f;   
+    [SerializeField] float _rotationSpeed = 0.1f;
     Vector3 _targetRotation = Vector3.zero;
     bool _holding = false;
+
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -26,7 +27,8 @@ public class KnobScript : MonoBehaviour
             }
             _holding = false;
         }
-        if(_holding){
+        if (_holding)
+        {
             Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 offset = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
             float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
@@ -40,16 +42,19 @@ public class KnobScript : MonoBehaviour
 
     public void OnHold()
     {
-        if(!_holding){
+        if (!_holding)
+        {
             _holding = true;
         }
     }
 
-    public void SetHigh(){
+    public void SetHigh()
+    {
         _targetRotation = new Vector3(0, 0, -90);
         _shootScript.SwitchWave(3);
         _holding = true;
     }
+
     public void SetMedium()
     {
         _targetRotation = new Vector3(0, 0, 0);

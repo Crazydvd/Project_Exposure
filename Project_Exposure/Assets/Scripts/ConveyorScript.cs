@@ -21,16 +21,9 @@ public class ConveyorScript : MonoBehaviour
 
     void Start()
     {
-        _cornerPoint = _corner? transform.GetChild(0) : null;
+        _cornerPoint = _corner ? transform.GetChild(0) : null;
 
-        if (_corner)
-        {
-            Action = moveCorner;
-        }
-        else
-        {
-            Action = moveStraight;
-        }
+        Action = _corner ? moveCorner : (System.Action<Transform>) moveStraight;
     }
 
     void moveStraight(Transform pShard)
@@ -40,6 +33,6 @@ public class ConveyorScript : MonoBehaviour
 
     void moveCorner(Transform pShard)
     {
-       pShard.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
+        pShard.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
     }
 }

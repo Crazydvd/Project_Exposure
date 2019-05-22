@@ -6,7 +6,7 @@ public class ShardScript : MonoBehaviour
 {
     public System.Action<Transform> Action { get; set; }
 
-    private ConveyorScript _lastEntered = null;
+    ConveyorScript _lastEntered = null;
 
     void Update()
     {

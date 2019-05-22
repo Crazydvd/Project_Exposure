@@ -12,22 +12,26 @@ public class PowerupPickupScript : MonoBehaviour
 
     private void Start()
     {
-        _powerupManagerScript = GetComponentInParent<PowerupManagerScript>();   
+        _powerupManagerScript = GetComponentInParent<PowerupManagerScript>();
     }
+
     void OnTriggerEnter(Collider other)
     {
-        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "PLAYER") {
+        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "PLAYER")
+        {
             if (_pierce)
             {
                 _powerupManagerScript.ActivatePierceShot();
             }
-            if(_overcharge){
+            if (_overcharge)
+            {
                 _powerupManagerScript.ActivateOvercharge();
             }
-            if(_battery){
+            if (_battery)
+            {
                 _powerupManagerScript.ActivateBattery();
             }
             Destroy(gameObject);
-        }   
+        }
     }
 }

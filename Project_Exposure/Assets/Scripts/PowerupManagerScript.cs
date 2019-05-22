@@ -7,25 +7,25 @@ public class PowerupManagerScript : MonoBehaviour
     [SerializeField] ShootScript _playerScript;
 
     bool _overcharge = false;
-    private void Update()
+
+    void disableOvercharge()
     {
-
-    }
-
-    private void DisableOvercharge(){
         Time.timeScale = 1f;
     }
 
-    public void ActivatePierceShot(){
+    public void ActivatePierceShot()
+    {
         _playerScript.EnablePierceShot();
     }
 
-    public void ActivateBattery(){
+    public void ActivateBattery()
+    {
         _playerScript.EnableBattery();
     }
 
-    public void ActivateOvercharge(){
+    public void ActivateOvercharge()
+    {
         Time.timeScale = 0.2f;
-        Invoke("DisableOvercharge", 15f * Time.timeScale);// / Time.timeScale);
+        Invoke("disableOvercharge", 15f * Time.timeScale);// / Time.timeScale);
     }
 }

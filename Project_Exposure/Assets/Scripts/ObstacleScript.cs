@@ -24,9 +24,31 @@ public class ObstacleScript : MonoBehaviour
 
     void Start()
     {
-        Renderer[] renderers = GetComponentsInChildren<Renderer>();
         _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
-        
+        setMaterial();
+    }
+
+    void OnValidate()
+    {
+        setMaterial();
+    }
+
+    void Update()
+    {
+        if (_shakingNShatter)
+        {
+            shake(true);
+        }
+        else if (_shaking)
+        {
+            shake(false);
+        }
+    }
+
+    void setMaterial()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
         Material material = null;
 
         switch (_frequency)
@@ -45,23 +67,6 @@ public class ObstacleScript : MonoBehaviour
         foreach (Renderer renderer in renderers)
         {
             renderer.material = material;
-        }
-    }
-
-    void OnValidate()
-    {
-        Start();
-    }
-
-    void Update()
-    {
-        if (_shakingNShatter)
-        {
-            shake(true);
-        }
-        else if (_shaking)
-        {
-            shake(false);
         }
     }
 

@@ -22,7 +22,6 @@ public class Pause : MonoBehaviour
             }
             else
             {
-
                 Time.timeScale = 0;
                 _pauseScreen.SetActive(true);
                 Paused = true;
