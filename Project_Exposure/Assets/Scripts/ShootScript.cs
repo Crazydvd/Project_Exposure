@@ -34,8 +34,9 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField] Text _energyCounter;
     [SerializeField] float _startEnergy = 80;
+
     float _energyCount;
-    string _originalEnergyText;
+    string _energyText;
 
     GameObject _previousHit;
     float _rayTimer = 0;
@@ -48,6 +49,7 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //NOTE: why invoke?
         Invoke("SetText", 0.1f);
 
         _waves.Add(Frequency.LOW, _bulletType1);
@@ -144,8 +146,11 @@ public class ShootScript : MonoBehaviour
     // ensure clicking is blocked for touch
     bool isPointerOverUIObject()
     {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current)
+        {
+            position = new Vector2(Input.mousePosition.x, Input.mousePosition.y)
+        };
+		
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
         return results.Count > 0;
@@ -177,15 +182,20 @@ public class ShootScript : MonoBehaviour
         return _shootingFrequency = (Frequency) pMode;
     }
 
+    public Frequency SwitchWave(Frequency pMode)
+    {
+        return _shootingFrequency = pMode;
+    }
+
     public void RemoveEnergy(float pAmount = 1)
     {
         _energyCount -= pAmount;
-        _energyCounter.text = _originalEnergyText + _energyCount;
+        _energyCounter.text = _energyText + _energyCount;
     }
     public void AddEnergy(float pAmount = 1)
     {
         _energyCount += pAmount;
-        _energyCounter.text = _originalEnergyText + _energyCount;
+        _energyCounter.text = _energyText + _energyCount;
     }
 
     public void EnablePierceShot()
@@ -213,7 +223,7 @@ public class ShootScript : MonoBehaviour
     public void SetText()
     {
         _energyCount = _startEnergy;
-        _originalEnergyText = _energyCounter.text + ": ";
-        _energyCounter.text = _originalEnergyText + _energyCount;
+        _energyText = JsonText.GetText("ENERGYTEXT") + ": ";
+        _energyCounter.text = _energyText + _energyCount;
     }
 }

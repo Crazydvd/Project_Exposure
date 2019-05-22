@@ -16,7 +16,6 @@ public class KnobScript : MonoBehaviour
         _animator = transform.parent.GetComponentInChildren<Animator>();
     }
 
-
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -35,6 +34,7 @@ public class KnobScript : MonoBehaviour
             }
             _holding = false;
         }
+        else
         if (_holding)
         {
             Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -59,26 +59,34 @@ public class KnobScript : MonoBehaviour
     public void SetHigh()
     {
         _targetRotation = new Vector3(0, 0, -90);
-        _shootScript.SwitchWave(3);
         _holding = true;
-        string frequency = _shootScript.SwitchWave(2).ToString().ToLower();
-        _animator.Play(frequency + "freq");
+        _shootScript.SwitchWave(Frequency.HIGH);
+        playAnimation(Frequency.HIGH);
     }
 
     public void SetMedium()
     {
         _targetRotation = new Vector3(0, 0, 0);
-        _shootScript.SwitchWave(2);
         _holding = true;
-        string frequency = _shootScript.SwitchWave(1).ToString().ToLower();
-        _animator.Play(frequency + "freq");
+        _shootScript.SwitchWave(Frequency.MEDIUM);
+        playAnimation(Frequency.MEDIUM);
     }
 
     public void SetLow()
     {
         _targetRotation = new Vector3(0, 0, 90);
         _holding = true;
-         string frequency = _shootScript.SwitchWave(0).ToString().ToLower();
-        _animator.Play(frequency + "freq");
+        _shootScript.SwitchWave(Frequency.LOW);
+        playAnimation(Frequency.LOW);
+    }
+
+    void playAnimation(string pFrequency)
+    {
+        _animator.Play(pFrequency + "freq");
+    }
+
+    void playAnimation(Frequency pFrequency)
+    {
+        playAnimation(pFrequency.ToString().ToLower());
     }
 }

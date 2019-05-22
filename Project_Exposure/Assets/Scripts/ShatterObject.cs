@@ -27,7 +27,7 @@ public class ShatterObject : MonoBehaviour
 
             if (childRigid == null)
             {
-                Debug.Log("YOU FORGOT TO ADD KINEMATIC RIGIDBODY TO THE CHILD!!!");
+                (childRigid = child.gameObject.AddComponent<Rigidbody>()).collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             }
 
             child.gameObject.SetActive(true);
