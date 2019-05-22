@@ -32,7 +32,7 @@ public class ShatterObject : MonoBehaviour
 
             child.gameObject.SetActive(true);
             childRigid.isKinematic = false;
-            child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
+            //child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
 
             Vector3 direction = (child.position - shardsContainer.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
