@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public enum Frequency
+public enum Frequency : int
 {
     LOW = 0,
     MEDIUM = 1,
@@ -147,25 +147,30 @@ public class ShootScript : MonoBehaviour
         }
     }
 
-    public void SwitchWave(int pMode = 0)
+    public void SwitchWave()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || pMode == 1)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _shootingFrequency = Frequency.LOW;
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) || pMode == 2)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _shootingFrequency = Frequency.MEDIUM;
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) || pMode == 3)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _shootingFrequency = Frequency.HIGH;
             return;
         }
+    }
+
+    public Frequency SwitchWave(int pMode)
+    {
+        return _shootingFrequency = (Frequency) pMode;
     }
 
     public void RemoveEnergy(float pAmount = 1)
