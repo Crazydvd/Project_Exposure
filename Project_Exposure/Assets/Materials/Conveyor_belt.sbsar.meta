@@ -18,9 +18,21 @@ ScriptedImporter:
     preset: " <sbspreset pkgurl=\"pkg://Conveyor_belt_Plastic\" label=\"\" >\n  <presetinput
       identifier=\"$outputsize\" uid=\"209672513\" type=\"8\" value=\"10,10\" />\n
       </sbspreset>\n"
-    shaderName: Handout/UVCycle
-    outputNames: baseColor
-    texturePackingList: []
+    shaderName: Standard
+    outputNames: baseColor,normal,metallic,height,ambientOcclusion
+    texturePackingList:
+    - outputName: baseColor
+      alphaSource: baseColor
+    - outputName: normal
+      alphaSource: normal
+    - outputName: roughness
+      alphaSource: roughness
+    - outputName: metallic
+      alphaSource: smoothness
+    - outputName: height
+      alphaSource: height
+    - outputName: ambientOcclusion
+      alphaSource: ambientOcclusion
     textureParameters:
     - textureName: Conveyor_belt_Plastic - roughness
       wrapMode: 0

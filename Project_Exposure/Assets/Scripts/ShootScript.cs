@@ -48,9 +48,7 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _energyCount = _startEnergy;
-        _originalEnergyText = _energyCounter.text + ": ";
-        _energyCounter.text = _originalEnergyText + _energyCount;
+        Invoke("SetText", 0.1f);
 
         _waves.Add(Frequency.LOW, _bulletType1);
         _waves.Add(Frequency.MEDIUM, _bulletType2);
@@ -62,12 +60,8 @@ public class ShootScript : MonoBehaviour
     {
         SwitchWave();
 
-        if (!EventSystem.current.IsPointerOverGameObject()) // check if mouse isn't hovering over button
+        if (!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) // check if mouse isn't hovering over button
         {
-            //Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10f);
-
-            //transform.LookAt(mouseWorldPosition);
-
             if (!_rayMode)
             {
                 if (Input.GetMouseButtonDown(0) && _energyCount > 0)
@@ -147,7 +141,17 @@ public class ShootScript : MonoBehaviour
         }
     }
 
-    public void SwitchWave()
+    // ensure clicking is blocked for touch
+    bool isPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+    }
+
+    public void SwitchWave(int pMode = 0)
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -204,5 +208,13 @@ public class ShootScript : MonoBehaviour
     public void DisableBattery()
     {
         _batteryMode = false;
+    }
+
+    public void SetText()
+    {
+        _energyCount = _startEnergy;
+        _originalEnergyText = _energyCounter.text + ": ";
+        Debug.Log(_originalEnergyText);
+        _energyCounter.text = _originalEnergyText + _energyCount;
     }
 }
