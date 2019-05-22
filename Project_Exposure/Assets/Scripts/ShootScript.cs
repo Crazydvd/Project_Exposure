@@ -209,7 +209,6 @@ public class ShootScript : MonoBehaviour
     {
         _energyCount = _startEnergy;
         _originalEnergyText = _energyCounter.text + ": ";
-        Debug.Log(_originalEnergyText);
         _energyCounter.text = _originalEnergyText + _energyCount;
     }
 }
