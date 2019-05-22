@@ -22,7 +22,19 @@ ScriptedImporter:
       />\n </sbspreset>\n"
     shaderName: Standard
     outputNames: baseColor,normal,metallic,height,ambientOcclusion
-    texturePackingList: []
+    texturePackingList:
+    - outputName: baseColor
+      alphaSource: baseColor
+    - outputName: normal
+      alphaSource: normal
+    - outputName: roughness
+      alphaSource: roughness
+    - outputName: metallic
+      alphaSource: smoothness
+    - outputName: height
+      alphaSource: height
+    - outputName: ambientOcclusion
+      alphaSource: ambientOcclusion
     textureParameters:
     - textureName: Conveyor_belt_rubber - roughness
       wrapMode: 0
