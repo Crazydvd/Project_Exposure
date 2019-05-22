@@ -151,7 +151,7 @@ public class ShootScript : MonoBehaviour
         return results.Count > 0;
     }
 
-    public void SwitchWave(int pMode = 0)
+    public void SwitchWave()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

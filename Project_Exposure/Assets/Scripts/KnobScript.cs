@@ -13,7 +13,7 @@ public class KnobScript : MonoBehaviour
 
     void Start()
     {
-        _animator = GetComponentInParent<Animator>();
+        _animator = transform.parent.GetComponentInChildren<Animator>();
     }
 
 
