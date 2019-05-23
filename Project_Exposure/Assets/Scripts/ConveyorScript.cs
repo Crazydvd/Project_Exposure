@@ -16,6 +16,7 @@ public class ConveyorScript : MonoBehaviour
 
     Transform _cornerPoint;
     ShardScript _shard;
+    static Material _conveyorMaterial;
 
     public System.Action<Transform> Action { get; private set; }
 
@@ -24,6 +25,11 @@ public class ConveyorScript : MonoBehaviour
         _cornerPoint = _corner ? transform.GetChild(0) : null;
 
         Action = _corner ? moveCorner : (System.Action<Transform>) moveStraight;
+
+        if (_conveyorMaterial == null)
+        {
+            _conveyorMaterial = GetComponent<Renderer>().material;
+        }
     }
 
     void moveStraight(Transform pShard)
@@ -34,5 +40,30 @@ public class ConveyorScript : MonoBehaviour
     void moveCorner(Transform pShard)
     {
         pShard.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
+    }
+
+    public static float Speed
+    {
+        get
+        {
+            return _conveyorMaterial.GetFloat("TimeScaleY");
+        }
+        set
+        {
+            _conveyorMaterial.SetFloat("TimeScaleY", value);
+        }
+    }
+
+    public static Vector2 SpeedVector
+    {
+        get
+        {
+            return new Vector2(_conveyorMaterial.GetFloat("TimeScaleX"), _conveyorMaterial.GetFloat("TimeScaleY"));
+        }
+        set
+        {
+            _conveyorMaterial.SetFloat("TimeScaleX", value.x);
+            _conveyorMaterial.SetFloat("TimeScaleY", value.y);
+        }
     }
 }

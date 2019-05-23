@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 6620827377485089759}
   - component: {fileID: 316531397216103688}
   - component: {fileID: 8881104817438037190}
+  - component: {fileID: 2037364029}
+  - component: {fileID: 2037364030}
   m_Layer: 0
   m_Name: Belt_TopNormal
-  m_TagString: Untagged
+  m_TagString: ConveyorBelt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +93,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000186, y: 0.00000022888183, z: 1.007997}
   m_Center: {x: 0.99999934, y: -0.000000038146972, z: -0.033575088}
+--- !u!65 &2037364029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885216196261704974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000186, y: 0.3163302, z: 1.007997}
+  m_Center: {x: 0.9999993, y: 0.1737827, z: -0.033575058}
+--- !u!114 &2037364030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885216196261704974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _corner: 0
+  _speed: 0.1
+  _rotateAngle: -20
 --- !u!1 &7608919162589165529
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,8 +210,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.1471778, z: 1.5305505}
-  m_Center: {x: 1, y: 0.0735889, z: 0.0000003874302}
+  m_Size: {x: 2, y: 0.014464378, z: 1.5305505}
+  m_Center: {x: 1, y: 0.007232189, z: 0.00000035762787}
 --- !u!1 &8236801611236719336
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +312,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8451751299558374274}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 40, y: 1.9302, z: 10.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
