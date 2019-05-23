@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObstacleScript : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class ObstacleScript : MonoBehaviour
     ScreenShake _screenShake;
     Vector3 _oldPosVector;
     Vector3 _pointOfImpact;
+    Text _scoreUI;
     float _timeBeforeShatter = 0.0f;
     float _shakeDelay;
     bool _shakingNShatter;
@@ -27,6 +29,7 @@ public class ObstacleScript : MonoBehaviour
     void Start()
     {
         _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
+        _scoreUI = GameObject.Find("Score").GetComponent<Text>();
         setMaterial();
     }
 
@@ -156,6 +159,7 @@ public class ObstacleScript : MonoBehaviour
         shardsContainer.DetachChildren();
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
+        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f);
         Destroy(gameObject);
     }
 
