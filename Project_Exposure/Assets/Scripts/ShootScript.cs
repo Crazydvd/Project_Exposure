@@ -52,8 +52,7 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //NOTE: why invoke?
-        Invoke("SetText", 0.1f);
+        SetText();
 
         _waves.Add(Frequency.LOW, _bulletType1);
         _waves.Add(Frequency.MEDIUM, _bulletType2);
