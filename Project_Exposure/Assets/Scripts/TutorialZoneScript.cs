@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Timeline;
+using Cinemachine;
 
 public class TutorialZoneScript : MonoBehaviour
 {
@@ -15,10 +17,15 @@ public class TutorialZoneScript : MonoBehaviour
         if (other.tag.ToUpper() == "MAINCAMERA")
         {
             _player = other.gameObject;
-            _playerTrack = _player.GetComponent<Animator>();
-            _initialSpeed = _playerTrack.speed;
-            _playerTrack.speed = 0;
-            _uiElement.SetActive(true);
+
+            //_player.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject;
+            //_initialSpeed = _playerTrack.speed;
+            //_playerTrack.speed = 0;
+            //_player.GetComponent<CinemachineTrack>().GetChildTracks(
+            if (_uiElement != null)
+            {
+                _uiElement.SetActive(true);
+            }
         }
     }
 
@@ -29,7 +36,10 @@ public class TutorialZoneScript : MonoBehaviour
             _playerTrack.speed = _initialSpeed;
         }
 
-        _uiElement.SetActive(false);
+        if (_uiElement != null)
+        {
+            _uiElement.SetActive(false);
+        }
         Destroy(gameObject);
     }
 }
