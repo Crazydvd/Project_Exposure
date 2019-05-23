@@ -63,9 +63,12 @@ public class PhysicsController_Cargo : PhysicsController
 
 				child.LocalCargoObject.gameObject.SetActive (false);
 			} else {
-				//the max side of the random range is exclusive, while the min size is inclusive
-				Random.seed = (int)(randomSeed * (1000 * Time.realtimeSinceStartup));
-				int randomCargoNum = Random.Range (0, cargoObjects.Length);
+                //the max side of the random range is exclusive, while the min size is inclusive
+				//HACK: disabled the warning message
+#pragma warning disable CS0618 // Type or member is obsolete
+                Random.seed = (int)(randomSeed * (1000 * Time.realtimeSinceStartup));
+#pragma warning restore CS0618 // Type or member is obsolete
+                int randomCargoNum = Random.Range (0, cargoObjects.Length);
 				_tempCargo = Instantiate (cargoObjects [randomCargoNum], _myTransform.position, _myTransform.rotation) as Transform;
 			
 				PushCargo (_tempCargo, randomCargoNum);
