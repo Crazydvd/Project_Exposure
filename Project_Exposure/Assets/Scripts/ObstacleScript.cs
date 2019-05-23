@@ -8,6 +8,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] float _shatterForce = 10f;
     [SerializeField] float _shatterDelay = 0.5f;
     [SerializeField] float _shakeForce = 0.05f;
+    [SerializeField][Range(0f, 5f)] float _shakeSpeed = 2f;
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
     [SerializeField] Material _lowFreqMaterial;
@@ -19,6 +20,7 @@ public class ObstacleScript : MonoBehaviour
     Vector3 _oldPosVector;
     Vector3 _pointOfImpact;
     float _timeBeforeShatter = 0.0f;
+    float _shakeDelay;
     bool _shakingNShatter;
     bool _shaking;
 
@@ -75,8 +77,13 @@ public class ObstacleScript : MonoBehaviour
         Vector3 shakeVector = new Vector3(_oldPosVector.x + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
                                           _oldPosVector.y + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
                                           _oldPosVector.z + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2));
-
-        transform.localPosition = shakeVector;
+        //add a shake speed
+        if (_shakeDelay >= (5 - (int) _frequency) - _shakeSpeed)
+        {
+            transform.localPosition = shakeVector;
+            _shakeDelay = 0;
+        }
+        _shakeDelay++;
 
         _timeBeforeShatter += Time.deltaTime;
 
