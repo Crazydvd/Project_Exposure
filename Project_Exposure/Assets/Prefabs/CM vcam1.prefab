@@ -126,7 +126,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4074625942218456483}
-  m_LocalRotation: {x: -0.0022664221, y: -0.70785195, z: -0.00227123, w: 0.70635355}
+  m_LocalRotation: {x: -0.0022683982, y: -0.70784944, z: -0.0022731938, w: 0.7063561}
   m_LocalPosition: {x: 41.967033, y: 2.6722994, z: 10.165845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -134,7 +134,7 @@ Transform:
   - {fileID: 9075121010235947038}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.36800003, y: -90.121, z: 0}
 --- !u!114 &4074625942218456481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2de533e33e7ce442bed1a934bace2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lookAt: {fileID: 6577054111598137772, guid: eb4c1a2bc679397499708a36e43ce1e9, type: 3}
+  _lookAt: {fileID: 0}
 --- !u!114 &4074625943127237066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TempGunModel
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3e125801a51c4b541a1b0bbce6b1958a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e125801a51c4b541a1b0bbce6b1958a,
         type: 3}
