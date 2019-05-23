@@ -20,7 +20,17 @@ ScriptedImporter:
       uid=\"1237181258\" type=\"0\" value=\"0\" />\n </sbspreset>\n"
     shaderName: Autodesk Interactive
     outputNames: baseColor,normal,metallic,height
-    texturePackingList: []
+    texturePackingList:
+    - outputName: baseColor
+      alphaSource: baseColor
+    - outputName: normal
+      alphaSource: normal
+    - outputName: roughness
+      alphaSource: roughness
+    - outputName: metallic
+      alphaSource: metallic
+    - outputName: height
+      alphaSource: height
     textureParameters:
     - textureName: Aluminium - roughness
       wrapMode: 0
