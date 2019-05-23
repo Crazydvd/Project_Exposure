@@ -19,7 +19,8 @@ public class PauseScript : MonoBehaviour
 
     public static bool Paused { get; set; }
 
-    public void Toggle(){
+    public void Toggle()
+    {
         if (_pauseScreen.activeSelf)
         {
             Time.timeScale = 1;
@@ -34,7 +35,8 @@ public class PauseScript : MonoBehaviour
         }
     }
 
-    public void Pause(){
+    public void Pause()
+    {
         Time.timeScale = 0;
         _pauseScreen.SetActive(true);
         Paused = true;

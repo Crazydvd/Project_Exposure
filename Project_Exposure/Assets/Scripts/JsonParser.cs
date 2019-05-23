@@ -24,7 +24,6 @@ public class JsonVariables
 {
     public D_ENTRY[] D_ENTRIES;
 
-    //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
     public Dictionary<string, string> this[string pIndex]
     {
         get
@@ -67,7 +66,6 @@ public class D_ENTRY
     public string Key;
     public DICTIONARYENTRY[] Value;
 
-    //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
     Dictionary<string, string> _dictionary = null;
 
     public Dictionary<string, string> GetDictionary

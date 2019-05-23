@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public enum Frequency
+public enum Frequency : int
 {
     LOW = 0,
     MEDIUM = 1,
@@ -34,8 +34,9 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField] Text _energyCounter;
     [SerializeField] float _startEnergy = 80;
+
     float _energyCount;
-    string _originalEnergyText;
+    string _energyText;
 
     GameObject _previousHit;
     float _rayTimer = 0;
@@ -45,14 +46,21 @@ public class ShootScript : MonoBehaviour
 
     Frequency _shootingFrequency = Frequency.MEDIUM;
 
+    //HACK: using a knobscript ref to play animation
+    KnobScript _knobScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        //NOTE: why invoke?
         Invoke("SetText", 0.1f);
 
         _waves.Add(Frequency.LOW, _bulletType1);
         _waves.Add(Frequency.MEDIUM, _bulletType2);
         _waves.Add(Frequency.HIGH, _bulletType3);
+
+        //HACK: grabbing knobscript ref in scene
+        _knobScript = GameObject.Find("Canvas").GetComponentInChildren<KnobScript>();
     }
 
     // Update is called once per frame
@@ -144,43 +152,64 @@ public class ShootScript : MonoBehaviour
     // ensure clicking is blocked for touch
     bool isPointerOverUIObject()
     {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current)
+        {
+            position = new Vector2(Input.mousePosition.x, Input.mousePosition.y)
+        };
+		
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-         return results.Count > 0;
+        return results.Count > 0;
     }
 
-    public void SwitchWave(int pMode = 0)
+    public void SwitchWave()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || pMode == 1)
+        //HACK: playing animation
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            _shootingFrequency = Frequency.LOW;
+            _knobScript.SetLow();
+            _knobScript.HOLDING = false;
+            //_shootingFrequency = Frequency.LOW;
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) || pMode == 2)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            _shootingFrequency = Frequency.MEDIUM;
+            _knobScript.SetMedium();
+            _knobScript.HOLDING = false;
+            //_shootingFrequency = Frequency.MEDIUM;
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) || pMode == 3)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            _shootingFrequency = Frequency.HIGH;
+            _knobScript.SetHigh();
+            _knobScript.HOLDING = false;
+            //_shootingFrequency = Frequency.HIGH;
             return;
         }
+    }
+
+    public Frequency SwitchWave(int pMode)
+    {
+        return _shootingFrequency = (Frequency) pMode;
+    }
+
+    public Frequency SwitchWave(Frequency pMode)
+    {
+        return _shootingFrequency = pMode;
     }
 
     public void RemoveEnergy(float pAmount = 1)
     {
         _energyCount -= pAmount;
-        _energyCounter.text = _originalEnergyText + _energyCount;
+        _energyCounter.text = _energyText + _energyCount;
     }
     public void AddEnergy(float pAmount = 1)
     {
         _energyCount += pAmount;
-        _energyCounter.text = _originalEnergyText + _energyCount;
+        _energyCounter.text = _energyText + _energyCount;
     }
 
     public void EnablePierceShot()
@@ -208,8 +237,7 @@ public class ShootScript : MonoBehaviour
     public void SetText()
     {
         _energyCount = _startEnergy;
-        _originalEnergyText = _energyCounter.text + ": ";
-        Debug.Log(_originalEnergyText);
-        _energyCounter.text = _originalEnergyText + _energyCount;
+        _energyText = JsonText.GetText("ENERGYTEXT") + ": ";
+        _energyCounter.text = _energyText + _energyCount;
     }
 }
