@@ -89,4 +89,14 @@ public class KnobScript : MonoBehaviour
     {
         playAnimation(pFrequency.ToString().ToLower());
     }
+
+
+    //HACK: had to stop holding
+    public bool HOLDING
+    {
+        set
+        {
+            _holding = value;
+        }
+    }
 }

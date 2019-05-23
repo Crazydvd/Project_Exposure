@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SetLanguageSetting : MonoBehaviour
 {
-    [SerializeField] int _language;
+    [SerializeField] Language _language;
 
     public void SetLanguage()
     {
