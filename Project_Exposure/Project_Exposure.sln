@@ -1,11 +1,8 @@
 ﻿
-<<<<<<< HEAD
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-=======
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
->>>>>>> 4ee52e98a5dfe67a8c2b8d107ec573c3e02af0ef
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{2371E427-A0FA-8C3F-4A41-D207FC81AC9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1EC02D6E-4934-2A26-0FE7-F266151794BF}"
@@ -13,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{96BB1C49-B3CE-BD67-F870-58BDDB65E871}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{B84371CE-09DF-EFF0-6776-28C241D2F8EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{818FE613-42A8-425A-9556-69F7D6FED659}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,5 +41,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6336D87-CFAF-4F06-8D4C-1C118FC3BE9B}
 	EndGlobalSection
 EndGlobal
