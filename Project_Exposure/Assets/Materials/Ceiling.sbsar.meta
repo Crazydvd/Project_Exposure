@@ -1,0 +1,91 @@
+fileFormatVersion: 2
+guid: 5d23b1179090e46418f8314adda17b6c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  version: 17
+  mGraphInstanceData:
+  - graphLabel: Ceiling
+    prototypeName: Ceiling
+    graphDescIndex: 0
+    generateAllOutputs: 0
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://Ceiling\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"168888820\" type=\"8\" value=\"11,11\" />\n </sbspreset>\n"
+    shaderName: Standard
+    outputNames: baseColor,normal,metallic,height,ambientOcclusion,emissive
+    texturePackingList:
+    - outputName: baseColor
+      alphaSource: baseColor
+    - outputName: normal
+      alphaSource: normal
+    - outputName: roughness
+      alphaSource: roughness
+    - outputName: metallic
+      alphaSource: smoothness
+    - outputName: height
+      alphaSource: height
+    - outputName: ambientOcclusion
+      alphaSource: ambientOcclusion
+    - outputName: emissive
+      alphaSource: emissive
+    textureParameters:
+    - textureName: Ceiling - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Ceiling - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Ceiling - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Ceiling - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Ceiling - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Ceiling - ambientOcclusion
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Ceiling - emissive
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    colorSpaceList:
+    - outputName: baseColor
+      bLinear: 0
+    - outputName: normal
+      bLinear: 1
+    - outputName: roughness
+      bLinear: 1
+    - outputName: metallic
+      bLinear: 1
+    - outputName: height
+      bLinear: 1
+    - outputName: ambientOcclusion
+      bLinear: 1
+    - outputName: emissive
+      bLinear: 0
+    inputTextureMap: []
+    targetSettingList:
+    - label: 
+      bLockRatio: 1
+      textureWidth: 2048
+      textureHeight: 2048
+      textureFormat: 0
+      bGenerateOnLoad: 1
+    material: {fileID: 3069082147569485441, guid: 5d23b1179090e46418f8314adda17b6c,
+      type: 3}
+    generatedTextures: []
