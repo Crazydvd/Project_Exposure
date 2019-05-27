@@ -13,6 +13,8 @@ public enum Frequency : int
 
 public class ShootScript : MonoBehaviour
 {
+    public static float Multiplier = 1;
+
     [SerializeField] bool _rayMode = false;
     [SerializeField] bool _rayCastAccuracy = true;
     [SerializeField] GameObject _beam;
@@ -52,6 +54,7 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ShootScript.Multiplier = 1;
         SetText();
 
         _waves.Add(Frequency.LOW, _bulletType1);

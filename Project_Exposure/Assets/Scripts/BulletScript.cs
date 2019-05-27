@@ -13,7 +13,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        Destroy(gameObject, 5f);
+        Invoke("SelfDestruct", 3f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,5 +48,13 @@ public class BulletScript : MonoBehaviour
     public void SetVelocity(Vector3 pVelocity)
     {
         _velocity = pVelocity;
+    }
+
+    public void SelfDestruct(){
+        if (!PierceShotMode)
+        {
+            ShootScript.Multiplier = 1;
+            Destroy(gameObject);
+        }
     }
 }
