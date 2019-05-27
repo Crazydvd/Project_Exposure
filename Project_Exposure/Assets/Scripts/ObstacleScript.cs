@@ -28,7 +28,7 @@ public class ObstacleScript : MonoBehaviour
 
     void Start()
     {
-        _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
+        _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
         _scoreUI = GameObject.Find("Score").GetComponent<Text>();
         setMaterial();
     }
