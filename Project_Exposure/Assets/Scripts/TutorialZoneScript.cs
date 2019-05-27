@@ -27,7 +27,7 @@ public class TutorialZoneScript : MonoBehaviour
                 _uiElement.SetActive(true);
             }
 
-            _playerTrack = _player.GetComponent<Animator>();
+            _playerTrack = _player.transform.parent.GetComponent<Animator>();
             _initialSpeed = _playerTrack.speed;
             _playerTrack.speed = 0;
             ConveyorScript.Speed = 0;

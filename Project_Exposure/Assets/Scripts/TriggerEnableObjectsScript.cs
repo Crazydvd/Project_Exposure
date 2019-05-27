@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerAnimationScript : MonoBehaviour
+public class TriggerEnableObjectsScript : MonoBehaviour
 {
-    [Header("The Animator which will play the animation")]
-    [SerializeField] Animator _animator = null;
+    enum Mode
+    {
+        ENABLE,
+        DISABLE,
+        TOGGLE,
+    }
 
-    [Header("The name of the animationState to play")]
-    [SerializeField] string _animationState;
 
+    [Header("Objects that you want to interact with")]
+    [SerializeField] GameObject[] _objects;
+
+    [SerializeField] Mode _currentMode = Mode.TOGGLE;
+
+    [Space]
     [Header("Whether or not every object can trigger the animation")]
     [SerializeField] bool _allTrigger = false;
 
@@ -21,9 +29,44 @@ public class TriggerAnimationScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if ((_allTrigger || checkTrigger(other.gameObject)) && _animator != null)
+        if (_allTrigger || checkTrigger(other.gameObject))
         {
-            _animator.Play(_animationState);
+            switch (_currentMode)
+            {
+                case Mode.ENABLE:
+                    enableObjects();
+                    break;
+                case Mode.DISABLE:
+                    disableObjects();
+                    break;
+                case Mode.TOGGLE:
+                    toggleObjects();
+                    break;
+            }
+        }
+    }
+
+    void enableObjects()
+    {
+        foreach (GameObject @object in _objects)
+        {
+            @object.SetActive(true);
+        }
+    }
+
+    void disableObjects()
+    {
+        foreach (GameObject @object in _objects)
+        {
+            @object.SetActive(false);
+        }
+    }
+
+    void toggleObjects()
+    {
+        foreach (GameObject @object in _objects)
+        {
+            @object.SetActive(!@object.activeSelf);
         }
     }
 
