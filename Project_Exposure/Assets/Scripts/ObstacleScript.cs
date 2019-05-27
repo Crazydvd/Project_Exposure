@@ -19,7 +19,6 @@ public class ObstacleScript : MonoBehaviour
 
     ScreenShake _screenShake;
     Vector3 _oldPosVector;
-    Vector3 _pointOfImpact;
     Text _scoreUI;
     float _timeBeforeShatter = 0.0f;
     float _shakeDelay;
@@ -146,7 +145,7 @@ public class ObstacleScript : MonoBehaviour
             childRigid.isKinematic = false;
             child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
 
-            Vector3 direction = (child.position - _pointOfImpact).normalized;
+            Vector3 direction = (child.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
 
             childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
@@ -159,17 +158,14 @@ public class ObstacleScript : MonoBehaviour
         shardsContainer.DetachChildren();
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
-        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f);
+        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier);
+        ShootScript.Multiplier += 1;
+        Debug.Log(ShootScript.Multiplier);
         Destroy(gameObject);
     }
 
     public Frequency GetFreq()
     {
         return _frequency;
-    }
-
-    public void SetPOI(Vector3 pVec)
-    {
-        _pointOfImpact = pVec;
     }
 }
