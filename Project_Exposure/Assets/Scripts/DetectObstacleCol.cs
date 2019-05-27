@@ -24,8 +24,6 @@ public class DetectObstacleCol : MonoBehaviour
         else
         if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")
         {
-
-            _obstacle.SetPOI(other.transform.position);
             _obstacle.EnableShake(true);
         }
         else if (other.gameObject.layer != 11) //layer 11 == shards
