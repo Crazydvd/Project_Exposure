@@ -13,8 +13,8 @@
 		_MaxHeight("MaxHeight", float) = 0.01
 		_OcclusionStrength("Occlusion Strength", float) = 1
 
-		_TimeScaleX("TimeScaleX", float) = 0
-		_TimeScaleY("TimeScaleY", float) = 1
+		_SpeedX("SpeedX", float) = 0
+		_SpeedY("SpeedY", float) = 1
 	}
 		SubShader
 		{
@@ -59,14 +59,14 @@
 			
 			UNITY_INSTANCING_BUFFER_END(Props)
 
-			float _TimeScaleX;
-			float _TimeScaleY;
+			float _SpeedX;
+			float _SpeedY;
 
 			float _MaxHeight;
 
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
-				float2 timeOffset = float2(_Time.x * _TimeScaleX, _Time.x * _TimeScaleY);
+				float2 timeOffset = float2(_Time.x * _SpeedX, _Time.x * _SpeedY);
 
 				//Height map gives an offset to the uvs
 				float value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
