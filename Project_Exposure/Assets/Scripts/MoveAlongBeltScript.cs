@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShardScript : MonoBehaviour
+public class MoveAlongBeltScript : MonoBehaviour
 {
     public System.Action<Transform> Action { get; set; }
 

@@ -138,9 +138,9 @@ public class ObstacleScript : MonoBehaviour
 
             child.gameObject.SetActive(true);
             child.gameObject.layer = 11;
-            if (child.GetComponent<ShardScript>() == null)
+            if (child.GetComponent<MoveAlongBeltScript>() == null)
             {
-                child.gameObject.AddComponent<ShardScript>();
+                child.gameObject.AddComponent<MoveAlongBeltScript>();
             }
 
             childRigid.isKinematic = false;
