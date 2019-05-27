@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 272567459781019744}
   - component: {fileID: 6448670285205421253}
   - component: {fileID: 8544794792003630125}
-  - component: {fileID: 7211766347649576987}
   - component: {fileID: 5017668976040773980}
+  - component: {fileID: 7211766347649576987}
   m_Layer: 0
   m_Name: BeltSlope_MiddelPart
   m_TagString: Untagged
@@ -94,22 +94,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 3923246983806166094, guid: e9629c3fe5864954699b83569e57fa29, type: 3}
---- !u!114 &7211766347649576987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570232580027655220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _corner: 0
-  _cornerPoint: {fileID: 0}
-  _rotateAngle: -20
-  _speed: 0.6
 --- !u!65 &5017668976040773980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,6 +107,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8256307, y: 1.2126026, z: 1.0079973}
   m_Center: {x: -0.9128077, y: 0.60629773, z: -0.033575296}
+--- !u!114 &7211766347649576987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570232580027655220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4884b9896b386f4ca80a12e0a156c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _corner: 0
+  _speed: 0.6
+  _rotateAngle: -20
 --- !u!1 &1984182732136142060
 GameObject:
   m_ObjectHideFlags: 0

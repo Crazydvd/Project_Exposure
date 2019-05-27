@@ -22,6 +22,18 @@ public class ShardScript : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if (Action == null)
+        {
+            if (other.transform.root.tag.ToLower() == "conveyorbelt")
+            {
+                _lastEntered = other.GetComponent<ConveyorScript>();
+                Action = _lastEntered.Action;
+            }
+        }
+    }
+
     void OnTriggerExit(Collider other)
     {
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
