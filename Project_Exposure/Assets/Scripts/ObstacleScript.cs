@@ -159,7 +159,9 @@ public class ObstacleScript : MonoBehaviour
         shardsContainer.DetachChildren();
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
-        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f);
+        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier);
+        ShootScript.Multiplier += 1;
+        Debug.Log(ShootScript.Multiplier);
         Destroy(gameObject);
     }
 
