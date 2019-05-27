@@ -43,6 +43,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 378976
   Exists: 1
+--- !u!114 &-5705200246891246074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: D:\Project Exposure\Project_Exposure\Assets\FMOD\Build\Desktop\Master Bank.bank
+  SubDir: 
+  lastModified: 636945587505086278
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 419168
+  Exists: 1
 --- !u!114 &-4660098288895405566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,7 +124,7 @@ MonoBehaviour:
   Path: event:/backgroundnoise
   guid: 70dda6f67e10e94bac321db647fb9a6b
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -169,7 +189,7 @@ MonoBehaviour:
   Path: event:/medium_shot
   guid: 1abaf08273853e40957cacc74be9cad7
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -212,7 +232,7 @@ MonoBehaviour:
   Path: event:/high_glassplaceholder
   guid: 70488a59c723b64bb03758e309e51c83
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -235,7 +255,7 @@ MonoBehaviour:
   Path: event:/shatter
   guid: 3630a17be6c56f449695cc51858d10e7
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -256,8 +276,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 8708212001910900853}
-  - {fileID: -3367571990187054224}
+  - {fileID: 5846749699932428798}
+  - {fileID: -5705200246891246074}
   EditorEvents:
   - {fileID: -2411586242906890885}
   - {fileID: 395304349774170570}
@@ -270,10 +290,10 @@ MonoBehaviour:
   - {fileID: -881812623520468015}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   StringsBanks:
-  - {fileID: 8708212001910900853}
-  stringsBankWriteTime: 636945601123661592
+  - {fileID: 5846749699932428798}
+  stringsBankWriteTime: 636945587505096251
   cacheVersion: 3
 --- !u!114 &395304349774170570
 MonoBehaviour:
@@ -290,7 +310,7 @@ MonoBehaviour:
   Path: event:/low_glassplaceholder
   guid: 2cfaa9702350ec4b9bc3228974dadfa9
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -336,7 +356,7 @@ MonoBehaviour:
   Path: event:/medium_glassplaceholder
   guid: bd8862287f09074da5466f07f5cbf9c9
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -403,7 +423,7 @@ MonoBehaviour:
   Path: event:/high_shot
   guid: 7815f026e900314495d1432154128258
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -426,7 +446,7 @@ MonoBehaviour:
   Path: event:/low_shot
   guid: 865e005f499649469f381dae6103606c
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -457,6 +477,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1124
+--- !u!114 &5846749699932428798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:\Project Exposure\Project_Exposure\Assets\FMOD\Build\Desktop\Master Bank.strings.bank
+  SubDir: 
+  lastModified: 636945587505096251
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1140
+  Exists: 1
 --- !u!114 &7177783742223992757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +558,7 @@ MonoBehaviour:
   Path: event:/conveyerbeltloop
   guid: 44ded1a60081ff4dbd0dc0d71741280f
   Banks:
-  - {fileID: -3367571990187054224}
+  - {fileID: -5705200246891246074}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
