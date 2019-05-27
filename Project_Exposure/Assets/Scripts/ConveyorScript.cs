@@ -32,25 +32,25 @@ public class ConveyorScript : MonoBehaviour
         }
     }
 
-    void moveStraight(Transform pShard)
+    void moveStraight(Transform pObject)
     {
-        pShard.position += (-transform.right * _speed) * Time.deltaTime;
+        pObject.position += (-transform.right * _speed) * Time.deltaTime;
     }
 
-    void moveCorner(Transform pShard)
+    void moveCorner(Transform pObject)
     {
-        pShard.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
+        pObject.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
     }
 
     public static float Speed
     {
         get
         {
-            return _conveyorMaterial.GetFloat("TimeScaleY");
+            return _conveyorMaterial.GetFloat("_SpeedY");
         }
         set
         {
-            _conveyorMaterial.SetFloat("TimeScaleY", value);
+            _conveyorMaterial.SetFloat("_SpeedY", value);
         }
     }
 
@@ -58,12 +58,12 @@ public class ConveyorScript : MonoBehaviour
     {
         get
         {
-            return new Vector2(_conveyorMaterial.GetFloat("TimeScaleX"), _conveyorMaterial.GetFloat("TimeScaleY"));
+            return new Vector2(_conveyorMaterial.GetFloat("_SpeedX"), _conveyorMaterial.GetFloat("_SpeedY"));
         }
         set
         {
-            _conveyorMaterial.SetFloat("TimeScaleX", value.x);
-            _conveyorMaterial.SetFloat("TimeScaleY", value.y);
+            _conveyorMaterial.SetFloat("_SpeedX", value.x);
+            _conveyorMaterial.SetFloat("_SpeedY", value.y);
         }
     }
 }

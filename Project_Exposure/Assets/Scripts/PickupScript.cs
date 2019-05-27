@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupScript : MonoBehaviour
 {
-    Transform _grabPosition;
+    [SerializeField] Transform _grabPosition = null;
 
     Transform _grabbedObject = null;
     Transform _canGrab = null;
@@ -20,11 +20,6 @@ public class PickupScript : MonoBehaviour
     [SerializeField] string[] _pickupAbleTags;
     [SerializeField] int[] _pickupAbleLayers;
     [SerializeField] string[] _pickupAbleNames;
-
-    void Start()
-    {
-        _grabPosition = transform.GetChild(0).GetChild(0).GetChild(0);
-    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -90,7 +85,7 @@ public class PickupScript : MonoBehaviour
     {
         foreach (GameObject @object in _pickupAbleObjects)
         {
-            if (pTest.Equals(@object))
+            if (pTest == @object)
             {
                 return true;
             }

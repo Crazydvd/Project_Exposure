@@ -10,7 +10,8 @@ public class DetectObstacleCol : MonoBehaviour
     void Start()
     {
         _obstacle = GetComponentInParent<ObstacleScript>();
-        _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
+
+        _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -24,7 +25,6 @@ public class DetectObstacleCol : MonoBehaviour
         else
         if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")
         {
-
             _obstacle.SetPOI(other.transform.position);
             _obstacle.EnableShake(true);
         }
