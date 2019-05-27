@@ -15,7 +15,6 @@ public class ShardScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.transform.root.tag.ToLower());
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
         {
             _lastEntered = other.GetComponent<ConveyorScript>();
