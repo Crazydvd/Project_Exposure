@@ -9,7 +9,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] float _shatterForce = 10f;
     [SerializeField] float _shatterDelay = 0.5f;
     [SerializeField] float _shakeForce = 0.05f;
-    [SerializeField][Range(0f, 5f)] float _shakeSpeed = 2f;
+    [SerializeField] [Range(0f, 5f)] float _shakeSpeed = 2f;
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
     [SerializeField] Material _lowFreqMaterial;
@@ -28,7 +28,7 @@ public class ObstacleScript : MonoBehaviour
 
     void Start()
     {
-        _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
+        _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
         _scoreUI = GameObject.Find("Score").GetComponent<Text>();
         setMaterial();
     }

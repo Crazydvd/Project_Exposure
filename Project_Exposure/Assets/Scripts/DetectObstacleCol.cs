@@ -10,7 +10,7 @@ public class DetectObstacleCol : MonoBehaviour
     void Start()
     {
         _obstacle = GetComponentInParent<ObstacleScript>();
-        _screenShake = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<ScreenShake>();
+        _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
     }
 
     void OnTriggerEnter(Collider other)
