@@ -2785,7 +2785,7 @@ MonoBehaviour:
   _shatterDelay: 0.5
   _shakeForce: 0.01
   _shakeSpeed: 2
-  _frequency: 1
+  _frequency: 2
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
@@ -3019,6 +3019,7 @@ GameObject:
   - component: {fileID: 822386970926000575}
   - component: {fileID: 3302184109491504617}
   - component: {fileID: 8808502409336701888}
+  - component: {fileID: 3762265084187272785}
   m_Layer: 10
   m_Name: ShardsContainer
   m_TagString: Untagged
@@ -3217,7 +3218,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
+  - {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3263,6 +3264,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 5453600023458935763, guid: 296bf2099b58d8849bacec9bf873e609, type: 3}
+--- !u!54 &3762265084187272785
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393128079486229859}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1394073454473371173
 GameObject:
   m_ObjectHideFlags: 0

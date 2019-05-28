@@ -1662,6 +1662,7 @@ GameObject:
   - component: {fileID: 2409234405846081528}
   - component: {fileID: 2689994586818117614}
   - component: {fileID: 9024119589418846172}
+  - component: {fileID: 1202859443110760255}
   m_Layer: 0
   m_Name: Desk_2
   m_TagString: Untagged
@@ -1728,6 +1729,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1202859443110760255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789917298770024951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.716404, y: 0.54821527, z: 1.8562676}
+  m_Center: {x: -0.00000011920929, y: -0.4057799, z: 4.038968e-28}
 --- !u!1 &854350765065578414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4451,7 +4465,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2564937158354212160}
-  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 10.07, y: -4.06, z: -24.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6181,7 +6195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
+  - {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14952,7 +14966,7 @@ MonoBehaviour:
   _shatterDelay: 0.5
   _shakeForce: 0.05
   _shakeSpeed: 2
-  _frequency: 1
+  _frequency: 0
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
