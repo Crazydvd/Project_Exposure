@@ -38,12 +38,7 @@ public class TutorialZoneScript : MonoBehaviour
     {
         if (_playerTrack != null)
         {
-<<<<<<< HEAD
-            _playerTrack.speed = 1;
-            ConveyorScript.Speed = 1;
-=======
             _playerTrack.speed = _initialSpeed;
->>>>>>> 7f90e6cbaae1f792dbfc2a56b9a360b394f95a25
         }
 
         if (_uiElement != null)
