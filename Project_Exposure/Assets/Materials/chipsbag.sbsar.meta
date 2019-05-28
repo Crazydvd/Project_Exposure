@@ -1,0 +1,86 @@
+fileFormatVersion: 2
+guid: cef1780e52ad12a4c8a80d4c434397d5
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
+  version: 17
+  mGraphInstanceData:
+  - graphLabel: chipsbag
+    prototypeName: chipsbag
+    graphDescIndex: 0
+    generateAllOutputs: 0
+    generateMipMaps: 1
+    preset: " <sbspreset pkgurl=\"pkg://chipsbag\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"819277864\" type=\"8\" value=\"10,10\" />\n  <presetinput identifier=\"Hue\"
+      uid=\"1518695643\" type=\"0\" value=\"0.63\" />\n  <presetinput identifier=\"Saturation\"
+      uid=\"1518695593\" type=\"0\" value=\"0.3\" />\n  <presetinput identifier=\"Lightness\"
+      uid=\"1518695589\" type=\"0\" value=\"0.58\" />\n </sbspreset>\n"
+    shaderName: Standard
+    outputNames: baseColor,normal,metallic,height,ambientOcclusion
+    texturePackingList:
+    - outputName: baseColor
+      alphaSource: baseColor
+    - outputName: normal
+      alphaSource: normal
+    - outputName: roughness
+      alphaSource: roughness
+    - outputName: metallic
+      alphaSource: smoothness
+    - outputName: height
+      alphaSource: height
+    - outputName: ambientOcclusion
+      alphaSource: ambientOcclusion
+    textureParameters:
+    - textureName: chipsbag - roughness
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: chipsbag - baseColor
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: chipsbag - normal
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: chipsbag - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: chipsbag - height
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: chipsbag - ambientOcclusion
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    colorSpaceList:
+    - outputName: baseColor
+      bLinear: 0
+    - outputName: normal
+      bLinear: 1
+    - outputName: roughness
+      bLinear: 1
+    - outputName: metallic
+      bLinear: 1
+    - outputName: height
+      bLinear: 1
+    - outputName: ambientOcclusion
+      bLinear: 1
+    inputTextureMap: []
+    targetSettingList:
+    - label: 
+      bLockRatio: 1
+      textureWidth: 1024
+      textureHeight: 1024
+      textureFormat: 0
+      bGenerateOnLoad: 1
+    material: {fileID: -4868508218414741439, guid: cef1780e52ad12a4c8a80d4c434397d5,
+      type: 3}
+    generatedTextures: []
