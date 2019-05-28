@@ -3577,6 +3577,8 @@ GameObject:
   - component: {fileID: 1803833437627455949}
   - component: {fileID: 5724609605885054616}
   - component: {fileID: 3069780925258389920}
+  - component: {fileID: 924049643}
+  - component: {fileID: 924049642}
   m_Layer: 10
   m_Name: ShardsContainer
   m_TagString: Untagged
@@ -3592,8 +3594,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2230446549101009449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.792, z: 0}
+  m_LocalScale: {x: 0.38412, y: 0.38412, z: 0.38412}
   m_Children:
   - {fileID: 5146601061800143442}
   - {fileID: 6154223387456788632}
@@ -3819,6 +3821,34 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 75dbeae5f1020c349be3a43a87cf94da, type: 3}
+--- !u!54 &924049643
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230446549101009449}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &924049642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230446549101009449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da792da4db060ca4283c5d2e09bf4d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2291538158603886624
 GameObject:
   m_ObjectHideFlags: 0
@@ -11853,7 +11883,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7053018738946281238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: df42478eab3fa7b4989d559137c0eec3, type: 2}
   m_CullingMode: 2
