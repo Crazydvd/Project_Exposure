@@ -33,6 +33,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField] float _pierceCooldownTime = 5;
     [SerializeField] bool _batteryMode = false;
     [SerializeField] float _batteryCooldownTime = 5;
+    public float OverchargeCooldownTime = 15; // should be able to get from the powerupmanager
 
     [SerializeField] Text _energyCounter;
     [SerializeField] float _startEnergy = 80;

@@ -22,18 +22,6 @@ public class MoveAlongBeltScript : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider other)
-    {
-        if (Action == null)
-        {
-            if (other.transform.root.tag.ToLower() == "conveyorbelt")
-            {
-                _lastEntered = other.GetComponent<ConveyorScript>();
-                Action = _lastEntered.Action;
-            }
-        }
-    }
-
     void OnTriggerExit(Collider other)
     {
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
@@ -43,5 +31,14 @@ public class MoveAlongBeltScript : MonoBehaviour
                 Action = null;
             }
         }
+    }
+
+    public void StartSelfDestruct(){
+        Invoke("RemoveRigidbody", 5f);
+    }
+
+    public void RemoveRigidbody(){
+        Destroy(GetComponent<Rigidbody>());
+        Destroy(gameObject, 5f);
     }
 }
