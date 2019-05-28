@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShardScript : MonoBehaviour
+public class MoveAlongBeltScript : MonoBehaviour
 {
     public System.Action<Transform> Action { get; set; }
 
@@ -15,11 +15,22 @@ public class ShardScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.transform.root.tag.ToLower());
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
         {
             _lastEntered = other.GetComponent<ConveyorScript>();
             Action = _lastEntered.Action;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (Action == null)
+        {
+            if (other.transform.root.tag.ToLower() == "conveyorbelt")
+            {
+                _lastEntered = other.GetComponent<ConveyorScript>();
+                Action = _lastEntered.Action;
+            }
         }
     }
 

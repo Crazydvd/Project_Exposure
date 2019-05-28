@@ -15,7 +15,7 @@ public class ConveyorScript : MonoBehaviour
     [SerializeField] float _rotateAngle = -20f;
 
     Transform _cornerPoint;
-    ShardScript _shard;
+    MoveAlongBeltScript _shard;
     static Material _conveyorMaterial;
 
     public System.Action<Transform> Action { get; private set; }
