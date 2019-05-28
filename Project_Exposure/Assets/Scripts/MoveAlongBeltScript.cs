@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MoveAlongBeltScript : MonoBehaviour
 {
-    public System.Action<Transform> Move { get; set; }
+    public System.Action<Transform> Move;
+    System.Action<Transform> _test;
 
     ConveyorScript _lastEntered = null;
     Transform _transform = null;
@@ -24,14 +25,10 @@ public class MoveAlongBeltScript : MonoBehaviour
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
         {
             _lastEntered = other.GetComponent<ConveyorScript>();
-            if (_lastEntered == null)
-            {
-                Debug.Log(gameObject.name);
-            }
             Move = _lastEntered.MoveObject;
         }
     }
-	
+
     void OnTriggerExit(Collider other)
     {
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
@@ -43,11 +40,13 @@ public class MoveAlongBeltScript : MonoBehaviour
         }
     }
 
-    public void StartSelfDestruct(){
+    public void StartSelfDestruct()
+    {
         Invoke("RemoveRigidbody", 15f);
     }
 
-    public void RemoveRigidbody(){
+    public void RemoveRigidbody()
+    {
         Destroy(GetComponent<Rigidbody>());
         Destroy(gameObject, 10f);
     }

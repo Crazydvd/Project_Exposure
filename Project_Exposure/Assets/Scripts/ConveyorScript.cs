@@ -27,10 +27,7 @@ public class ConveyorScript : MonoBehaviour
 
         MoveObject = _corner ? moveCorner : (System.Action<Transform>) moveStraight;
 
-        if (_conveyorMaterial == null)
-        {
-            _conveyorMaterial = GetComponent<Renderer>().material;
-        }
+        _conveyorMaterial = GetComponent<Renderer>().material;
 
         TimePerUnit = _speed;
     }
@@ -54,12 +51,12 @@ public class ConveyorScript : MonoBehaviour
     }
 
     //TODO: 
-            /**Find a way to set the speed seperately per conveyorbelt
-             **/
-            /**Also find a way to make the conveyorBelt be affected by slowdown (so need to use DeltaTime in a way)
-             * **/
-            /**and keep in mind that the speed of objects on the belt should match the belt (beltSpeed = objectSpeed / 2)
-             * **/
+    /**Find a way to set the speed seperately per conveyorbelt
+     **/
+    /**Also find a way to make the conveyorBelt be affected by slowdown (so need to use DeltaTime in a way)
+     * **/
+    /**and keep in mind that the speed of objects on the belt should match the belt (beltSpeed = objectSpeed / 2)
+     * **/
     public float TimePerUnit
     {
         get
