@@ -15,6 +15,8 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
+    [SerializeField] bool _isBuddy;
+    [SerializeField] BuddyScript _buddyScript;
     [SerializeField] List<GameObject> _tutorialZones;
 
     ScreenShake _screenShake;
@@ -161,9 +163,15 @@ public class ObstacleScript : MonoBehaviour
         _screenShake.StartShake(0.2f, 0.1f);
         shardsContainer.DetachChildren();
 
+        if(_isBuddy){
+            _buddyScript.InitiateCrash();
+        }
+
         GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
-        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier);
-        ShootScript.Multiplier += 1;
+
+        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier); // add score
+
+        ShootScript.Multiplier += 1; // increase multiplier
         Debug.Log(ShootScript.Multiplier);
         Destroy(gameObject);
     }
