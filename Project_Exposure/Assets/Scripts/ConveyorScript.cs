@@ -16,25 +16,36 @@ public class ConveyorScript : MonoBehaviour
 
     Transform _cornerPoint;
     MoveAlongBeltScript _shard;
-    static Material _conveyorMaterial;
+    Material _conveyorMaterial;
+    float _timeElapsed = 0;
 
-    public System.Action<Transform> Action { get; private set; }
+    public System.Action<Transform> MoveObject { get; private set; }
 
     void Start()
     {
         _cornerPoint = _corner ? transform.GetChild(0) : null;
 
-        Action = _corner ? moveCorner : (System.Action<Transform>) moveStraight;
+        MoveObject = _corner ? moveCorner : (System.Action<Transform>) moveStraight;
 
         if (_conveyorMaterial == null)
         {
             _conveyorMaterial = GetComponent<Renderer>().material;
         }
+
+        TimePerUnit = _speed;
+    }
+
+    void Update()
+    {
+        timeElapsed = _timeElapsed += Time.deltaTime;
     }
 
     void moveStraight(Transform pObject)
     {
-        pObject.position += (-transform.right * _speed) * Time.deltaTime;
+        // _deltaTime / _Time == Seconds per Unit
+        // _deltaTime * Speed == Units per Second
+        // (Time = 1 / Speed) && (Speed = 1 / Time)
+        pObject.position += -transform.right * Time.deltaTime * _speed;
     }
 
     void moveCorner(Transform pObject)
@@ -42,28 +53,40 @@ public class ConveyorScript : MonoBehaviour
         pObject.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
     }
 
-    public static float Speed
+    //TODO: 
+            /**Find a way to set the speed seperately per conveyorbelt
+             **/
+            /**Also find a way to make the conveyorBelt be affected by slowdown (so need to use DeltaTime in a way)
+             * **/
+            /**and keep in mind that the speed of objects on the belt should match the belt (beltSpeed = objectSpeed / 2)
+             * **/
+    public float TimePerUnit
     {
         get
         {
-            return _conveyorMaterial.GetFloat("_SpeedY");
+            return _speed;
         }
         set
         {
+            _speed = value;
             _conveyorMaterial.SetFloat("_SpeedY", value);
         }
     }
 
-    public static Vector2 SpeedVector
+    float timeElapsed
     {
         get
         {
-            return new Vector2(_conveyorMaterial.GetFloat("_SpeedX"), _conveyorMaterial.GetFloat("_SpeedY"));
+            return _conveyorMaterial.GetFloat("_TimeElapsed");
         }
         set
         {
-            _conveyorMaterial.SetFloat("_SpeedX", value.x);
-            _conveyorMaterial.SetFloat("_SpeedY", value.y);
+            _conveyorMaterial.SetFloat("_TimeElapsed", value);
         }
+    }
+
+    void OnDestroy()
+    {
+        Destroy(_conveyorMaterial);
     }
 }

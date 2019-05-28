@@ -13,8 +13,15 @@
 		_MaxHeight("MaxHeight", float) = 0.01
 		_OcclusionStrength("Occlusion Strength", float) = 1
 
+		[Header(The amount of seconds it takes to complete 1 cycle)]
 		_SpeedX("SpeedX", float) = 0
 		_SpeedY("SpeedY", float) = 1
+
+		[Header(How much ingame time has elapsed)]
+		_TimeElapsed("TimeOffset", float) = 0
+
+		[Header(the length of the object)]
+		_Length("Length", float) = 2
 	}
 		SubShader
 		{
@@ -61,12 +68,19 @@
 
 			float _SpeedX;
 			float _SpeedY;
+			float _TimeElapsed;
+			float _Length;
 
 			float _MaxHeight;
 
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
-				float2 timeOffset = float2(_Time.x * _SpeedX, _Time.x * _SpeedY);
+				// _deltaTime / _Time == Seconds per Cycle
+				// _deltaTime * Speed == Cycles per second
+				// (Time = 1 / Speed) && (Speed = 1 / Time)
+				float timeX = (_SpeedX == 0) ? 0 : _TimeElapsed * (_SpeedX / _Length);
+				float timeY = (_SpeedY == 0) ? 0 : _TimeElapsed * (_SpeedY / _Length);
+				float2 timeOffset = float2(timeX, timeY);
 
 				//Height map gives an offset to the uvs
 				float value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;

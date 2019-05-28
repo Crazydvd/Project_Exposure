@@ -30,7 +30,6 @@ public class TutorialZoneScript : MonoBehaviour
             _playerTrack = _player.transform.parent.GetComponent<Animator>();
             _initialSpeed = _playerTrack.speed;
             _playerTrack.speed = 0;
-            ConveyorScript.Speed = 0;
             _uiElement.SetActive(true);
         }
     }
@@ -40,7 +39,6 @@ public class TutorialZoneScript : MonoBehaviour
         if (_playerTrack != null)
         {
             _playerTrack.speed = _initialSpeed;
-            ConveyorScript.Speed = 1;
         }
 
         if (_uiElement != null)
