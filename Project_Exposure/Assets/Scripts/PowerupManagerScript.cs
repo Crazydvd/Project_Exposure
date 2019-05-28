@@ -5,8 +5,7 @@ using UnityEngine;
 public class PowerupManagerScript : MonoBehaviour
 {
     [SerializeField] ShootScript _playerScript;
-
-    bool _overcharge = false;
+    [SerializeField] float _overchargeTimeSpeed = 0.2f;
 
     void disableOvercharge()
     {
@@ -25,7 +24,7 @@ public class PowerupManagerScript : MonoBehaviour
 
     public void ActivateOvercharge()
     {
-        Time.timeScale = 0.2f;
-        Invoke("disableOvercharge", 15f * Time.timeScale);// / Time.timeScale);
+        Time.timeScale = _overchargeTimeSpeed;
+        Invoke("disableOvercharge", _playerScript.OverchargeCooldownTime * Time.timeScale);// / Time.timeScale);
     }
 }
