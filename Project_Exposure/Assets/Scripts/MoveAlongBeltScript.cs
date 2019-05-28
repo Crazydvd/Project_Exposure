@@ -34,11 +34,11 @@ public class MoveAlongBeltScript : MonoBehaviour
     }
 
     public void StartSelfDestruct(){
-        Invoke("RemoveRigidbody", 5f);
+        Invoke("RemoveRigidbody", 15f);
     }
 
     public void RemoveRigidbody(){
         Destroy(GetComponent<Rigidbody>());
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 10f);
     }
 }

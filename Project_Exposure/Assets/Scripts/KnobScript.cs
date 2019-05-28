@@ -59,7 +59,6 @@ public class KnobScript : MonoBehaviour
     public void SetHigh()
     {
         _targetRotation = new Vector3(0, 0, -90);
-        _holding = true;
         _shootScript.SwitchWave(Frequency.HIGH);
         playAnimation(Frequency.HIGH);
     }
@@ -67,7 +66,6 @@ public class KnobScript : MonoBehaviour
     public void SetMedium()
     {
         _targetRotation = new Vector3(0, 0, 0);
-        _holding = true;
         _shootScript.SwitchWave(Frequency.MEDIUM);
         playAnimation(Frequency.MEDIUM);
     }
@@ -75,7 +73,6 @@ public class KnobScript : MonoBehaviour
     public void SetLow()
     {
         _targetRotation = new Vector3(0, 0, 90);
-        _holding = true;
         _shootScript.SwitchWave(Frequency.LOW);
         playAnimation(Frequency.LOW);
     }
