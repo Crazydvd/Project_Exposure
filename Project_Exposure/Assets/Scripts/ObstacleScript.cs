@@ -137,9 +137,13 @@ public class ObstacleScript : MonoBehaviour
 
             child.gameObject.SetActive(true);
             child.gameObject.layer = 11;
-            if (child.GetComponent<MoveAlongBeltScript>() == null)
+            MoveAlongBeltScript moveAlongBeltScript = child.GetComponent<MoveAlongBeltScript>();
+            if (moveAlongBeltScript == null)
             {
-                child.gameObject.AddComponent<MoveAlongBeltScript>();
+                child.gameObject.AddComponent<MoveAlongBeltScript>().StartSelfDestruct();
+            }
+            else{
+                moveAlongBeltScript.StartSelfDestruct();
             }
 
             childRigid.isKinematic = false;
