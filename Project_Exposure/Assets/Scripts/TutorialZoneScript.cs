@@ -10,25 +10,19 @@ public class TutorialZoneScript : MonoBehaviour
     [SerializeField] GameObject _uiElement;
     GameObject _player;
     Animator _playerTrack;
-    float _initialSpeed;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.ToUpper() == "MAINCAMERA")
+        if (other.tag.ToUpper() == "MAINCAMERA" && !_player)
         {
             _player = other.gameObject;
 
-            //_player.GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject;
-            //_initialSpeed = _playerTrack.speed;
-            //_playerTrack.speed = 0;
-            //_player.GetComponent<CinemachineTrack>().GetChildTracks(
             if (_uiElement != null)
             {
                 _uiElement.SetActive(true);
             }
 
             _playerTrack = _player.transform.parent.GetComponent<Animator>();
-            _initialSpeed = _playerTrack.speed;
             _playerTrack.speed = 0;
             _uiElement.SetActive(true);
         }
@@ -38,7 +32,7 @@ public class TutorialZoneScript : MonoBehaviour
     {
         if (_playerTrack != null)
         {
-            _playerTrack.speed = _initialSpeed;
+            _playerTrack.speed = 1;
         }
 
         if (_uiElement != null)
