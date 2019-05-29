@@ -174,7 +174,7 @@ public class ObstacleScript : MonoBehaviour
         _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier); // add score
 
         ShootScript.Multiplier += 1; // increase multiplier
-        Debug.Log(ShootScript.Multiplier);
+        Debug.Log(ShootScript.Multiplier + " multi");
         Destroy(gameObject);
     }
 
