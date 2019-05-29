@@ -54,7 +54,7 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShootScript.Multiplier = 1;
+        Multiplier = 1;
         SetText();
 
         _waves.Add(Frequency.LOW, _bulletType1);

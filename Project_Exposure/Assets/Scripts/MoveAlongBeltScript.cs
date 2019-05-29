@@ -5,7 +5,6 @@ using UnityEngine;
 public class MoveAlongBeltScript : MonoBehaviour
 {
     public System.Action<Transform> Move;
-    System.Action<Transform> _test;
 
     ConveyorScript _lastEntered = null;
     Transform _transform = null;
@@ -24,7 +23,7 @@ public class MoveAlongBeltScript : MonoBehaviour
     {
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
         {
-            _lastEntered = other.GetComponent<ConveyorScript>();
+            _lastEntered = other.GetComponent<ConveyorScript>() ?? other.gameObject.AddComponent<ConveyorScript>();
             Move = _lastEntered.MoveObject;
         }
     }

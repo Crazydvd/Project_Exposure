@@ -7,7 +7,7 @@ public class BuddyScript : MonoBehaviour
     [SerializeField] ObstacleScript _heldObject;
     SphereCollider _collider;
     Animator _animator;
-    
+
     void Start()
     {
         _collider = GetComponent<SphereCollider>();
@@ -22,7 +22,8 @@ public class BuddyScript : MonoBehaviour
         Invoke("ShatterHeldObject", 1f);
     }
 
-    public void ShatterHeldObject(){
+    public void ShatterHeldObject()
+    {
         if (_heldObject)
         {
             _heldObject.Shatter();

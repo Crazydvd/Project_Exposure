@@ -14,9 +14,9 @@ public class ConveyorScript : MonoBehaviour
     [Header("Corner variables")]
     [SerializeField] float _rotateAngle = -20f;
 
-    Transform _cornerPoint;
-    MoveAlongBeltScript _shard;
-    Material _conveyorMaterial;
+    Transform _cornerPoint = null;
+    MoveAlongBeltScript _shard = null;
+    Material _conveyorMaterial = null;
     float _timeElapsed = 0;
 
     public System.Action<Transform> MoveObject { get; private set; }
@@ -29,7 +29,7 @@ public class ConveyorScript : MonoBehaviour
 
         _conveyorMaterial = GetComponent<Renderer>().material;
 
-        TimePerUnit = _speed;
+        Speed = _speed;
     }
 
     void Update()
@@ -39,9 +39,6 @@ public class ConveyorScript : MonoBehaviour
 
     void moveStraight(Transform pObject)
     {
-        // _deltaTime / _Time == Seconds per Unit
-        // _deltaTime * Speed == Units per Second
-        // (Time = 1 / Speed) && (Speed = 1 / Time)
         pObject.position += -transform.right * Time.deltaTime * _speed;
     }
 
@@ -50,14 +47,7 @@ public class ConveyorScript : MonoBehaviour
         pObject.RotateAround(_cornerPoint.position, _cornerPoint.up, _rotateAngle * Time.deltaTime);
     }
 
-    //TODO: 
-    /**Find a way to set the speed seperately per conveyorbelt
-     **/
-    /**Also find a way to make the conveyorBelt be affected by slowdown (so need to use DeltaTime in a way)
-     * **/
-    /**and keep in mind that the speed of objects on the belt should match the belt (beltSpeed = objectSpeed / 2)
-     * **/
-    public float TimePerUnit
+    public float Speed
     {
         get
         {

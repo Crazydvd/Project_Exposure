@@ -12,7 +12,7 @@ public class ScoreScript : MonoBehaviour
     float _originalTextSize;
     bool _textAnimationUpscale;
     bool _textAnimationDownscale;
-    
+
     void Start()
     {
         _textUI = GetComponent<Text>();
@@ -22,16 +22,20 @@ public class ScoreScript : MonoBehaviour
 
     void Update()
     {
-        if(_textAnimationUpscale){
-            if(_textUI.fontSize < _originalTextSize + 10){
+        if (_textAnimationUpscale)
+        {
+            if (_textUI.fontSize < _originalTextSize + 10)
+            {
                 _textUI.fontSize++;
             }
-            else{
+            else
+            {
                 _textAnimationUpscale = false;
                 _textAnimationDownscale = true;
             }
         }
-        if(_textAnimationDownscale){
+        if (_textAnimationDownscale)
+        {
             if (_textUI.fontSize > _originalTextSize)
             {
                 _textUI.fontSize--;
