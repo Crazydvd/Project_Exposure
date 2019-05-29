@@ -37,8 +37,7 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField] Text _energyCounter;
     [SerializeField] float _startEnergy = 80;
-
-    float _energyCount;
+    [SerializeField] float _energyCount;
     string _energyText;
 
     GameObject _previousHit;

@@ -23,7 +23,7 @@ public class TriggerAnimationScript : MonoBehaviour
     {
         if ((_allTrigger || checkTrigger(other.gameObject)) && _animator != null)
         {
-            _animator.Play(_animationState);
+            _animator.Play(_animationState, 0);
         }
     }
 
