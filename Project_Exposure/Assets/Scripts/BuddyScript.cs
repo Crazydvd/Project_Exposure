@@ -22,7 +22,8 @@ public class BuddyScript : MonoBehaviour
     public void InitiateCrash()
     {
         _collider.enabled = true;
-        transform.parent.gameObject.AddComponent<Rigidbody>().AddForce(-transform.right.normalized * 200);
+        transform.GetComponent<Rigidbody>().isKinematic = false;
+        _heldObject.gameObject.AddComponent<Rigidbody>();
         _animator.enabled = false;
         _hovering.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/dying", gameObject);

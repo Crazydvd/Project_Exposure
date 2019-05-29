@@ -20,6 +20,7 @@ public class ConveyorScript : MonoBehaviour
     float _timeElapsed = 0;
 
     public System.Action<Transform> MoveObject { get; private set; }
+    float _oldSpeed;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class ConveyorScript : MonoBehaviour
         _conveyorMaterial = GetComponent<Renderer>().material;
 
         Speed = _speed;
+        _oldSpeed = _speed;
     }
 
     void Update()
@@ -75,5 +77,10 @@ public class ConveyorScript : MonoBehaviour
     void OnDestroy()
     {
         Destroy(_conveyorMaterial);
+    }
+
+    public float GetOldSpeed()
+    {
+        return _oldSpeed;
     }
 }

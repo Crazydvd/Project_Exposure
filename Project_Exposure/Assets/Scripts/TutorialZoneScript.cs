@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class TutorialZoneScript : MonoBehaviour
 {
     [SerializeField] GameObject _uiElement;
+    [SerializeField] bool _stopBelt = false;
+    [SerializeField] GameObject _conveyorBelt;
     GameObject _player;
     Animator _playerTrack;
 
@@ -25,6 +27,19 @@ public class TutorialZoneScript : MonoBehaviour
             _playerTrack = _player.transform.parent.GetComponent<Animator>();
             _playerTrack.speed = 0;
             _uiElement.SetActive(true);
+
+            if (!_stopBelt)
+                return;
+            
+            //Stop the belt
+            for (int i = 0; i < _conveyorBelt.transform.childCount; i++)
+            {
+                ConveyorScript script = _conveyorBelt.transform.GetChild(i).GetComponentInChildren<ConveyorScript>();
+                if (script != null)
+                {
+                    script.Speed = 0.0f;
+                }
+            }
         }
     }
 
@@ -38,6 +53,19 @@ public class TutorialZoneScript : MonoBehaviour
         if (_uiElement != null)
         {
             _uiElement.SetActive(false);
+        }
+
+        if (!_stopBelt)
+        {
+            //Start the belt again
+            for (int i = 0; i < _conveyorBelt.transform.childCount; i++)
+            {
+                ConveyorScript script = _conveyorBelt.transform.GetChild(i).GetComponentInChildren<ConveyorScript>();
+                if (script != null)
+                {
+                    script.Speed = script.GetOldSpeed();
+                }
+            }
         }
         Destroy(gameObject);
     }
