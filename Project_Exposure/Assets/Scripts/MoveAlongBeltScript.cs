@@ -23,7 +23,7 @@ public class MoveAlongBeltScript : MonoBehaviour
     {
         if (other.transform.root.tag.ToLower() == "conveyorbelt")
         {
-            _lastEntered = other.GetComponent<ConveyorScript>();
+            _lastEntered = other.GetComponent<ConveyorScript>() ?? other.gameObject.AddComponent<ConveyorScript>();
             Move = _lastEntered.MoveObject;
         }
     }
