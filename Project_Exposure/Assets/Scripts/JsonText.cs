@@ -10,12 +10,7 @@ public class JsonText : MonoBehaviour
 
     void Start()
     {
-        GetComponent<Text>().text = getText(_textType);
-    }
-
-    string getText(string pType)
-    {
-        return JsonVariables.Instance[pType][LanguageSettings.Language.ToString()];
+        GetComponent<Text>().text = GetText(_textType);
     }
 
     public static string GetText(string pType)

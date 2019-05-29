@@ -37,7 +37,7 @@ public class BulletScript : MonoBehaviour
             transform.position += _velocity * (Time.deltaTime / Time.timeScale);
         }
 
-        if (Mathf.Approximately(Time.timeScale, 1f) && _slowdown)
+        if (_slowdown && Mathf.Approximately(Time.timeScale, 1f))
         { // end of overcharge
             _rigidbody.isKinematic = false;
             _rigidbody.velocity = _velocity;
@@ -50,7 +50,8 @@ public class BulletScript : MonoBehaviour
         _velocity = pVelocity;
     }
 
-    public void SelfDestruct(){
+    public void SelfDestruct()
+    {
         if (!PierceShotMode)
         {
             ShootScript.Multiplier = 1;
