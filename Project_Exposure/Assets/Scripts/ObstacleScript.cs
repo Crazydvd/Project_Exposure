@@ -144,7 +144,8 @@ public class ObstacleScript : MonoBehaviour
             {
                 child.gameObject.AddComponent<MoveAlongBeltScript>().StartSelfDestruct();
             }
-            else{
+            else
+            {
                 moveAlongBeltScript.StartSelfDestruct();
             }
 
@@ -163,7 +164,8 @@ public class ObstacleScript : MonoBehaviour
         _screenShake.StartShake(0.2f, 0.1f);
         shardsContainer.DetachChildren();
 
-        if(_isBuddy){
+        if (_isBuddy)
+        {
             _buddyScript.InitiateCrash();
         }
 

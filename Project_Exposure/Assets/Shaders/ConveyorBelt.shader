@@ -1,4 +1,4 @@
-﻿Shader "Custom/Conveyor Belt"
+﻿Shader "Custom/ConveyorBelt"
 {
 	Properties
 	{
@@ -19,9 +19,6 @@
 
 		[Header(How much ingame time has elapsed)]
 		_TimeElapsed("TimeOffset", float) = 0
-
-		[Header(the length of the object)]
-		_Length("Length", float) = 2
 	}
 		SubShader
 		{
@@ -75,11 +72,8 @@
 
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
-				// _deltaTime / _Time == Seconds per Cycle
-				// _deltaTime * Speed == Cycles per second
-				// (Time = 1 / Speed) && (Speed = 1 / Time)
-				float timeX = (_SpeedX == 0) ? 0 : _TimeElapsed * (_SpeedX / _Length);
-				float timeY = (_SpeedY == 0) ? 0 : _TimeElapsed * (_SpeedY / _Length);
+				float timeX = (_SpeedX == 0) ? 0 : _TimeElapsed * _SpeedX;
+				float timeY = (_SpeedY == 0) ? 0 : _TimeElapsed * _SpeedY;
 				float2 timeOffset = float2(timeX, timeY);
 
 				//Height map gives an offset to the uvs

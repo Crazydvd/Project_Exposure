@@ -5,7 +5,6 @@ using UnityEngine;
 public class MoveAlongBeltScript : MonoBehaviour
 {
     public System.Action<Transform> Move;
-    System.Action<Transform> _test;
 
     ConveyorScript _lastEntered = null;
     Transform _transform = null;

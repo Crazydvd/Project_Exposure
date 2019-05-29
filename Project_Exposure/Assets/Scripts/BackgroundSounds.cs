@@ -9,6 +9,4 @@ public class BackgroundSounds : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/conveyerbeltloop");
         FMODUnity.RuntimeManager.PlayOneShot("event:/backgroundnoise");
     }
-
-
 }

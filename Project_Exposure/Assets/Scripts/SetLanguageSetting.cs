@@ -8,6 +8,6 @@ public class SetLanguageSetting : MonoBehaviour
 
     public void SetLanguage()
     {
-        LanguageSettings.Language = (Language) _language;
+        LanguageSettings.Language = _language;
     }
 }
