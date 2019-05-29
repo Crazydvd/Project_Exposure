@@ -11,10 +11,10 @@ public class TriggerEnableObjectsScript : MonoBehaviour
         TOGGLE,
     }
 
-
     [Header("Objects that you want to interact with")]
     [SerializeField] GameObject[] _objects;
 
+    [Header("Enable, Disable or switch the current state of the objects?")]
     [SerializeField] Mode _currentMode = Mode.TOGGLE;
 
     [Space]

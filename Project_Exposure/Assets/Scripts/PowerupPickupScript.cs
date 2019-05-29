@@ -10,7 +10,7 @@ public class PowerupPickupScript : MonoBehaviour
 
     PowerupManagerScript _powerupManagerScript;
 
-    private void Start()
+    void Start()
     {
         _powerupManagerScript = GetComponentInParent<PowerupManagerScript>();
     }

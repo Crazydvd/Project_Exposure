@@ -50,6 +50,7 @@ public class PickupScript : MonoBehaviour
 
         if (_grabbedObject.gameObject.name.ToLower().Contains("container"))
         {
+            _grabbedObject.GetComponent<MoveAlongBeltScript>().Move = null;
             _originalParent = _grabbedObject.transform.parent.parent;
             _grabbedObject.parent.SetParent(_grabPosition);
         }
@@ -77,7 +78,6 @@ public class PickupScript : MonoBehaviour
         }
 
         _rigidbody.isKinematic = false;
-
         _grabbedObject = null;
     }
 
