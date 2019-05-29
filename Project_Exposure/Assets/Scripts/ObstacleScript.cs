@@ -82,7 +82,7 @@ public class ObstacleScript : MonoBehaviour
                                           _oldPosVector.y + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
                                           _oldPosVector.z + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2));
         //add a shake speed
-        if (_shakeDelay >= (5 - (int) _frequency) - _shakeSpeed)
+        if (_shakeDelay >= (5 - (int) _frequency) - _shakeSpeed * Time.deltaTime)
         {
             transform.localPosition = shakeVector;
             _shakeDelay = 0;
@@ -174,7 +174,7 @@ public class ObstacleScript : MonoBehaviour
         _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier); // add score
 
         ShootScript.Multiplier += 1; // increase multiplier
-        Debug.Log(ShootScript.Multiplier);
+        Debug.Log(ShootScript.Multiplier + " multi");
         Destroy(gameObject);
     }
 
