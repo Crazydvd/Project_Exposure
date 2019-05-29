@@ -13172,8 +13172,8 @@ GameObject:
   - component: {fileID: 3171813286060003931}
   - component: {fileID: 9167079290963193506}
   - component: {fileID: 6449718096669770484}
-  - component: {fileID: 8180805497321498844}
-  - component: {fileID: 2687216304282635102}
+  - component: {fileID: 6289524547603301203}
+  - component: {fileID: 8417353523162642274}
   m_Layer: 10
   m_Name: ShardsContainer
   m_TagString: Untagged
@@ -13402,8 +13402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63682d763a6dd1498c9810d3426ea8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &8180805497321498844
-MeshCollider:
+--- !u!136 &6289524547603301203
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13412,11 +13412,11 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7230981733657565749, guid: 56aa0d7b1f32a9f4e83971ab3fa451b6, type: 3}
---- !u!54 &2687216304282635102
+  m_Radius: 0.1140182
+  m_Height: 0.4257877
+  m_Direction: 1
+  m_Center: {x: -0.00013279915, y: 0.042069674, z: -0.000000044703484}
+--- !u!54 &8417353523162642274
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

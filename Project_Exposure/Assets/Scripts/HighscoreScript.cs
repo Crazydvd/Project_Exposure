@@ -28,11 +28,11 @@ public class HighscoreScript : MonoBehaviour
 
     void OnEnable()
     {
-        for (int i = _highscoreContainer.transform.childCount - 1; i > 0; i--)
+        for (int i = _highscoreContainer.transform.childCount - 1; i > -1; i--)
         {
             Destroy(_highscoreContainer.transform.GetChild(i).gameObject);
         }
-
+        Debug.Log(_leaderBoard.Count);
         for (int i = 0; i < _leaderBoard.Count; i++)
         {
             GameObject score = Instantiate(_highscoreTemplate, _highscoreContainer.transform);
@@ -60,6 +60,9 @@ public class HighscoreScript : MonoBehaviour
                 _leaderBoard.Insert(i, entry);
                 break;
             }
+        }
+        if(_leaderBoard.Count < 1){
+            _leaderBoard.Add(entry);
         }
 
         if (_leaderBoard.Count > 10)
