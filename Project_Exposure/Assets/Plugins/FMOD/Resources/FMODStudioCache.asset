@@ -23,6 +23,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 851
+--- !u!114 &-7718188877526935068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dying
+  m_EditorClassIdentifier: 
+  Path: event:/Dying
+  guid: fe542f1c1db7354397e2a1f949117fdf
+  Banks:
+  - {fileID: 7919498588777065285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1683
 --- !u!114 &-7220659351286714881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,12 +163,14 @@ MonoBehaviour:
   - {fileID: -7220659351286714881}
   - {fileID: -4524872567357718761}
   - {fileID: -5659596842521492377}
+  - {fileID: 3140197591036069100}
+  - {fileID: -7718188877526935068}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7919498588777065285}
   StringsBanks:
   - {fileID: 214372204325172542}
-  stringsBankWriteTime: 636945587505096251
+  stringsBankWriteTime: 636947251737892997
   cacheVersion: 3
 --- !u!114 &214372204325172542
 MonoBehaviour:
@@ -161,12 +186,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Project Exposure\Project_Exposure\Assets\FMOD\Build\Desktop\Master Bank.strings.bank
   SubDir: 
-  lastModified: 636945587505096251
+  lastModified: 636947251737892997
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1140
+    Value: 1226
   Exists: 1
+--- !u!114 &3140197591036069100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/hovering
+  m_EditorClassIdentifier: 
+  Path: event:/hovering
+  guid: b62e1b096adc3f4b8343b56e3f10d460
+  Banks:
+  - {fileID: 7919498588777065285}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22000
 --- !u!114 &3292336919940083180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +233,7 @@ MonoBehaviour:
   - {fileID: 7919498588777065285}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -208,7 +256,7 @@ MonoBehaviour:
   - {fileID: 7919498588777065285}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -250,11 +298,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\Project Exposure\Project_Exposure\Assets\FMOD\Build\Desktop\Master Bank.bank
   SubDir: 
-  lastModified: 636945587505086278
+  lastModified: 636947251737883005
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 419168
+    Value: 667296
   Exists: 1
 --- !u!114 &8049283142629795166
 MonoBehaviour:
