@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef2985ceb3a831c49a58ec3ca24c2b39
+guid: 181d8a55aee8cd44b8c839f873c87839
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -10,15 +10,14 @@ ScriptedImporter:
   script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
   version: 17
   mGraphInstanceData:
-  - graphLabel: MetalWall
-    prototypeName: MetalWall
+  - graphLabel: ConcreteWall
+    prototypeName: ConcreteWall
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://MetalWall\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
-      uid=\"2886308529\" type=\"8\" value=\"11,11\" />\n  <presetinput identifier=\"DamageValue\"
-      uid=\"3332442665\" type=\"0\" value=\"0.044\" />\n  <presetinput identifier=\"MetallicValue\"
-      uid=\"3332440387\" type=\"0\" value=\"0.419\" />\n </sbspreset>\n"
+    preset: " <sbspreset pkgurl=\"pkg://ConcreteWall\" label=\"\" >\n  <presetinput
+      identifier=\"$outputsize\" uid=\"2016217542\" type=\"8\" value=\"11,11\" />\n
+      </sbspreset>\n"
     shaderName: Standard
     outputNames: baseColor,normal,metallic,height,ambientOcclusion
     texturePackingList:
@@ -35,27 +34,27 @@ ScriptedImporter:
     - outputName: ambientOcclusion
       alphaSource: ambientOcclusion
     textureParameters:
-    - textureName: MetalWall - roughness
+    - textureName: ConcreteWall - roughness
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: MetalWall - baseColor
+    - textureName: ConcreteWall - baseColor
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: MetalWall - normal
+    - textureName: ConcreteWall - normal
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: MetalWall - metallic
+    - textureName: ConcreteWall - metallic
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: MetalWall - height
+    - textureName: ConcreteWall - height
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: MetalWall - ambientOcclusion
+    - textureName: ConcreteWall - ambientOcclusion
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -80,6 +79,6 @@ ScriptedImporter:
       textureHeight: 2048
       textureFormat: 0
       bGenerateOnLoad: 1
-    material: {fileID: -1503242863662918132, guid: ef2985ceb3a831c49a58ec3ca24c2b39,
+    material: {fileID: 4222489026672749072, guid: 181d8a55aee8cd44b8c839f873c87839,
       type: 3}
     generatedTextures: []
