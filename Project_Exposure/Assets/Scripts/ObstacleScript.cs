@@ -166,7 +166,7 @@ public class ObstacleScript : MonoBehaviour
             _buddyScript.InitiateCrash();
         }
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
 
         _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier); // add score
 
