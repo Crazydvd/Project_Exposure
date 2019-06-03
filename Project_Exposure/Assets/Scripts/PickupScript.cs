@@ -21,6 +21,14 @@ public class PickupScript : MonoBehaviour
     [SerializeField] int[] _pickupAbleLayers;
     [SerializeField] string[] _pickupAbleNames;
 
+    void Start()
+    {
+        if (_grabPosition.childCount > 0)
+        {
+            _grabbedObject = _grabPosition.GetChild(0);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         Transform test = other.transform;
