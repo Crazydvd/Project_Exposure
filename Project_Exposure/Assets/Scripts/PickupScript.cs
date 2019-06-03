@@ -25,7 +25,7 @@ public class PickupScript : MonoBehaviour
     {
         if (_grabPosition.childCount > 0)
         {
-            _canGrab = _grabPosition.GetChild(0).GetComponentInChildren<Rigidbody>().transform;
+            _canGrab = _grabPosition.GetComponentInChildren<Rigidbody>().transform;
             Pickup();
         }
     }
