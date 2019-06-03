@@ -10,6 +10,9 @@ public class TutorialZoneScript : MonoBehaviour
     [SerializeField] GameObject _uiElement;
     [SerializeField] bool _stopBelt = false;
     [SerializeField] GameObject _conveyorBelt;
+    [SerializeField] ObstacleScript[] _obstacles;
+
+    int _obstacleCount;
     GameObject _player;
     Animator _playerTrack;
 
@@ -17,6 +20,11 @@ public class TutorialZoneScript : MonoBehaviour
 
     void Start()
     {
+        foreach(ObstacleScript obstacle in _obstacles){
+            obstacle.SetTutorialZone(this);
+            _obstacleCount++;
+        }
+        
         if (_stopBelt)
         {
             (_control = GetComponent<ControlConveyorBelt>() ?? gameObject.AddComponent<ControlConveyorBelt>()).AddConveyorBelt(_conveyorBelt);
@@ -47,17 +55,22 @@ public class TutorialZoneScript : MonoBehaviour
         }
     }
 
+    // signal that one of the obstacles has been destroyed
+    public void RemoveObstacle(){
+        _obstacleCount--;
+        if(_obstacleCount < 1){
+            ReenablePlayer();
+        }
+    }
+
     public void ReenablePlayer()
     {
-        if (_playerTrack != null)
+        if (_playerTrack)
         {
             _playerTrack.speed = 1;
         }
 
-        if (_uiElement != null)
-        {
-            _uiElement.SetActive(false);
-        }
+        _uiElement?.SetActive(false);
 
         if (!_stopBelt)
         {
