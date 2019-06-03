@@ -37,7 +37,10 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField] Text _energyCounter;
     [SerializeField] float _startEnergy = 80;
-    [SerializeField] float _energyCount;
+    [SerializeField] float _energyRegainSpeed = 0.25f;
+    [SerializeField] float _energyRegainDelay = 0.5f;
+    float _energyCount;
+    float _regainTime = 1f;
     string _energyText;
 
     GameObject _previousHit;
@@ -70,11 +73,21 @@ public class ShootScript : MonoBehaviour
     {
         SwitchWave();
 
+        if (_regainTime > 0)
+        {
+            _regainTime -= Time.deltaTime;
+        }
+
+        if (_energyCount > 0 && _regainTime <= 0)
+        {
+            RemoveEnergy(_energyRegainSpeed);
+        }
+
         if (!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) // check if mouse isn't hovering over button
         {
             if (!_rayMode)
             {
-                if (Input.GetMouseButtonDown(0) && _energyCount > 0)
+                if (Input.GetMouseButtonDown(0) && _energyCount < 100) //was > 0
                 {
                     int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
                     Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -102,16 +115,18 @@ public class ShootScript : MonoBehaviour
                     Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
                     bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
+                    AddEnergy(10f);
+                    _regainTime = _energyRegainDelay;
 
                     if (_pierceMode)
                     {
                         bullet.GetComponent<BulletScript>().PierceShotMode = true;
                     }
 
-                    if (!_batteryMode)
-                    {
-                        RemoveEnergy();
-                    }
+                    //if (!_batteryMode)
+                    //{
+                    //    RemoveEnergy();
+                    //}
                 }
             }
             else
@@ -206,12 +221,12 @@ public class ShootScript : MonoBehaviour
     public void RemoveEnergy(float pAmount = 1)
     {
         _energyCount -= pAmount;
-        _energyCounter.text = _energyText + _energyCount;
+        _energyCounter.text = _energyText + (int) _energyCount;
     }
     public void AddEnergy(float pAmount = 1)
     {
         _energyCount += pAmount;
-        _energyCounter.text = _energyText + _energyCount;
+        _energyCounter.text = _energyText + (int) _energyCount;
     }
 
     public void EnablePierceShot()
@@ -240,6 +255,6 @@ public class ShootScript : MonoBehaviour
     {
         _energyCount = _startEnergy;
         _energyText = JsonText.GetText("ENERGYTEXT") + ": ";
-        _energyCounter.text = _energyText + _energyCount;
+        _energyCounter.text = _energyText + (int) _energyCount;
     }
 }
