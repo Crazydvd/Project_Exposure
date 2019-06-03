@@ -32,6 +32,7 @@ public class ObstacleScript : MonoBehaviour
         _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
         _scoreUI = GameObject.Find("Score").GetComponent<Text>();
         setMaterial();
+        transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Obstacles");
     }
 
     void OnValidate()
@@ -166,7 +167,7 @@ public class ObstacleScript : MonoBehaviour
             _buddyScript.InitiateCrash();
         }
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
 
         _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier); // add score
 

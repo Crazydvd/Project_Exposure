@@ -7,10 +7,16 @@ using UnityEngine.UI;
 public class JsonText : MonoBehaviour
 {
     [SerializeField] string _textType;
+    Text _text;
 
     void Start()
     {
-        GetComponent<Text>().text = GetText(_textType);
+        _text = GetComponent<Text>();
+        _text.text = GetText(_textType);
+    }
+
+    public void ReloadText(){
+        _text.text = GetText(_textType);
     }
 
     public static string GetText(string pType)
