@@ -32,6 +32,7 @@ public class ObstacleScript : MonoBehaviour
         _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
         _scoreUI = GameObject.Find("Score").GetComponent<Text>();
         setMaterial();
+        transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Obstacles");
     }
 
     void OnValidate()
