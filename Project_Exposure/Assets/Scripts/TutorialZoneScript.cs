@@ -20,11 +20,12 @@ public class TutorialZoneScript : MonoBehaviour
 
     void Start()
     {
-        foreach(ObstacleScript obstacle in _obstacles){
+        foreach (ObstacleScript obstacle in _obstacles)
+        {
             obstacle.SetTutorialZone(this);
             _obstacleCount++;
         }
-        
+
         if (_stopBelt)
         {
             (_control = GetComponent<ControlConveyorBelt>() ?? gameObject.AddComponent<ControlConveyorBelt>()).AddConveyorBelt(_conveyorBelt);
@@ -32,7 +33,7 @@ public class TutorialZoneScript : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-    {
+    {      
         if (other.tag.ToUpper() == "MAINCAMERA" && !_player)
         {
             _player = other.gameObject;
@@ -56,9 +57,11 @@ public class TutorialZoneScript : MonoBehaviour
     }
 
     // signal that one of the obstacles has been destroyed
-    public void RemoveObstacle(){
+    public void RemoveObstacle()
+    {
         _obstacleCount--;
-        if(_obstacleCount < 1){
+        if (_obstacleCount < 1)
+        {
             ReenablePlayer();
         }
     }
@@ -72,7 +75,7 @@ public class TutorialZoneScript : MonoBehaviour
 
         _uiElement?.SetActive(false);
 
-        if (!_stopBelt)
+        if ( _stopBelt)
         {
             _control.StartBelt();
         }
