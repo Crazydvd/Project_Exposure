@@ -17,8 +17,8 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _highFreqMaterial;
     [SerializeField] bool _isBuddy;
     [SerializeField] BuddyScript _buddyScript;
-    [SerializeField] List<GameObject> _tutorialZones;
 
+    TutorialZoneScript _tutorialZone;
     ScreenShake _screenShake;
     Vector3 _oldPosVector;
     Text _scoreUI;
@@ -124,10 +124,7 @@ public class ObstacleScript : MonoBehaviour
     public void Shatter()
     {
         //if a tutorial zone is linked to this object, resume gameplay on shatter
-        if (_tutorialZones.Count > 0)
-        {
-            _tutorialZones[0].GetComponent<TutorialZoneScript>().ReenablePlayer();
-        }
+        _tutorialZone?.GetComponent<TutorialZoneScript>().RemoveObstacle();
 
         Transform shardsContainer = transform.GetChild(0).transform;
 
@@ -181,5 +178,9 @@ public class ObstacleScript : MonoBehaviour
     public Frequency GetFreq()
     {
         return _frequency;
+    }
+
+    public void SetTutorialZone(TutorialZoneScript pTutorialZoneScript){
+        _tutorialZone = pTutorialZoneScript;
     }
 }
