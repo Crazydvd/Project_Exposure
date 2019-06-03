@@ -406,12 +406,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6728949}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &6728951 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7542150726777151220, guid: 80a2b904fdc088c40a4df482bcda39ab,
-    type: 3}
-  m_PrefabInstance: {fileID: 6728949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &12439451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,8 +1818,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 526025755}
-  _animationState: HydraulicArm_TutorialStart
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -4781,8 +4775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 920162720}
-  _animationState: HydraulicArm_TutorialStart
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -5139,8 +5133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 385760791}
-  _animationState: WallSlidingAnimation
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -5217,8 +5211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 306764755}
-  _animationState: WallSlidingAnimation
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -5596,6 +5590,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7542150727530189805, guid: 80a2b904fdc088c40a4df482bcda39ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80a2b904fdc088c40a4df482bcda39ab, type: 3}
+--- !u!114 &505164168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6139688197974497008, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+    type: 3}
+  m_PrefabInstance: {fileID: 617575535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c323335ead2f458c9716306bf72f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &515631416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5773,12 +5779,6 @@ Transform:
   m_Father: {fileID: 1610448837}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &526025755 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7542150726777151220, guid: 80a2b904fdc088c40a4df482bcda39ab,
-    type: 3}
-  m_PrefabInstance: {fileID: 504592063}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &526025756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3301612342666648785, guid: 80a2b904fdc088c40a4df482bcda39ab,
@@ -5970,12 +5970,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 612746673}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &612746675 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2079177945, guid: 0202b2a82ae510541bbad5bfa82ef26a,
-    type: 3}
-  m_PrefabInstance: {fileID: 612746673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &617575535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6048,6 +6042,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1d65f7150035b1f4a99d4d5ce8bbd77a, type: 2}
+    - target: {fileID: 6139688197974497008, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _energyCounter
+      value: 
+      objectReference: {fileID: 1653713879}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8f4961a9e63bb741b744c6d2d5c1628, type: 3}
 --- !u!1001 &620286301
@@ -8966,12 +8965,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7542150727530189805, guid: 80a2b904fdc088c40a4df482bcda39ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80a2b904fdc088c40a4df482bcda39ab, type: 3}
---- !u!95 &920162720 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7542150726777151220, guid: 80a2b904fdc088c40a4df482bcda39ab,
-    type: 3}
-  m_PrefabInstance: {fileID: 920162719}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &922840252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4832924113096509841, guid: 25c26a0800a94cb489b7c22a104d5770,
@@ -9586,12 +9579,6 @@ PrefabInstance:
 --- !u!4 &1057614944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3301612342666648785, guid: 80a2b904fdc088c40a4df482bcda39ab,
-    type: 3}
-  m_PrefabInstance: {fileID: 1057614943}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1057614945 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7542150726777151220, guid: 80a2b904fdc088c40a4df482bcda39ab,
     type: 3}
   m_PrefabInstance: {fileID: 1057614943}
   m_PrefabAsset: {fileID: 0}
@@ -11695,8 +11682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 6728951}
-  _animationState: HydraulicArm_TutorialStart
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -13369,8 +13356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 1057614945}
-  _animationState: HydraulicArm_TutorialStart
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -13737,8 +13724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 2107217991}
-  _animationState: BuddyTutorialAnimation
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -13959,6 +13946,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1644321100}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653713879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 286002750, guid: eabd19395776ad1499a09903aa836151,
+    type: 3}
+  m_PrefabInstance: {fileID: 1963049918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1675866207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15097,8 +15096,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 612746675}
-  _animationState: BuddyTutorialAnimation
+  _animators: []
+  _animationStates: []
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -16082,7 +16081,7 @@ PrefabInstance:
     - target: {fileID: 1965311199, guid: eabd19395776ad1499a09903aa836151, type: 3}
       propertyPath: _shootScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 505164168}
     - target: {fileID: 286002749, guid: eabd19395776ad1499a09903aa836151, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 316.04
@@ -17390,12 +17389,6 @@ PrefabInstance:
 --- !u!4 &2107217990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3020158248712038499, guid: 0202b2a82ae510541bbad5bfa82ef26a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2107217989}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2107217991 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2079177945, guid: 0202b2a82ae510541bbad5bfa82ef26a,
     type: 3}
   m_PrefabInstance: {fileID: 2107217989}
   m_PrefabAsset: {fileID: 0}
