@@ -124,7 +124,7 @@ public class ObstacleScript : MonoBehaviour
     public void Shatter()
     {
         //if a tutorial zone is linked to this object, resume gameplay on shatter
-        _tutorialZone?.GetComponent<TutorialZoneScript>().RemoveObstacle();
+        _tutorialZone?.RemoveObstacle();
 
         Transform shardsContainer = transform.GetChild(0).transform;
 

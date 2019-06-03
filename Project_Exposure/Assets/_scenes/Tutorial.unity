@@ -1818,8 +1818,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animators: []
-  _animationStates: []
+  _animators:
+  - {fileID: 208540855}
+  _animationStates:
+  - HydraulicArm_TutorialStart
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -2264,6 +2266,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58d9fb96e522028459b6517bbd0fb836, type: 3}
+--- !u!95 &202325911 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2079177945, guid: 0202b2a82ae510541bbad5bfa82ef26a,
+    type: 3}
+  m_PrefabInstance: {fileID: 612746673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &208383354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2348,6 +2356,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c06c3139ca183441a0b59f917fe3c13, type: 3}
+--- !u!95 &208540855 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7542150726777151220, guid: 80a2b904fdc088c40a4df482bcda39ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 504592063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &211473026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2782,12 @@ Transform:
   m_Father: {fileID: 373862136}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &276957242 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7542150726777151220, guid: 80a2b904fdc088c40a4df482bcda39ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 1057614943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &281391490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,6 +3032,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 318395217}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &318814146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 816282799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1437d4cfcde057469e3d39cf89db2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &322264999
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,6 +4452,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &389760198 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7542150726777151220, guid: 80a2b904fdc088c40a4df482bcda39ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 6728949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &395288039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7529,6 +7567,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7345e73906a53a446a245e73eebd943a, type: 3}
+--- !u!114 &791961298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 532312910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1437d4cfcde057469e3d39cf89db2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &808611898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9924,7 +9974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1084379879
 Transform:
   m_ObjectHideFlags: 0
@@ -9951,9 +10001,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905bf93123f610042a842fb3ddc08918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiElement: {fileID: 821744422}
+  _uiElement: {fileID: 1770051237}
   _stopBelt: 1
-  _conveyorBelt: {fileID: 0}
+  _conveyorBelt: {fileID: 821744422}
+  _obstacles:
+  - {fileID: 791961298}
 --- !u!65 &1084379881
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11764,8 +11816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animators: []
-  _animationStates: []
+  _animators:
+  - {fileID: 389760198}
+  _animationStates:
+  - HydraulicArm_TutorialStart
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -12321,6 +12375,120 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1423551127}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425491576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425491577}
+  - component: {fileID: 1425491581}
+  - component: {fileID: 1425491580}
+  - component: {fileID: 1425491579}
+  - component: {fileID: 1425491578}
+  m_Layer: 0
+  m_Name: BuddyAnimationTrigger (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425491577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425491576}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 64.57, y: 5.77, z: 43.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1808847576}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425491578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425491576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animators:
+  - {fileID: 1690967363}
+  _animationStates:
+  - BuddyTutorialAnimation
+  _allTrigger: 0
+  _pickupAbleObjects: []
+  _pickupAbleTags:
+  - MainCamera
+  _pickupAbleLayers: 
+  _pickupAbleNames: []
+--- !u!65 &1425491579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425491576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1425491580
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425491576}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1425491581
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425491576}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1432700444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13438,8 +13606,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animators: []
-  _animationStates: []
+  _animators:
+  - {fileID: 276957242}
+  _animationStates:
+  - HydraulicArm_TutorialStart
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -14122,6 +14292,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5626066002428624195, guid: 4f2957470d2eaaf46a3878b4a6cdc0cb,
     type: 3}
   m_PrefabInstance: {fileID: 1675866207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1690967363 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2079177945, guid: 0202b2a82ae510541bbad5bfa82ef26a,
+    type: 3}
+  m_PrefabInstance: {fileID: 361624925}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1730490318
 PrefabInstance:
@@ -14878,6 +15054,7 @@ Transform:
   - {fileID: 1629780245}
   - {fileID: 1840899735}
   - {fileID: 459188898}
+  - {fileID: 1425491577}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15186,8 +15363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64fe4d1a5c98ec4e85f930db441f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animators: []
-  _animationStates: []
+  _animators:
+  - {fileID: 202325911}
+  _animationStates:
+  - BuddyTutorialAnimation
   _allTrigger: 0
   _pickupAbleObjects: []
   _pickupAbleTags:
@@ -15917,9 +16096,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905bf93123f610042a842fb3ddc08918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiElement: {fileID: 0}
+  _uiElement: {fileID: 739173767}
   _stopBelt: 1
   _conveyorBelt: {fileID: 821744422}
+  _obstacles:
+  - {fileID: 318814146}
 --- !u!65 &1958995093
 BoxCollider:
   m_ObjectHideFlags: 0
