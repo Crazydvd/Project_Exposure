@@ -37,6 +37,7 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField] Text _energyCounter;
     [SerializeField] float _startEnergy = 80;
+    [SerializeField] float _energyGain = 10f;
     [SerializeField] float _energyRegainSpeed = 0.25f;
     [SerializeField] float _energyRegainDelay = 0.5f;
     float _energyCount;
@@ -115,7 +116,7 @@ public class ShootScript : MonoBehaviour
                     Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
                     bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
                     FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
-                    AddEnergy(10f);
+                    AddEnergy(_energyGain);
                     _regainTime = _energyRegainDelay;
 
                     if (_pierceMode)
