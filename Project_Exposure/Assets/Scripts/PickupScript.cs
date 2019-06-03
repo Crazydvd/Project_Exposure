@@ -88,6 +88,7 @@ public class PickupScript : MonoBehaviour
 
         _rigidbody.isKinematic = false;
         _grabbedObject = null;
+        _grabPosition.DetachChildren();
     }
 
     bool checkPickupAble(GameObject pTest)
