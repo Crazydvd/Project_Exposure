@@ -12,8 +12,8 @@ public class PickupScript : MonoBehaviour
     Transform _originalParent;
     Rigidbody _rigidbody;
 
-    [Header("Snap the object to the grab position")]
-    [SerializeField] bool _snapPosition = false;
+    //[Header("Snap the object to the grab position")]
+    //[SerializeField] bool _snapPosition = false;
 
     [Header("Pickupable Object")]
     [SerializeField] GameObject[] _pickupAbleObjects;

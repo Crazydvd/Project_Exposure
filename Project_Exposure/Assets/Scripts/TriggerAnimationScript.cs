@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TriggerAnimationScript : MonoBehaviour
 {
-    [Header("The Animator which will play the animation")]
-    [SerializeField] Animator _animator = null;
+    [Header("The Animator(s) which will play the animation")]
+    [SerializeField] Animator[] _animators = null;
 
     [Header("The name of the animationState to play")]
-    [SerializeField] string _animationState;
+    [SerializeField] string[] _animationStates = null;
 
     [Header("Whether or not every object can trigger the animation")]
     [SerializeField] bool _allTrigger = false;
@@ -21,9 +21,12 @@ public class TriggerAnimationScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if ((_allTrigger || checkTrigger(other.gameObject)) && _animator != null)
+        if ((_allTrigger || checkTrigger(other.gameObject)) && _animators != null)
         {
-            _animator.Play(_animationState, 0);
+            for (int i = 0; i < _animators.Length; i++)
+            {
+                _animators[i].Play(_animationStates[i], 0);
+            }
         }
     }
 

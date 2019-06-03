@@ -13,6 +13,16 @@ public class TutorialZoneScript : MonoBehaviour
     GameObject _player;
     Animator _playerTrack;
 
+    ControlConveyorBelt _control = null;
+
+    void Start()
+    {
+        if (_stopBelt)
+        {
+            (_control = GetComponent<ControlConveyorBelt>() ?? gameObject.AddComponent<ControlConveyorBelt>()).AddConveyorBelt(_conveyorBelt);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag.ToUpper() == "MAINCAMERA" && !_player)
@@ -29,17 +39,11 @@ public class TutorialZoneScript : MonoBehaviour
             _uiElement.SetActive(true);
 
             if (!_stopBelt)
-                return;
-            
-            //Stop the belt
-            for (int i = 0; i < _conveyorBelt.transform.childCount; i++)
             {
-                ConveyorScript script = _conveyorBelt.transform.GetChild(i).GetComponentInChildren<ConveyorScript>();
-                if (script != null)
-                {
-                    script.Speed = 0.0f;
-                }
+                return;
             }
+
+            _control.StopBelt();
         }
     }
 
@@ -57,16 +61,9 @@ public class TutorialZoneScript : MonoBehaviour
 
         if (!_stopBelt)
         {
-            //Start the belt again
-            for (int i = 0; i < _conveyorBelt.transform.childCount; i++)
-            {
-                ConveyorScript script = _conveyorBelt.transform.GetChild(i).GetComponentInChildren<ConveyorScript>();
-                if (script != null)
-                {
-                    script.Speed = script.GetOldSpeed();
-                }
-            }
+            _control.StartBelt();
         }
+
         Destroy(gameObject);
     }
 }
