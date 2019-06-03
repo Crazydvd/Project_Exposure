@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControlConveyorBelt : MonoBehaviour
 {
     [Header("The parent(s) of the conveyorBelts that you want to control")]
-    [SerializeField] List<GameObject> _conveyorBeltGroup = null;
+    [SerializeField] List<GameObject> _conveyorBeltGroup = new List<GameObject>();
 
     public void StopBelt()
     {

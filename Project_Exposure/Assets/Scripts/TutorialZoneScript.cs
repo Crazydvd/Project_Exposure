@@ -71,7 +71,7 @@ public class TutorialZoneScript : MonoBehaviour
 
         _uiElement?.SetActive(false);
 
-        if (!_stopBelt)
+        if (_stopBelt)
         {
             _control.StartBelt();
         }
