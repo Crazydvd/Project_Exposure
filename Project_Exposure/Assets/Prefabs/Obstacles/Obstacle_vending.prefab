@@ -2063,6 +2063,7 @@ GameObject:
   - component: {fileID: 8642613056905742179}
   - component: {fileID: 4045595365892106418}
   - component: {fileID: 7464506438297757210}
+  - component: {fileID: 326401528}
   m_Layer: 0
   m_Name: VendingMachineBody
   m_TagString: Untagged
@@ -2129,6 +2130,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &326401528
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2558387431371771494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.670369, y: 0.2527576, z: 0.67037106}
+  m_Center: {x: 0, y: -0.35382214, z: 0}
 --- !u!1 &2567422194412072848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,7 +4310,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892502687221354549}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.0000004768371}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: 10.11, y: -5, z: -20.44}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
