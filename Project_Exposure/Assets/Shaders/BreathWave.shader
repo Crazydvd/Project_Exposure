@@ -1,4 +1,4 @@
-﻿Shader "Handout/Wave" 
+﻿Shader "Handout/BreathWave" 
 {
 	Properties
 	{
@@ -19,7 +19,7 @@
 		Tags {"Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent"}
 		ZWrite Off
 		Blend SrcAlpha OneMinusSrcAlpha
-		Cull front
+		//Cull front
 		LOD 100
 
 		Pass 
@@ -32,6 +32,7 @@
 			struct vertexInput 
 			{
 				float4 vertex : POSITION;
+				float4 normal : NORMAL;
 				float2 uv : TEXCOORD0;
 			};
 
@@ -39,7 +40,7 @@
 			{
 				float4 vertex : SV_POSITION;
 				float2 uv : TEXCOORD0;
-				float4 worldPos : TEXCOORD1;
+				//float4 worldPos : TEXCOORD1;
 			};
 
 			float _Local;
@@ -54,36 +55,12 @@
 			vertexToFragment myVertexShader (vertexInput v) 
 			{
 				vertexToFragment o;
-				o.uv = v.uv;
+
+				float4 modifiedPosition = v.vertex + v.normal * sin(v.vertex.y * _Frequency + _Time.y * _Speed) * _Amplitude;
 				// Transform the point to clip space:
-				o.vertex = mul(UNITY_MATRIX_MVP,v.vertex);
-				if (_Local)
-				{
-					o.worldPos = v.vertex;
-				}
-				else
-				{
-					o.worldPos = mul(UNITY_MATRIX_M, v.vertex);
-				}
-				float y = 0;
-				float PI = 3.141592653589;
+				o.vertex = UnityObjectToClipPos(modifiedPosition);
 
-				float frequency = _Frequency * 2 * PI * (1 / _Unit);
-
-				if (_Xaxis)
-				{
-					y += _Amplitude * sin(_Speed * _Time.y + v.vertex.z * frequency);
-				}
-				if (_Yaxis)
-				{
-					o.vertex.x += _Amplitude * sin(frequency * o.worldPos.y);
-				}
-				if (_Zaxis)
-				{
-					y += _Amplitude * sin(frequency * o.worldPos.z);
-				}
-
-				o.vertex.y += y;
+				o.uv = v.uv;
 				return o;
 			}
 			
