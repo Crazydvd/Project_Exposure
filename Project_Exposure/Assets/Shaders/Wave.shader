@@ -1,4 +1,4 @@
-﻿Shader "Handout/Wave" 
+﻿Shader "Custom/Wave" 
 {
 	Properties
 	{
