@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 86920542126056910}
   - component: {fileID: 8966609111518322680}
   - component: {fileID: 3410141986301108993}
+  - component: {fileID: -2166606008518919214}
+  - component: {fileID: -6029668957446436500}
   m_Layer: 0
   m_Name: BeerCan_EnergyDrink
   m_TagString: Untagged
@@ -77,3 +79,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!54 &-2166606008518919214
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994574247489787869}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-6029668957446436500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994574247489787869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.030426372, y: 0.08085159, z: 0.030426653}
+  m_Center: {x: 0.0000000023283078, y: 0, z: 0}
