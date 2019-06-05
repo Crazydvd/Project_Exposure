@@ -32,7 +32,6 @@ public class KnobScript : MonoBehaviour
             {
                 SetHigh();
             }
-            _holding = false;
         }
         else
         if (_holding)
@@ -61,6 +60,8 @@ public class KnobScript : MonoBehaviour
         _targetRotation = new Vector3(0, 0, -90);
         _shootScript.SwitchWave(Frequency.HIGH);
         playAnimation(Frequency.HIGH);
+
+        _holding = false;
     }
 
     public void SetMedium()
@@ -68,6 +69,8 @@ public class KnobScript : MonoBehaviour
         _targetRotation = new Vector3(0, 0, 0);
         _shootScript.SwitchWave(Frequency.MEDIUM);
         playAnimation(Frequency.MEDIUM);
+
+        _holding = false;
     }
 
     public void SetLow()
@@ -75,6 +78,8 @@ public class KnobScript : MonoBehaviour
         _targetRotation = new Vector3(0, 0, 90);
         _shootScript.SwitchWave(Frequency.LOW);
         playAnimation(Frequency.LOW);
+
+        _holding = false;
     }
 
     void playAnimation(string pFrequency)
@@ -85,15 +90,5 @@ public class KnobScript : MonoBehaviour
     void playAnimation(Frequency pFrequency)
     {
         playAnimation(pFrequency.ToString().ToLower());
-    }
-
-
-    //HACK: had to stop holding
-    public bool HOLDING
-    {
-        set
-        {
-            _holding = value;
-        }
     }
 }

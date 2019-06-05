@@ -48,7 +48,6 @@ public class ShootScript : MonoBehaviour
 
     Frequency _shootingFrequency = Frequency.MEDIUM;
 
-    //HACK: using a knobscript ref to play animation
     KnobScript _knobScript;
 
     // Start is called before the first frame update
@@ -61,7 +60,6 @@ public class ShootScript : MonoBehaviour
         _waves.Add(Frequency.MEDIUM, _bulletType2);
         _waves.Add(Frequency.HIGH, _bulletType3);
 
-        //HACK: grabbing knobscript ref in scene
         _knobScript = GameObject.Find("Canvas").GetComponentInChildren<KnobScript>();
     }
 
@@ -166,29 +164,21 @@ public class ShootScript : MonoBehaviour
 
     public void SwitchWave()
     {
-        //HACK: playing animation
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _knobScript.SetLow();
-            _knobScript.HOLDING = false;
-            //_shootingFrequency = Frequency.LOW;
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _knobScript.SetMedium();
-            _knobScript.HOLDING = false;
-            //_shootingFrequency = Frequency.MEDIUM;
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _knobScript.SetHigh();
-            _knobScript.HOLDING = false;
-            //_shootingFrequency = Frequency.HIGH;
             return;
         }
     }
