@@ -15,6 +15,9 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
+    [SerializeField] Material _lowFreqStandard;
+    [SerializeField] Material _mediumFreqStandard;
+    [SerializeField] Material _highFreqStandard;
     [SerializeField] bool _isBuddy;
     [SerializeField] BuddyScript _buddyScript;
 
@@ -148,7 +151,21 @@ public class ObstacleScript : MonoBehaviour
             }
 
             childRigid.isKinematic = false;
-            child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
+            //Set the material for the shards
+            switch (_frequency)
+            {
+                case Frequency.LOW:
+                    child.GetComponent<Renderer>().material = _lowFreqStandard;
+                    break;
+                case Frequency.MEDIUM:
+                    child.GetComponent<Renderer>().material = _mediumFreqStandard;
+                    break;
+                case Frequency.HIGH:
+                    child.GetComponent<Renderer>().material = _highFreqStandard;
+                    break;
+            }
+
+
 
             Vector3 direction = (child.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
