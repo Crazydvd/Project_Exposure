@@ -19,6 +19,10 @@
 		[MaterialToggle] _ExtendVertices("ExtendVertices", float) = 0
 		_OutlineColor("OutlineColor", color) = (0, 0, 0, 1)
 		_Thickness("Outline thickness (pixels)", float) = 25
+
+		[space]
+		[Header(Stencil buffer)]
+		[IntRange] _StencilRef("Stencil Reference Value", Range(1,255)) = 0
 	}
 
 
@@ -61,7 +65,7 @@
 
 			Stencil 
 			{
-				Ref 2
+				Ref [_StencilRef]
 				Comp always
 				Pass replace
 				ZFail decrWrap
@@ -87,7 +91,6 @@
 			}
 
 			ENDCG
-
 		}
 
 		Pass //Outline
@@ -97,7 +100,7 @@
 
 			Stencil 
 			{
-				Ref 2
+				Ref [_StencilRef]
 				Comp NotEqual
 				Pass replace
 				ZFail decrWrap
