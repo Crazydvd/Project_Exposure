@@ -23,7 +23,10 @@ public class BuddyScript : MonoBehaviour
     {
         _collider.enabled = true;
         transform.GetComponent<Rigidbody>().isKinematic = false;
-        _heldObject.gameObject.AddComponent<Rigidbody>();
+        if (_heldObject)
+        {
+            _heldObject.gameObject.AddComponent<Rigidbody>();
+        }
         _animator.enabled = false;
         _hovering.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/dying", gameObject);
@@ -33,7 +36,7 @@ public class BuddyScript : MonoBehaviour
     public void ShatterHeldObject()
     {
         if (_heldObject)
-        {
+        { 
             _heldObject.Shatter();
         }
     }

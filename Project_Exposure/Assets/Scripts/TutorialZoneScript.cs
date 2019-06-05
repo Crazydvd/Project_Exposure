@@ -32,7 +32,7 @@ public class TutorialZoneScript : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-    {
+    {      
         if (other.tag.ToUpper() == "MAINCAMERA" && !_player)
         {
             _player = other.gameObject;
