@@ -12,8 +12,15 @@ class JsonParser : MonoBehaviour
 
     void Start()
     {
-        _path = Application.dataPath + "/Localization/" + FileName;
+        _path = Application.streamingAssetsPath + "/" + FileName;
         JsonString = File.ReadAllText(_path);
+
+        //questionData = JsonMapper.ToObject(JsonString);
+
+        //TextAsset file = Resources.Load("Language") as TextAsset;
+        //JsonString = file.ToString();
+
+
     }
 
     public static string JsonString { get; private set; }

@@ -15,7 +15,6 @@ public class ShootScript : MonoBehaviour
 {
     public static float Multiplier = 1;
 
-    [SerializeField] bool _rayMode = false;
     [SerializeField] bool _rayCastAccuracy = true;
     [SerializeField] GameObject _beam;
 
@@ -81,86 +80,50 @@ public class ShootScript : MonoBehaviour
         {
             RemoveEnergy(_energyRegainSpeed);
         }
+        Debug.Log(Input.touchCount);
 
-        if (!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) // check if mouse isn't hovering over button
+        if ((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))) // check if mouse isn't hovering over button
         {
-            if (!_rayMode)
+            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 &&  Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount < 100) //was > 0
             {
-                if (Input.GetMouseButtonDown(0) && _energyCount < 100) //was > 0
+                int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
+                Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Vector3 hitPoint;
+                if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
                 {
-                    int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
-                    Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    Vector3 hitPoint;
-                    if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
-                    {
-                        transform.LookAt(hit.point);
-                        hitPoint = hit.point;
-                    }
-                    else
-                    {
-                        hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
-                        transform.LookAt(hitPoint);
-                        Debug.DrawLine(_bulletSpawnPoint.transform.position, hitPoint, Color.red);
-                    }
-
-                    if ((transform.position - hitPoint).magnitude < _minRayDistance)
-                    {
-                        hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
-                        transform.LookAt(hitPoint);
-                    }
-
-
-                    GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
-                    Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-                    bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
-                    AddEnergy(_energyGain);
-                    _regainTime = _energyRegainDelay;
-
-                    if (_pierceMode)
-                    {
-                        bullet.GetComponent<BulletScript>().PierceShotMode = true;
-                    }
-
-                    //if (!_batteryMode)
-                    //{
-                    //    RemoveEnergy();
-                    //}
+                    transform.LookAt(hit.point);
+                    hitPoint = hit.point;
                 }
-            }
-            else
-            {
-                if (Input.GetMouseButton(0))
+                else
                 {
-                    int layerMask = LayerMask.GetMask("Obstacles");
-                    if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, _maxRayDistance, layerMask))
-                    {
-                        GameObject hitObject = hit.transform.gameObject;
-
-                        transform.LookAt(hitObject.transform.position);
-                        transform.Rotate(Vector3.right, 90f);
-
-                        _beam.SetActive(true);
-                        if (GameObject.ReferenceEquals(_previousHit, hitObject))
-                        {
-                            _rayTimer += Time.deltaTime;
-                            if (_rayTimer >= _rayTimerMax)
-                            {
-                                hitObject.transform.GetComponent<ObstacleScript>().Shatter();
-                                _rayTimer = 0;
-                            }
-                        }
-                        else
-                        {
-                            _rayTimer = 0;
-                        }
-                        _previousHit = hitObject;
-                    }
-                    else
-                    {
-                        _beam.SetActive(false);
-                    }
+                    hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
+                    transform.LookAt(hitPoint);
+                    Debug.DrawLine(_bulletSpawnPoint.transform.position, hitPoint, Color.red);
                 }
+
+                if ((transform.position - hitPoint).magnitude < _minRayDistance)
+                {
+                    hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
+                    transform.LookAt(hitPoint);
+                }
+
+
+                GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
+                Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+                bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
+                AddEnergy(_energyGain);
+                _regainTime = _energyRegainDelay;
+
+                if (_pierceMode)
+                {
+                    bullet.GetComponent<BulletScript>().PierceShotMode = true;
+                }
+
+                //if (!_batteryMode)
+                //{
+                //    RemoveEnergy();
+                //}
             }
         }
     }
