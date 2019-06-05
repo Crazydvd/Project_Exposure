@@ -1,4 +1,4 @@
-﻿Shader "Handout/Wave" 
+﻿Shader "Custom/Wave" 
 {
 	Properties
 	{
@@ -11,17 +11,22 @@
 		[MaterialToggle] _Zaxis("Z-Axis", float) = 1
 		_Amplitude("Amplitude", float) = 1
 		_Frequency("Frequency", float) = 1
+		_Speed("Speed", float) = 1
 		_Unit("Length", float) = 1
 	}
 	SubShader 
 	{
-		Cull Off
+		Tags {"Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent"}
+		ZWrite Off
+		Blend SrcAlpha OneMinusSrcAlpha
+		Cull front
+		LOD 100
 
 		Pass 
 		{
 			CGPROGRAM
-			#pragma vertex myVertexShader
-			#pragma fragment myFragmentShader
+			#pragma vertex myVertexShader alpha
+			#pragma fragment myFragmentShader alpha
 			#define UNITY_SHADER_NO_UPGRADE 1
 
 			struct vertexInput 
@@ -42,6 +47,7 @@
 			float _Yaxis;
 			float _Zaxis;
 			float _Amplitude;
+			float _Speed;
 			float _Frequency;
 			float _Unit;
 
@@ -66,7 +72,7 @@
 
 				if (_Xaxis)
 				{
-					y += _Amplitude * sin(frequency * o.worldPos.x);
+					y += _Amplitude * sin(_Speed * _Time.y + v.vertex.z * frequency);
 				}
 				if (_Yaxis)
 				{

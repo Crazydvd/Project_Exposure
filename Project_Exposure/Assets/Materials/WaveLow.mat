@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: WaveLow
   m_Shader: {fileID: 4800000, guid: ee3d9e348caaed942b794603adc1ecbc, type: 3}
-  m_ShaderKeywords: _LOCAL_ON _XAXIS_ON
+  m_ShaderKeywords: _XAXIS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,17 +20,18 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e543be8029cf4324c81f8a429f19b627, type: 3}
+        m_Texture: {fileID: 2800000, guid: 81d1d28e59f2b62498e5d4c0f6750984, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Amplitude: 3
-    - _Frequency: 4
-    - _Local: 1
+    - _Amplitude: 0.2
+    - _Frequency: 1
+    - _Local: 0
     - _Scale: 0.5
-    - _Unit: 1
+    - _Speed: 10
+    - _Unit: 0.5
     - _Xaxis: 1
     - _Yaxis: 0
     - _Zaxis: 0
     m_Colors:
-    - _Color: {r: 0.83137256, g: 0.1333333, b: 0.13333334, a: 1}
+    - _Color: {r: 0.990566, g: 0.28502133, b: 0.303309, a: 0.41960785}

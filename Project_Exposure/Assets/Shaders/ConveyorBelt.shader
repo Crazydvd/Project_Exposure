@@ -13,7 +13,7 @@
 		_MaxHeight("MaxHeight", float) = 0.01
 		_OcclusionStrength("Occlusion Strength", float) = 1
 
-		[Header(The amount of seconds it takes to complete 1 cycle)]
+		[Header(How fast the belt goes)]
 		_SpeedX("SpeedX", float) = 0
 		_SpeedY("SpeedY", float) = 1
 
@@ -82,7 +82,7 @@
 
 
 				// Albedo comes from a texture tinted by color
-				fixed4 c = tex2D(_MainTex, IN.uv_MainTex + timeOffset) * _Color;
+				fixed4 c = tex2D(_MainTex, IN.uv_MainTex + timeOffset + heightOffset) * _Color;
 				o.Albedo = c.rgb;
 
 				// Normal comes from a NormalMap/BumpMap

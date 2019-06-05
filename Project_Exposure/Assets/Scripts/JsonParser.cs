@@ -12,7 +12,7 @@ class JsonParser : MonoBehaviour
 
     void Start()
     {
-        _path = Application.dataPath + "/Localization/" + FileName;
+        _path = Application.streamingAssetsPath + "/" + FileName;
         JsonString = File.ReadAllText(_path);
     }
 
