@@ -66,7 +66,7 @@ public class ConveyorScript : MonoBehaviour
     {
         get
         {
-            return _conveyorMaterial.GetFloat("_TimeElapsed");
+            return _timeElapsed;
         }
         set
         {
