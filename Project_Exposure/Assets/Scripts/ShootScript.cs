@@ -84,7 +84,7 @@ public class ShootScript : MonoBehaviour
 
         if ((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))) // check if mouse isn't hovering over button
         {
-            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 &&  Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount < 100) //was > 0
+            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount < 100) //was > 0
             {
                 int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
                 Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -112,12 +112,20 @@ public class ShootScript : MonoBehaviour
                 Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
                 bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
-                AddEnergy(_energyGain);
-                _regainTime = _energyRegainDelay;
+                if (!_batteryMode)
+                {
+                    AddEnergy(_energyGain);
+                    _regainTime = _energyRegainDelay;
+                }
 
                 if (_pierceMode)
                 {
                     bullet.GetComponent<BulletScript>().PierceShotMode = true;
+                }
+
+                if (IsPoweredUp())
+                {
+                    bullet.GetComponent<BulletScript>().SetPoweredUp(true);
                 }
 
                 //if (!_batteryMode)
@@ -210,5 +218,10 @@ public class ShootScript : MonoBehaviour
         _energyCount = _startEnergy;
         _energyText = JsonText.GetText("ENERGYTEXT") + ": ";
         _energyCounter.text = _energyText + (int) _energyCount;
+    }
+
+    public bool IsPoweredUp()
+    {
+        return (_pierceMode || _batteryMode);
     }
 }
