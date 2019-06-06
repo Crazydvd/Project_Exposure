@@ -80,7 +80,7 @@ public class ShootScript : MonoBehaviour
         {
             RemoveEnergy(_energyRegainSpeed);
         }
-        Debug.Log(Input.touchCount);
+        //Debug.Log(Input.touchCount);
 
         if ((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))) // check if mouse isn't hovering over button
         {

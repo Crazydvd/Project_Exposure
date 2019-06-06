@@ -5,24 +5,32 @@
 		_Color("Color", Color) = (1,1,1,1)
 
 		[Header(PBR maps)]
-		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_MainTex("Albedo (RGB), Alpha (A)", 2D) = "white" {}
 		_BumpMap("NormalMap", 2D) = "bump" {}
 		_MetallicMap("MetallicMap (RGB), Smoothness (A)", 2D) = "white" {}
 		_HeightMap("HeightMap", 2D) = "black" {}
 		_OcclusionMap("OcclusionMap", 2D) = "white" {}
 
+		[Header(PBR settings)]
 		_MaxHeight("MaxHeight", float) = 0.01
 		_OcclusionStrength("Occlusion Strength", float) = 1
 
 		[space]
 		[Header(Outline)]
-		[MaterialToggle] _ExtendVertices("ExtendVertices", float) = 0
+		[MaterialToggle] _ExtendVertices("ExtendAlongNormal", float) = 0
 		_OutlineColor("OutlineColor", color) = (0, 0, 0, 1)
 		_Thickness("Outline thickness (pixels)", float) = 25
 
 		[space]
 		[Header(Stencil buffer)]
 		[IntRange] _StencilRef("Stencil Reference Value", Range(1,255)) = 0
+
+		[space]
+		[Header(Texture movement)]
+		[MaterialToggle] _OnlyMoveAlbedo("Only move Albedo", float) = 0
+		_Speed("Speed (XY)", vector) = (1, 0, 0, 0)
+
+		[HideinInspector]_TimeElapsed("TimeOffset", float) = 0
 	}
 
 
@@ -186,29 +194,44 @@
 		UNITY_INSTANCING_BUFFER_END(Props)
 
 		float _MaxHeight;
-		float4 _OutlineColor;
+
+		float _OnlyMoveAlbedo;
+		float4 _Speed;
+		float _TimeElapsed;
 
 		void surf(Input IN, inout SurfaceOutputStandard o)
 		{
+			float timeX = _TimeElapsed * _Speed.x;
+			float timeY = _TimeElapsed * _Speed.y;
+			float2 timeOffset = float2(timeX, timeY);
+
 			//Height map gives an offset to the uvs
-			float value = tex2D(_HeightMap, IN.uv_HeightMap).rgb;
+			float value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
 			float2 heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
 
 			//Albedo comes from a texture tinted by color
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex + heightOffset) * _Color;
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex + heightOffset + timeOffset) * _Color;
 			o.Albedo = c.rgb;
 
+			if (_OnlyMoveAlbedo)
+			{
+				timeOffset = float2(0, 0);
+				value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
+				heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
+			}
+
 			//Normal comes from a NormalMap
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap + heightOffset));
+			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap + heightOffset + timeOffset));
 
 			//Metallic and smoothness come from the MetallicMap
-			float4 metallicData = tex2D(_MetallicMap, IN.uv_MetallicMap + heightOffset);
+			float4 metallicData = tex2D(_MetallicMap, IN.uv_MetallicMap + heightOffset + timeOffset);
 			o.Metallic = metallicData.rgb;
 			o.Smoothness = metallicData.a;
 
 			//Ambient Occulusion comes from the occulusionMap
-			o.Occlusion = tex2D(_OcclusionMap, IN.uv_OcclusionMap + heightOffset) * _OcclusionStrength;
+			o.Occlusion = tex2D(_OcclusionMap, IN.uv_OcclusionMap + heightOffset + timeOffset) * _OcclusionStrength;
 
+			//Alpha comes from the Albedo
 			o.Alpha = c.a;
 		}
 		ENDCG

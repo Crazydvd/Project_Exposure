@@ -17,8 +17,7 @@
 		_SpeedX("SpeedX", float) = 0
 		_SpeedY("SpeedY", float) = 1
 
-		[Header(How much ingame time has elapsed)]
-		_TimeElapsed("TimeOffset", float) = 0
+		[Hideininspector]_TimeElapsed("TimeOffset", float) = 0
 	}
 		SubShader
 		{
@@ -72,8 +71,8 @@
 
 			void surf(Input IN, inout SurfaceOutputStandard o)
 			{
-				float timeX = (_SpeedX == 0) ? 0 : _TimeElapsed * _SpeedX;
-				float timeY = (_SpeedY == 0) ? 0 : _TimeElapsed * _SpeedY;
+				float timeX = _TimeElapsed * _SpeedX;
+				float timeY = _TimeElapsed * _SpeedY;
 				float2 timeOffset = float2(timeX, timeY);
 
 				//Height map gives an offset to the uvs
