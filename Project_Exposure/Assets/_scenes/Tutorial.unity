@@ -8289,7 +8289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _conveyorBeltGroup:
   - {fileID: 204936905}
-  _stopMode: 1
+  _stopMode: 0
+  _reverse: 0
   _allTrigger: 1
   _triggerAbleObjects: []
   _triggerAbleTags:
@@ -14803,7 +14804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _conveyorBeltGroup:
   - {fileID: 204936905}
-  _stopMode: 0
+  _stopMode: 1
+  _reverse: 0
   _allTrigger: 1
   _triggerAbleObjects: []
   _triggerAbleTags: []
@@ -33956,6 +33958,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4583909049121081581, guid: c11af4cefccc9714fb83e25b31185960,
         type: 3}
+    - target: {fileID: 6139688197974497008, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _overheatBar
+      value: 
+      objectReference: {fileID: 1711233250}
     - target: {fileID: 7908170683042372496, guid: d8f4961a9e63bb741b744c6d2d5c1628,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -90065,6 +90072,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47f44bdecc8f8a54abad81738a1f9914, type: 3}
+--- !u!114 &1711233250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3558673535012168976, guid: eabd19395776ad1499a09903aa836151,
+    type: 3}
+  m_PrefabInstance: {fileID: 1963049918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1712145354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103361,6 +103380,16 @@ PrefabInstance:
     - target: {fileID: 421638562, guid: eabd19395776ad1499a09903aa836151, type: 3}
       propertyPath: m_RootOrder
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058165529574784943, guid: eabd19395776ad1499a09903aa836151,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125706029215380397, guid: eabd19395776ad1499a09903aa836151,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eabd19395776ad1499a09903aa836151, type: 3}

@@ -176,7 +176,7 @@ public class ObstacleScript : MonoBehaviour
             Rigidbody childRigid = child.GetComponent<Rigidbody>();
 
             child.gameObject.SetActive(true);
-            child.gameObject.layer = 11;
+            child.gameObject.layer = 11; //layer 11 == shards
             MoveAlongBeltScript moveAlongBeltScript = child.GetComponent<MoveAlongBeltScript>();
             if (moveAlongBeltScript == null)
             {
@@ -226,6 +226,7 @@ public class ObstacleScript : MonoBehaviour
         _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier); // add score
 
         ShootScript.Multiplier += 1; // increase multiplier
+
         Destroy(gameObject);
     }
 
@@ -234,7 +235,8 @@ public class ObstacleScript : MonoBehaviour
         return _frequency;
     }
 
-    public void SetTutorialZone(TutorialZoneScript pTutorialZoneScript){
+    public void SetTutorialZone(TutorialZoneScript pTutorialZoneScript)
+    {
         _tutorialZone = pTutorialZoneScript;
     }
 }
