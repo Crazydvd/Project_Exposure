@@ -22,19 +22,16 @@ public class PowerupManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ActivateOvercharge();
-            return;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
             ActivatePierceShot();
-            return;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             ActivateBattery();
-            return;
         }
     }
 

@@ -35,6 +35,7 @@ public class ShootScript : MonoBehaviour
     public float OverchargeCooldownTime = 15; // should be able to get from the powerupmanager
 
     [SerializeField] Text _energyCounter;
+    [SerializeField] Slider _overheatBar;
     [SerializeField] float _startEnergy = 80;
     [SerializeField] float _energyGain = 10f;
     [SerializeField] float _energyRegainSpeed = 0.25f;
@@ -184,11 +185,18 @@ public class ShootScript : MonoBehaviour
     {
         _energyCount -= pAmount;
         _energyCounter.text = _energyText + (int) _energyCount;
+        UpdateOverheatBar();
     }
     public void AddEnergy(float pAmount = 1)
     {
         _energyCount += pAmount;
         _energyCounter.text = _energyText + (int) _energyCount;
+        UpdateOverheatBar();
+    }
+
+    public void UpdateOverheatBar()
+    {
+        _overheatBar.value = _energyCount;
     }
 
     public void EnablePierceShot()
