@@ -15,6 +15,11 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
+    [SerializeField] Material _lowFreqStandard;
+    [SerializeField] Material _mediumFreqStandard;
+    [SerializeField] Material _highFreqStandard;
+
+    [SerializeField] GameObject _content;
     [SerializeField] bool _isBuddy;
     [SerializeField] BuddyScript _buddyScript;
 
@@ -107,6 +112,39 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
+    void launchContent(){
+        if(_content){
+
+            Transform contentContainer = _content.transform; 
+            //Shatter and destroy. Decimate and obliterate. Annihilate and eradicate. Erase from existence.
+            for (int i = 0; i < contentContainer.childCount; i++)
+            {
+                Transform child = contentContainer.GetChild(i);
+                Rigidbody childRigid = child.GetComponent<Rigidbody>();
+
+                child.gameObject.SetActive(true);
+                child.gameObject.layer = 11;
+                MoveAlongBeltScript moveAlongBeltScript = child.GetComponent<MoveAlongBeltScript>();
+                if (moveAlongBeltScript == null)
+                {
+                    child.gameObject.AddComponent<MoveAlongBeltScript>().StartSelfDestruct();
+                }
+                else
+                {
+                    moveAlongBeltScript.StartSelfDestruct();
+                }
+
+                childRigid.isKinematic = false;
+
+                Vector3 direction = (child.position - transform.position).normalized;
+                Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
+
+                childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
+                childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
+            }
+        }
+    }
+
     public void EnableShake(bool pDestroy)
     {
         _oldPosVector = transform.localPosition;
@@ -129,6 +167,8 @@ public class ObstacleScript : MonoBehaviour
 
         Transform shardsContainer = transform.GetChild(0).transform;
 
+        launchContent();
+
         //Shatter and destroy. Decimate and obliterate. Annihilate and eradicate. Erase from existence.
         for (int i = 0; i < shardsContainer.childCount; i++)
         {
@@ -148,7 +188,21 @@ public class ObstacleScript : MonoBehaviour
             }
 
             childRigid.isKinematic = false;
-            child.GetComponent<Renderer>().material = shardsContainer.GetComponent<Renderer>().material;
+            //Set the material for the shards
+            switch (_frequency)
+            {
+                case Frequency.LOW:
+                    child.GetComponent<Renderer>().material = _lowFreqStandard;
+                    break;
+                case Frequency.MEDIUM:
+                    child.GetComponent<Renderer>().material = _mediumFreqStandard;
+                    break;
+                case Frequency.HIGH:
+                    child.GetComponent<Renderer>().material = _highFreqStandard;
+                    break;
+            }
+
+
 
             Vector3 direction = (child.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
