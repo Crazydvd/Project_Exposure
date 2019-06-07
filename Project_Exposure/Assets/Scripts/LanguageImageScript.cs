@@ -13,7 +13,21 @@ public class LanguageImageScript : MonoBehaviour
 
     void Start()
     {
-        GetComponent<Image>().sprite = getImage(LanguageSettings.Language);
+        Language language = LanguageSettings.Language;
+        Sprite sprite = getImage(language);
+
+        while (language >= 0 && sprite != null)
+        {
+            language--;
+            sprite = getImage(language);
+        }
+
+        if (sprite == null)
+        {
+            return;
+        }
+
+        GetComponent<Image>().sprite = sprite;
     }
 
     Sprite getImage(Language pLanguage)
