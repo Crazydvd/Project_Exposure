@@ -17,8 +17,7 @@ public class DetectObstacleCol : MonoBehaviour
     {
         if (other.transform.tag == "MainCamera")
         {
-            Debug.Log("u dede");
-            _obstacle.Shatter();
+            _obstacle.Shatter(true);
             _screenShake.StartShake(0.4f, 0.2f);
         }
         else
