@@ -105,13 +105,14 @@
 		{
 			Name "OUTLINE"
 			cull front
+			ColorMask RBGA
 
 			Stencil 
 			{
-				Ref [_StencilRef]
-				Comp NotEqual
-				Pass replace
-				ZFail decrWrap
+				//Ref [_StencilRef]
+				//Comp NotEqual
+				//Pass replace
+				//ZFail decrWrap
 			}
 
 			CGPROGRAM
@@ -134,7 +135,6 @@
 					float2 offset = (normalize(clipNormal.xy) / _ScreenParams.xy) * _Thickness * frag.position.w * 2;
 
 					frag.position.xy += offset;
-					return frag;
 				}
 				else
 				{
@@ -145,8 +145,9 @@
 					vertex.z *= Width + 1;
 
 					frag.position = UnityObjectToClipPos(half4(vertex, vert.vertex.w));
-					return frag;
 				}
+
+				return frag;
 			}
 
 			float4 fragmentShader(FragmentInput frag) : SV_TARGET
