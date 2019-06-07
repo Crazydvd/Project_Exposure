@@ -17,6 +17,35 @@ public class PowerupManagerScript : MonoBehaviour
         _mainBus = FMODUnity.RuntimeManager.GetBus("bus:/Main");
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ActivateOvercharge();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            ActivatePierceShot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ActivateBattery();
+        }
+    }
+
+    public void ActivateOvercharge()
+    {
+        _overchargeUI.SetActive(true);
+        Time.timeScale = _overchargeTimeSpeed;
+        Invoke("disableOvercharge", _playerScript.OverchargeCooldownTime * Time.timeScale);// / Time.timeScale);
+
+        FMOD.ChannelGroup group;
+        _mainBus.getChannelGroup(out group);
+        group.setPitch(_pitch);
+    }
+
     void disableOvercharge()
     {
         Time.timeScale = 1f;
@@ -37,13 +66,4 @@ public class PowerupManagerScript : MonoBehaviour
         _playerScript.EnableBattery();
     }
 
-    public void ActivateOvercharge()
-    {
-        _overchargeUI.SetActive(true);
-        Time.timeScale = _overchargeTimeSpeed;
-        Invoke("disableOvercharge", _playerScript.OverchargeCooldownTime * Time.timeScale);// / Time.timeScale);
-        FMOD.ChannelGroup group;
-        _mainBus.getChannelGroup(out group);
-        group.setPitch(_pitch);
-    }
 }

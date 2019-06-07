@@ -9,11 +9,16 @@ public class BulletScript : MonoBehaviour
     Rigidbody _rigidbody;
     bool _slowdown;
     Vector3 _velocity;
+    bool _powered;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        Invoke("SelfDestruct", 3f);
+
+        if (!_powered) //if powered up, dont lose the multiplier 
+        {
+            Invoke("SelfDestruct", 3f);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,6 +53,11 @@ public class BulletScript : MonoBehaviour
     public void SetVelocity(Vector3 pVelocity)
     {
         _velocity = pVelocity;
+    }
+
+    public void SetPoweredUp(bool pValue)
+    {
+        _powered = pValue;
     }
 
     public void SelfDestruct()

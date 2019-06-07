@@ -35,6 +35,7 @@ public class ShootScript : MonoBehaviour
     public float OverchargeCooldownTime = 15; // should be able to get from the powerupmanager
 
     [SerializeField] Text _energyCounter;
+    [SerializeField] Slider _overheatBar;
     [SerializeField] float _startEnergy = 80;
     [SerializeField] float _energyGain = 10f;
     [SerializeField] float _energyRegainSpeed = 0.25f;
@@ -84,7 +85,7 @@ public class ShootScript : MonoBehaviour
 
         if ((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))) // check if mouse isn't hovering over button
         {
-            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 &&  Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount < 100) //was > 0
+            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount < 100) //was > 0
             {
                 int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
                 Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -112,12 +113,20 @@ public class ShootScript : MonoBehaviour
                 Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
                 bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
                 FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
-                AddEnergy(_energyGain);
-                _regainTime = _energyRegainDelay;
+                if (!_batteryMode)
+                {
+                    AddEnergy(_energyGain);
+                    _regainTime = _energyRegainDelay;
+                }
 
                 if (_pierceMode)
                 {
                     bullet.GetComponent<BulletScript>().PierceShotMode = true;
+                }
+
+                if (IsPoweredUp())
+                {
+                    bullet.GetComponent<BulletScript>().SetPoweredUp(true);
                 }
 
                 //if (!_batteryMode)
@@ -176,11 +185,18 @@ public class ShootScript : MonoBehaviour
     {
         _energyCount -= pAmount;
         _energyCounter.text = _energyText + (int) _energyCount;
+        UpdateOverheatBar();
     }
     public void AddEnergy(float pAmount = 1)
     {
         _energyCount += pAmount;
         _energyCounter.text = _energyText + (int) _energyCount;
+        UpdateOverheatBar();
+    }
+
+    public void UpdateOverheatBar()
+    {
+        _overheatBar.value = _energyCount;
     }
 
     public void EnablePierceShot()
@@ -210,5 +226,10 @@ public class ShootScript : MonoBehaviour
         _energyCount = _startEnergy;
         _energyText = JsonText.GetText("ENERGYTEXT") + ": ";
         _energyCounter.text = _energyText + (int) _energyCount;
+    }
+
+    public bool IsPoweredUp()
+    {
+        return (_pierceMode || _batteryMode);
     }
 }

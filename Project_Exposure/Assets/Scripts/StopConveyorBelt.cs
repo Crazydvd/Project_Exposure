@@ -13,6 +13,9 @@ public class StopConveyorBelt : ControlConveyorBelt
     [Header("What to do when something enters the trigger")]
     [SerializeField] STOPMODE _stopMode = STOPMODE.STOP;
 
+    [Header("reverse the effect when you leave the trigger?")]
+    [SerializeField] bool _reverse = false;
+
     [Space]
     [Header("Whether or not every object can trigger the zone")]
     [SerializeField] bool _allTrigger = true;
@@ -40,7 +43,7 @@ public class StopConveyorBelt : ControlConveyorBelt
 
     void OnTriggerExit(Collider other)
     {
-        if (_allTrigger || checkTrigger(other.gameObject))
+        if (_reverse && (_allTrigger || checkTrigger(other.gameObject)))
         {
             if (_stopMode == STOPMODE.STOP)
             {

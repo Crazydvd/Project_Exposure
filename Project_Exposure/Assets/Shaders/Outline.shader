@@ -23,7 +23,7 @@
 
 		[space]
 		[Header(Stencil buffer)]
-		[IntRange] _StencilRef("Stencil Reference Value", Range(1,255)) = 0
+		[IntRange] _StencilRef("Stencil Reference Value", Range(1,255)) = 1
 
 		[space]
 		[Header(Texture movement)]
