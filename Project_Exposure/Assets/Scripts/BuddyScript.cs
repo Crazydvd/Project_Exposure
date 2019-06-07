@@ -22,7 +22,9 @@ public class BuddyScript : MonoBehaviour
     public void InitiateCrash()
     {
         _collider.enabled = true;
-        transform.GetComponent<Rigidbody>().isKinematic = false;
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.isKinematic = false;
+        rigidbody.velocity = transform.forward * 0.2f;
         if (_heldObject)
         {
             _heldObject.gameObject.AddComponent<Rigidbody>();

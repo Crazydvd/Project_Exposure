@@ -10,6 +10,7 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] float _shatterDelay = 0.5f;
     [SerializeField] float _shakeForce = 0.05f;
     [SerializeField] [Range(0f, 5f)] float _shakeSpeed = 2f;
+    [Tooltip("The frequency this object needs to be destroyed")]
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
     [SerializeField] Material _lowFreqMaterial;
@@ -22,6 +23,12 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] GameObject _content;
     [SerializeField] bool _isBuddy;
     [SerializeField] BuddyScript _buddyScript;
+
+    [Space]
+    [Header("score: breaking object")]
+    [SerializeField] int _scoreForBreaking = 10;
+    [Header("score: hitting object")]
+    [SerializeField] int _scoreLoss = 10;
 
     TutorialZoneScript _tutorialZone;
     ScreenShake _screenShake;
@@ -112,10 +119,11 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
-    void launchContent(){
-        if(_content){
-
-            Transform contentContainer = _content.transform; 
+    void launchContent()
+    {
+        if (_content)
+        {
+            Transform contentContainer = _content.transform;
             //Shatter and destroy. Decimate and obliterate. Annihilate and eradicate. Erase from existence.
             for (int i = 0; i < contentContainer.childCount; i++)
             {
@@ -160,7 +168,7 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
-    public void Shatter()
+    public void Shatter(bool pLoseScore = false)
     {
         //if a tutorial zone is linked to this object, resume gameplay on shatter
         _tutorialZone?.RemoveObstacle();
@@ -222,8 +230,15 @@ public class ObstacleScript : MonoBehaviour
         }
 
         //GameObject.FindGameObjectWithTag("Player").GetComponent<ShootScript>().AddEnergy(); // regain energy
-
-        _scoreUI.GetComponent<ScoreScript>().IncreaseScore(10f * ShootScript.Multiplier); // add score
+        ScoreScript score = _scoreUI.GetComponent<ScoreScript>();
+        if (!pLoseScore)
+        {
+            score.IncreaseScore(_scoreForBreaking * ShootScript.Multiplier); // add score
+        }
+        else
+        {
+            score.IncreaseScore((-(_scoreForBreaking + _scoreLoss)) * ShootScript.Multiplier);
+        }
 
         ShootScript.Multiplier += 1; // increase multiplier
 

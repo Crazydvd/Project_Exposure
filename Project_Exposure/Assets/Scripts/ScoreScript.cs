@@ -54,7 +54,8 @@ public class ScoreScript : MonoBehaviour
         _textAnimationUpscale = true;
     }
 
-    public float GetScore(){
+    public float GetScore()
+    {
         return _score;
     }
 }
