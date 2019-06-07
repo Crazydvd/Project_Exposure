@@ -9,8 +9,6 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] float _shatterForce = 10f;
     [SerializeField] float _shatterDelay = 0.5f;
     [SerializeField] float _shakeForce = 0.05f;
-    [SerializeField] [Range(0f, 5f)] float _shakeSpeed = 2f;
-    [Tooltip("The frequency this object needs to be destroyed")]
     [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
     [SerializeField] Material _lowFreqMaterial;
@@ -35,7 +33,6 @@ public class ObstacleScript : MonoBehaviour
     Vector3 _oldPosVector;
     Text _scoreUI;
     float _timeBeforeShatter = 0.0f;
-    float _shakeDelay;
     bool _shakingNShatter;
     bool _shaking;
 
@@ -94,13 +91,8 @@ public class ObstacleScript : MonoBehaviour
         Vector3 shakeVector = new Vector3(_oldPosVector.x + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
                                           _oldPosVector.y + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
                                           _oldPosVector.z + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2));
-        //add a shake speed
-        if (_shakeDelay >= (5 - (int) _frequency) - _shakeSpeed * Time.deltaTime)
-        {
-            transform.localPosition = shakeVector;
-            _shakeDelay = 0;
-        }
-        _shakeDelay++;
+
+        transform.localPosition = shakeVector;
 
         _timeBeforeShatter += Time.deltaTime;
 
@@ -144,7 +136,7 @@ public class ObstacleScript : MonoBehaviour
 
                 childRigid.isKinematic = false;
 
-                float upward = (float)Random.Range(-100, 100) / 10;
+                float upward = (float) Random.Range(-100, 100) / 10;
 
                 childRigid.AddForce(-transform.right * (_shatterForce / 2) + new Vector3(0, upward, 0), ForceMode.Impulse);
                 childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
