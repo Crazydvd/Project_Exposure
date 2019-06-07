@@ -9,8 +9,8 @@ public class PickupScript : MonoBehaviour
     Transform _grabbedObject = null;
     Transform _canGrab = null;
 
-    Transform _originalParent;
-    Rigidbody _rigidbody;
+    Transform _originalParent = null;
+    Rigidbody _rigidbody = null;
 
     //[Header("Snap the object to the grab position")]
     //[SerializeField] bool _snapPosition = false;
@@ -21,11 +21,14 @@ public class PickupScript : MonoBehaviour
     [SerializeField] int[] _pickupAbleLayers;
     [SerializeField] string[] _pickupAbleNames;
 
+    Transform _startGrabbedObject = null;
+
     void Start()
     {
         if (_grabPosition.childCount > 0)
         {
             _canGrab = _grabPosition.GetComponentInChildren<Rigidbody>().transform;
+            _startGrabbedObject = _canGrab;
             Pickup();
         }
     }
@@ -56,6 +59,11 @@ public class PickupScript : MonoBehaviour
 
         _grabbedObject = _canGrab;
         (_rigidbody = _grabbedObject.GetComponent<Rigidbody>()).isKinematic = true;
+
+        if (_startGrabbedObject == _grabbedObject)
+        {
+            return;
+        }
 
         if (_grabbedObject.gameObject.name.ToLower().Contains("container"))
         {
