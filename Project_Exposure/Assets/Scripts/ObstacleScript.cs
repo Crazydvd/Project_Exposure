@@ -236,7 +236,7 @@ public class ObstacleScript : MonoBehaviour
         }
         else
         {
-            score.IncreaseScore((-(_scoreForBreaking + _scoreLoss)) * ShootScript.Multiplier);
+            score.IncreaseScore(-_scoreLoss * ShootScript.Multiplier);
         }
 
         ShootScript.Multiplier += 1; // increase multiplier
