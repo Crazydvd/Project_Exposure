@@ -3139,6 +3139,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c023078b04a53d44bc0c5aaf30cd85c, type: 3}
+--- !u!114 &42209294 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+    type: 3}
+  m_PrefabInstance: {fileID: 617575535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c323335ead2f458c9716306bf72f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &43396872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28091,18 +28103,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500655376}
   m_Mesh: {fileID: 732913326396283899, guid: 750f5921d8d604f47b91f7a523d8fe5d, type: 3}
---- !u!114 &505164168 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6139688197974497008, guid: d8f4961a9e63bb741b744c6d2d5c1628,
-    type: 3}
-  m_PrefabInstance: {fileID: 617575535}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91c323335ead2f458c9716306bf72f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &505659334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34062,6 +34062,64 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364128562462045975, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.142
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364128562462045975, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364128562462045975, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.429
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _overheatBar
+      value: 
+      objectReference: {fileID: 1711233250}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _energyCounter
+      value: 
+      objectReference: {fileID: 1653713879}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _speed
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _startEnergy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _bulletType1
+      value: 
+      objectReference: {fileID: 4158618498503359273, guid: e586736da2a6cd64ea81ec9087f59ab1,
+        type: 3}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _bulletType2
+      value: 
+      objectReference: {fileID: 450445466149532646, guid: db7a640b8eb2e55458dd56d2ee5a97b9,
+        type: 3}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _bulletType3
+      value: 
+      objectReference: {fileID: 4583909049121081581, guid: c11af4cefccc9714fb83e25b31185960,
+        type: 3}
+    - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: _energyRegainSpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8f4961a9e63bb741b744c6d2d5c1628, type: 3}
@@ -45888,7 +45946,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _playerScript
       value: 
-      objectReference: {fileID: 505164168}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b08f0de2ba89e674aa888fecaad73fe8, type: 3}
 --- !u!1001 &865758409
@@ -103284,7 +103342,7 @@ PrefabInstance:
     - target: {fileID: 1965311199, guid: eabd19395776ad1499a09903aa836151, type: 3}
       propertyPath: _shootScript
       value: 
-      objectReference: {fileID: 505164168}
+      objectReference: {fileID: 42209294}
     - target: {fileID: 286002749, guid: eabd19395776ad1499a09903aa836151, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 316.04
