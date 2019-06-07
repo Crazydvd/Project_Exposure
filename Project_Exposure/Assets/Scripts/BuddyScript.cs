@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class BuddyScript : MonoBehaviour
 {
     [SerializeField] ObstacleScript _heldObject;
@@ -22,6 +23,7 @@ public class BuddyScript : MonoBehaviour
     public void InitiateCrash()
     {
         _collider.enabled = true;
+        transform.parent.gameObject.AddComponent<Rigidbody>().AddForce(-transform.right.normalized * 200);
         transform.GetComponent<Rigidbody>().isKinematic = false;
         if (_heldObject)
         {
