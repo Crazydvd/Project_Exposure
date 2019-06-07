@@ -9,13 +9,18 @@ public class SetShaderProperties : MonoBehaviour
     Material _material = null;
     float _timeElapsed = 0;
 
-    private bool test = false;
+    static byte _stencilRef = 1;
 
     void Start()
     {
         _material = GetComponent<Renderer>().material;
 
         _shaderSpeed = _speed;
+
+        _stencilRef++;
+        _stencilRef = (_stencilRef == 0) ? (byte)(_stencilRef + 1) : _stencilRef;
+
+        _material.SetFloat("_StencilRef", _stencilRef);
     }
 
     void Update()
