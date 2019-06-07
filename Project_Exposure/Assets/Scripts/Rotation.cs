@@ -182,7 +182,7 @@ public class Rotation : MonoBehaviour
                 _positiveZ = true;
                 _rotation += new Vector3(0, 0, euler.z + RotationStep);
                 _rotationZ += RotationStep;
-                return; ;
+                return;
             }
 
             _rotation += new Vector3(0, 0, euler.z - RotationStep);
