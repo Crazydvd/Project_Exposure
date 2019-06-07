@@ -136,10 +136,9 @@ public class ObstacleScript : MonoBehaviour
 
                 childRigid.isKinematic = false;
 
-                Vector3 direction = (child.position - transform.position).normalized;
-                Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
+                float upward = (float)Random.Range(-100, 100) / 10;
 
-                childRigid.AddForce(randomizedDirection * _shatterForce, ForceMode.Impulse);
+                childRigid.AddForce(-transform.right * (_shatterForce / 2) + new Vector3(0, upward, 0), ForceMode.Impulse);
                 childRigid.angularVelocity = new Vector3(Random.Range(0f, 10f), Random.Range(0f, 10f), Random.Range(0f, 10f)) * 2;
             }
         }
