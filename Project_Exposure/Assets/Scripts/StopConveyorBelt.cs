@@ -13,7 +13,7 @@ public class StopConveyorBelt : ControlConveyorBelt
     [Header("What to do when something enters the trigger")]
     [SerializeField] STOPMODE _stopMode = STOPMODE.STOP;
 
-    [Header("reverse the effect when you leave the trigger?")]
+    [Header("Reverse the effect when you leave the trigger?")]
     [SerializeField] bool _reverse = false;
 
     [Space]
