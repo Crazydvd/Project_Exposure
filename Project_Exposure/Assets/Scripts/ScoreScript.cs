@@ -54,6 +54,13 @@ public class ScoreScript : MonoBehaviour
         _textAnimationUpscale = true;
     }
 
+    public void MultiplyScore(float pFactor)
+    {
+        _score *= pFactor;
+        _textUI.text = JsonText.GetText("SCORE") + ": " + _score;
+        _textAnimationUpscale = true;
+    }
+
     public float GetScore()
     {
         return _score;

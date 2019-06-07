@@ -25,8 +25,8 @@ public class ObstacleScript : MonoBehaviour
     [Space]
     [Header("score: breaking object")]
     [SerializeField] int _scoreForBreaking = 10;
-    [Header("score: hitting object")]
-    [SerializeField] int _scoreLoss = 10;
+    [Header("score: % loss hitting object")]
+    [SerializeField] [Range(0, 1)] float _scoreLoss = 0.05f;
 
     TutorialZoneScript _tutorialZone;
     ScreenShake _screenShake;
@@ -225,13 +225,13 @@ public class ObstacleScript : MonoBehaviour
         if (!pLoseScore)
         {
             score.IncreaseScore(_scoreForBreaking * ShootScript.Multiplier); // add score
+            ShootScript.Multiplier += 1; // increase multiplier
         }
         else
         {
-            score.IncreaseScore(-_scoreLoss * ShootScript.Multiplier);
+            ShootScript.Multiplier = 1;
+            score.MultiplyScore(1 - _scoreLoss);
         }
-
-        ShootScript.Multiplier += 1; // increase multiplier
 
         Destroy(gameObject);
     }
