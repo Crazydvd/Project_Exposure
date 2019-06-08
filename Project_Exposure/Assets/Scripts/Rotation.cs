@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    [Header("How much ° to rotate in each direction")]
+    [Header("How much ° to rotate in each direction\n")]
     [Header("Use 0 and 1s to rotate infinite")]
+    [Header("X and Z are local, Y is world")]
     public float maxX = 0;
     public float minX = 0;
     public float maxY = 0;
@@ -13,7 +14,7 @@ public class Rotation : MonoBehaviour
     public float maxZ = 0;
     public float minZ = 0;
 
-    [Header("° per step")]
+    [Header("° per frame")]
     public float RotationStep = 1;
 
     [Header("The direction to rotate in")]

@@ -2,14 +2,16 @@
 {
 	Properties
 	{
-		_Color("Color", Color) = (1,1,1,1)
+		_Color("Color", Color) = (1, 1, 1, 1)
+		[HDR] _EmissionColor("Emission Color", Color) = (1, 1, 1, 1)
 
 		[Header(PBR maps)]
 		_MainTex("Albedo (RGB), Alpha (A)", 2D) = "white" {}
 		_BumpMap("NormalMap", 2D) = "bump" {}
 		_MetallicMap("MetallicMap (RGB), Smoothness (A)", 2D) = "white" {}
-		_HeightMap("HeightMap", 2D) = "black" {}
+		_HeightMap("HeightMap", 2D) = "grey" {}
 		_OcclusionMap("OcclusionMap", 2D) = "white" {}
+		_EmissionMap("EmissionMap (RGB)", 2D) = "black" {}
 
 		[Header(PBR settings)]
 		_MaxHeight("MaxHeight", float) = 0.01
@@ -23,11 +25,13 @@
 
 		[space]
 		[Header(Stencil buffer)]
-		[IntRange] _StencilRef("Stencil Reference Value", Range(1,255)) = 1
+		[IntRange] _StencilRef("Stencil Reference Value", Range(1, 255)) = 1
 
 		[space]
 		[Header(Texture movement)]
-		[MaterialToggle] _OnlyMoveAlbedo("Only move Albedo", float) = 0
+		[MaterialToggle] _MoveAlbedo("Move Albedo", float) = 0
+		[MaterialToggle] _MoveOther("Move Normal, Height and Occulusion", float) = 0
+		[MaterialToggle] _MoveEmission("Move Emission", float) = 0
 		_Speed("Speed (XY)", vector) = (1, 0, 0, 0)
 
 		[HideinInspector]_TimeElapsed("TimeOffset", float) = 0
@@ -169,6 +173,7 @@
 		sampler2D _MetallicMap;
 		sampler2D _HeightMap;
 		sampler2D _OcclusionMap;
+		sampler2D _EmissionMap;
 
 		struct Input
 		{
@@ -177,6 +182,7 @@
 			float2 uv_MetallicMap;
 			float2 uv_HeightMap;
 			float2 uv_OcclusionMap;
+			float2 uv_EmissionMap;
 			float3 viewDir;
 		};
 
@@ -184,6 +190,7 @@
 		half _Glossiness;
 		half _Metallic;
 		fixed4 _Color;
+		float4 _EmissionColor;
 		float _OcclusionStrength;
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
@@ -196,7 +203,9 @@
 
 		float _MaxHeight;
 
-		float _OnlyMoveAlbedo;
+		float _MoveAlbedo;
+		float _MoveOther;
+		float _MoveEmission;
 		float4 _Speed;
 		float _TimeElapsed;
 
@@ -210,11 +219,24 @@
 			float value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
 			float2 heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
 
+			if (!_MoveAlbedo)
+			{
+				timeOffset = float2(0, 0);
+				value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
+				heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
+			}
+			
 			//Albedo comes from a texture tinted by color
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex + heightOffset + timeOffset) * _Color;
 			o.Albedo = c.rgb;
-
-			if (_OnlyMoveAlbedo)
+			
+			if (!_MoveAlbedo && _MoveOther)
+			{
+				timeOffset = float2(timeX, timeY);
+				value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
+				heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
+			}
+			else if(_MoveAlbedo && !_MoveOther)
 			{
 				timeOffset = float2(0, 0);
 				value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
@@ -231,6 +253,22 @@
 
 			//Ambient Occulusion comes from the occulusionMap
 			o.Occlusion = tex2D(_OcclusionMap, IN.uv_OcclusionMap + heightOffset + timeOffset) * _OcclusionStrength;
+			
+			if (!_MoveOther && _MoveEmission)
+			{
+				timeOffset = float2(timeX, timeY);
+				value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
+				heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
+			}
+			else if(_MoveOther && !_MoveEmission)
+			{
+				timeOffset = float2(0, 0);
+				value = tex2D(_HeightMap, IN.uv_HeightMap + timeOffset).rgb;
+				heightOffset = ParallaxOffset(value, _MaxHeight, IN.viewDir);
+			}
+
+			//Emission comes from the emissionMap
+			o.Emission = tex2D(_EmissionMap, IN.uv_EmissionMap + heightOffset + timeOffset).rgb * _EmissionColor.rgb;
 
 			//Alpha comes from the Albedo
 			o.Alpha = c.a;
