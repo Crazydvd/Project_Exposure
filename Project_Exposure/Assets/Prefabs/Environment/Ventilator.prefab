@@ -171,6 +171,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &662509908722743759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3918803532987492623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed7eb57b2cd02144da6d276ebe88d9cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxX: 0
+  minX: 0
+  maxY: 0
+  minY: 0
+  maxZ: 1
+  minZ: 0
+  RotationStep: 3
+  Positive: 1
 --- !u!1001 &3849134778278317302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,11 +198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1802696693070817164}
     m_Modifications:
-    - target: {fileID: 218631990723896825, guid: eae191ee8a7f4cb439ffe3e2c207b890,
-        type: 3}
-      propertyPath: m_Name
-      value: VentilatorBlades
-      objectReference: {fileID: 0}
     - target: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,17 +216,17 @@ PrefabInstance:
     - target: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,
         type: 3}
@@ -231,7 +246,7 @@ PrefabInstance:
     - target: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,
         type: 3}
@@ -253,8 +268,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 218631990723896825, guid: eae191ee8a7f4cb439ffe3e2c207b890,
+        type: 3}
+      propertyPath: m_Name
+      value: VentilatorBlades
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eae191ee8a7f4cb439ffe3e2c207b890, type: 3}
+--- !u!1 &3918803532987492623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 218631990723896825, guid: eae191ee8a7f4cb439ffe3e2c207b890,
+    type: 3}
+  m_PrefabInstance: {fileID: 3849134778278317302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &16108756414044956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3842667227550881770, guid: eae191ee8a7f4cb439ffe3e2c207b890,

@@ -87,11 +87,11 @@ public class PickupScript : MonoBehaviour
 
         if (_grabbedObject.gameObject.name.ToLower().Contains("container"))
         {
-            _grabbedObject.transform.parent.parent = _originalParent;
+            _grabbedObject.parent.parent = _originalParent;
         }
         else
         {
-            _grabbedObject.transform.parent = _originalParent;
+            _grabbedObject.parent = _originalParent;
         }
 
         _rigidbody.isKinematic = false;
