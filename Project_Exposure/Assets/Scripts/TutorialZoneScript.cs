@@ -8,6 +8,7 @@ public class TutorialZoneScript : MonoBehaviour
 {
     [SerializeField] GameObject _uiElement;
     [SerializeField] bool _stopBelt = false;
+    [SerializeField] bool _enableGun = false;
     [SerializeField] GameObject _conveyorBelt;
     [SerializeField] ObstacleScript[] _obstacles;
 
@@ -45,6 +46,10 @@ public class TutorialZoneScript : MonoBehaviour
             _playerTrack = _player.transform.parent.GetComponent<Animator>();
             _playerTrack.speed = 0;
             _uiElement.SetActive(true);
+
+            if(_enableGun){ // enable the gun, duh
+                _player.GetComponentInChildren<ShootScript>().EnableGun();
+            }
 
             if (!_stopBelt)
             {

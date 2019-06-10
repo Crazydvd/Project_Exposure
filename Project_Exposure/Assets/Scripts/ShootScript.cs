@@ -15,8 +15,8 @@ public class ShootScript : MonoBehaviour
 {
     public static float Multiplier = 1;
 
+    [SerializeField] bool _shootingEnabled = true;
     [SerializeField] bool _rayCastAccuracy = true;
-    [SerializeField] GameObject _beam;
 
     [SerializeField] GameObject _bulletSpawnPoint;
     [SerializeField] GameObject _bulletType1;
@@ -43,10 +43,6 @@ public class ShootScript : MonoBehaviour
     float _energyCount;
     float _regainTime = 1f;
     string _energyText;
-
-    GameObject _previousHit;
-    float _rayTimer = 0;
-    float _rayTimerMax = 0.5f;
 
     Dictionary<Frequency, GameObject> _waves = new Dictionary<Frequency, GameObject>();
 
@@ -83,7 +79,9 @@ public class ShootScript : MonoBehaviour
         }
         //Debug.Log(Input.touchCount);
 
-        if ((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject()) || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))) // check if mouse isn't hovering over button
+        if (((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject())// check if mouse isn't hovering over button
+           || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))
+           ) && _shootingEnabled) // check if gun enabled
         {
             if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount < 100) //was > 0
             {
@@ -219,6 +217,16 @@ public class ShootScript : MonoBehaviour
     public void DisableBattery()
     {
         _batteryMode = false;
+    }
+
+    public void EnableGun()
+    {
+        _shootingEnabled = true;
+    }
+
+    public void DisableGun()
+    {
+        _shootingEnabled = false;
     }
 
     public void SetText()
