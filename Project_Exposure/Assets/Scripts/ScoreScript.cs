@@ -16,7 +16,7 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         _textUI = GetComponent<Text>();
-        _textUI.text = JsonText.GetText("SCORE") + ": 0";
+        _textUI.text = "0";//JsonText.GetText("SCORE") + ": 0";
         _originalTextSize = _textUI.fontSize;
     }
 
@@ -50,14 +50,20 @@ public class ScoreScript : MonoBehaviour
     public void IncreaseScore(float pIncrease)
     {
         _score += pIncrease;
-        _textUI.text = JsonText.GetText("SCORE") + ": " + _score;
+        _textUI.text = /*JsonText.GetText("SCORE") + ": " + */"" + _score;
+        _textAnimationUpscale = true;
+    }
+
+    public void DecreaseScore(float pDecrease){
+        _score -= pDecrease;
+        _textUI.text = /*JsonText.GetText("SCORE") + ": " + */"" + _score;
         _textAnimationUpscale = true;
     }
 
     public void MultiplyScore(float pFactor)
     {
         _score *= pFactor;
-        _textUI.text = JsonText.GetText("SCORE") + ": " + _score;
+        _textUI.text = /*JsonText.GetText("SCORE") + ": " + */ "" + _score;
         _textAnimationUpscale = true;
     }
 

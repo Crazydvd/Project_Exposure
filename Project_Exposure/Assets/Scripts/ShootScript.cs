@@ -37,7 +37,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField] Text _energyCounter;
     [SerializeField] Slider _overheatBar;
     [SerializeField] float _startEnergy = 80;
-    [SerializeField] float _energyGain = 10f;
+    [SerializeField] float _energyGain = -1f;
     [SerializeField] float _energyRegainSpeed = 0.25f;
     [SerializeField] float _energyRegainDelay = 0.5f;
     float _energyCount;
@@ -68,7 +68,7 @@ public class ShootScript : MonoBehaviour
     {
         SwitchWave();
 
-        if (_regainTime > 0)
+        /*if (_regainTime > 0) temp commented out
         {
             _regainTime -= Time.deltaTime;
         }
@@ -76,14 +76,14 @@ public class ShootScript : MonoBehaviour
         if (_energyCount > 0 && _regainTime <= 0)
         {
             RemoveEnergy(_energyRegainSpeed);
-        }
+        }*/
         //Debug.Log(Input.touchCount);
 
         if (((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject())// check if mouse isn't hovering over button
            || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))
            ) && _shootingEnabled) // check if gun enabled
         {
-            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount < 100) //was > 0
+            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount > 0)
             {
                 int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
                 Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -182,14 +182,14 @@ public class ShootScript : MonoBehaviour
     public void RemoveEnergy(float pAmount = 1)
     {
         _energyCount -= pAmount;
-        _energyCounter.text = _energyText + (int) _energyCount;
-        UpdateOverheatBar();
+        _energyCounter.text = "x" + (int) _energyCount;
+        //UpdateOverheatBar();
     }
     public void AddEnergy(float pAmount = 1)
     {
         _energyCount += pAmount;
-        _energyCounter.text = _energyText + (int) _energyCount;
-        UpdateOverheatBar();
+        _energyCounter.text = "x" + (int) _energyCount;
+        //UpdateOverheatBar();
     }
 
     public void UpdateOverheatBar()
@@ -233,7 +233,7 @@ public class ShootScript : MonoBehaviour
     {
         _energyCount = _startEnergy;
         _energyText = JsonText.GetText("ENERGYTEXT") + ": ";
-        _energyCounter.text = _energyText + (int) _energyCount;
+        _energyCounter.text = "x" + (int) _energyCount;
     }
 
     public bool IsPoweredUp()

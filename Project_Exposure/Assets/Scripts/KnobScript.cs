@@ -6,7 +6,7 @@ public class KnobScript : MonoBehaviour
 {
     [SerializeField] ShootScript _shootScript;
     [SerializeField] float _rotationSpeed = 0.1f;
-    Vector3 _targetRotation = Vector3.zero;
+    Vector3 _targetRotation = new Vector3(0,0, 180);
     bool _holding = false;
 
     Animator _animator;
@@ -20,15 +20,15 @@ public class KnobScript : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            if (_targetRotation.z > 45)
+            if (_targetRotation.z < 135)
             {
                 SetLow();
             }
-            else if (_targetRotation.z > -45 && _targetRotation.z < 45)
+            else if (_targetRotation.z > 135 && _targetRotation.z < 225)
             {
                 SetMedium();
             }
-            else if (_targetRotation.x >= -90)
+            else if (_targetRotation.x >= 225)
             {
                 SetHigh();
             }
@@ -39,9 +39,10 @@ public class KnobScript : MonoBehaviour
             Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 offset = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
             float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-            if (angle - 90 < 90 && angle - 90 > -90)
+            Debug.Log(angle);
+            if (angle > 0 && angle > -180)
             {
-                _targetRotation = new Vector3(0, 0, angle - 90);
+                _targetRotation = new Vector3(0, 0, angle + 270);
             }
         }
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(_targetRotation), _rotationSpeed);
@@ -51,13 +52,13 @@ public class KnobScript : MonoBehaviour
     {
         if (!_holding)
         {
-            _holding = true;
+            //_holding = true;
         }
     }
 
     public void SetHigh()
     {
-        _targetRotation = new Vector3(0, 0, -90);
+        _targetRotation = new Vector3(0, 0, 270);
         _shootScript.SwitchWave(Frequency.HIGH);
         playAnimation(Frequency.HIGH);
 
@@ -66,7 +67,7 @@ public class KnobScript : MonoBehaviour
 
     public void SetMedium()
     {
-        _targetRotation = new Vector3(0, 0, 0);
+        _targetRotation = new Vector3(0, 0, 180);
         _shootScript.SwitchWave(Frequency.MEDIUM);
         playAnimation(Frequency.MEDIUM);
 

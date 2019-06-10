@@ -230,7 +230,7 @@ public class ObstacleScript : MonoBehaviour
         else
         {
             ShootScript.Multiplier = 1;
-            score.MultiplyScore(1 - _scoreLoss);
+            score.DecreaseScore(30);
         }
 
         Destroy(gameObject);
