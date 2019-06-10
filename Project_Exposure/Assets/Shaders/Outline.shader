@@ -113,10 +113,10 @@
 
 			Stencil 
 			{
-				//Ref [_StencilRef]
-				//Comp NotEqual
-				//Pass replace
-				//ZFail decrWrap
+				Ref [_StencilRef]
+				Comp NotEqual
+				Pass replace
+				ZFail decrWrap
 			}
 
 			CGPROGRAM
