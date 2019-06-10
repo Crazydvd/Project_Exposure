@@ -22,6 +22,7 @@
 		[MaterialToggle] _ExtendVertices("ExtendAlongNormal", float) = 0
 		_OutlineColor("OutlineColor", color) = (0, 0, 0, 1)
 		_Thickness("Outline thickness (pixels)", float) = 25
+		_OutlineOffset("Outline Offset (Local space)", vector) = (0, 0, 0, 1)
 
 		[space]
 		[Header(Stencil buffer)]
@@ -29,9 +30,9 @@
 
 		[space]
 		[Header(Texture movement)]
-		[MaterialToggle] _MoveAlbedo("Move Albedo", float) = 0
-		[MaterialToggle] _MoveOther("Move Normal, Height and Occulusion", float) = 0
-		[MaterialToggle] _MoveEmission("Move Emission", float) = 0
+		[MaterialToggle] _MoveAlbedo("Move Albedo", float) = 1
+		[MaterialToggle] _MoveOther("Move Others", float) = 1
+		[MaterialToggle] _MoveEmission("Move Emission", float) = 1
 		_Speed("Speed (XY)", vector) = (1, 0, 0, 0)
 
 		[HideinInspector]_TimeElapsed("TimeOffset", float) = 0
@@ -109,7 +110,6 @@
 		{
 			Name "OUTLINE"
 			cull front
-			ColorMask RBGA
 
 			Stencil 
 			{
@@ -124,13 +124,18 @@
 			#pragma fragment fragmentShader alpha
 
 			float4 _OutlineColor;
+			float4 _OutlineOffset;
 			float _Thickness;
 			float _ExtendVertices;
+
+			float4 oldPosition;
 
 			FragmentInput vertexShader(VertexInput vert)
 			{
 				FragmentInput frag;
 				frag.color = vert.color;
+
+				vert.vertex.xyz += _OutlineOffset.xyz;
 
 				if (_ExtendVertices)
 				{
@@ -156,7 +161,10 @@
 
 			float4 fragmentShader(FragmentInput frag) : SV_TARGET
 			{
-				return _OutlineColor;
+
+				float alpha = _OutlineColor.a;
+				alpha = saturate(alpha);
+				return float4(_OutlineColor.rgb, alpha);
 			}
 			ENDCG
 		}
