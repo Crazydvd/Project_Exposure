@@ -92,7 +92,7 @@ public class ObstacleScript : MonoBehaviour
                                           _oldPosVector.y + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2),
                                           _oldPosVector.z + Random.Range(-_shakeForce, _shakeForce) / (pDestroy ? 1 : 2));
 
-        transform.localPosition = shakeVector;
+        transform.GetChild(0).localPosition = shakeVector;
 
         _timeBeforeShatter += Time.deltaTime;
 
@@ -104,7 +104,7 @@ public class ObstacleScript : MonoBehaviour
             }
             else
             {
-                transform.localPosition = _oldPosVector;
+                transform.GetChild(0).localPosition = _oldPosVector;
                 _timeBeforeShatter = 0.0f;
                 _shaking = false;
             }
@@ -146,7 +146,7 @@ public class ObstacleScript : MonoBehaviour
 
     public void EnableShake(bool pDestroy)
     {
-        _oldPosVector = transform.localPosition;
+        _oldPosVector = transform.GetChild(0).localPosition;
 
         switch (pDestroy)
         {
