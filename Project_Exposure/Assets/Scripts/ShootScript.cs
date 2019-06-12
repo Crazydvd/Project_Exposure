@@ -34,15 +34,15 @@ public class ShootScript : MonoBehaviour
     [SerializeField] float _batteryCooldownTime = 5;
     public float OverchargeCooldownTime = 15; // should be able to get from the powerupmanager
 
-    [SerializeField] Text _energyCounter;
-    [SerializeField] Slider _overheatBar;
-    [SerializeField] float _startEnergy = 80;
-    [SerializeField] float _energyGain = -1f;
-    [SerializeField] float _energyRegainSpeed = 0.25f;
-    [SerializeField] float _energyRegainDelay = 0.5f;
-    float _energyCount;
-    float _regainTime = 1f;
-    string _energyText;
+    //[SerializeField] Text _energyCounter; Not used
+    //[SerializeField] Slider _overheatBar;
+    //[SerializeField] float _startEnergy = 80;
+    //[SerializeField] float _energyGain = -1f;
+    //[SerializeField] float _energyRegainSpeed = 0.25f;
+    //[SerializeField] float _energyRegainDelay = 0.5f;
+    //float _energyCount;
+    //float _regainTime = 1f;
+    //string _energyText;
 
     Dictionary<Frequency, GameObject> _waves = new Dictionary<Frequency, GameObject>();
 
@@ -54,11 +54,12 @@ public class ShootScript : MonoBehaviour
     void Start()
     {
         Multiplier = 1;
-        SetText();
 
         _waves.Add(Frequency.LOW, _bulletType1);
         _waves.Add(Frequency.MEDIUM, _bulletType2);
         _waves.Add(Frequency.HIGH, _bulletType3);
+
+        Lean.Touch.LeanTouch.OnFingerTap += OnFingerTap;
 
         _knobScript = GameObject.Find("Canvas").GetComponentInChildren<KnobScript>();
     }
@@ -67,70 +68,48 @@ public class ShootScript : MonoBehaviour
     void Update()
     {
         SwitchWave();
+    }
 
-        /*if (_regainTime > 0) temp commented out
+    // Detect (touch/mouse) input
+    void OnFingerTap(Lean.Touch.LeanFinger finger)
+    {
+        if (!finger.IsOverGui && _shootingEnabled)
         {
-            _regainTime -= Time.deltaTime;
-        }
-
-        if (_energyCount > 0 && _regainTime <= 0)
-        {
-            RemoveEnergy(_energyRegainSpeed);
-        }*/
-        //Debug.Log(Input.touchCount);
-
-        if (((!EventSystem.current.IsPointerOverGameObject() && !isPointerOverUIObject())// check if mouse isn't hovering over button
-           || (Input.touchCount > 1 && !EventSystem.current.IsPointerOverGameObject(Input.touches[1].fingerId))
-           ) && _shootingEnabled) // check if gun enabled
-        {
-            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && _energyCount > 0)
+            int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
+            Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 hitPoint;
+            if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
             {
-                int layerMask = ~LayerMask.GetMask("Player"); // don't hit the Player layer
-                Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
-                Vector3 hitPoint;
-                if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
-                {
-                    transform.LookAt(hit.point);
-                    hitPoint = hit.point;
-                }
-                else
-                {
-                    hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
-                    transform.LookAt(hitPoint);
-                    Debug.DrawLine(_bulletSpawnPoint.transform.position, hitPoint, Color.red);
-                }
+                transform.LookAt(hit.point);
+                hitPoint = hit.point;
+            }
+            else
+            {
+                hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
+                transform.LookAt(hitPoint);
+                Debug.DrawLine(_bulletSpawnPoint.transform.position, hitPoint, Color.red);
+            }
 
-                if ((transform.position - hitPoint).magnitude < _minRayDistance)
-                {
-                    hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
-                    transform.LookAt(hitPoint);
-                }
+            if ((transform.position - hitPoint).magnitude < _minRayDistance)
+            {
+                hitPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _bulletPointDistance));
+                transform.LookAt(hitPoint);
+            }
 
 
-                GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
-                Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-                bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
-                if (!_batteryMode)
-                {
-                    AddEnergy(_energyGain);
-                    _regainTime = _energyRegainDelay;
-                }
+            GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
+            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
 
-                if (_pierceMode)
-                {
-                    bullet.GetComponent<BulletScript>().PierceShotMode = true;
-                }
+            if (_pierceMode)
+            {
+                bullet.GetComponent<BulletScript>().PierceShotMode = true;
+            }
 
-                if (IsPoweredUp())
-                {
-                    bullet.GetComponent<BulletScript>().SetPoweredUp(true);
-                }
-
-                //if (!_batteryMode)
-                //{
-                //    RemoveEnergy();
-                //}
+            if (IsPoweredUp())
+            {
+                bullet.GetComponent<BulletScript>().SetPoweredUp(true);
             }
         }
     }
@@ -179,24 +158,6 @@ public class ShootScript : MonoBehaviour
         return _shootingFrequency = pMode;
     }
 
-    public void RemoveEnergy(float pAmount = 1)
-    {
-        _energyCount -= pAmount;
-        _energyCounter.text = "x" + (int) _energyCount;
-        //UpdateOverheatBar();
-    }
-    public void AddEnergy(float pAmount = 1)
-    {
-        _energyCount += pAmount;
-        _energyCounter.text = "x" + (int) _energyCount;
-        //UpdateOverheatBar();
-    }
-
-    public void UpdateOverheatBar()
-    {
-        _overheatBar.value = _energyCount;
-    }
-
     public void EnablePierceShot()
     {
         _pierceMode = true;
@@ -227,13 +188,6 @@ public class ShootScript : MonoBehaviour
     public void DisableGun()
     {
         _shootingEnabled = false;
-    }
-
-    public void SetText()
-    {
-        _energyCount = _startEnergy;
-        _energyText = JsonText.GetText("ENERGYTEXT") + ": ";
-        _energyCounter.text = "x" + (int) _energyCount;
     }
 
     public bool IsPoweredUp()
