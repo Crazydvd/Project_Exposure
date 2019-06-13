@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaveHigh
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _XAXIS_ON
+  m_Name: OrbMaterial2mat
+  m_Shader: {fileID: 4800000, guid: 9e40fa65392fe8841b0ebfd4b980c911, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -40,7 +40,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 81d1d28e59f2b62498e5d4c0f6750984, type: 3}
+        m_Texture: {fileID: -3507384285057116018, guid: cef1780e52ad12a4c8a80d4c434397d5,
+          type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,27 +61,28 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _Distort: 11.7
     - _DstBlend: 0
-    - _Frequency: 3
+    - _Fresnel: 13.4
+    - _FresnelWidth: 0.154
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Local: 0
+    - _IntersectionThreshold: 0.1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Offset: 3
     - _Parallax: 0.02
-    - _Scale: 0.5
+    - _ScrollSpeedU: 5
+    - _ScrollSpeedV: 5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 20
+    - _Speed: 4.9
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Unit: 0.5
-    - _Xaxis: 1
-    - _Yaxis: 0
     - _ZWrite: 1
-    - _Zaxis: 0
     m_Colors:
-    - _Color: {r: 0.5411765, g: 0.5787177, b: 0.90588236, a: 0.41960785}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 0.2666666, g: 1, b: 0.31906188, a: 0}

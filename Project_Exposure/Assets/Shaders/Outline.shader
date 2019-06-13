@@ -35,7 +35,7 @@
 		[MaterialToggle] _MoveEmission("Move Emission", float) = 1
 		_Speed("Speed (XY)", vector) = (1, 0, 0, 0)
 
-		[HideinInspector]_TimeElapsed("TimeOffset", float) = 0
+		[HideinInspector] _TimeElapsed("TimeOffset", float) = 0
 	}
 
 
@@ -57,13 +57,11 @@
 		{
 			float4 vertex : POSITION;
 			float4 normal : NORMAL;
-			float4 color : COLOR;
 		};
 
 		struct FragmentInput
 		{
 			float4 position : SV_POSITION;
-			float4 color : COLOR;
 		};
 
 		ENDCG
@@ -93,14 +91,13 @@
 			{
 				FragmentInput frag;
 				frag.position = UnityObjectToClipPos(vert.vertex);
-				frag.color = vert.color;
 
 				return frag;
 			}
 
 			half4 frag(FragmentInput frag) : COLOR
 			{
-				return frag.color;
+				return float4(0, 0, 0, 1);
 			}
 
 			ENDCG
@@ -128,12 +125,9 @@
 			float _Thickness;
 			float _ExtendVertices;
 
-			float4 oldPosition;
-
 			FragmentInput vertexShader(VertexInput vert)
 			{
 				FragmentInput frag;
-				frag.color = vert.color;
 
 				vert.vertex.xyz += _OutlineOffset.xyz;
 
@@ -161,10 +155,7 @@
 
 			float4 fragmentShader(FragmentInput frag) : SV_TARGET
 			{
-
-				float alpha = _OutlineColor.a;
-				alpha = saturate(alpha);
-				return float4(_OutlineColor.rgb, alpha);
+				return _OutlineColor;
 			}
 			ENDCG
 		}
