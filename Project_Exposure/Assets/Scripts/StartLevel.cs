@@ -19,4 +19,8 @@ public class StartLevel : MonoBehaviour
     {
         SceneManager.LoadScene(_levelToLoad);
     }
+
+    public void loadLevel(int pLevel){
+        SceneManager.LoadScene(pLevel);
+    }
 }
