@@ -17,7 +17,7 @@ public class ScreenShake : MonoBehaviour
 
             transform.localPosition = new Vector3(_oldPosition.x + x, _oldPosition.y + y, _oldPosition.z);
 
-            _time += Time.deltaTime;
+            _time ++;
 
             yield return null;
         }

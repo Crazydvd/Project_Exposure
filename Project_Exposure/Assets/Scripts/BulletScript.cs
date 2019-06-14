@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
 
         if (!_powered) //if powered up, dont lose the multiplier 
         {
-            Invoke("SelfDestruct", 3f);
+            Invoke("SelfDestruct", 5f);
         }
     }
 
@@ -26,6 +26,10 @@ public class BulletScript : MonoBehaviour
         if (!PierceShotMode && LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "OBSTACLES")
         {
             Destroy(gameObject);
+        }
+        else if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "WALLS")
+        {
+            SelfDestruct();
         }
     }
 

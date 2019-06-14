@@ -212,7 +212,7 @@ public class ObstacleScript : MonoBehaviour
 
 
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_glassplaceholder", gameObject);
-        _screenShake.StartShake(0.2f, 0.1f);
+        _screenShake.StartShake(12f, 0.1f);
         shardsContainer.DetachChildren();
 
         if (_isBuddy)

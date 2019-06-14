@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4791212707435094128}
   - component: {fileID: 4550544571667225158}
   - component: {fileID: 7789610277951334079}
+  - component: {fileID: 2416813265517796585}
   m_Layer: 0
   m_Name: Pallet
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8369543303235326563}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 62.56884, y: 1.705, z: 93.02652}
   m_LocalScale: {x: 0.01, y: 0.0011435588, z: 0.01}
   m_Children: []
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2416813265517796585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369543303235326563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.999985, y: 99.99998, z: 99.999985}
+  m_Center: {x: 38.88888, y: -17.259369, z: -1.2127062}
