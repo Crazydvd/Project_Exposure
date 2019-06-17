@@ -14,6 +14,7 @@ public class LoadingScreenScript : MonoBehaviour
     [Header("The filled part of the loading bar")]
     [SerializeField] RectTransform _barFill;
 
+    //Used to cache the scale, just in case.
     Vector3 _barFillLocalScale;
 
     [Header("The %")]
@@ -24,14 +25,24 @@ public class LoadingScreenScript : MonoBehaviour
 
     float _timeElapsed = 0;
 
+    [Header("Don't show")]
     [SerializeField] bool _hideProgressBar = false;
     [SerializeField] bool _hidePercentage = false;
 
     [Header("Loading screen fade in/out")]
     [SerializeField] bool _fade = true;
 
-    [Header("Loading progress only")]
+    [Header("Show loading progress only")]
     [SerializeField] bool _loadOnly = false;
+
+    [Header("Require input to continue")]
+    [SerializeField] bool _requireInput = false;
+
+    [Header("Optionally: Show when input needed")]
+    [SerializeField] GameObject _whenInput = null;
+
+    [Header("Size 0 == any button")]
+    [SerializeField] string[] _inputButtons;
 
     Animator _animator;
     bool _didFadeOut;
@@ -47,16 +58,26 @@ public class LoadingScreenScript : MonoBehaviour
         {
             setProgress(_currentLoadingOperation.progress);
 
-            if (_currentLoadingOperation.isDone && !_didFadeOut)
+            if (_didFadeOut)
             {
-                if (_fade)
+                return;
+            }
+
+            if (_currentLoadingOperation.isDone)
+            {
+                Time.timeScale = 0;
+
+                if (!_requireInput || (_requireInput && checkInput()))
                 {
-                    _animator.SetTrigger("Hide");
-                    _didFadeOut = true;
-                }
-                else
-                {
-                    Hide();
+                    if (_fade)
+                    {
+                        _animator.SetTrigger("Hide");
+                        _didFadeOut = true;
+                    }
+                    else
+                    {
+                        Hide();
+                    }
                 }
             }
             else
@@ -89,6 +110,7 @@ public class LoadingScreenScript : MonoBehaviour
 
         _barFill.parent.gameObject.SetActive(!_hideProgressBar);
         _percentLoadedText.gameObject.SetActive(!_hidePercentage);
+        _whenInput?.gameObject.SetActive(false);
 
         Hide();
     }
@@ -100,7 +122,7 @@ public class LoadingScreenScript : MonoBehaviour
 
         _barFill.localScale = _barFillLocalScale;
 
-        _percentLoadedText.text = _loadOnly ? Mathf.CeilToInt(pProgress * 100) / 0.9 + "%" 
+        _percentLoadedText.text = _loadOnly ? Mathf.CeilToInt(pProgress * 100) / 0.9 + "%"
                                             : Mathf.CeilToInt(pProgress * 100) + "%";
     }
 
@@ -131,6 +153,8 @@ public class LoadingScreenScript : MonoBehaviour
 
     public void Hide()
     {
+        Time.timeScale = 1;
+
         gameObject.SetActive(false);
 
         _currentLoadingOperation = null;
@@ -154,5 +178,28 @@ public class LoadingScreenScript : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    bool checkInput()
+    {
+        if (_whenInput && !_whenInput.gameObject.activeInHierarchy)
+        {
+            _whenInput.SetActive(true);
+        }
+
+        if (_inputButtons.Length == 0 && Input.anyKey)
+        {
+            return true;
+        }
+
+        foreach (string button in _inputButtons)
+        {
+            if (Input.GetButton(button))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
