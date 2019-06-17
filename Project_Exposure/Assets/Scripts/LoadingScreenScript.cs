@@ -130,7 +130,6 @@ public class LoadingScreenScript : MonoBehaviour
 
         _barFill.parent.gameObject.SetActive(!_hideProgressBar);
         _percentLoadedText.gameObject.SetActive(!_hidePercentage);
-        _whenInput?.gameObject.SetActive(false);
 
         Hide();
     }
@@ -165,6 +164,8 @@ public class LoadingScreenScript : MonoBehaviour
             //Trigger animation
             _animator.SetTrigger("Show");
         }
+
+        _whenInput?.gameObject.SetActive(false);
 
         _didFadeOut = false;
 
