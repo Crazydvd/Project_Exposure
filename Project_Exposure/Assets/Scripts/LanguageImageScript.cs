@@ -11,12 +11,20 @@ public class LanguageImageScript : MonoBehaviour
     [SerializeField] Sprite _russian = null;
     [SerializeField] Sprite _bulgerian = null;
 
+    Image _image;
+
     void Start()
     {
+        _image = GetComponent<Image>();
+        LoadImage();
+    }
+
+    public void LoadImage(){
+
         Language language = LanguageSettings.Language;
         Sprite sprite = getImage(language);
 
-        while (language >= 0 && sprite != null)
+        while (language >= 0 && sprite == null)
         {
             language--;
             sprite = getImage(language);
@@ -26,8 +34,7 @@ public class LanguageImageScript : MonoBehaviour
         {
             return;
         }
-
-        GetComponent<Image>().sprite = sprite;
+        _image.sprite = sprite;
     }
 
     Sprite getImage(Language pLanguage)

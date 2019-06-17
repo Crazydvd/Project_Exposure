@@ -212,7 +212,7 @@ public class ObstacleScript : MonoBehaviour
 
 
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_glassplaceholder", gameObject);
-        _screenShake.StartShake(0.2f, 0.1f);
+        _screenShake.StartShake(12f, 0.1f);
         shardsContainer.DetachChildren();
 
         if (_isBuddy)
@@ -230,7 +230,8 @@ public class ObstacleScript : MonoBehaviour
         else
         {
             ShootScript.Multiplier = 1;
-            score.DecreaseScore(30);
+            //score.DecreaseScore(30);
+            score.MultiplyScore(1 - _scoreLoss);
         }
 
         Destroy(gameObject);

@@ -29,11 +29,13 @@ public class ShootScript : MonoBehaviour
     [SerializeField] float _bulletPointDistance = 5f;
 
     [SerializeField] bool _pierceMode = false;
-    [SerializeField] float _pierceCooldownTime = 5;
+    [SerializeField] float _pierceShotAmmo = 5;
     [SerializeField] bool _batteryMode = false;
     [SerializeField] float _batteryCooldownTime = 5;
     public float OverchargeCooldownTime = 15; // should be able to get from the powerupmanager
+    float _pierceShots;
 
+    [SerializeField] Text _pierceShotCounter;
     //[SerializeField] Text _energyCounter; Not used
     //[SerializeField] Slider _overheatBar;
     //[SerializeField] float _startEnergy = 80;
@@ -96,21 +98,29 @@ public class ShootScript : MonoBehaviour
                 transform.LookAt(hitPoint);
             }
 
-
+            //Shoot the shit here
             GameObject bullet = Instantiate(_waves[_shootingFrequency], _bulletSpawnPoint.transform.position, Quaternion.LookRotation(transform.forward));
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
             FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
 
-            if (_pierceMode)
-            {
-                bullet.GetComponent<BulletScript>().PierceShotMode = true;
-            }
-
             if (IsPoweredUp())
             {
                 bullet.GetComponent<BulletScript>().SetPoweredUp(true);
             }
+
+            if (_pierceMode)
+            {
+                bullet.GetComponent<BulletScript>().PierceShotMode = true;
+
+                _pierceShots--;
+                _pierceShotCounter.text = _pierceShots.ToString();
+                if (_pierceShots <= 0)
+                {
+                    DisablePierceShot();
+                }
+            }
+
         }
     }
 
@@ -161,12 +171,15 @@ public class ShootScript : MonoBehaviour
     public void EnablePierceShot()
     {
         _pierceMode = true;
-        Invoke("DisablePierceShot", _pierceCooldownTime);
+        _pierceShots = _pierceShotAmmo;
+        _pierceShotCounter.text = _pierceShots.ToString();
+        _pierceShotCounter.gameObject.SetActive(true);
     }
 
     public void DisablePierceShot()
     {
         _pierceMode = false;
+        _pierceShotCounter.gameObject.SetActive(false);
     }
 
     public void EnableBattery()
