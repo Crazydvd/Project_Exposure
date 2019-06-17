@@ -21,7 +21,7 @@ public class MoveAlongBeltScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.tag.ToLower() == "conveyorbelt")
+        if (other.transform.root.tag.ToLower() == "conveyorbelt" || other.tag.ToLower() == "conveyorbelt")
         {
             _lastEntered = other.GetComponent<ConveyorScript>() ?? other.gameObject.AddComponent<ConveyorScript>();
             Move = _lastEntered.MoveObject;
