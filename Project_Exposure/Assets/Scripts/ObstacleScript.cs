@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField] float _speed = 0.01f;
+    [Header("Shatter Options")]
     [SerializeField] float _shatterForce = 10f;
     [SerializeField] float _shatterDelay = 0.5f;
     [SerializeField] float _shakeForce = 0.05f;
-    [SerializeField] Frequency _frequency = Frequency.MEDIUM;
 
+    [Header("Frequency")]
+    [SerializeField] Frequency _frequency = Frequency.MEDIUM;
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
@@ -18,15 +19,15 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _mediumFreqStandard;
     [SerializeField] Material _highFreqStandard;
 
+    [Header("Specific Objeccts")]
     [SerializeField] GameObject _content;
+    [SerializeField] bool _isVending;
     [SerializeField] bool _isBuddy;
     [SerializeField] BuddyScript _buddyScript;
 
-    [Space]
-    [Header("score: breaking object")]
+    [Header("Score")]
     [SerializeField] int _scoreForBreaking = 10;
-    [Header("score: % loss hitting object")]
-    [SerializeField] [Range(0, 1)] float _scoreLoss = 0.05f;
+    [SerializeField] [Range(0, 1)] float _scoreLossPercent = 0.05f;
 
     TutorialZoneScript _tutorialZone;
     ScreenShake _screenShake;
@@ -211,9 +212,14 @@ public class ObstacleScript : MonoBehaviour
         }
 
 
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_glassplaceholder", gameObject);
         _screenShake.StartShake(12f, 0.1f);
         shardsContainer.DetachChildren();
+        //Play sounds
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_glassplaceholder", gameObject);
+        if (_isVending)
+        {
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Vending machine", gameObject);
+        }
 
         if (_isBuddy)
         {
@@ -231,7 +237,7 @@ public class ObstacleScript : MonoBehaviour
         {
             ShootScript.Multiplier = 1;
             //score.DecreaseScore(30);
-            score.MultiplyScore(1 - _scoreLoss);
+            score.MultiplyScore(1 - _scoreLossPercent);
         }
 
         Destroy(gameObject);
