@@ -234,6 +234,8 @@ public class ObstacleScript : MonoBehaviour
             score.MultiplyScore(1 - _scoreLoss);
         }
 
+        GameObject.Find("Canvas").GetComponentInChildren<ShatterMultiplierVisualScript>().SetFollowObject(transform.GetChild(0)); // oof sorry, didn't wanna drag another thing in the editor
+
         Destroy(gameObject);
     }
 

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-
     public void BackToMainMenu(){
         Time.timeScale = 1f;
         LoadingScreenScript.Load(0);
