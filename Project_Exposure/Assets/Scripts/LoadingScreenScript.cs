@@ -123,7 +123,6 @@ public class LoadingScreenScript : MonoBehaviour
         _extra = transform.Find("Extras");
         _extraTexts = _extra.GetComponentsInChildren<Text>();
         _extraImages = _extra.GetComponentsInChildren<Image>();
-        setExtraAlpha(0);
 
         _barFillLocalScale = _barFill.localScale;
         _animator = GetComponent<Animator>();
@@ -166,6 +165,8 @@ public class LoadingScreenScript : MonoBehaviour
         }
 
         _whenInput?.gameObject.SetActive(false);
+
+        setExtraAlpha(0);
 
         _didFadeOut = false;
 
