@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class GoalScript : MonoBehaviour
 {
     [SerializeField] GameObject _endMenu;
-    [SerializeField] Text _obstacleScore;
+    [SerializeField] Text _endScoreText;
     [SerializeField] ScoreScript _scoreScript;
+    [SerializeField] StarScript _starScript;
     [SerializeField] ObstacleCountScript _obstacleCountScript;
     [SerializeField] HighscoreScript _highscoreScript;
     [SerializeField] int _level = 1;
@@ -16,11 +17,13 @@ public class GoalScript : MonoBehaviour
     {
         if (other.tag.ToUpper() == "MAINCAMERA")
         {
+            float score = _scoreScript.GetScore();
             other.transform.parent.GetComponent<Animator>().speed = 0;
-            _obstacleScore.text = "Destroyed Obstacles: " + (_obstacleCountScript.TotalObstacleCount - _obstacleCountScript.GetCurrentObstacleCount()) + "/" + _obstacleCountScript.TotalObstacleCount;
+            _endScoreText.text = "Score: " + score; 
             _endMenu.SetActive(true);
 
-            _highscoreScript.AddEntry("Naam", _scoreScript.GetScore(), _level);
+            _starScript.CheckStarScore(score);
+            _highscoreScript.AddEntry("Naam", score, _level);
         }
     }
 }
