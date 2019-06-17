@@ -47,6 +47,13 @@ public class LoadingScreenScript : MonoBehaviour
     Animator _animator;
     bool _didFadeOut;
 
+    Image _mainImage = null;
+
+    Transform _extra = null;
+    Text[] _extraTexts;
+    Image[] _extraImages;
+
+
     void Awake()
     {
         initialize();
@@ -56,6 +63,11 @@ public class LoadingScreenScript : MonoBehaviour
     {
         if (_isLoading)
         {
+            if (_fade)
+            {
+                setExtraAlpha(_mainImage.color.a);
+            }
+
             setProgress(_currentLoadingOperation.progress);
 
             if (_didFadeOut)
@@ -92,6 +104,7 @@ public class LoadingScreenScript : MonoBehaviour
 
     void initialize()
     {
+        //Only one loading screen can exist
         if (Instance == null)
         {
             Instance = this;
@@ -104,6 +117,13 @@ public class LoadingScreenScript : MonoBehaviour
 
             return;
         }
+
+        _mainImage = GetComponent<Image>();
+
+        _extra = transform.Find("Extras");
+        _extraTexts = _extra.GetComponentsInChildren<Text>();
+        _extraImages = _extra.GetComponentsInChildren<Image>();
+        setExtraAlpha(0);
 
         _barFillLocalScale = _barFill.localScale;
         _animator = GetComponent<Animator>();
@@ -118,11 +138,11 @@ public class LoadingScreenScript : MonoBehaviour
     //Updates the UI
     void setProgress(float pProgress)
     {
-        _barFillLocalScale.x = pProgress;
+        _barFillLocalScale.x = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
 
         _barFill.localScale = _barFillLocalScale;
 
-        _percentLoadedText.text = _loadOnly ? Mathf.CeilToInt(pProgress * 100) / 0.9 + "%"
+        _percentLoadedText.text = _loadOnly ? Mathf.Clamp(Mathf.CeilToInt(pProgress * 100 / 0.9f), 0, 100) + "%"
                                             : Mathf.CeilToInt(pProgress * 100) + "%";
     }
 
@@ -201,5 +221,25 @@ public class LoadingScreenScript : MonoBehaviour
         }
 
         return false;
+    }
+
+    void setExtraAlpha(float pAlpha)
+    {
+        Color colour;
+        float alpha = pAlpha;
+
+        foreach (Text text in _extraTexts)
+        {
+            colour = text.color;
+            colour.a = alpha;
+            text.color = colour;
+        }
+
+        foreach (Image image in _extraImages)
+        {
+            colour = image.color;
+            colour.a = alpha;
+            image.color = colour;
+        }
     }
 }
