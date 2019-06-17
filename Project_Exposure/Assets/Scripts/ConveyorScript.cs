@@ -15,7 +15,6 @@ public class ConveyorScript : MonoBehaviour
     [SerializeField] float _rotateAngle = -20f;
 
     Transform _cornerPoint = null;
-    MoveAlongBeltScript _shard = null;
     Material _conveyorMaterial = null;
     float _timeElapsed = 0;
 

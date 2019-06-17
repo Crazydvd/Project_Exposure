@@ -34,7 +34,7 @@ public class BuddyScript : MonoBehaviour
         _animator.enabled = false;
         _hovering.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/dying", gameObject);
-        Invoke("ShatterHeldObject", 1f);h
+        Invoke("ShatterHeldObject", 1f);
     }
 
     public void ShatterHeldObject()
