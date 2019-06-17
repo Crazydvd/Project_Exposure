@@ -17,10 +17,11 @@ public class StartLevel : MonoBehaviour
 
     void loadLevel()
     {
-        SceneManager.LoadScene(_levelToLoad);
+        loadLevel(_levelToLoad);
     }
 
-    public void loadLevel(int pLevel){
-        SceneManager.LoadScene(pLevel);
+    public void loadLevel(int pLevel)
+    {
+        LoadingScreenScript.Load(pLevel);
     }
 }
