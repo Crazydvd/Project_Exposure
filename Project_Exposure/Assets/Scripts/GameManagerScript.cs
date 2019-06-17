@@ -8,7 +8,7 @@ public class GameManagerScript : MonoBehaviour
     public void ReloadScene()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        LoadingScreenScript.Load(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame()

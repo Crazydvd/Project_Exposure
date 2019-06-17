@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_Sun: {fileID: 380082633}
+  m_IndirectSpecularColor: {r: 0.176207, g: 0.21327929, b: 0.26135644, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -58,7 +58,7 @@ LightmapSettings:
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
@@ -96,7 +96,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6589925a87113454daec0923cd789b03,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -601,6 +602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -1521,6 +1527,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1575,11 +1586,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -2105,6 +2111,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2159,11 +2170,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (21)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -3024,6 +3030,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3195,6 +3206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarCylinderSkinny (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5914da2ed559f7429c5276467f5d7fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5914da2ed559f7429c5276467f5d7fe,
         type: 3}
@@ -3637,7 +3653,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -3964,6 +3980,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarCylinderSkinny (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5914da2ed559f7429c5276467f5d7fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5914da2ed559f7429c5276467f5d7fe,
         type: 3}
@@ -4474,6 +4495,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4528,11 +4554,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (17)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -5116,7 +5137,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -5328,6 +5349,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5382,11 +5408,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (20)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -5752,7 +5773,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -6013,7 +6034,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -6717,6 +6738,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6948,6 +6974,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1669299284850117041, guid: 68b3967441964f349b3d496ecc7dc7e4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4222489026672749072, guid: 5e6790f0142a8e8408db7d3abd6bdf1d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68b3967441964f349b3d496ecc7dc7e4, type: 3}
 --- !u!4 &131916244 stripped
@@ -8924,6 +8956,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8978,11 +9015,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (18)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -10429,6 +10461,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10484,11 +10521,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -10503,6 +10535,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
+        type: 3}
+      propertyPath: m_Name
+      value: SmallChips 1 (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 6373797990820505335, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10572,11 +10609,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000036
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
-        type: 3}
-      propertyPath: m_Name
-      value: SmallChips 1 (3)
       objectReference: {fileID: 0}
     - target: {fileID: -1866769813609615765, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
@@ -10848,6 +10880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -11321,7 +11358,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -12152,6 +12189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12207,11 +12249,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -12226,6 +12263,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12280,11 +12322,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -13154,6 +13191,7 @@ Transform:
   - {fileID: 445062564}
   - {fileID: 1999901018}
   - {fileID: 83766261}
+  - {fileID: 1461706080}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13238,6 +13276,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13292,11 +13335,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (15)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -13995,6 +14033,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14049,11 +14092,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (19)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -14143,6 +14181,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14198,11 +14241,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (25)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -14237,7 +14275,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -14397,6 +14435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14451,11 +14494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (12)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -15483,7 +15521,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -16689,7 +16727,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -17268,6 +17306,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
+        type: 3}
+      propertyPath: m_Name
+      value: SmallChips 1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6373797990820505335, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
       propertyPath: m_RootOrder
@@ -17292,11 +17335,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.0363001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
-        type: 3}
-      propertyPath: m_Name
-      value: SmallChips 1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c06c3139ca183441a0b59f917fe3c13, type: 3}
@@ -17937,7 +17975,6 @@ Transform:
   - {fileID: 2107889120}
   - {fileID: 41707641}
   - {fileID: 427069898}
-  - {fileID: 804069408}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18125,7 +18162,7 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: 2
+    m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -19068,6 +19105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -21065,16 +21107,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3126172491502589252, guid: 98131d5e0a6efd644a7832a5f4adfc76,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8868815001005527094, guid: 98131d5e0a6efd644a7832a5f4adfc76,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4068845309577045418, guid: 98131d5e0a6efd644a7832a5f4adfc76,
         type: 3}
       propertyPath: m_IsActive
@@ -21084,6 +21116,28 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549013221, guid: 98131d5e0a6efd644a7832a5f4adfc76, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499731352, guid: 98131d5e0a6efd644a7832a5f4adfc76, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 253307473, guid: 98131d5e0a6efd644a7832a5f4adfc76, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126172491502589252, guid: 98131d5e0a6efd644a7832a5f4adfc76,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868815001005527094, guid: 98131d5e0a6efd644a7832a5f4adfc76,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7464506438297757210, guid: 98131d5e0a6efd644a7832a5f4adfc76,
         type: 3}
@@ -21134,18 +21188,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _scoreLoss
       value: 0.503
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549013221, guid: 98131d5e0a6efd644a7832a5f4adfc76, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1499731352, guid: 98131d5e0a6efd644a7832a5f4adfc76, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 253307473, guid: 98131d5e0a6efd644a7832a5f4adfc76, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98131d5e0a6efd644a7832a5f4adfc76, type: 3}
@@ -21400,7 +21442,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -21596,6 +21638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -21831,6 +21878,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21885,11 +21937,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (9)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -22423,7 +22470,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -22884,6 +22931,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (39)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22938,11 +22990,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (39)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -24284,7 +24331,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -24494,7 +24541,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -25414,7 +25461,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &517535513
 BoxCollider:
@@ -25620,7 +25667,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -25800,7 +25847,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -25937,6 +25984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -26157,6 +26209,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26211,11 +26268,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (14)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -26860,6 +26912,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27445,6 +27502,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27499,11 +27561,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (16)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -27759,6 +27816,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27813,11 +27875,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -27996,6 +28053,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28050,11 +28112,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (13)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -28854,7 +28911,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -31759,6 +31816,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (37)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31813,11 +31875,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (37)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -31949,6 +32006,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32003,11 +32065,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (7)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -32253,6 +32310,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32307,11 +32369,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (14)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -32621,6 +32678,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32675,11 +32737,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (31)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -32804,6 +32861,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32858,11 +32920,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -34315,6 +34372,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34369,11 +34431,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (32)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -34992,6 +35049,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
+        type: 3}
+      propertyPath: m_Name
+      value: SmallChips 1 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6373797990820505335, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35061,11 +35123,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000036
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
-        type: 3}
-      propertyPath: m_Name
-      value: SmallChips 1 (2)
       objectReference: {fileID: 0}
     - target: {fileID: -1866769813609615765, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
@@ -35687,6 +35744,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36006,6 +36068,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36060,11 +36127,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -36728,6 +36790,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36782,11 +36849,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (30)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -37024,6 +37086,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37078,11 +37145,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -37331,97 +37393,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1495590214}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &804069407
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 804069408}
-  - component: {fileID: 804069409}
-  m_Layer: 0
-  m_Name: Point Light (59)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &804069408
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804069407}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 101.97, y: 10.851199, z: 77.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 373862136}
-  m_RootOrder: 83
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &804069409
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804069407}
-  m_Enabled: 1
-  serializedVersion: 9
-  m_Type: 2
-  m_Color: {r: 1, g: 0.94239384, b: 0.8066038, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &805619917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38559,7 +38530,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &826041512
 Transform:
@@ -38788,6 +38759,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (38)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38842,11 +38818,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (38)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -39789,6 +39760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40531,6 +40507,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (35)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40586,11 +40567,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (35)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -40605,6 +40581,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
+        type: 3}
+      propertyPath: m_Name
+      value: SmallChips 1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6373797990820505335, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40674,11 +40655,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000036
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
-        type: 3}
-      propertyPath: m_Name
-      value: SmallChips 1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: -1866769813609615765, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
@@ -41826,6 +41802,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41880,11 +41861,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (27)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -43303,7 +43279,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -43436,6 +43412,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43490,11 +43471,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (24)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -43837,7 +43813,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -44911,7 +44887,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -44959,6 +44935,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -46228,6 +46209,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampOffice
       objectReference: {fileID: 0}
+    - target: {fileID: 6537380417995553790, guid: 0b1a30f19d1275b46ac931979056ac28,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7845878591139006957, guid: 0b1a30f19d1275b46ac931979056ac28,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46312,7 +46298,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -46756,7 +46742,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -47193,6 +47179,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47247,11 +47238,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -48913,6 +48899,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48926,7 +48917,7 @@ PrefabInstance:
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51.6
+      value: 48.16
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -50133,7 +50124,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -50238,7 +50229,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -50393,7 +50384,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -51745,6 +51736,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51914,7 +51910,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1125782368
 Transform:
@@ -52084,6 +52080,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52138,11 +52139,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -54659,7 +54655,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -54888,6 +54884,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (36)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54942,11 +54943,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (36)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -55336,6 +55332,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 789917298770024951, guid: 6d8240b21e509504c9e615db342ce1dc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8240b21e509504c9e615db342ce1dc, type: 3}
 --- !u!4 &1196281445 stripped
@@ -55701,6 +55702,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55755,11 +55761,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (18)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -56717,6 +56718,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56771,11 +56777,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (15)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -57838,6 +57839,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57892,11 +57898,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (26)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -58103,6 +58104,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58157,11 +58163,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (17)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -58271,7 +58272,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -60098,6 +60099,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60152,11 +60158,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (11)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -60668,6 +60669,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60722,11 +60728,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -61054,6 +61055,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61108,11 +61114,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (13)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -61203,6 +61204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61277,6 +61283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarCylinderSkinny (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5914da2ed559f7429c5276467f5d7fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5914da2ed559f7429c5276467f5d7fe,
         type: 3}
@@ -61517,7 +61528,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -62051,7 +62062,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1352993172
 Transform:
@@ -62578,6 +62589,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62632,11 +62648,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -63310,6 +63321,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
+        type: 3}
+      propertyPath: m_Name
+      value: SmallChips 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6373797990820505335, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63380,11 +63396,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.50000036
       objectReference: {fileID: 0}
-    - target: {fileID: 7939598032849507556, guid: 4c06c3139ca183441a0b59f917fe3c13,
-        type: 3}
-      propertyPath: m_Name
-      value: SmallChips 1
-      objectReference: {fileID: 0}
     - target: {fileID: -1866769813609615765, guid: 4c06c3139ca183441a0b59f917fe3c13,
         type: 3}
       propertyPath: m_IsKinematic
@@ -63419,7 +63430,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -64311,6 +64322,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64366,11 +64382,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -64405,7 +64416,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -64629,6 +64640,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64786,6 +64802,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64840,11 +64861,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (33)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -65359,7 +65375,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1409617187
 Transform:
@@ -65963,6 +65979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -67456,6 +67477,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451279284}
   m_Mesh: {fileID: 9050161910366820607, guid: eba31fd5fa7c2d54aa4dbd6ebea9254e, type: 3}
+--- !u!1001 &1461706079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 281391491}
+    m_Modifications:
+    - target: {fileID: 23742347535779178, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall_TileNormal (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8521786
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.609997
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4766a27ef7a9a2f4bb749229efba935e, type: 3}
+--- !u!4 &1461706080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1461706079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1465391396
 GameObject:
   m_ObjectHideFlags: 0
@@ -67483,7 +67579,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -68245,6 +68341,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -68299,11 +68400,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (10)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -68600,7 +68696,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -68960,6 +69056,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PilarCylinderSkinny (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5914da2ed559f7429c5276467f5d7fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5914da2ed559f7429c5276467f5d7fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69185,6 +69286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -69513,6 +69619,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -70961,6 +71072,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -71015,11 +71131,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (21)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -71230,6 +71341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarCylinderSkinny
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5914da2ed559f7429c5276467f5d7fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5914da2ed559f7429c5276467f5d7fe,
         type: 3}
@@ -72023,6 +72139,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72077,11 +72198,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (10)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -72534,6 +72650,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72588,11 +72709,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (16)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -73454,7 +73570,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1591820802
 Transform:
@@ -75436,7 +75552,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -76043,6 +76159,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76098,11 +76219,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (23)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -76117,6 +76233,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76172,11 +76293,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -76195,6 +76311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -76573,6 +76694,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -76627,11 +76753,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (29)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -79101,6 +79222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarCylinderSkinny (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5914da2ed559f7429c5276467f5d7fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5914da2ed559f7429c5276467f5d7fe,
         type: 3}
@@ -82446,6 +82572,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -82500,11 +82631,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (9)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -82595,6 +82721,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -82649,11 +82780,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (20)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -82784,7 +82910,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -82848,7 +82974,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -83301,7 +83427,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -83928,6 +84054,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -83982,11 +84113,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (7)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -84518,7 +84644,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -85336,7 +85462,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -86416,6 +86542,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1669299284850117041, guid: 68b3967441964f349b3d496ecc7dc7e4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4222489026672749072, guid: 5e6790f0142a8e8408db7d3abd6bdf1d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68b3967441964f349b3d496ecc7dc7e4, type: 3}
 --- !u!4 &1874336841 stripped
@@ -86792,7 +86924,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1886709512
 Transform:
@@ -87623,6 +87755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -87677,11 +87814,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (19)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -87989,6 +88121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -88625,6 +88762,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88679,11 +88821,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (23)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -89585,6 +89722,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -89639,11 +89781,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (34)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -90513,6 +90650,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -90567,11 +90709,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -91107,6 +91244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampOffice (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537380417995553790, guid: 0b1a30f19d1275b46ac931979056ac28,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7845878591139006957, guid: 0b1a30f19d1275b46ac931979056ac28,
         type: 3}
@@ -91909,7 +92051,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 1
+  m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
@@ -92140,6 +92282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLampIndustrial (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -94177,6 +94324,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -94231,11 +94383,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (12)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -94662,6 +94809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarCylinderSkinny (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5914da2ed559f7429c5276467f5d7fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c5914da2ed559f7429c5276467f5d7fe,
         type: 3}
@@ -95131,6 +95283,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -95557,6 +95714,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -95611,11 +95773,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (22)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -96316,6 +96473,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallLampIndustrial (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6071627862058818821, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7068848799111163670, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -96514,6 +96676,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -96568,11 +96735,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (22)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -97180,6 +97342,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1105058829}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -97235,11 +97402,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (28)
-      objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_IsKinematic
@@ -97254,6 +97416,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1211382522}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -97308,11 +97475,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (11)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -100042,6 +100204,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1514884650}
     m_Modifications:
+    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
+        type: 3}
+      propertyPath: m_Name
+      value: bonejuice (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 7952251414785573639, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -100096,11 +100263,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6343121473874604308, guid: cdd3dd42975e09f40b3e5990171747be,
-        type: 3}
-      propertyPath: m_Name
-      value: bonejuice (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8517190449010148641, guid: cdd3dd42975e09f40b3e5990171747be,
         type: 3}
@@ -102860,6 +103022,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1669299284850117041, guid: 68b3967441964f349b3d496ecc7dc7e4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4222489026672749072, guid: 5e6790f0142a8e8408db7d3abd6bdf1d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68b3967441964f349b3d496ecc7dc7e4, type: 3}
 --- !u!54 &6180316244192487568
@@ -103786,7 +103954,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 2aae85f7c0c1b4544bbb1aab252022c2,
+      objectReference: {fileID: 32900000, guid: 9f85fd9d77ae96343bf97f32f12956af,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10ed99456dc52f44a32b6ed9bfc0aee, type: 3}

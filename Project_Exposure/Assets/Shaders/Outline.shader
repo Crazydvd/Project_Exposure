@@ -38,7 +38,6 @@
 		[HideinInspector] _TimeElapsed("TimeOffset", float) = 0
 	}
 
-
 	SubShader
 	{
 		Tags 
