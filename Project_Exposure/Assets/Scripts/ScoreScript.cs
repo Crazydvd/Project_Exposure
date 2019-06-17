@@ -5,28 +5,30 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
+    RectTransform _rectTransform;
     Text _textUI;
     float _score;
 
     // animation properties
-    float _originalTextSize;
+    float _originalHeight;
     bool _textAnimationUpscale;
     bool _textAnimationDownscale;
 
     void Start()
     {
+        _rectTransform = GetComponent<RectTransform>();
         _textUI = GetComponent<Text>();
         _textUI.text = "0";//JsonText.GetText("SCORE") + ": 0";
-        _originalTextSize = _textUI.fontSize;
+        _originalHeight = _rectTransform.rect.height;
     }
 
     void Update()
     {
         if (_textAnimationUpscale)
         {
-            if (_textUI.fontSize < _originalTextSize + 10)
+            if (_rectTransform.rect.height < _originalHeight + 30)
             {
-                _textUI.fontSize++;
+                _rectTransform.sizeDelta = new Vector2(_rectTransform.rect.width, _rectTransform.rect.height + 3);
             }
             else
             {
@@ -36,9 +38,9 @@ public class ScoreScript : MonoBehaviour
         }
         if (_textAnimationDownscale)
         {
-            if (_textUI.fontSize > _originalTextSize)
+            if (_rectTransform.rect.height > _originalHeight)
             {
-                _textUI.fontSize--;
+                _rectTransform.sizeDelta = new Vector2(_rectTransform.rect.width, _rectTransform.rect.height - 3);
             }
             else
             {
@@ -51,13 +53,19 @@ public class ScoreScript : MonoBehaviour
     {
         _score += pIncrease;
         _textUI.text = /*JsonText.GetText("SCORE") + ": " + */"" + _score;
-        _textAnimationUpscale = true;
+        if (!_textAnimationUpscale && !_textAnimationDownscale)
+        {
+            _textAnimationUpscale = true;
+        }
     }
 
     public void DecreaseScore(float pDecrease){
         _score -= pDecrease;
         _textUI.text = /*JsonText.GetText("SCORE") + ": " + */"" + _score;
-        _textAnimationUpscale = true;
+        if (!_textAnimationUpscale && !_textAnimationDownscale)
+        {
+            _textAnimationUpscale = true;
+        }
     }
 
     public void MultiplyScore(float pFactor)
@@ -65,7 +73,10 @@ public class ScoreScript : MonoBehaviour
         _score *= pFactor;
         _score = Mathf.Round(_score);
         _textUI.text = /*JsonText.GetText("SCORE") + ": " + */ "" + _score;
-        _textAnimationUpscale = true;
+        if (!_textAnimationUpscale && !_textAnimationDownscale)
+        {
+            _textAnimationUpscale = true;
+        }
     }
 
     public float GetScore()

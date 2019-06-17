@@ -124,17 +124,9 @@ public class ShootScript : MonoBehaviour
         }
     }
 
-    // ensure clicking is blocked for touch
-    bool isPointerOverUIObject()
+    void OnDisable()
     {
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current)
-        {
-            position = new Vector2(Input.mousePosition.x, Input.mousePosition.y)
-        };
-
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
+        Lean.Touch.LeanTouch.OnFingerTap -= OnFingerTap;
     }
 
     public void SwitchWave()
