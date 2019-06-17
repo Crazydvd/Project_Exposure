@@ -31,8 +31,6 @@ public class BulletScript : MonoBehaviour
         {
             SelfDestruct();
         }
-
-        Debug.Log("I smash");
     }
 
     void Update()
