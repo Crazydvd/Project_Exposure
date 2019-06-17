@@ -7,8 +7,11 @@ public class DetectObstacleCol : MonoBehaviour
     ObstacleScript _obstacle;
     ScreenShake _screenShake;
 
+    Rigidbody _rigidbody;
+
     void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         _obstacle = GetComponentInParent<ObstacleScript>();
         _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
     }
@@ -29,5 +32,18 @@ public class DetectObstacleCol : MonoBehaviour
         {
             _obstacle.EnableShake(false);
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag.ToLower() == "floor" && _rigidbody.velocity.magnitude > 1.2)
+        {
+            fallOnFloor();
+        }
+    }
+
+    void fallOnFloor()
+    {
+        GetComponentInParent<ObstacleScript>().Shatter();
     }
 }
