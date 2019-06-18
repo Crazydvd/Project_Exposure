@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{dad34b15-2303-4028-86d9-df1fe8cf8ddd}">
 		<property name="name">
-			<value>Newshatteringhigh</value>
+			<value>high_shattering</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -70,9 +70,6 @@
 		<relationship name="modules">
 			<destination>{f9370f9d-ac47-44ce-88a9-c32a660661dd}</destination>
 		</relationship>
-		<relationship name="markers">
-			<destination>{dcfbc606-d43e-4cd1-aa82-a70212db4181}</destination>
-		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{08a477c0-42ba-4175-82e6-30793e03c1d9}">
 		<relationship name="effectChain">
@@ -121,20 +118,6 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{08a477c0-42ba-4175-82e6-30793e03c1d9}</destination>
-		</relationship>
-	</object>
-	<object class="LoopRegion" id="{dcfbc606-d43e-4cd1-aa82-a70212db4181}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="length">
-			<value>1.7678231292517006</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{dd020998-7dac-4f7a-8657-246e9d01727c}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{0a5f78f8-0f50-4259-8434-edb4dbd72c23}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{82e63fac-4efa-4988-8c23-43278b24aad9}">
@@ -202,6 +185,10 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{db619096-3770-4aad-a14e-e928984ce5dc}" />
-	<object class="SpatialiserEffect" id="{99530889-d373-42d2-bec1-b251ad1d4c0f}" />
+	<object class="SpatialiserEffect" id="{99530889-d373-42d2-bec1-b251ad1d4c0f}">
+		<property name="maximumDistance">
+			<value>40</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{984ffef5-e22a-4670-996f-6844ffd8dedc}" />
 </objects>
