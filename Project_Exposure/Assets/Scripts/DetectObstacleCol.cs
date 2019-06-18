@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DetectObstacleCol : MonoBehaviour
 {
-    ObstacleScript _obstacle;
-    ScreenShake _screenShake;
+    ObstacleScript _obstacle = null;
+    ScreenShake _screenShake = null;
 
-    Rigidbody _rigidbody;
+    Rigidbody _rigidbody = null;
 
     bool _shatterOnFall = true;
 
@@ -38,6 +38,11 @@ public class DetectObstacleCol : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (_rigidbody == null)
+        {
+            return;
+        } 
+
         if (_shatterOnFall && _rigidbody?.velocity.magnitude > 1.8)
         {
             fallOnFloor();
