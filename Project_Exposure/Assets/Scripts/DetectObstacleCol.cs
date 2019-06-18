@@ -44,6 +44,7 @@ public class DetectObstacleCol : MonoBehaviour
 
     void fallOnFloor()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/bounceglass", gameObject);
         GetComponentInParent<ObstacleScript>().Shatter();
     }
 }

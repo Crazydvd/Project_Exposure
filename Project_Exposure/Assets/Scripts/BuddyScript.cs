@@ -39,12 +39,4 @@ public class BuddyScript : MonoBehaviour
         rigidbody.useGravity = true;
         rigidbody.isKinematic = false;
     }
-
-    public void ShatterHeldObject()
-    {
-        if (_heldObject)
-        { 
-            _heldObject.Shatter();
-        }
-    }
 }
