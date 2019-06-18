@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GoalScript : MonoBehaviour
 {
     [SerializeField] GameObject _endMenu;
+    [SerializeField] GameObject _gameUI;
     [SerializeField] Text _endScoreText;
     [SerializeField] ScoreScript _scoreScript;
     [SerializeField] StarScript _starScript;
@@ -19,7 +20,9 @@ public class GoalScript : MonoBehaviour
         {
             float score = _scoreScript.GetScore();
             other.transform.parent.GetComponent<Animator>().speed = 0;
-            _endScoreText.text = "Score: " + score; 
+            _endScoreText.text = "Score: " + score;
+            other.gameObject.GetComponentInChildren<ShootScript>().DisableGun();
+            _gameUI.SetActive(false);
             _endMenu.SetActive(true);
 
             _starScript.CheckStarScore(score);
