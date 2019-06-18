@@ -30,13 +30,13 @@ public class MoveAlongBeltScript : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.transform.root.tag.ToLower() == "conveyorbelt")
-        {
-            if (_lastEntered == other.GetComponent<ConveyorScript>())
-            {
-                Move = null;
-            }
-        }
+        //if (other.transform.root.tag.ToLower() == "conveyorbelt")
+        //{
+        //    if (_lastEntered == other.GetComponent<ConveyorScript>())
+        //    {
+        //        Move = null;
+        //    }
+        //}
     }
 
     public void StartSelfDestruct()
