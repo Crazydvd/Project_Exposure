@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
@@ -15,12 +13,19 @@ public class JsonText : MonoBehaviour
         _text.text = GetText(_textType);
     }
 
-    public void ReloadText(){
+    void OnEnable()
+    {
+        _text = _text ?? GetComponentInChildren<Text>();
+        ReloadText();
+    }
+
+    public void ReloadText()
+    {
         _text.text = GetText(_textType);
     }
 
     public static string GetText(string pType)
     {
-        return JsonVariables.Instance[pType][LanguageSettings.Language.ToString()];
+        return JsonVariables.Instance?[pType][LanguageSettings.Language.ToString()] ?? "UNDEFINED";
     }
 }

@@ -186,7 +186,7 @@ public class LoadingScreenScript : MonoBehaviour
 
     public static void Load(int pBuildIndex)
     {
-        Instance.Show(pBuildIndex);
+        Instance?.Show(pBuildIndex);
     }
 
     System.Collections.IEnumerator load(int pBuildIndex)
