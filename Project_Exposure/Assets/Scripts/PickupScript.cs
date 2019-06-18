@@ -87,6 +87,7 @@ public class PickupScript : MonoBehaviour
 
         if (_grabbedObject.gameObject.name.ToLower().Contains("container"))
         {
+            _grabbedObject.GetComponent<DetectObstacleCol>().FallImmune();
             _grabbedObject.parent.parent = _originalParent;
         }
         else
