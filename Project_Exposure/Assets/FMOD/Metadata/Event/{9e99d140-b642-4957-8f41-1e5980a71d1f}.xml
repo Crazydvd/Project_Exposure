@@ -53,7 +53,7 @@
 			<destination>{027a90ff-e4d6-4a30-bdd5-fec38588cb98}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{64b8258f-9799-4632-b8d1-d6bc4e1a5c16}</destination>
+			<destination>{72403542-859b-4b7e-a721-91fb906cb79b}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6eece9f4-40ea-415a-80a0-c2b2375bdc70}" />
@@ -71,7 +71,7 @@
 			<destination>{27a60159-dd49-4a2f-b953-d682e33ae92f}</destination>
 		</relationship>
 		<relationship name="markers">
-			<destination>{1e4bd521-c2a8-43fe-bbe8-c1f328072bb1}</destination>
+			<destination>{7cdba06b-014b-4f1f-9a34-d0828edc3eaa}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{041592e4-d2a1-43bd-ac2f-c669486b063f}">
@@ -134,7 +134,7 @@
 			<destination>{041592e4-d2a1-43bd-ac2f-c669486b063f}</destination>
 		</relationship>
 	</object>
-	<object class="LoopRegion" id="{1e4bd521-c2a8-43fe-bbe8-c1f328072bb1}">
+	<object class="LoopRegion" id="{7cdba06b-014b-4f1f-9a34-d0828edc3eaa}">
 		<property name="position">
 			<value>0</value>
 		</property>
@@ -268,6 +268,19 @@
 	<object class="MixerBusPanner" id="{0f5c3418-3944-4f01-9f79-7fd876ab40d6}" />
 	<object class="SFXReverbEffect" id="{5f013d72-8af2-4754-8783-b84889683dbf}" />
 	<object class="MixerBusFader" id="{d053fdee-bfcb-4a2f-a14e-99abe97c91a6}" />
-	<object class="SpatialiserEffect" id="{e883f2dd-b906-4806-a945-bc498b7d75ce}" />
+	<object class="SpatialiserEffect" id="{e883f2dd-b906-4806-a945-bc498b7d75ce}">
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10000</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>2</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{211be66b-e46c-4375-8104-6d7e46bfeec8}" />
 </objects>
