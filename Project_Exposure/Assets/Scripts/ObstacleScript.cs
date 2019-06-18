@@ -217,7 +217,7 @@ public class ObstacleScript : MonoBehaviour
         _screenShake.StartShake(12f, 0.1f);
         shardsContainer.DetachChildren();
         //Play sounds
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_glassplaceholder", gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency + "_shattering", gameObject);
         if (_isVending)
         {
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Vending machine", gameObject);

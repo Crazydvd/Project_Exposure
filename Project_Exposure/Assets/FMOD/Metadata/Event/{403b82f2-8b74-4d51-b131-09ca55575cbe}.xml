@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{403b82f2-8b74-4d51-b131-09ca55575cbe}">
 		<property name="name">
-			<value>Newshatteringlow</value>
+			<value>low_shattering</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -70,9 +70,6 @@
 		<relationship name="modules">
 			<destination>{df4e1777-b253-4901-a0f1-ae74934fd34e}</destination>
 		</relationship>
-		<relationship name="markers">
-			<destination>{fef9b71e-9fcb-4600-8e9f-26516968f37b}</destination>
-		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{35bb5835-0adf-483c-be5e-e155c6884f4a}">
 		<relationship name="effectChain">
@@ -121,20 +118,6 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{35bb5835-0adf-483c-be5e-e155c6884f4a}</destination>
-		</relationship>
-	</object>
-	<object class="LoopRegion" id="{fef9b71e-9fcb-4600-8e9f-26516968f37b}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="length">
-			<value>1.7678231292517006</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{36148bef-0f83-4d10-8a3b-b6034668f0c3}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{1ab5b209-970b-4ac7-9f76-87afc1ab2031}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{9759d834-3298-41e1-a9a8-d2b92f055462}">
