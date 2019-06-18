@@ -23,23 +23,27 @@ public class ShatterMultiplierVisualScript : MonoBehaviour
     {
         if (_followObject)
         {
-            transform.position = Camera.main.WorldToScreenPoint(_followObject.transform.position) + new Vector3(0, 15f - _timer * 30f,0);
-            _text.color = _text.color - new Color(0, 0, 0, Time.deltaTime);
+            transform.position = Camera.main.WorldToScreenPoint(_followObject.transform.position) + new Vector3(0, 15f - _timer * 30f, 0);
+            _text.color -= new Color(0, 0, 0, Time.deltaTime);
         }
-        if(_timer > 0){
+        if (_timer > 0)
+        {
             _timer -= Time.deltaTime;
-            if(_timer <= 0){
+            if (_timer <= 0)
+            {
                 Destroy(_followObject);
                 transform.position = new Vector3(10000, 10000, 10000); // way off the screen
             }
         }
     }
 
-    public void SetFollowObject(Transform pObject){
+    public void SetFollowObject(Transform pObject)
+    {
         _text.text = "X" + ShootScript.Multiplier;
         _text.color = _originalColor;
         float increase = 0.03f * ShootScript.Multiplier;
-        if(increase > 0.5f){
+        if (increase > 0.5f)
+        {
             increase = 0.5f;
         }
         _rectTransform.localScale = new Vector3(0.5f + increase, 0.5f + increase, 0.5f + increase);
