@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 4575327173033102497}
   m_Layer: 0
   m_Name: Forklift
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 5987994765556103987}
   m_Layer: 0
   m_Name: RearWheelR
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2576,7 +2576,7 @@ GameObject:
   - component: {fileID: 6641542151198399530}
   m_Layer: 0
   m_Name: Fork
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3996,7 +3996,7 @@ GameObject:
   - component: {fileID: 8785378528773721472}
   m_Layer: 0
   m_Name: FrontWheelL
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4398,7 +4398,7 @@ GameObject:
   - component: {fileID: 5410014303447029639}
   m_Layer: 0
   m_Name: ForkliftBody
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4920,7 +4920,7 @@ GameObject:
   - component: {fileID: 1543206784735525073}
   m_Layer: 0
   m_Name: RearWheelL
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5767,7 +5767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1437d4cfcde057469e3d39cf89db2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.01
   _shatterForce: 10
   _shatterDelay: 0.5
   _shakeForce: 0.02
@@ -5779,10 +5778,11 @@ MonoBehaviour:
   _mediumFreqStandard: {fileID: 2100000, guid: 44088a210346f3849aac4ea45b118f99, type: 2}
   _highFreqStandard: {fileID: 2100000, guid: c49be50df79829a4eb10fdd69de67611, type: 2}
   _content: {fileID: 0}
+  _isVending: 0
   _isBuddy: 0
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
-  _scoreLoss: 10
+  _scoreLossPercent: 0.05
 --- !u!1 &8593522957699343607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,7 +5796,7 @@ GameObject:
   - component: {fileID: 4989368733438853614}
   m_Layer: 0
   m_Name: FrontWheelR
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

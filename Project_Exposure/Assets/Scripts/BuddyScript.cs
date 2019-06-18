@@ -34,7 +34,10 @@ public class BuddyScript : MonoBehaviour
         _animator.enabled = false;
         _hovering.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/dying", gameObject);
-        Invoke("ShatterHeldObject", 1f);
+
+        Rigidbody rigidbody = _heldObject.transform.GetChild(0).GetComponent<Rigidbody>() ?? _heldObject.transform.GetChild(0).gameObject.AddComponent<Rigidbody>();
+        rigidbody.useGravity = true;
+        rigidbody.isKinematic = false;
     }
 
     public void ShatterHeldObject()
