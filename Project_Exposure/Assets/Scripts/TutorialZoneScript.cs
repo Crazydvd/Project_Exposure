@@ -33,7 +33,7 @@ public class TutorialZoneScript : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-    {      
+    {
         if (other.tag.ToUpper() == "MAINCAMERA" && !_player)
         {
             _player = other.gameObject;
@@ -45,9 +45,10 @@ public class TutorialZoneScript : MonoBehaviour
 
             _playerTrack = _player.transform.parent.GetComponent<Animator>();
             _playerTrack.speed = 0;
-            _uiElement.SetActive(true);
+            //_uiElement.SetActive(true);
 
-            if(_enableGun){ // enable the gun, duh
+            if (_enableGun)
+            { // enable the gun, duh
                 _player.GetComponentInChildren<ShootScript>().EnableGun();
             }
 
@@ -77,7 +78,10 @@ public class TutorialZoneScript : MonoBehaviour
             _playerTrack.speed = 1;
         }
 
-        _uiElement?.SetActive(false);
+        if (_uiElement != null)
+        {
+            _uiElement?.SetActive(false);
+        }
 
         if (_stopBelt)
         {
