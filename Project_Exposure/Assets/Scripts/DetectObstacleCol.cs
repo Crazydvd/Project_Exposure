@@ -31,6 +31,7 @@ public class DetectObstacleCol : MonoBehaviour
         else if (other.gameObject.layer == 9) //layer 9 == Player (all bullets are on this layer)
         {
             _obstacle.EnableShake(false);
+            ShootScript.Multiplier = 1;
         }
     }
 
