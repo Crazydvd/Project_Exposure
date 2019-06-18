@@ -29,14 +29,14 @@ public class BuddyScript : MonoBehaviour
         bodyBuddy.AddTorque(-transform.right.normalized * 100);
         if (_heldObject)
         {
-            _heldObject.gameObject.AddComponent<Rigidbody>();
+            Rigidbody rigidbody = _heldObject.transform.GetChild(0).gameObject.GetComponent<Rigidbody>()
+                                  ?? _heldObject.transform.GetChild(0).gameObject.AddComponent<Rigidbody>();
+            rigidbody.useGravity = true;
+            rigidbody.isKinematic = false;
         }
         _animator.enabled = false;
         _hovering.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/dying", gameObject);
 
-        Rigidbody rigidbody = _heldObject.transform.GetChild(0).GetComponent<Rigidbody>() ?? _heldObject.transform.GetChild(0).gameObject.AddComponent<Rigidbody>();
-        rigidbody.useGravity = true;
-        rigidbody.isKinematic = false;
     }
 }

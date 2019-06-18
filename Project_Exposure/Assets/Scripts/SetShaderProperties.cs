@@ -22,7 +22,7 @@ public class SetShaderProperties : MonoBehaviour
         _stencilRef = (_stencilRef == 0) ? (byte) (_stencilRef + 1) : _stencilRef;
 
         _material.SetFloat("_StencilRef", _stencilRef);
-        _material.SetVector("_OutlineOffset", new Vector4(_offset.x, _offset.y, _offset.z, 1));
+        _material.SetVector("_OutlineOffset", _offset);
     }
 
     void Update()
