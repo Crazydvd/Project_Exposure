@@ -7092,7 +7092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1437d4cfcde057469e3d39cf89db2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.01
   _shatterForce: 10
   _shatterDelay: 0.5
   _shakeForce: 0.01
@@ -7104,10 +7103,11 @@ MonoBehaviour:
   _mediumFreqStandard: {fileID: 2100000, guid: 44088a210346f3849aac4ea45b118f99, type: 2}
   _highFreqStandard: {fileID: 2100000, guid: c49be50df79829a4eb10fdd69de67611, type: 2}
   _content: {fileID: 0}
+  _isVending: 0
   _isBuddy: 1
   _buddyScript: {fileID: 4281338601845948700}
   _scoreForBreaking: 10
-  _scoreLoss: 10
+  _scoreLossPercent: 0.05
 --- !u!1 &8643784031953190476
 GameObject:
   m_ObjectHideFlags: 0
@@ -7439,11 +7439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4329543941948256962}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7513,6 +7508,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}

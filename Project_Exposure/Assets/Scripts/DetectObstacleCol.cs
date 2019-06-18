@@ -9,6 +9,8 @@ public class DetectObstacleCol : MonoBehaviour
 
     Rigidbody _rigidbody;
 
+    bool _shatterOnFall = true;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -36,10 +38,21 @@ public class DetectObstacleCol : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.ToLower() == "floor" && _rigidbody.velocity.magnitude > 1.2)
+        if (_shatterOnFall && _rigidbody?.velocity.magnitude > 1.8)
         {
             fallOnFloor();
         }
+    }
+
+    public void FallImmune()
+    {
+        _shatterOnFall = false;
+        Invoke("resetFallImmunity", 1.0f);
+    }
+
+    void resetFallImmunity()
+    {
+        _shatterOnFall = true;
     }
 
     void fallOnFloor()
