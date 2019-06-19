@@ -12,6 +12,7 @@ public class TutorialZoneScript : MonoBehaviour
     [SerializeField] GameObject _conveyorBelt;
     [SerializeField] ObstacleScript[] _obstacles;
 
+    bool _rotateGun;
     int _obstacleCount;
     GameObject _player;
     Animator _playerTrack;
@@ -45,6 +46,7 @@ public class TutorialZoneScript : MonoBehaviour
 
             _playerTrack = _player.transform.parent.GetComponent<Animator>();
             _playerTrack.speed = 0;
+            _player.GetComponentInChildren<ShootScript>().RotateGunBack();
             //_uiElement.SetActive(true);
 
             if (_enableGun)
