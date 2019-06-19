@@ -19,7 +19,7 @@ Shader "Hidden/PostProcessing/Uber"
     
         #include "\Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\StdLib.hlsl"
         #include "\Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\Colors.hlsl"
-        #include "\Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\ampling.hlsl"
+        #include "\Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\Sampling.hlsl"
         #include "Distortion.hlsl"
         #include "Dithering.hlsl"
 
