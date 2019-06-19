@@ -7,9 +7,9 @@ Shader "Hidden/PostProcessing/FinalPass"
 
         #pragma vertex VertUVTransform
         #pragma fragment Frag
-		
-        #include "\Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\StdLib.hlsl"
-        #include "\Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\Colors.hlsl"
+
+        #include "../StdLib.hlsl"
+        #include "../Colors.hlsl"
         #include "Dithering.hlsl"
 
         // PS3 and XBOX360 aren't supported in Unity anymore, only use the PC variant
