@@ -38,6 +38,7 @@ public class BuddyScript : MonoBehaviour
                                          
             rigidbody.useGravity = true;
             rigidbody.isKinematic = false;
+            rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         }
         _animator.enabled = false;
         _hovering.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
