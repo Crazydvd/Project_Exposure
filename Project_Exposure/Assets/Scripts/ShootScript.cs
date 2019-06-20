@@ -32,8 +32,11 @@ public class ShootScript : MonoBehaviour
     [SerializeField] float _pierceShotAmmo = 5;
     [SerializeField] bool _batteryMode = false;
     [SerializeField] float _batteryCooldownTime = 5;
+    [SerializeField] float _timeBeforeRotatingGunBack = 2;
     public float OverchargeCooldownTime = 15; // should be able to get from the powerupmanager
     float _pierceShots;
+    float _rotationDelay;
+    bool _rotateGun;
 
     [SerializeField] Text _pierceShotCounter;
     //[SerializeField] Text _energyCounter; Not used
@@ -70,6 +73,7 @@ public class ShootScript : MonoBehaviour
     void Update()
     {
         SwitchWave();
+        rotateGunToZero();
     }
 
     // Detect (touch/mouse) input
@@ -81,7 +85,7 @@ public class ShootScript : MonoBehaviour
 
         if (!finger.IsOverGui && _shootingEnabled)
         {
-            int layerMask = ~LayerMask.GetMask("Player", "MainCamera"); // don't hit the Player layer or MainCamera
+            int layerMask = ~LayerMask.GetMask("Player", "PostProcessing"); // don't hit the Player layer or Camera
             Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 hitPoint;
             if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
@@ -107,6 +111,7 @@ public class ShootScript : MonoBehaviour
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
             FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
+            _rotationDelay = 0;
 
             if (IsPoweredUp())
             {
@@ -202,5 +207,32 @@ public class ShootScript : MonoBehaviour
     public bool IsPoweredUp()
     {
         return (_pierceMode || _batteryMode);
+    }
+
+    public void RotateGunBack()
+    {
+        _rotateGun = true;
+    }
+
+    void rotateGunToZero()
+    {
+        if (_rotationDelay < _timeBeforeRotatingGunBack)
+        {
+            _rotationDelay += Time.deltaTime;
+        }
+        else
+        {
+            _rotateGun = true;
+        }
+
+        if (!_rotateGun)
+            return;
+
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, 0.1f);
+
+        if (transform.localRotation.x - Quaternion.identity.x < 0.1f)
+        {    
+            _rotateGun = false;
+        }
     }
 }

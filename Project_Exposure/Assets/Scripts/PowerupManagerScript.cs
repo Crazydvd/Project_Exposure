@@ -11,10 +11,14 @@ public class PowerupManagerScript : MonoBehaviour
     GameObject _overchargeUI;
     FMOD.Studio.Bus _mainBus;
 
+    float _originalFixedDeltaTime;
+
     void Start()
     {
         _overchargeUI = GameObject.Find("Canvas").transform.Find("Overcharge").gameObject;
         _mainBus = FMODUnity.RuntimeManager.GetBus("bus:/Main");
+
+        _originalFixedDeltaTime = Time.fixedDeltaTime;
     }
 
     void Update()
@@ -39,8 +43,8 @@ public class PowerupManagerScript : MonoBehaviour
     {
         _overchargeUI.SetActive(true);
         Time.timeScale = _overchargeTimeSpeed;
-        Time.fixedDeltaTime = _overchargeTimeSpeed * 0.02f;
-        Invoke("disableOvercharge", _playerScript.OverchargeCooldownTime * Time.timeScale);// / Time.timeScale);
+        Time.fixedDeltaTime = _overchargeTimeSpeed * _originalFixedDeltaTime;
+        //Invoke("disableOvercharge", _playerScript.OverchargeCooldownTime * Time.timeScale);// / Time.timeScale);
 
         FMOD.ChannelGroup group;
         _mainBus.getChannelGroup(out group);
@@ -50,7 +54,7 @@ public class PowerupManagerScript : MonoBehaviour
     void disableOvercharge()
     {
         Time.timeScale = 1f;
-        Time.fixedDeltaTime = 0.02f;
+        Time.fixedDeltaTime = _originalFixedDeltaTime;
         _overchargeUI.SetActive(false);
 
         FMOD.ChannelGroup group;
