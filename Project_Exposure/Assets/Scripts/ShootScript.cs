@@ -75,6 +75,10 @@ public class ShootScript : MonoBehaviour
     // Detect (touch/mouse) input
     void OnFingerTap(Lean.Touch.LeanFinger finger)
     {
+        if(Time.timeScale == 0f){
+            return;
+        }
+
         if (!finger.IsOverGui && _shootingEnabled)
         {
             int layerMask = ~LayerMask.GetMask("Player", "MainCamera"); // don't hit the Player layer or MainCamera
