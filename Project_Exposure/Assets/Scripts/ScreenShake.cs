@@ -5,14 +5,13 @@ using UnityEngine;
 public class ScreenShake : MonoBehaviour
 {
     Vector3 _oldPosition;
-    bool _alreadyShaking;
+    int _shakesCount = 0;
 
     public IEnumerator Shake(float pDuration, float pMagnitude)
     {
-        if (!_alreadyShaking)
+        if (_shakesCount == 0)
         {
             _oldPosition = transform.localPosition;
-            _alreadyShaking = true;
         }
 
         float _time = 0f;
@@ -30,11 +29,12 @@ public class ScreenShake : MonoBehaviour
         }
 
         transform.localPosition = _oldPosition;
-        _alreadyShaking = false;
+        _shakesCount--;
     }
 
     public void StartShake(float pDuration, float pMagnitude)
     {
         StartCoroutine(Shake(pDuration, pMagnitude));
+        _shakesCount++;
     }
 }
