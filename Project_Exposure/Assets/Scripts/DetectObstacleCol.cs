@@ -39,12 +39,12 @@ public class DetectObstacleCol : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (_rigidbody == null)
+        if (GetComponent<Rigidbody>() == null)
         {
             return;
-        } 
+        }
 
-        if (_shatterOnFall && _rigidbody?.velocity.magnitude > 1.8)
+        if (_shatterOnFall && GetComponent<Rigidbody>()?.velocity.magnitude > 2)
         {
             fallOnFloor();
         }

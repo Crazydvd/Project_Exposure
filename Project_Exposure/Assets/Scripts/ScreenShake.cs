@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
+    Vector3 _oldPosition;
+    bool _alreadyShaking;
+
     public IEnumerator Shake(float pDuration, float pMagnitude)
     {
-        Vector3 _oldPosition = transform.localPosition;
+        if (!_alreadyShaking)
+        {
+            _oldPosition = transform.localPosition;
+            _alreadyShaking = true;
+        }
 
         float _time = 0f;
 
@@ -17,12 +24,13 @@ public class ScreenShake : MonoBehaviour
 
             transform.localPosition = new Vector3(_oldPosition.x + x, _oldPosition.y + y, _oldPosition.z);
 
-            _time ++;
+            _time++;
 
             yield return null;
         }
 
         transform.localPosition = _oldPosition;
+        _alreadyShaking = false;
     }
 
     public void StartShake(float pDuration, float pMagnitude)

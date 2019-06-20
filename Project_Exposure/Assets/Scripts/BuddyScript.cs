@@ -29,8 +29,13 @@ public class BuddyScript : MonoBehaviour
         bodyBuddy.AddTorque(-transform.right.normalized * 100);
         if (_heldObject)
         {
-            Rigidbody rigidbody = _heldObject.transform.GetChild(0).gameObject.GetComponent<Rigidbody>()
-                                  ?? _heldObject.transform.GetChild(0).gameObject.AddComponent<Rigidbody>();
+            Rigidbody rigidbody = _heldObject.transform.GetChild(0).gameObject.GetComponent<Rigidbody>();
+
+            if (rigidbody == null)
+            {
+                rigidbody = _heldObject.transform.GetChild(0).gameObject.AddComponent<Rigidbody>();
+            }
+                                         
             rigidbody.useGravity = true;
             rigidbody.isKinematic = false;
         }
