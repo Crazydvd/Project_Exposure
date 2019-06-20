@@ -33,7 +33,7 @@ public class BulletScript : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Time.timeScale < 1 && Time.timeScale > 0)
         { // on overcharge
@@ -43,7 +43,8 @@ public class BulletScript : MonoBehaviour
                 _rigidbody.isKinematic = true;
                 _slowdown = true;
             }
-            transform.position += _velocity * (Time.deltaTime / Time.timeScale);
+
+            transform.position += _velocity * Time.unscaledDeltaTime;
         }
 
         if (_slowdown && Mathf.Approximately(Time.timeScale, 1f))
