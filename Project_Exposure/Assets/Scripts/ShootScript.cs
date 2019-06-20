@@ -81,7 +81,7 @@ public class ShootScript : MonoBehaviour
     {
         if (!finger.IsOverGui && _shootingEnabled)
         {
-            int layerMask = ~LayerMask.GetMask("Player", "MainCamera"); // don't hit the Player layer or MainCamera
+            int layerMask = ~LayerMask.GetMask("Player", "PostProcessing"); // don't hit the Player layer or Camera
             Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 hitPoint;
             if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
