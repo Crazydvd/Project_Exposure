@@ -43,8 +43,7 @@ public class BulletScript : MonoBehaviour
                 _rigidbody.isKinematic = true;
                 _slowdown = true;
             }
-
-            transform.position += _velocity * Time.unscaledDeltaTime;
+            _rigidbody.position += _velocity * Time.unscaledDeltaTime;
         }
 
         if (_slowdown && Mathf.Approximately(Time.timeScale, 1f))
@@ -53,6 +52,8 @@ public class BulletScript : MonoBehaviour
             _rigidbody.velocity = _velocity;
             _slowdown = false;
         }
+
+        print($"{_slowdown}: {Time.unscaledDeltaTime}");
     }
 
     public void SetVelocity(Vector3 pVelocity)

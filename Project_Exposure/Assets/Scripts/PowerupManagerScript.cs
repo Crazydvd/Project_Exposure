@@ -44,7 +44,7 @@ public class PowerupManagerScript : MonoBehaviour
         _overchargeUI.SetActive(true);
         Time.timeScale = _overchargeTimeSpeed;
         Time.fixedDeltaTime = _overchargeTimeSpeed * _originalFixedDeltaTime;
-        //Invoke("disableOvercharge", _playerScript.OverchargeCooldownTime * Time.timeScale);// / Time.timeScale);
+        Invoke("disableOvercharge", _playerScript.OverchargeCooldownTime * Time.timeScale);// / Time.timeScale);
 
         FMOD.ChannelGroup group;
         _mainBus.getChannelGroup(out group);
@@ -53,7 +53,7 @@ public class PowerupManagerScript : MonoBehaviour
 
     void disableOvercharge()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
         Time.fixedDeltaTime = _originalFixedDeltaTime;
         _overchargeUI.SetActive(false);
 

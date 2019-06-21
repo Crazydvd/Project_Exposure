@@ -23,6 +23,19 @@ public class ShootScript : MonoBehaviour
     [SerializeField] GameObject _bulletType2;
     [SerializeField] GameObject _bulletType3;
 
+    [Header("Paricles here")]
+    [SerializeField] GameObject _gunParticles;
+    [SerializeField] GameObject _flashLow;
+    [SerializeField] GameObject _flashMedium;
+    [SerializeField] GameObject _flashHigh;
+    GameObject _lastMuzzleFlash;
+
+    [Header("Colors of the particle system")]
+    [SerializeField] Gradient _colorLow;
+    [SerializeField] Gradient _colorMedium;
+    [SerializeField] Gradient _colorHigh;
+
+    [Space]
     [SerializeField] float _speed = 300f;
     [SerializeField] float _minRayDistance = 2f;
     [SerializeField] float _maxRayDistance = 15f;
@@ -63,6 +76,7 @@ public class ShootScript : MonoBehaviour
         _waves.Add(Frequency.LOW, _bulletType1);
         _waves.Add(Frequency.MEDIUM, _bulletType2);
         _waves.Add(Frequency.HIGH, _bulletType3);
+        _lastMuzzleFlash = _flashMedium;
 
         Lean.Touch.LeanTouch.OnFingerTap += OnFingerTap;
 
@@ -79,7 +93,8 @@ public class ShootScript : MonoBehaviour
     // Detect (touch/mouse) input
     void OnFingerTap(Lean.Touch.LeanFinger finger)
     {
-        if(Time.timeScale == 0f){
+        if (Time.timeScale == 0f)
+        {
             return;
         }
 
@@ -111,6 +126,7 @@ public class ShootScript : MonoBehaviour
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             bulletRigidbody.AddForce((hitPoint - _bulletSpawnPoint.transform.position).normalized * _speed);
             FMODUnity.RuntimeManager.PlayOneShot("event:/" + _shootingFrequency + "_shot");
+            _lastMuzzleFlash.GetComponent<ParticleSystem>().Play();
             _rotationDelay = 0;
 
             if (IsPoweredUp())
@@ -140,21 +156,30 @@ public class ShootScript : MonoBehaviour
 
     public void SwitchWave()
     {
+        ParticleSystem.ColorOverLifetimeModule particleColor = _gunParticles.GetComponent<ParticleSystem>().colorOverLifetime;
+        particleColor.enabled = true;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _knobScript.SetLow();
+            _lastMuzzleFlash = _flashLow;
+            particleColor.color = _colorLow;
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _knobScript.SetMedium();
+            _lastMuzzleFlash = _flashMedium;
+            particleColor.color = _colorMedium;
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _knobScript.SetHigh();
+            _lastMuzzleFlash = _flashHigh;
+            particleColor.color = _colorHigh;
             return;
         }
     }
@@ -166,6 +191,27 @@ public class ShootScript : MonoBehaviour
 
     public Frequency SwitchWave(Frequency pMode)
     {
+        ParticleSystem.ColorOverLifetimeModule particleColor = _gunParticles.GetComponent<ParticleSystem>().colorOverLifetime;
+        particleColor.enabled = true;
+
+        switch (pMode)
+        {
+            case Frequency.LOW:
+                _lastMuzzleFlash = _flashLow;
+                particleColor.color = _colorLow;
+                break;
+            case Frequency.MEDIUM:
+                _lastMuzzleFlash = _flashMedium;
+                particleColor.color = _colorMedium;
+                break;
+            case Frequency.HIGH:
+                _lastMuzzleFlash = _flashHigh;
+                particleColor.color = _colorHigh;
+                break;
+            default:
+                break;
+        }
+
         return _shootingFrequency = pMode;
     }
 
@@ -231,7 +277,7 @@ public class ShootScript : MonoBehaviour
         transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, 0.1f);
 
         if (transform.localRotation.x - Quaternion.identity.x < 0.1f)
-        {    
+        {
             _rotateGun = false;
         }
     }
