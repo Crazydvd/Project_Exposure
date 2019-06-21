@@ -17,7 +17,7 @@ public class PowerupPickupScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "PLAYER")
+        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "PROJECTILES")
         {
             if (_pierce)
             {

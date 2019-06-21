@@ -71,7 +71,7 @@ public class ScoreScript : MonoBehaviour
     public void MultiplyScore(float pFactor)
     {
         _score *= pFactor;
-        _score = Mathf.Round(_score);
+        _score = Mathf.Floor(_score);
         _textUI.text = /*JsonText.GetText("SCORE") + ": " + */ "" + _score;
         if (!_textAnimationUpscale && !_textAnimationDownscale)
         {
