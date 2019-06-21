@@ -30,7 +30,7 @@ public class DetectObstacleCol : MonoBehaviour
         {
             _obstacle.EnableShake(true);
         }
-        else if (other.gameObject.layer == 9) //layer 9 == Player (all bullets are on this layer)
+        else if (other.gameObject.layer == 13) //layer 13 == Projectiles (all bullets are on this layer)
         {
             _obstacle.EnableShake(false);
             ShootScript.Multiplier = 1;
@@ -39,12 +39,12 @@ public class DetectObstacleCol : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (_rigidbody == null)
+        if (GetComponent<Rigidbody>() == null)
         {
             return;
-        } 
+        }
 
-        if (_shatterOnFall && _rigidbody?.velocity.magnitude > 1.8)
+        if (_shatterOnFall && GetComponent<Rigidbody>()?.velocity.magnitude > 2)
         {
             fallOnFloor();
         }

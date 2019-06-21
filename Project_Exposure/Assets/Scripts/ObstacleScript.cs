@@ -204,8 +204,6 @@ public class ObstacleScript : MonoBehaviour
                     break;
             }
 
-
-
             Vector3 direction = (child.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
 
@@ -218,6 +216,7 @@ public class ObstacleScript : MonoBehaviour
         shardsContainer.DetachChildren();
         //Play sounds
         FMODUnity.RuntimeManager.PlayOneShotAttached("event:/" + _frequency.ToString().ToLower() + "_shattering", gameObject);
+
         if (_isVending)
         {
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Vending machine", gameObject);

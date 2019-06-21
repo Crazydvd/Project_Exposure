@@ -23,6 +23,12 @@ public class ShootScript : MonoBehaviour
     [SerializeField] GameObject _bulletType2;
     [SerializeField] GameObject _bulletType3;
 
+    [Header("Colors of the particle system")]
+    [SerializeField] Color _colorLow = new Color(1, 0, 0, 0.5f);
+    [SerializeField] Color _colorMedium  = new Color(0, 1, 0, 0.5f);
+    [SerializeField] Color _colorHigh = new Color(0, 0, 1, 0.5f);
+
+    [Space]
     [SerializeField] float _speed = 300f;
     [SerializeField] float _minRayDistance = 2f;
     [SerializeField] float _maxRayDistance = 15f;
@@ -79,9 +85,14 @@ public class ShootScript : MonoBehaviour
     // Detect (touch/mouse) input
     void OnFingerTap(Lean.Touch.LeanFinger finger)
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+
         if (!finger.IsOverGui && _shootingEnabled)
         {
-            int layerMask = ~LayerMask.GetMask("Player", "MainCamera"); // don't hit the Player layer or MainCamera
+            int layerMask = ~LayerMask.GetMask("Player", "PostProcessing"); // don't hit the Player layer or Camera
             Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 hitPoint;
             if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
@@ -136,21 +147,27 @@ public class ShootScript : MonoBehaviour
 
     public void SwitchWave()
     {
+        ParticleSystem.ColorOverLifetimeModule particleColor = GetComponentInChildren<ParticleSystem>().colorOverLifetime;
+        particleColor.enabled = true;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _knobScript.SetLow();
+            particleColor.color = _colorLow;
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _knobScript.SetMedium();
+            particleColor.color = _colorMedium;
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _knobScript.SetHigh();
+            particleColor.color = _colorHigh;
             return;
         }
     }
@@ -227,7 +244,7 @@ public class ShootScript : MonoBehaviour
         transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.identity, 0.1f);
 
         if (transform.localRotation.x - Quaternion.identity.x < 0.1f)
-        {    
+        {
             _rotateGun = false;
         }
     }
