@@ -59,7 +59,7 @@ public class HighscoreScript : MonoBehaviour
             GameObject score = Instantiate(_highscoreTemplate, _highscoreContainer.transform);
             score.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -_offset * i);
 
-            score.transform.GetChild(0).GetComponent<Text>().text = "#" + (i + 1); // place
+            score.transform.GetChild(0).GetComponent<Text>().text = (i + 1) + "."; // place
             score.transform.GetChild(1).GetComponent<Text>().text = "" + _leaderBoard[i].Score; // score
             score.transform.GetChild(2).GetComponent<Text>().text = "" + _leaderBoard[i].Name; // name
         }

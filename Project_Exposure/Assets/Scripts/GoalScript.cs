@@ -17,6 +17,7 @@ public class GoalScript : MonoBehaviour
     bool _startScoreAnimation = false;
     float _score;
     float _currentAnimationScore;
+    float _scoreIncrease;
 
     void OnTriggerEnter(Collider other)
     {
@@ -35,6 +36,8 @@ public class GoalScript : MonoBehaviour
             _starScript.CheckStarScore(_score);
             _highscoreScript.SetScore(_score);
             _highscoreScript.SetLevel(_level);
+
+            _scoreIncrease = _score / 100 / _starScript.GetStarScore();
         }
     }
 
@@ -47,8 +50,8 @@ public class GoalScript : MonoBehaviour
         if(_startScoreAnimation){
             if (_currentAnimationScore < _score)
             {
-                _currentAnimationScore++;
-                _endScoreText.text = "Score: " + _currentAnimationScore;
+                _currentAnimationScore += _scoreIncrease;
+                _endScoreText.text = "Score: " + (int)_currentAnimationScore;
             }
             else{
                 int place = _highscoreScript.CheckDailySpot(_score);
