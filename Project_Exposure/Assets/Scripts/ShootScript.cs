@@ -23,10 +23,15 @@ public class ShootScript : MonoBehaviour
     [SerializeField] GameObject _bulletType2;
     [SerializeField] GameObject _bulletType3;
 
+    [Header("Muzzle Flares here")]
+    [SerializeField] GameObject _flashLow;
+    [SerializeField] GameObject _flashMedium;
+    [SerializeField] GameObject _flashHigh;
+
     [Header("Colors of the particle system")]
-    [SerializeField] Color _colorLow = new Color(1, 0, 0, 0.5f);
-    [SerializeField] Color _colorMedium  = new Color(0, 1, 0, 0.5f);
-    [SerializeField] Color _colorHigh = new Color(0, 0, 1, 0.5f);
+    [SerializeField] Gradient _colorLow;
+    [SerializeField] Gradient _colorMedium;
+    [SerializeField] Gradient _colorHigh;
 
     [Space]
     [SerializeField] float _speed = 300f;
@@ -147,27 +152,46 @@ public class ShootScript : MonoBehaviour
 
     public void SwitchWave()
     {
-        ParticleSystem.ColorOverLifetimeModule particleColor = GetComponentInChildren<ParticleSystem>().colorOverLifetime;
-        particleColor.enabled = true;
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _knobScript.SetLow();
-            particleColor.color = _colorLow;
+
+            if (GetComponentInChildren<ParticleSystem>() != null)
+            {
+                ParticleSystem.ColorOverLifetimeModule particleColor = GetComponentInChildren<ParticleSystem>().colorOverLifetime;
+                particleColor.enabled = true;
+                particleColor.color = _colorLow;
+                return;
+            }
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _knobScript.SetMedium();
-            particleColor.color = _colorMedium;
+
+            if (GetComponentInChildren<ParticleSystem>() != null)
+            {
+                ParticleSystem.ColorOverLifetimeModule particleColor = GetComponentInChildren<ParticleSystem>().colorOverLifetime;
+                particleColor.enabled = true;
+                particleColor.color = _colorMedium;
+                return;
+            }
             return;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _knobScript.SetHigh();
-            particleColor.color = _colorHigh;
+
+            if (GetComponentInChildren<ParticleSystem>() != null)
+            {
+                ParticleSystem.ColorOverLifetimeModule particleColor = GetComponentInChildren<ParticleSystem>().colorOverLifetime;
+                particleColor.enabled = true;
+                particleColor.color = _colorHigh;
+                return;
+            }
             return;
         }
     }
