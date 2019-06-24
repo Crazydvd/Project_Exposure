@@ -52,8 +52,6 @@ public class BulletScript : MonoBehaviour
             _rigidbody.velocity = _velocity;
             _slowdown = false;
         }
-
-        print($"{_slowdown}: {Time.unscaledDeltaTime}");
     }
 
     public void SetVelocity(Vector3 pVelocity)

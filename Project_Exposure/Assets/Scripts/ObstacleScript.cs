@@ -149,14 +149,15 @@ public class ObstacleScript : MonoBehaviour
     {
         _oldPosVector = transform.GetChild(0).localPosition;
 
-        switch (pDestroy)
+        if (pDestroy)
         {
-            case true:
-                _shakingNShatter = true;
-                break;
-            case false:
-                _shaking = true;
-                break;
+            _shakingNShatter = true;            
+            //disable the outline 
+            GetComponentInChildren<Renderer>().material.SetFloat("_Thickness", 0);
+        }
+        else
+        {
+            _shaking = true;
         }
     }
 
@@ -168,6 +169,7 @@ public class ObstacleScript : MonoBehaviour
         GameObject.Find("Canvas").GetComponentInChildren<ShatterMultiplierVisualScript>().SetFollowObject(transform.GetChild(0)); // oof sorry, didn't wanna drag another thing in the editor
 
         Transform shardsContainer = transform.GetChild(0).transform;
+        GetComponentInChildren<Renderer>().material.SetFloat("_Thickness", 0);
 
         launchContent();
 
@@ -191,18 +193,7 @@ public class ObstacleScript : MonoBehaviour
 
             childRigid.isKinematic = false;
             //Set the material for the shards
-            switch (_frequency)
-            {
-                case Frequency.LOW:
-                    child.GetComponent<Renderer>().material = _lowFreqStandard;
-                    break;
-                case Frequency.MEDIUM:
-                    child.GetComponent<Renderer>().material = _mediumFreqStandard;
-                    break;
-                case Frequency.HIGH:
-                    child.GetComponent<Renderer>().material = _highFreqStandard;
-                    break;
-            }
+            child.GetComponent<Renderer>().material = GetComponentInChildren<Renderer>().material;
 
             Vector3 direction = (child.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
