@@ -37,7 +37,15 @@ public class GoalScript : MonoBehaviour
             _highscoreScript.SetScore(_score);
             _highscoreScript.SetLevel(_level);
 
-            _scoreIncrease = _score / 100 / _starScript.GetStarScore();
+            int starAmount = _starScript.GetStarScore();
+            if (starAmount > 0)
+            {
+                _scoreIncrease = _score / 100 / starAmount;
+            }
+            else
+            {
+                _scoreIncrease = _score;
+            }
         }
     }
 
@@ -50,7 +58,14 @@ public class GoalScript : MonoBehaviour
         if(_startScoreAnimation){
             if (_currentAnimationScore < _score)
             {
-                _currentAnimationScore += _scoreIncrease;
+                if (_currentAnimationScore + _scoreIncrease >= _score)
+                {
+                    _currentAnimationScore = _score; // make sure it doesn't go above the actual score
+                }
+                else
+                {
+                    _currentAnimationScore += _scoreIncrease;
+                }
                 _endScoreText.text = "Score: " + (int)_currentAnimationScore;
             }
             else{
