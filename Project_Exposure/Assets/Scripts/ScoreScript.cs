@@ -52,6 +52,7 @@ public class ScoreScript : MonoBehaviour
     public void IncreaseScore(float pIncrease)
     {
         _score += pIncrease;
+        _score = Mathf.Clamp(Mathf.Floor(_score), 0, _score);
         _textUI.text = /*JsonText.GetText("SCORE") + ": " + */"" + _score;
         if (!_textAnimationUpscale && !_textAnimationDownscale)
         {
@@ -59,13 +60,9 @@ public class ScoreScript : MonoBehaviour
         }
     }
 
-    public void DecreaseScore(float pDecrease){
-        _score -= pDecrease;
-        _textUI.text = /*JsonText.GetText("SCORE") + ": " + */"" + _score;
-        if (!_textAnimationUpscale && !_textAnimationDownscale)
-        {
-            _textAnimationUpscale = true;
-        }
+    public void DecreaseScore(float pDecrease)
+    {
+        IncreaseScore(-pDecrease);
     }
 
     public void MultiplyScore(float pFactor)

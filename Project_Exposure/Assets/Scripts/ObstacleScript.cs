@@ -27,7 +27,7 @@ public class ObstacleScript : MonoBehaviour
 
     [Header("Score")]
     [SerializeField] int _scoreForBreaking = 10;
-    [SerializeField] [Range(0, 1)] float _scoreLossPercent = 0.05f;
+    [SerializeField] float _scoreLoss = 10;
 
     TutorialZoneScript _tutorialZone;
     ScreenShake _screenShake;
@@ -42,7 +42,9 @@ public class ObstacleScript : MonoBehaviour
         _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
         _scoreUI = GameObject.Find("Score").GetComponent<Text>();
         setMaterial();
-        transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Obstacles");
+        Transform child = transform.GetChild(0);
+        child.gameObject.layer = LayerMask.NameToLayer("Obstacles");
+        child.GetComponent<DetectObstacleCol>().ScoreLoss = _scoreLoss;
     }
 
     void OnValidate()
@@ -238,7 +240,7 @@ public class ObstacleScript : MonoBehaviour
         {
             ShootScript.Multiplier = 1;
             //score.DecreaseScore(30);
-            score.MultiplyScore(1 - _scoreLossPercent);
+            score.MultiplyScore(1 - _scoreLoss);
         }
 
         Destroy(gameObject);

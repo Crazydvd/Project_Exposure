@@ -33,27 +33,23 @@ public class BulletScript : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (Time.timeScale < 1 && Time.timeScale > 0)
         { // on overcharge
             if (!_slowdown && _rigidbody.velocity.magnitude > 0)
             {
                 _velocity = _rigidbody.velocity;
-                _rigidbody.isKinematic = true;
+                _rigidbody.velocity *= 1 / Time.timeScale;
                 _slowdown = true;
             }
-            _rigidbody.position += _velocity * Time.unscaledDeltaTime;
         }
 
         if (_slowdown && Mathf.Approximately(Time.timeScale, 1f))
         { // end of overcharge
-            _rigidbody.isKinematic = false;
             _rigidbody.velocity = _velocity;
             _slowdown = false;
         }
-
-        print($"{_slowdown}: {Time.unscaledDeltaTime}");
     }
 
     public void SetVelocity(Vector3 pVelocity)
