@@ -239,8 +239,8 @@ public class ObstacleScript : MonoBehaviour
         else
         {
             ShootScript.Multiplier = 1;
-            //score.DecreaseScore(30);
-            score.MultiplyScore(1 - _scoreLoss);
+            score.DecreaseScore(_scoreLoss);
+            //score.MultiplyScore(1 - _scoreLoss);
         }
 
         Destroy(gameObject);
