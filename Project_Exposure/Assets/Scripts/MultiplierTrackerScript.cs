@@ -15,6 +15,6 @@ public class MultiplierTrackerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _text.text = ShootScript.Multiplier < 2 ? "" : "X " + ShootScript.Multiplier;
+        _text.text = ShootScript.Multiplier < 2 ? "" : "x" + ShootScript.Multiplier;
     }
 }
