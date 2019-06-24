@@ -40,6 +40,10 @@ public class StarScript : MonoBehaviour
         }
     }
 
+    public int GetStarScore(){
+        return _fillGoal;
+    }
+
     // Update is called once per frame
     void Update()
     {
