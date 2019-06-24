@@ -11,11 +11,16 @@ public class DetectObstacleCol : MonoBehaviour
 
     bool _shatterOnFall = true;
 
+    ScoreScript _scoreScript = null;
+
+    public float ScoreLoss { get; set; }
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _obstacle = GetComponentInParent<ObstacleScript>();
         _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
+        _scoreScript = GameObject.Find("Score").GetComponent<ScoreScript>(); //Shite, but it works.
     }
 
     void OnTriggerEnter(Collider other)
@@ -25,8 +30,7 @@ public class DetectObstacleCol : MonoBehaviour
             _obstacle.Shatter(true);
             _screenShake.StartShake(24f, 0.2f);
         }
-        else
-        if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")
+        else if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")
         {
             _obstacle.EnableShake(true);
         }
@@ -34,6 +38,7 @@ public class DetectObstacleCol : MonoBehaviour
         {
             _obstacle.EnableShake(false);
             ShootScript.Multiplier = 1;
+            _scoreScript.DecreaseScore(ScoreLoss);
         }
     }
 

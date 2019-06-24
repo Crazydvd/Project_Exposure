@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class LanguageImageScript : MonoBehaviour
 {
-    [SerializeField] Sprite _dutch = null; 
-    [SerializeField] Sprite _english = null; 
-    [SerializeField] Sprite _german = null; 
+    [SerializeField] Sprite _dutch = null;
+    [SerializeField] Sprite _english = null;
+    [SerializeField] Sprite _german = null;
     [SerializeField] Sprite _russian = null;
     [SerializeField] Sprite _bulgerian = null;
 
@@ -19,12 +19,12 @@ public class LanguageImageScript : MonoBehaviour
         LoadImage();
     }
 
-    public void LoadImage(){
-
+    public void LoadImage()
+    {
         Language language = LanguageSettings.Language;
         Sprite sprite = getImage(language);
 
-        while (language >= 0 && sprite == null)
+        while (language > 0 && sprite == null)
         {
             language--;
             sprite = getImage(language);
