@@ -27,7 +27,7 @@ public class ObstacleScript : MonoBehaviour
 
     [Header("Score")]
     [SerializeField] int _scoreForBreaking = 10;
-    [SerializeField] [Range(0, 1)] float _scoreLossPercent = 0.05f;
+    [SerializeField] float _scoreLoss = 10;
 
     TutorialZoneScript _tutorialZone;
     ScreenShake _screenShake;
@@ -42,7 +42,9 @@ public class ObstacleScript : MonoBehaviour
         _screenShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenShake>();
         _scoreUI = GameObject.Find("Score").GetComponent<Text>();
         setMaterial();
-        transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Obstacles");
+        Transform child = transform.GetChild(0);
+        child.gameObject.layer = LayerMask.NameToLayer("Obstacles");
+        child.GetComponent<DetectObstacleCol>().ScoreLoss = _scoreLoss;
     }
 
     void OnValidate()
@@ -149,14 +151,15 @@ public class ObstacleScript : MonoBehaviour
     {
         _oldPosVector = transform.GetChild(0).localPosition;
 
-        switch (pDestroy)
+        if (pDestroy)
         {
-            case true:
-                _shakingNShatter = true;
-                break;
-            case false:
-                _shaking = true;
-                break;
+            _shakingNShatter = true;            
+            //disable the outline 
+            GetComponentInChildren<Renderer>().material.SetFloat("_Thickness", 0);
+        }
+        else
+        {
+            _shaking = true;
         }
     }
 
@@ -168,6 +171,7 @@ public class ObstacleScript : MonoBehaviour
         GameObject.Find("Canvas").GetComponentInChildren<ShatterMultiplierVisualScript>().SetFollowObject(transform.GetChild(0)); // oof sorry, didn't wanna drag another thing in the editor
 
         Transform shardsContainer = transform.GetChild(0).transform;
+        GetComponentInChildren<Renderer>().material.SetFloat("_Thickness", 0);
 
         launchContent();
 
@@ -191,18 +195,7 @@ public class ObstacleScript : MonoBehaviour
 
             childRigid.isKinematic = false;
             //Set the material for the shards
-            switch (_frequency)
-            {
-                case Frequency.LOW:
-                    child.GetComponent<Renderer>().material = _lowFreqStandard;
-                    break;
-                case Frequency.MEDIUM:
-                    child.GetComponent<Renderer>().material = _mediumFreqStandard;
-                    break;
-                case Frequency.HIGH:
-                    child.GetComponent<Renderer>().material = _highFreqStandard;
-                    break;
-            }
+            child.GetComponent<Renderer>().material = GetComponentInChildren<Renderer>().material;
 
             Vector3 direction = (child.position - transform.position).normalized;
             Vector3 randomizedDirection = new Vector3(direction.x * Random.Range(0.5f, 1.5f), direction.y * Random.Range(0.5f, 1.5f), direction.z * Random.Range(0.5f, 1.5f));
@@ -238,7 +231,7 @@ public class ObstacleScript : MonoBehaviour
         {
             ShootScript.Multiplier = 1;
             //score.DecreaseScore(30);
-            score.MultiplyScore(1 - _scoreLossPercent);
+            score.MultiplyScore(1 - _scoreLoss);
         }
 
         Destroy(gameObject);
