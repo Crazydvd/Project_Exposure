@@ -29,6 +29,8 @@ public class DetectObstacleCol : MonoBehaviour
         {
             _obstacle.Shatter(true);
             _screenShake.StartShake(24f, 0.2f);
+            _scoreScript.GetComponent<UnityEngine.UI.Text>().text = _scoreScript.GetScore() + "";
+            _scoreScript._negativeScoreScript.EnableText();
         }
         else if (other.transform.tag.ToUpper() == _obstacle.GetFreq() + "FREQ")
         {
