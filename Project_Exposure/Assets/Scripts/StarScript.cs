@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StarScript : MonoBehaviour
 {
     [SerializeField] Sprite _filledStarSprite;
+    [SerializeField] float _scoreForOneStar = 5000f;
     [SerializeField] float _scoreForTwoStars = 10000f;
     [SerializeField] float _scoreForThreeStars = 20000f;
 
@@ -13,7 +14,7 @@ public class StarScript : MonoBehaviour
     Image[] _fillImages = new Image[3];
 
     int _currentStar = 1; // indexer
-    int _fillGoal = 1; // amount of stars to fill
+    int _fillGoal = 0; // amount of stars to fill
     bool _fillStars = false; // boolean to start
 
     bool _starAnimationUpscale = false;
@@ -32,11 +33,16 @@ public class StarScript : MonoBehaviour
     }
 
     public void CheckStarScore(float pScore){
-        _fillStars = true;
         if(pScore > _scoreForThreeStars){
             _fillGoal = 3;
         }else if(pScore > _scoreForTwoStars){
             _fillGoal = 2;
+        }else if(pScore > _scoreForOneStar){
+            _fillGoal = 1;
+        }
+
+        if(_fillGoal > 0){
+            _fillStars = true;
         }
     }
 
