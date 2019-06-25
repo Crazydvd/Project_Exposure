@@ -31,6 +31,7 @@ public class KnobScript : MonoBehaviour
     bool _holding = false;
 
     Animator _animator;
+    StreamVideo _streamVideo;
     Image _backgroundImage;
 
     void Start()
@@ -39,7 +40,9 @@ public class KnobScript : MonoBehaviour
         _englishSprites = new Sprite[] { _englishLow, _englishMedium, _englishHigh };
         _germanSprites = new Sprite[] { _germanLow, _germanMedium, _germanHigh };
 
+        _streamVideo = transform.parent.GetComponentInChildren<StreamVideo>();
         _animator = transform.parent.GetComponentInChildren<Animator>();
+
         _backgroundImage = transform.parent.GetComponent<Image>();
     }
 
@@ -74,14 +77,16 @@ public class KnobScript : MonoBehaviour
         }
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(_targetRotation), _rotationSpeed);
     }
+
     void playAnimation(string pFrequency)
     {
-        _animator.Play(pFrequency + "freq");
+        _animator.Play(pFrequency.ToLower() + "freq");
     }
 
     void playAnimation(Frequency pFrequency)
     {
-        playAnimation(pFrequency.ToString().ToLower());
+        playAnimation(pFrequency.ToString());
+        //_streamVideo.Play(pFrequency);
     }
 
     Sprite[] getCurrentSprites(){
