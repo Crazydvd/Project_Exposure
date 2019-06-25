@@ -129,11 +129,6 @@ public class ShootScript : MonoBehaviour
             _lastMuzzleFlash.GetComponent<ParticleSystem>().Play();
             _rotationDelay = 0;
 
-            if (IsPoweredUp())
-            {
-                bullet.GetComponent<BulletScript>().SetPoweredUp(true);
-            }
-
             if (_pierceMode)
             {
                 bullet.GetComponent<BulletScript>().PierceShotMode = true;
@@ -248,11 +243,6 @@ public class ShootScript : MonoBehaviour
     public void DisableGun()
     {
         _shootingEnabled = false;
-    }
-
-    public bool IsPoweredUp()
-    {
-        return (_pierceMode || _batteryMode);
     }
 
     public void RotateGunBack()
