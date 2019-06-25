@@ -34,6 +34,7 @@ public class StarBarScript : MonoBehaviour
             if(_nextStar == 2) // went down
             {
                 transform.GetChild(0).gameObject.SetActive(false);
+                _nextStar = 1;
             }
         }
         else if(score >= _oneStarScore && score < _twoStarScore){

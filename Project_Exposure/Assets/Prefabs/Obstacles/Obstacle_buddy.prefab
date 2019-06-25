@@ -3273,6 +3273,7 @@ GameObject:
   - component: {fileID: 5588026920462841789}
   - component: {fileID: 5588026920462841788}
   - component: {fileID: 761945615036554279}
+  - component: {fileID: 2643336497179447850}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -3348,9 +3349,6 @@ MonoBehaviour:
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
-  _lowFreqStandard: {fileID: 2100000, guid: d3afc8b6f78ca4e4fa65311d75a68dfb, type: 2}
-  _mediumFreqStandard: {fileID: 2100000, guid: 44088a210346f3849aac4ea45b118f99, type: 2}
-  _highFreqStandard: {fileID: 2100000, guid: c49be50df79829a4eb10fdd69de67611, type: 2}
   _content: {fileID: 0}
   _isVending: 0
   _isBuddy: 1
@@ -3369,9 +3367,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
+  CollisionTag: MainCamera
   Event: event:/Buddy idle
-  PlayEvent: 1
+  PlayEvent: 3
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
@@ -3380,6 +3378,19 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!135 &2643336497179447850
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588026920462841762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5800384719875615608
 GameObject:
   m_ObjectHideFlags: 0
@@ -6223,16 +6234,16 @@ PrefabInstance:
       propertyPath: _frequency
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2230446549101009449, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
+    - target: {fileID: 2230446549101009449, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 924049643, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}

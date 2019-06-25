@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
+    public NegativeScoreScript _negativeScoreScript;
     RectTransform _rectTransform;
     Text _textUI;
+    Color _originalColor;
     float _score;
 
     // animation properties
@@ -18,6 +20,7 @@ public class ScoreScript : MonoBehaviour
     {
         _rectTransform = GetComponent<RectTransform>();
         _textUI = GetComponent<Text>();
+        _originalColor = _textUI.color;
         _textUI.text = "0";//JsonText.GetText("SCORE") + ": 0";
         _originalHeight = _rectTransform.rect.height;
     }
@@ -45,6 +48,7 @@ public class ScoreScript : MonoBehaviour
             else
             {
                 _textAnimationDownscale = false;
+                _textUI.color = _originalColor;
             }
         }
     }
@@ -62,6 +66,7 @@ public class ScoreScript : MonoBehaviour
 
     public void DecreaseScore(float pDecrease)
     {
+        _textUI.color = Color.red;
         IncreaseScore(-pDecrease);
     }
 
