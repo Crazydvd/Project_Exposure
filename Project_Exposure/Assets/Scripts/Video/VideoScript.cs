@@ -39,11 +39,9 @@ public class VideoScript : MonoBehaviour
 
         while (!_video.isPrepared)
         {
-            print("Loading...");
             yield return null;
         }
 
-        print("Ready");
         LoadingScreenScript.LevelReady = true;
     }
 
