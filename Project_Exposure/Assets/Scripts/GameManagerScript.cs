@@ -15,6 +15,12 @@ public class GameManagerScript : MonoBehaviour
         LoadingScreenScript.Load(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoadScene(int pScene)
+    {
+        Time.timeScale = 1f;
+        LoadingScreenScript.Load(pScene);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
