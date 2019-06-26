@@ -17,20 +17,23 @@ public class PowerupPickupScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "PROJECTILES")
+        string layer = LayerMask.LayerToName(other.gameObject.layer).ToUpper();
+
+        if (layer == "PROJECTILES" || layer == "POSTPROCESSING")
         {
             if (_pierce)
             {
                 _powerupManagerScript.ActivatePierceShot();
             }
-            if (_overcharge)
+            else if (_overcharge)
             {
                 _powerupManagerScript.ActivateOvercharge();
             }
-            if (_battery)
+            else if (_battery)
             {
                 _powerupManagerScript.ActivateBattery();
             }
+
             Destroy(gameObject);
         }
     }

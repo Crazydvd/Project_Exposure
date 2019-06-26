@@ -52,6 +52,7 @@ public class ShootScript : MonoBehaviour
     bool _rotateGun;
 
     [SerializeField] Text _pierceShotCounter;
+    GameObject _pierceUI;
     //[SerializeField] Text _energyCounter; Not used
     //[SerializeField] Slider _overheatBar;
     //[SerializeField] float _startEnergy = 80;
@@ -71,6 +72,8 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _pierceUI = GameObject.Find("Canvas").transform.Find("Pierce").gameObject;
+
         Multiplier = 1;
 
         _waves.Add(Frequency.LOW, _bulletType1);
@@ -100,7 +103,8 @@ public class ShootScript : MonoBehaviour
 
         if (!finger.IsOverGui && _shootingEnabled)
         {
-            int layerMask = ~LayerMask.GetMask("Player", "PostProcessing"); // don't hit the Player layer or Camera
+            int layerMask = 1 << 10; //Only raycast the obstacle layer
+            //int layerMask = ~LayerMask.GetMask("Player", "PostProcessing", "Projectiles", "Shards"); // don't hit the Player layer or Camera
             Ray rayPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 hitPoint;
             if ((Physics.Raycast(rayPoint, out RaycastHit hit, _maxRayDistance, layerMask) && _rayCastAccuracy))
@@ -212,6 +216,8 @@ public class ShootScript : MonoBehaviour
 
     public void EnablePierceShot()
     {
+        _pierceUI.SetActive(true);
+
         _pierceMode = true;
         _pierceShots = _pierceShotAmmo;
         _pierceShotCounter.text = _pierceShots.ToString();
@@ -220,6 +226,8 @@ public class ShootScript : MonoBehaviour
 
     public void DisablePierceShot()
     {
+        _pierceUI.SetActive(false);
+
         _pierceMode = false;
         _pierceShotCounter.gameObject.SetActive(false);
     }
