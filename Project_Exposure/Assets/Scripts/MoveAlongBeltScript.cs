@@ -23,21 +23,22 @@ public class MoveAlongBeltScript : MonoBehaviour
     {
         if (other.transform.root.tag.ToLower() == "conveyorbelt" || other.tag.ToLower() == "conveyorbelt")
         {
+            CancelInvoke("stopMoving");
             _lastEntered = other.GetComponent<ConveyorScript>() ?? other.gameObject.AddComponent<ConveyorScript>();
             Move = _lastEntered.MoveObject;
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        //if (other.transform.root.tag.ToLower() == "conveyorbelt")
-        //{
-        //    if (_lastEntered == other.GetComponent<ConveyorScript>())
-        //    {
-        //        Move = null;
-        //    }
-        //}
-    }
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.transform.root.tag.ToLower() == "conveyorbelt")
+    //    {
+    //        if (_lastEntered == other.GetComponent<ConveyorScript>())
+    //        {
+    //            Move = null
+    //        }
+    //    }
+    //}
 
     public void StartSelfDestruct()
     {

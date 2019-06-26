@@ -44,7 +44,9 @@ public class LoadingScreenScript : MonoBehaviour
     [Header("Size 0 == any button")]
     [SerializeField] string[] _inputButtons;
 
-    //Can be used by external scripts to prevent level from starting (e.g have some time to preload videos)
+    /// <summary>
+    /// Can be used by external scripts to prevent level from starting (e.g have some time to preload videos)
+    /// </summary>
     public static bool LevelReady { get; set; } = true;
 
 

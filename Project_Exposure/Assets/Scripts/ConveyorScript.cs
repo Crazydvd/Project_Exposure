@@ -29,8 +29,8 @@ public class ConveyorScript : MonoBehaviour
 
         _conveyorMaterial = GetComponent<Renderer>().material;
 
-        Speed = _speed;
         _oldSpeed = _speed;
+        Speed = _speed;
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class ConveyorScript : MonoBehaviour
         }
         set
         {
-            _speed = value;
+            _speed = value * 2;
             _conveyorMaterial.SetFloat("_SpeedY", value);
         }
     }
