@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 380082633}
-  m_IndirectSpecularColor: {r: 0.3115725, g: 0.25324604, b: 0.3492236, a: 1}
+  m_IndirectSpecularColor: {r: 0.5939861, g: 0.54028994, b: 0.6255796, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -30309,6 +30309,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera Container
       objectReference: {fileID: 0}
+    - target: {fileID: 7908170683042372497, guid: d8f4961a9e63bb741b744c6d2d5c1628,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
         type: 3}
       propertyPath: _pierceShotCounter
@@ -30368,6 +30373,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 840268438, guid: d8f4961a9e63bb741b744c6d2d5c1628, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8f4961a9e63bb741b744c6d2d5c1628, type: 3}
@@ -89909,6 +89918,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _video: {fileID: 7166659980643151360}
+  _dutch: {fileID: 0}
+  _english: {fileID: 0}
+  _german: {fileID: 0}
 --- !u!1001 &1960514916
 PrefabInstance:
   m_ObjectHideFlags: 0

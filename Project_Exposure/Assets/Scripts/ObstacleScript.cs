@@ -150,9 +150,9 @@ public class ObstacleScript : MonoBehaviour
 
         if (pDestroy)
         {
-            _shakingNShatter = true;            
+            _shakingNShatter = true;
             //disable the outline 
-            GetComponentInChildren<Renderer>().material.SetFloat("_Thickness", 0);
+            GetComponentInChildren<Renderer>().material.SetColor("_OutlineColor", new Vector4(0, 0, 0, 0));
         }
         else
         {
@@ -168,7 +168,7 @@ public class ObstacleScript : MonoBehaviour
         GameObject.Find("Canvas").GetComponentInChildren<ShatterMultiplierVisualScript>().SetFollowObject(transform.GetChild(0)); // oof sorry, didn't wanna drag another thing in the editor
 
         Transform shardsContainer = transform.GetChild(0).transform;
-        GetComponentInChildren<Renderer>().material.SetFloat("_Thickness", 0);
+        GetComponentInChildren<Renderer>().material.SetColor("_OutlineColor", new Vector4(0, 0, 0, 0));
 
         launchContent();
 
