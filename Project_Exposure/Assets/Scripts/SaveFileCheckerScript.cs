@@ -45,6 +45,11 @@ public class SaveFileCheckerScript : MonoBehaviour
                 PlayerPrefs.DeleteKey("YEARLYhighscore" + i);
             }
         }
+
+        if (!File.Exists(path + @"/UserData/Statistics/" + date + "-feedback" + ".txt")) // check if daily data exists
+        {
+            PlayerPrefs.DeleteKey("FeedbackStats");
+        }
     }
 
     // Update is called once per frame
