@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
 
     Rigidbody _rigidbody;
     bool _slowdown;
+    Vector3 _oldVelocity;
     Vector3 _velocity;
     bool _hitObstacle;
 
@@ -40,22 +41,23 @@ public class BulletScript : MonoBehaviour
         { // on overcharge
             if (!_slowdown && _rigidbody.velocity.magnitude > 0)
             {
-                _velocity = _rigidbody.velocity;
-                _rigidbody.velocity *= 1 / Time.timeScale;
+                _oldVelocity = _rigidbody.velocity;
+                _velocity = _oldVelocity * (1 + (1 - Time.timeScale));
                 _slowdown = true;
             }
         }
+        _rigidbody.position += _velocity * Time.unscaledDeltaTime;
 
         if (_slowdown && Mathf.Approximately(Time.timeScale, 1f))
         { // end of overcharge
-            _rigidbody.velocity = _velocity;
+            _rigidbody.velocity = _oldVelocity;
             _slowdown = false;
         }
     }
 
     public void SetVelocity(Vector3 pVelocity)
     {
-        _velocity = pVelocity;
+        _oldVelocity = pVelocity;
     }
 
     public void SelfDestruct()
