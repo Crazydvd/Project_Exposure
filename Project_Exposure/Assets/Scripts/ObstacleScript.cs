@@ -15,9 +15,6 @@ public class ObstacleScript : MonoBehaviour
     [SerializeField] Material _lowFreqMaterial;
     [SerializeField] Material _mediumFreqMaterial;
     [SerializeField] Material _highFreqMaterial;
-    [SerializeField] Material _lowFreqStandard;
-    [SerializeField] Material _mediumFreqStandard;
-    [SerializeField] Material _highFreqStandard;
 
     [Header("Specific Objeccts")]
     [SerializeField] GameObject _content;

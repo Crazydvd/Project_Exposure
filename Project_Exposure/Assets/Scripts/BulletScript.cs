@@ -9,27 +9,28 @@ public class BulletScript : MonoBehaviour
     Rigidbody _rigidbody;
     bool _slowdown;
     Vector3 _velocity;
-    bool _powered;
+    bool _hitObstacle;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
 
-        if (!_powered) //if powered up, dont lose the multiplier 
-        {
-            Invoke("SelfDestruct", 5f);
-        }
+        Invoke("SelfDestruct", 5f);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (!PierceShotMode && LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "OBSTACLES")
-        {
-            Destroy(gameObject);
-        }
-        else if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "WALLS")
+        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "WALLS")
         {
             SelfDestruct();
+        }
+        else if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "OBSTACLES")
+        {
+            _hitObstacle = true;
+            if (!PierceShotMode)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -57,17 +58,12 @@ public class BulletScript : MonoBehaviour
         _velocity = pVelocity;
     }
 
-    public void SetPoweredUp(bool pValue)
-    {
-        _powered = pValue;
-    }
-
     public void SelfDestruct()
     {
-        if (!PierceShotMode)
+        if (!_hitObstacle)
         {
             ShootScript.Multiplier = 1;
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }
