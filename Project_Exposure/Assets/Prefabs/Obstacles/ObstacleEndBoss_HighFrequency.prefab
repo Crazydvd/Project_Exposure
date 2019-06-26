@@ -3143,9 +3143,9 @@ GameObject:
   - component: {fileID: 2318995766895196560}
   - component: {fileID: 6734496497181852582}
   - component: {fileID: 1029412853757050719}
-  - component: {fileID: 5756381666525964642}
   - component: {fileID: 2950763672906142473}
   - component: {fileID: 1958042477853352563}
+  - component: {fileID: 7397050278793273562}
   m_Layer: 10
   m_Name: ShardsContainer
   m_TagString: Untagged
@@ -3362,20 +3362,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5756381666525964642
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618449805354912643}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8844700393703326736, guid: cabbc21d85b4ab849a99544e92169c93, type: 3}
 --- !u!114 &2950763672906142473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3404,6 +3390,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!135 &7397050278793273562
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618449805354912643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1624297123690681408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3599,9 +3598,6 @@ MonoBehaviour:
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   _highFreqMaterial: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-  _lowFreqStandard: {fileID: 2100000, guid: d3afc8b6f78ca4e4fa65311d75a68dfb, type: 2}
-  _mediumFreqStandard: {fileID: 2100000, guid: 44088a210346f3849aac4ea45b118f99, type: 2}
-  _highFreqStandard: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
   _content: {fileID: 0}
   _isVending: 0
   _isBuddy: 0
