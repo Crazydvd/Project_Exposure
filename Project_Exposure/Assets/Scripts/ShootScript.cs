@@ -215,6 +215,8 @@ public class ShootScript : MonoBehaviour
 
     public void EnablePierceShot()
     {
+        _pierceUI.SetActive(true);
+
         _pierceMode = true;
         _pierceShots = _pierceShotAmmo;
         _pierceShotCounter.text = _pierceShots.ToString();
@@ -223,6 +225,8 @@ public class ShootScript : MonoBehaviour
 
     public void DisablePierceShot()
     {
+        _pierceUI.SetActive(false);
+
         _pierceMode = false;
         _pierceShotCounter.gameObject.SetActive(false);
     }
