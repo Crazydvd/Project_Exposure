@@ -34,6 +34,7 @@ public class StarScript : MonoBehaviour
     }
 
     public void CheckStarScore(float pScore, int pLevel){
+        setPointStats(pScore, pLevel);
         if(pScore > _scoreForThreeStars){
             _fillGoal = 3;
         }else if(pScore > _scoreForTwoStars){

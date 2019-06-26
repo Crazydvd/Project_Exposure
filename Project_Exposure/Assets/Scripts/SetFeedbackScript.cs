@@ -99,10 +99,13 @@ public class SetFeedbackScript : MonoBehaviour
             FeedbackEntry entry = _feedback[i];
             textWriter.WriteLine("Wat vindt je van technologie: " + entry.Knowledge
                                 + " Hoeveel heb je geleerd: " + entry.Learned 
-                                + " Punten level 1: " + entry.Level1Points
-                                + " Punten level 2: " + entry.Level2Points
-                                + " Punten level 3: " + entry.Level3Points
-                                + " Punten Totaal: " + (entry.Level1Points + entry.Level2Points + entry.Level3Points));
+                                + " Punten level 1: " + (entry.Level1Points > -1 ? entry.Level1Points + "" : "Niet geweest")
+                                + " Punten level 2: " + (entry.Level2Points > -1 ? entry.Level2Points + "" : "Niet geweest")
+                                + " Punten level 3: " + (entry.Level3Points > -1 ? entry.Level3Points + "" : "Niet geweest")
+                                + " Punten Totaal: " + ((entry.Level1Points < 0 ? 0 : entry.Level1Points) 
+                                                    + (entry.Level2Points < 0 ? 0 : entry.Level2Points)
+                                                    + (entry.Level3Points < 0 ? 0 : entry.Level3Points))
+                                );
         }
         textWriter.Close();
     }
