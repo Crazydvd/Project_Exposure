@@ -41,6 +41,8 @@ public class DetectObstacleCol : MonoBehaviour
             _obstacle.EnableShake(false);
             ShootScript.Multiplier = 1;
             _scoreScript.DecreaseScore(ScoreLoss);
+            _scoreScript._negativeScoreScript.EnableText();
+            _scoreScript._negativeScoreScript.SetFollowObject(transform);
         }
     }
 

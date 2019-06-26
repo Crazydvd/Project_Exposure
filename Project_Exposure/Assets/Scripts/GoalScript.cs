@@ -33,7 +33,7 @@ public class GoalScript : MonoBehaviour
             _gameUI.SetActive(false);
             _endMenu.SetActive(true);
 
-            _starScript.CheckStarScore(_score);
+            _starScript.CheckStarScore(_score, _level);
             _highscoreScript.SetScore(_score);
             _highscoreScript.SetLevel(_level);
 
