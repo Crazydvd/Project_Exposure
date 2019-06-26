@@ -2710,6 +2710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4202942859691131466}
   - component: {fileID: 5934294517557929195}
+  - component: {fileID: 301852865774302424}
   m_Layer: 0
   m_Name: Obstacle 1
   m_TagString: Untagged
@@ -2757,6 +2758,18 @@ MonoBehaviour:
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
   _scoreLoss: 10
+--- !u!114 &301852865774302424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816092704228101778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16cedefd9110b4487e60a5ab130634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &877638814245508843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5136,6 +5149,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _platformShoot: {fileID: 8178857461281005794}
   _animationSpeed: 1
+  _hurlSpeed: 30
+  _object1: {fileID: 2158373447372870967, guid: dae3193b6af517345906f70918ee5734,
+    type: 3}
+  _object2: {fileID: 649173143381763168, guid: 5ac6ecc711650914f9ef4e8d2ad5f192, type: 3}
+  _object3: {fileID: 1709670166514186075, guid: a0ee6f94da3a2c94aa05e12170890569,
+    type: 3}
+  _obstacles:
+  - {fileID: 816092704228101778}
+  - {fileID: 3331793782121414408}
+  - {fileID: 6261479443146531760}
+  - {fileID: 8246279489183034801}
+  - {fileID: 3681179115300680855}
+  - {fileID: 5228728210308755679}
+  - {fileID: 2606495796023512749}
 --- !u!1 &1974870141346792791
 GameObject:
   m_ObjectHideFlags: 0
@@ -6838,6 +6865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101429174666424653}
   - component: {fileID: 4621686218956065582}
+  - component: {fileID: 8231472975800133581}
   m_Layer: 0
   m_Name: Obstacle 7
   m_TagString: Untagged
@@ -6885,6 +6913,18 @@ MonoBehaviour:
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
   _scoreLoss: 10
+--- !u!114 &8231472975800133581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606495796023512749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16cedefd9110b4487e60a5ab130634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2778977595080238370
 GameObject:
   m_ObjectHideFlags: 0
@@ -6972,7 +7012,7 @@ BoxCollider:
   m_GameObject: {fileID: 2778977595080238370}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -9578,6 +9618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7689553950624718321}
   - component: {fileID: 8431802854263874130}
+  - component: {fileID: 6521420401704430270}
   m_Layer: 0
   m_Name: Obstacle 2
   m_TagString: Untagged
@@ -9625,6 +9666,18 @@ MonoBehaviour:
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
   _scoreLoss: 10
+--- !u!114 &6521420401704430270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331793782121414408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16cedefd9110b4487e60a5ab130634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3418019633737003305
 GameObject:
   m_ObjectHideFlags: 0
@@ -10607,6 +10660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7958588388221804498}
   - component: {fileID: 248034537349144365}
+  - component: {fileID: 2408157162953208148}
   m_Layer: 0
   m_Name: Obstacle 5
   m_TagString: Untagged
@@ -10654,6 +10708,18 @@ MonoBehaviour:
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
   _scoreLoss: 10
+--- !u!114 &2408157162953208148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681179115300680855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16cedefd9110b4487e60a5ab130634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3684957688446577402
 GameObject:
   m_ObjectHideFlags: 0
@@ -14458,6 +14524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2541384146890022144}
   - component: {fileID: 8650644405325055510}
+  - component: {fileID: 7497528856759014436}
   m_Layer: 0
   m_Name: Obstacle 6
   m_TagString: Untagged
@@ -14505,6 +14572,18 @@ MonoBehaviour:
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
   _scoreLoss: 10
+--- !u!114 &7497528856759014436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228728210308755679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16cedefd9110b4487e60a5ab130634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5264408387026782181
 GameObject:
   m_ObjectHideFlags: 0
@@ -17076,6 +17155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8733908809753110154}
   - component: {fileID: 3896765877959215098}
+  - component: {fileID: 4185278746734082016}
   m_Layer: 0
   m_Name: Obstacle 3
   m_TagString: Untagged
@@ -17123,6 +17203,18 @@ MonoBehaviour:
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
   _scoreLoss: 10
+--- !u!114 &4185278746734082016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6261479443146531760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16cedefd9110b4487e60a5ab130634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6301105500889428622
 GameObject:
   m_ObjectHideFlags: 0
@@ -22150,6 +22242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6199754001601367384}
   - component: {fileID: 5123430006782532741}
+  - component: {fileID: 5569837682662204251}
   m_Layer: 0
   m_Name: Obstacle 4
   m_TagString: Untagged
@@ -22197,6 +22290,18 @@ MonoBehaviour:
   _buddyScript: {fileID: 0}
   _scoreForBreaking: 10
   _scoreLoss: 10
+--- !u!114 &5569837682662204251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246279489183034801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16cedefd9110b4487e60a5ab130634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8297366532608961732
 GameObject:
   m_ObjectHideFlags: 0
