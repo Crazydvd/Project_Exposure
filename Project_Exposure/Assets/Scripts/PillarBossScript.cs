@@ -7,6 +7,7 @@ public class PillarBossScript : MonoBehaviour
     [SerializeField] GameObject _platformShoot;
     [SerializeField] float _animationSpeed = 1f;
     [SerializeField] float _hurlSpeed = 10f;
+    [SerializeField] bool _usesGravity = false;
 
     [Header("Projectiles")]
     [SerializeField] GameObject _object1;
@@ -31,18 +32,13 @@ public class PillarBossScript : MonoBehaviour
 
         foreach (GameObject obstacle in _obstacles)
         {
-            
+
             _obstacleCount++;
         }
     }
 
     void Update()
     {
-        //if (_platformShoot == null)
-        //{
-        //    return;
-        //}
-
         _platformShoot.transform.LookAt(_mainCamera.transform);
         _platformShoot.transform.rotation = Quaternion.Euler(0, _platformShoot.transform.rotation.eulerAngles.y, 0);
     }
@@ -77,13 +73,13 @@ public class PillarBossScript : MonoBehaviour
 
     void launchProjectile()
     {
+        Transform _cameraTransform = _mainCamera.transform.parent.transform;
         //get the vector                        predicted camera postition                            projectile position         little adjustment                   amplify            
-        Vector3 force = ((_mainCamera.transform.position + _mainCamera.transform.forward * 2) - _projectile.transform.position + new Vector3(0, 0.5f, 0)).normalized * _hurlSpeed;
-
+        Vector3 force = ((_cameraTransform.position + _cameraTransform.right * - 1.75f) - _projectile.transform.position + new Vector3(0, -0.3f, 0)).normalized * _hurlSpeed;
         //launch the shit
         _projectile.transform.parent = null;
         Rigidbody rigidbody = _projectile.GetComponentInChildren<Rigidbody>();
-        rigidbody.useGravity = false;
+        rigidbody.useGravity = _usesGravity;
         rigidbody.isKinematic = false;
         rigidbody.AddForce(force, ForceMode.Impulse);
     }
@@ -96,5 +92,5 @@ public class PillarBossScript : MonoBehaviour
             _animator.SetBool("dead", true);
             _platformShoot.SetActive(false);
         }
-    }    
+    }
 }

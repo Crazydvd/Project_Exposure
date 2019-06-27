@@ -93,6 +93,8 @@ public class StarScript : MonoBehaviour
                 _starAnimationIndex = _currentStar;
                 _starAnimationUpscale = true;
 
+                //play the sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Star");
                 if(_currentStar < _fillGoal){
                     _currentStar++;
                 }
