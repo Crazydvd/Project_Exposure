@@ -26,7 +26,10 @@ public class HighscoreScript : MonoBehaviour
         YEARLY
     }
 
-    [SerializeField] GameObject _nameInputPanel;
+    [SerializeField] bool _autoLoop = false;
+    [SerializeField] GameObject _dailyTitle;
+    [SerializeField] GameObject _yearlyTitle;
+
     [SerializeField] InputField _nameField;
 
     [SerializeField] GameObject _highscoreContainer;
@@ -38,12 +41,47 @@ public class HighscoreScript : MonoBehaviour
     HighscoreType _highscoreType = HighscoreType.DAILY; // default is daily
     float _level = 1;
     float _score = 0;
-    string _name = "Naamloos";
     bool _entryAdded = false;
+
+    float _autoLoopTimer = 0f;
+    float _autoLoopTimerMax = 3f;
+
+    private void Start()
+    {
+        if (_autoLoop)
+        {
+            _autoLoopTimer = _autoLoopTimerMax;
+        }
+    }
 
     void OnEnable()
     {
         ReloadHighscore();
+    }
+
+    void Update()
+    {
+        if(_autoLoop){
+            if(_autoLoopTimer > 0f){
+                _autoLoopTimer -= Time.deltaTime;
+            }else{
+                switch (_highscoreType)
+                {
+                    case HighscoreType.DAILY:
+                        SetHighscoreTypeYearly();
+                        _yearlyTitle.SetActive(true);
+                        _dailyTitle.SetActive(false);
+                        break;
+                    case HighscoreType.YEARLY:
+                        SetHighscoreTypeDaily();
+                        _yearlyTitle.SetActive(false);
+                        _dailyTitle.SetActive(true);
+                        break;
+                }
+                _autoLoopTimer = _autoLoopTimerMax;
+                ReloadHighscore();
+            }
+        }    
     }
 
     public void ReloadHighscore(){
@@ -54,6 +92,8 @@ public class HighscoreScript : MonoBehaviour
         }
 
         float count = _leaderBoard.Count < 10 ? _leaderBoard.Count : 10;
+        bool currentPlayerFound = false;
+
         for (int i = 0; i < count; i++)
         {
             GameObject score = Instantiate(_highscoreTemplate, _highscoreContainer.transform);
@@ -61,7 +101,33 @@ public class HighscoreScript : MonoBehaviour
 
             score.transform.GetChild(0).GetComponent<Text>().text = (i + 1) + "."; // place
             score.transform.GetChild(1).GetComponent<Text>().text = "" + _leaderBoard[i].Score; // score
-            score.transform.GetChild(2).GetComponent<Text>().text = "" + _leaderBoard[i].Name; // name
+
+            Text name = score.transform.GetChild(2).GetComponent<Text>();
+            if (name.text == "Naamloos"){
+                switch (LanguageSettings.Language)
+                {
+                    case Language.NL:
+                        name.text = "Naamloos";
+                        break;
+                    case Language.EN:
+                        name.text = "Anonymous";
+                        break;
+                    case Language.DE:
+                        name.text = "Unbekannt";
+                        break;
+                }
+            }
+            else
+            {
+                name.text = "" + _leaderBoard[i].Score;
+            }
+
+            if(_score == _leaderBoard[i].Score && !currentPlayerFound){
+                score.transform.GetChild(0).GetComponent<Text>().color = Color.yellow;
+                score.transform.GetChild(1).GetComponent<Text>().color = Color.yellow;
+                score.transform.GetChild(2).GetComponent<Text>().color = Color.yellow;
+                currentPlayerFound = true;
+            }
         }
     }
 
@@ -72,7 +138,7 @@ public class HighscoreScript : MonoBehaviour
         }
         
         _entryAdded = true;
-        HighscoreEntry entry = new HighscoreEntry { Name = _name, Score = _score };
+        HighscoreEntry entry = new HighscoreEntry { Name = StatsTrackerScript.Name, Score = _score };
         for (int loop = 0; loop < 2; loop++) // add it both to daily and yearly
         {
             loadHighscore(); // load it again to be sure
@@ -118,25 +184,17 @@ public class HighscoreScript : MonoBehaviour
         return _leaderBoard.Count + 1; // last spot
     }
 
-    public void ShowPlayerInputPanel(){
-        if(_entryAdded){
-            gameObject.SetActive(true);
-        }else{
-            _nameInputPanel.SetActive(true);
-        }
-    }
-
     public void SetName(){
         if (_nameField.text != "")
         {
-            _name = _nameField.text;
+            StatsTrackerScript.Name = _nameField.text;
         }else{
-            _name = "Naamloos";
+            StatsTrackerScript.Name = "Naamloos";
         }
     }
 
     public void SkipName(){
-        _name = "Naamloos";
+        StatsTrackerScript.Name = "Naamloos";
     }
 
     public void SetScore(float pScore){

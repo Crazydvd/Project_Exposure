@@ -50,11 +50,7 @@ public class SaveFileCheckerScript : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("FeedbackStats");
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        StatsTrackerScript.ResetStats();
     }
 }
