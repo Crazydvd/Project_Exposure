@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoScript : MonoBehaviour
@@ -11,12 +12,15 @@ public class VideoScript : MonoBehaviour
 
     void Start()
     {
+        LoadingScreenScript.LevelReady = false;
+
         if (_video == null)
         {
             throw new System.Exception("Forgot to drag a video to this script");
         }
 
         setVideo();
+        StartCoroutine(loadVideo());
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,6 +31,18 @@ public class VideoScript : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         _video?.Stop();
+    }
+
+    IEnumerator loadVideo()
+    {
+        _video.Prepare();
+
+        while (!_video.isPrepared)
+        {
+            yield return null;
+        }
+
+        LoadingScreenScript.LevelReady = true;
     }
 
     void setVideo()

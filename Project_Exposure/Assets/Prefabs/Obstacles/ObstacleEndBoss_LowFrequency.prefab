@@ -4515,9 +4515,6 @@ MonoBehaviour:
   _lowFreqMaterial: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
-  _lowFreqStandard: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
-  _mediumFreqStandard: {fileID: 2100000, guid: 44088a210346f3849aac4ea45b118f99, type: 2}
-  _highFreqStandard: {fileID: 2100000, guid: c49be50df79829a4eb10fdd69de67611, type: 2}
   _content: {fileID: 0}
   _isVending: 0
   _isBuddy: 0
@@ -13310,8 +13307,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
