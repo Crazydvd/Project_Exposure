@@ -38,11 +38,6 @@ public class PillarBossScript : MonoBehaviour
 
     void Update()
     {
-        //if (_platformShoot == null)
-        //{
-        //    return;
-        //}
-
         _platformShoot.transform.LookAt(_mainCamera.transform);
         _platformShoot.transform.rotation = Quaternion.Euler(0, _platformShoot.transform.rotation.eulerAngles.y, 0);
     }
