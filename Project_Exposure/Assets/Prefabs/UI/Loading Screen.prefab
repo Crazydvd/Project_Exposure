@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 3341247778675431576}
   - component: {fileID: 3341247778675431577}
   - component: {fileID: 4078614619843593420}
+  - component: {fileID: 7146733802951808429}
   m_Layer: 5
   m_Name: LoadingText
   m_TagString: Untagged
@@ -523,7 +524,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -543,6 +544,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textType: LOADINGTEXT
+--- !u!114 &7146733802951808429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341247778675431579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b0a8ee1b5472442a4bfee6858008da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 1
+  _lettersFromBeginning: 0
+  _lettersFromEnd: 3
+  _useUnscaledTime: 1
 --- !u!1 &4378504743841659173
 GameObject:
   m_ObjectHideFlags: 0
