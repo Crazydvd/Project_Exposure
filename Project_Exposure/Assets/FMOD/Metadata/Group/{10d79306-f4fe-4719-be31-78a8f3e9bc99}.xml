@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{10d79306-f4fe-4719-be31-78a8f3e9bc99}">
+		<property name="volume">
+			<value>-0.5</value>
+		</property>
+		<property name="name">
+			<value>Buddydyingandidle</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{45cd06ef-b734-4f67-94ef-e65cd2c01fb0}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{dd960a31-063e-4c8d-9068-8e3d71be8e03}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{64b8258f-9799-4632-b8d1-d6bc4e1a5c16}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{45cd06ef-b734-4f67-94ef-e65cd2c01fb0}">
+		<relationship name="effects">
+			<destination>{906c0b09-42cb-40bc-b95c-417fbfd817d3}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{dd960a31-063e-4c8d-9068-8e3d71be8e03}" />
+	<object class="MixerBusFader" id="{906c0b09-42cb-40bc-b95c-417fbfd817d3}" />
+</objects>
