@@ -13,5 +13,5 @@ public enum Language : int
 
 public static class LanguageSettings
 {
-    public static Language Language { get; set; }
+    public static Language Language { get; set; } = 0;
 }
