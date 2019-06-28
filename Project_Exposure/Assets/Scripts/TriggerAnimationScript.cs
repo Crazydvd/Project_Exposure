@@ -12,6 +12,8 @@ public class TriggerAnimationScript : MonoBehaviour
 
     [Header("Whether or not every object can trigger the animation")]
     [SerializeField] bool _allTrigger = false;
+    [Header("Bool for the pillarman")]
+    [SerializeField] bool _isPillar;
 
     [Header("Objects that can trigger the zone")]
     [SerializeField] GameObject[] _pickupAbleObjects;
@@ -21,8 +23,15 @@ public class TriggerAnimationScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+
         if ((_allTrigger || checkTrigger(other.gameObject)) && _animators != null)
         {
+            if (_isPillar)
+            {
+                _animators[0].speed = 0f;
+                return;
+            }
+
             for (int i = 0; i < _animators.Length; i++)
             {
                 _animators[i].Play(_animationStates[i], 0);

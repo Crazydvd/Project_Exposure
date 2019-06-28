@@ -103,7 +103,7 @@ public class HighscoreScript : MonoBehaviour
             score.transform.GetChild(1).GetComponent<Text>().text = "" + _leaderBoard[i].Score; // score
 
             Text name = score.transform.GetChild(2).GetComponent<Text>();
-            if (name.text == "Naamloos"){
+            if (_leaderBoard[i].Name == "Naamloos"){
                 switch (LanguageSettings.Language)
                 {
                     case Language.NL:
@@ -119,7 +119,7 @@ public class HighscoreScript : MonoBehaviour
             }
             else
             {
-                name.text = "" + _leaderBoard[i].Score;
+                name.text = "" + _leaderBoard[i].Name;
             }
 
             if(_score == _leaderBoard[i].Score && !currentPlayerFound){
