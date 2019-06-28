@@ -39,7 +39,7 @@ public class ShatterMultiplierVisualScript : MonoBehaviour
 
     public void SetFollowObject(Transform pObject)
     {
-        if (ShootScript.Multiplier < 2)
+        if (ShootScript.Multiplier > 1)
         {
             _text.text = "X" + ShootScript.Multiplier;
             _text.color = _originalColor;

@@ -39,7 +39,7 @@ public class DetectObstacleCol : MonoBehaviour
         else if (other.gameObject.layer == 13) //layer 13 == Projectiles (all bullets are on this layer)
         {
             _obstacle.EnableShake(false);
-            ShootScript.Multiplier = 1;
+            ShootScript.Multiplier = 0;
             _scoreScript.DecreaseScore(ScoreLoss);
             _scoreScript._negativeScoreScript.EnableText();
             _scoreScript._negativeScoreScript.SetFollowObject(transform);
