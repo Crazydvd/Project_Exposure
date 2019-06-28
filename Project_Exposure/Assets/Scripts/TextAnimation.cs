@@ -36,25 +36,9 @@ public class TextAnimation : MonoBehaviour
 
     float _elapsedTime = 0;
 
-    /* Have amount of letters from beginning
-     * Turn that into substring
-     * 
-     * have amount of letters from end
-     * turn that into substring
-     * 
-     * then take the remaining stuff
-     * turn that into substring
-     * 
-     * take a substring (1 for both begin and end)
-     * keep adding another letter to it per interval
-     * then add begin and end to the remainder substring.
-     */
-
     void Start()
     {
         initialize();
-
-        print($"{_begin} {_remainder} {_end}");
     }
 
     void initialize()
