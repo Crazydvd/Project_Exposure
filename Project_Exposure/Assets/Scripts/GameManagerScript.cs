@@ -14,8 +14,7 @@ public class GameManagerScript : MonoBehaviour
         if (_loading)
             return;
 
-        _time += Time.deltaTime;
-        Debug.Log(_time);
+        _time += Time.unscaledDeltaTime;
         if (Input.anyKey)
         {
             _time = 0;
