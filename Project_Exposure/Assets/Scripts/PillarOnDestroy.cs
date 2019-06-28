@@ -6,6 +6,11 @@ public class PillarOnDestroy : MonoBehaviour
 {
     void OnDestroy()
     {
+        if (LoadingScreenScript.Instance.IsLoading)
+        {
+            return;
+        }
+
         GetComponentInParent<PillarBossScript>().RemoveObstacle();
     }
 }
