@@ -75,6 +75,7 @@ public class ConveyorScript : MonoBehaviour
 
     void OnDestroy()
     {
+        //A copied material is not automatically destroyed, doing it manually.
         Destroy(_conveyorMaterial);
     }
 

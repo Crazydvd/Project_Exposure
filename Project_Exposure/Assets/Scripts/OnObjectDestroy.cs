@@ -47,7 +47,7 @@ public class OnObjectDestroy : MonoBehaviour
 
     void OnDestroy()
     {
-        if (LoadingScreenScript.Instance.IsLoading)
+        if (LoadingScreenScript.Instance != null && LoadingScreenScript.Instance.IsLoading)
         {
             return;
         }

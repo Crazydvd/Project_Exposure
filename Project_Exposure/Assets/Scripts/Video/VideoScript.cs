@@ -30,8 +30,9 @@ public class VideoScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(gameObject && _video != null){
-            _video?.Stop();
+        if (gameObject && _video != null)
+        {
+            _video.Stop();
         }
     }
 
