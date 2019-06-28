@@ -62,10 +62,6 @@ public class BulletScript : MonoBehaviour
 
     public void SelfDestruct()
     {
-        if (!_hitObstacle)
-        {
-            ShootScript.Multiplier = 1;
-        }
         Destroy(gameObject);
     }
 }

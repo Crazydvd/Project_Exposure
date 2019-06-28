@@ -28,9 +28,11 @@ public class VideoScript : MonoBehaviour
         _video?.Play();
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnDestroy()
     {
-        _video?.Stop();
+        if(gameObject && _video != null){
+            _video?.Stop();
+        }
     }
 
     IEnumerator loadVideo()
