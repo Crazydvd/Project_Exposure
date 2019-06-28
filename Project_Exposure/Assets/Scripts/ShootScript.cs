@@ -13,7 +13,7 @@ public enum Frequency : int
 
 public class ShootScript : MonoBehaviour
 {
-    public static float Multiplier = 1;
+    public static float Multiplier = 0;
 
     [SerializeField] bool _shootingEnabled = true;
     [SerializeField] bool _rayCastAccuracy = true;
@@ -73,8 +73,6 @@ public class ShootScript : MonoBehaviour
     void Start()
     {
         _pierceUI = GameObject.Find("Canvas").transform.Find("Pierce").gameObject;
-
-        Multiplier = 1;
 
         _waves.Add(Frequency.LOW, _bulletType1);
         _waves.Add(Frequency.MEDIUM, _bulletType2);

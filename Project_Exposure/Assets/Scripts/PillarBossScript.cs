@@ -32,7 +32,6 @@ public class PillarBossScript : MonoBehaviour
 
         foreach (GameObject obstacle in _obstacles)
         {
-
             _obstacleCount++;
         }
     }
@@ -74,8 +73,8 @@ public class PillarBossScript : MonoBehaviour
     void launchProjectile()
     {
         Transform _cameraTransform = _mainCamera.transform.parent.transform;
-        //get the vector                        predicted camera postition                            projectile position         little adjustment                   amplify            
-        Vector3 force = ((_cameraTransform.position + _cameraTransform.right * - 1.75f) - _projectile.transform.position + new Vector3(0, -0.3f, 0)).normalized * _hurlSpeed;
+        //get the vector                        predicted camera postition       lead                 projectile position         little adjustment                   amplify            
+        Vector3 force = ((_cameraTransform.position + _cameraTransform.right * - 1.75f * (10 / _hurlSpeed)) - _projectile.transform.position + new Vector3(0, -0.3f, 0)).normalized * _hurlSpeed;
         //launch the shit
         _projectile.transform.parent = null;
         Rigidbody rigidbody = _projectile.GetComponentInChildren<Rigidbody>();
@@ -91,6 +90,7 @@ public class PillarBossScript : MonoBehaviour
         {
             _animator.SetBool("dead", true);
             _platformShoot.SetActive(false);
+           
         }
     }
 }
