@@ -22,7 +22,7 @@ public class TutorialZoneScript : MonoBehaviour
 
     void Start()
     {
-        if (_obstacles.Length > 0)
+        if (_obstacles != null && _obstacles.Length > 0)
         {
             foreach (ObstacleScript obstacle in _obstacles)
             {
@@ -30,7 +30,8 @@ public class TutorialZoneScript : MonoBehaviour
                 _obstacleCount++;
             }
         }
-        if(_pickups.Length > 0)
+
+        if(_pickups != null && _pickups.Length > 0)
         {
             foreach (PowerupPickupScript powerup in _pickups)
             {
