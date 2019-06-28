@@ -9,6 +9,7 @@ public class PowerupPickupScript : MonoBehaviour
     [SerializeField] bool _battery = false;
 
     PowerupManagerScript _powerupManagerScript;
+    TutorialZoneScript _tutorialZoneScript;
 
     void Start()
     {
@@ -34,7 +35,13 @@ public class PowerupPickupScript : MonoBehaviour
                 _powerupManagerScript.ActivateBattery();
             }
 
+            _tutorialZoneScript?.RemoveObstacle();
+
             Destroy(gameObject);
         }
+    }
+
+    public void SetTutorialZone(TutorialZoneScript pTutorialZoneScript){
+        _tutorialZoneScript = pTutorialZoneScript;
     }
 }
