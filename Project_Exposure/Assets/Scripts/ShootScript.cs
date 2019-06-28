@@ -212,6 +212,11 @@ public class ShootScript : MonoBehaviour
         return _shootingFrequency = pMode;
     }
 
+    public Frequency GetWave()
+    {
+        return _shootingFrequency;
+    }
+
     public void EnablePierceShot()
     {
         _pierceUI.SetActive(true);

@@ -85,6 +85,11 @@ public class KnobScript : MonoBehaviour
 
     public void SetHigh()
     {
+        if (_shootScript.GetWave() == Frequency.HIGH)
+        {
+            return;
+        }
+
         _targetRotation = new Vector3(0, 0, 270);
         _shootScript.SwitchWave(Frequency.HIGH);
         playAnimation(Frequency.HIGH);
@@ -96,6 +101,11 @@ public class KnobScript : MonoBehaviour
 
     public void SetMedium()
     {
+        if (_shootScript.GetWave() == Frequency.MEDIUM)
+        {
+            return;
+        }
+
         _targetRotation = new Vector3(0, 0, 180);
         _shootScript.SwitchWave(Frequency.MEDIUM);
         playAnimation(Frequency.MEDIUM);
@@ -107,6 +117,11 @@ public class KnobScript : MonoBehaviour
 
     public void SetLow()
     {
+        if (_shootScript.GetWave() == Frequency.LOW)
+        {
+            return;
+        }
+
         _targetRotation = new Vector3(0, 0, 90);
         _shootScript.SwitchWave(Frequency.LOW);
         playAnimation(Frequency.LOW);
