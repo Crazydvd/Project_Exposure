@@ -39,16 +39,19 @@ public class ShatterMultiplierVisualScript : MonoBehaviour
 
     public void SetFollowObject(Transform pObject)
     {
-        _text.text = "X" + ShootScript.Multiplier;
-        _text.color = _originalColor;
-        float increase = 0.03f * ShootScript.Multiplier;
-        if (increase > 0.5f)
+        if (ShootScript.Multiplier < 2)
         {
-            increase = 0.5f;
+            _text.text = "X" + ShootScript.Multiplier;
+            _text.color = _originalColor;
+            float increase = 0.03f * ShootScript.Multiplier;
+            if (increase > 0.5f)
+            {
+                increase = 0.5f;
+            }
+            _rectTransform.localScale = new Vector3(0.5f + increase, 0.5f + increase, 0.5f + increase);
+            _followObject = new GameObject();
+            _timer = _timerTime;
+            _followObject.transform.position = pObject.position;
         }
-        _rectTransform.localScale = new Vector3(0.5f + increase, 0.5f + increase, 0.5f + increase);
-        _followObject = new GameObject();
-        _timer = _timerTime;
-        _followObject.transform.position = pObject.position;
     }
 }
