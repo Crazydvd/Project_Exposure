@@ -219,12 +219,12 @@ public class ObstacleScript : MonoBehaviour
         ScoreScript score = _scoreUI.GetComponent<ScoreScript>();
         if (!pLoseScore)
         {
-            score.IncreaseScore(_scoreForBreaking * ShootScript.Multiplier); // add score
             ShootScript.Multiplier += 1; // increase multiplier
+            score.IncreaseScore(_scoreForBreaking * ShootScript.Multiplier); // add score
         }
         else
         {
-            ShootScript.Multiplier = 1;
+            ShootScript.Multiplier = 0;
             score.DecreaseScore(_scoreLoss);
             //score.MultiplyScore(1 - _scoreLoss);
         }
