@@ -155,7 +155,7 @@ public class LoadingScreenScript : MonoBehaviour
 
         _animator = GetComponent<Animator>();
 
-        _barFill.transform.parent.gameObject.SetActive(!_hideProgressBar);
+        _barFill.gameObject.SetActive(!_hideProgressBar);
         _percentLoadedText.gameObject.SetActive(!_hidePercentage);
 
         Hide();
@@ -164,9 +164,7 @@ public class LoadingScreenScript : MonoBehaviour
     //Updates the UI
     void setProgress(float pProgress)
     {
-        //_barFillLocalScale.x = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
-
-        _barFill.fillAmount = pProgress;//_barFillLocalScale;
+        _barFill.fillAmount = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
 
         _percentLoadedText.text = _loadOnly ? Mathf.Clamp(Mathf.CeilToInt(pProgress * 100 / 0.9f), 0, 100) + "%"
                                             : Mathf.CeilToInt(pProgress * 100) + "%";
