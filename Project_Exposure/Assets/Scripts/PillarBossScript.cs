@@ -88,9 +88,9 @@ public class PillarBossScript : MonoBehaviour
         _obstacleCount--;
         if (_obstacleCount < 1)
         {
+            _animator.speed = 1f;
             _animator.SetBool("dead", true);
-            _platformShoot.SetActive(false);
-           
+            _platformShoot.SetActive(false);           
         }
     }
 }
