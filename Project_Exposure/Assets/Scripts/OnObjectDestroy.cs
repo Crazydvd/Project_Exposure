@@ -47,6 +47,11 @@ public class OnObjectDestroy : MonoBehaviour
 
     void OnDestroy()
     {
+        if (LoadingScreenScript.Instance.IsLoading)
+        {
+            return;
+        }
+
         switch (_mode)
         {
             case Mode.ENABLE:
@@ -62,6 +67,11 @@ public class OnObjectDestroy : MonoBehaviour
 
         for (int i = 0; i < _animators.Length; i++)
         {
+            if (!_animators[i])
+            {
+                return;
+            }
+
             _animators[i].Play(_animationStates[i], 0);
         }
     }
