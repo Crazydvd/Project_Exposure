@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4490725863601771629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7416397784155808532}
+  m_Layer: 0
+  m_Name: Pierce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7416397784155808532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490725863601771629}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.8369446, y: 22.78585, z: 43.251305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5958429309928574419}
+  m_Father: {fileID: 5958429308976865637}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5958429308379391489
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,12 +57,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5958429308379391489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.94, y: 22.78585, z: 42.59}
+  m_LocalPosition: {x: -1.103054, y: 0, z: -0.6613045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 754650798352623094}
-  m_Father: {fileID: 5958429308976865637}
-  m_RootOrder: 1
+  m_Father: {fileID: 7614850686597312964}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5958429308379391491
 BoxCollider:
@@ -89,8 +120,8 @@ Transform:
   m_LocalPosition: {x: 36.686707, y: -18.819054, z: -30.314278}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5958429309928574419}
-  - {fileID: 5958429308379391488}
+  - {fileID: 7416397784155808532}
+  - {fileID: 7614850686597312964}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135,11 +166,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5958429309928574416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7338943, y: 22.78585, z: 43.912605}
+  m_LocalPosition: {x: 1.1030502, y: 0, z: 0.66130066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1452262446894247941}
-  m_Father: {fileID: 5958429308976865637}
+  m_Father: {fileID: 7416397784155808532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5958429309928574421
@@ -170,6 +201,37 @@ MonoBehaviour:
   _pierce: 1
   _overcharge: 0
   _battery: 0
+--- !u!1 &8780238456216577465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7614850686597312964}
+  m_Layer: 0
+  m_Name: SlowDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7614850686597312964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8780238456216577465}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.8369446, y: 22.78585, z: 43.251305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5958429308379391488}
+  m_Father: {fileID: 5958429308976865637}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &749882980477760146
 PrefabInstance:
   m_ObjectHideFlags: 0
