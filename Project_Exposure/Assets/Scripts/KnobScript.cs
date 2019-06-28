@@ -47,34 +47,7 @@ public class KnobScript : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (_targetRotation.z < 135)
-            {
-                SetLow();
-            }
-            else if (_targetRotation.z > 135 && _targetRotation.z < 225)
-            {
-                SetMedium();
-            }
-            else if (_targetRotation.x >= 225)
-            {
-                SetHigh();
-            }
-        }
-        else
-        if (_holding)
-        {
-            Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            Vector2 offset = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-            float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-            Debug.Log(angle);
-            if (angle > 0 && angle > -180)
-            {
-                _targetRotation = new Vector3(0, 0, angle + 270);
-            }
-        }
+    {   
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(_targetRotation), _rotationSpeed);
     }
 
@@ -116,6 +89,7 @@ public class KnobScript : MonoBehaviour
         _shootScript.SwitchWave(Frequency.HIGH);
         playAnimation(Frequency.HIGH);
         _backgroundImage.sprite = getCurrentSprites()[2];
+        FMODUnity.RuntimeManager.PlayOneShot("event:/knob");
 
         _holding = false;
     }
@@ -126,6 +100,7 @@ public class KnobScript : MonoBehaviour
         _shootScript.SwitchWave(Frequency.MEDIUM);
         playAnimation(Frequency.MEDIUM);
         _backgroundImage.sprite = getCurrentSprites()[1];
+        FMODUnity.RuntimeManager.PlayOneShot("event:/knob");
 
         _holding = false;
     }
@@ -136,6 +111,7 @@ public class KnobScript : MonoBehaviour
         _shootScript.SwitchWave(Frequency.LOW);
         playAnimation(Frequency.LOW);
         _backgroundImage.sprite = getCurrentSprites()[0];
+        FMODUnity.RuntimeManager.PlayOneShot("event:/knob");
 
         _holding = false;
     }
