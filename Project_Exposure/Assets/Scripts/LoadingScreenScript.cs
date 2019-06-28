@@ -12,10 +12,7 @@ public class LoadingScreenScript : MonoBehaviour
     bool _isLoading;
 
     [Header("The filled part of the loading bar")]
-    [SerializeField] RectTransform _barFill;
-
-    //Used to cache the scale, just in case.
-    Vector3 _barFillLocalScale;
+    [SerializeField] Image _barFill;
 
     [Header("The %")]
     [SerializeField] Text _percentLoadedText;
@@ -133,10 +130,9 @@ public class LoadingScreenScript : MonoBehaviour
         _extraTexts = _extra.GetComponentsInChildren<Text>();
         _extraImages = _extra.GetComponentsInChildren<Image>();
 
-        _barFillLocalScale = _barFill.localScale;
         _animator = GetComponent<Animator>();
 
-        _barFill.parent.gameObject.SetActive(!_hideProgressBar);
+        _barFill.transform.parent.gameObject.SetActive(!_hideProgressBar);
         _percentLoadedText.gameObject.SetActive(!_hidePercentage);
 
         Hide();
@@ -145,9 +141,9 @@ public class LoadingScreenScript : MonoBehaviour
     //Updates the UI
     void setProgress(float pProgress)
     {
-        _barFillLocalScale.x = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
+        //_barFillLocalScale.x = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
 
-        _barFill.localScale = _barFillLocalScale;
+        _barFill.fillAmount = pProgress;//_barFillLocalScale;
 
         _percentLoadedText.text = _loadOnly ? Mathf.Clamp(Mathf.CeilToInt(pProgress * 100 / 0.9f), 0, 100) + "%"
                                             : Mathf.CeilToInt(pProgress * 100) + "%";

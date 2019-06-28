@@ -165,8 +165,6 @@ public class ObstacleScript : MonoBehaviour
         //if a tutorial zone is linked to this object, resume gameplay on shatter
         _tutorialZone?.RemoveObstacle();
 
-        GameObject.Find("Canvas").GetComponentInChildren<ShatterMultiplierVisualScript>().SetFollowObject(transform.GetChild(0)); // oof sorry, didn't wanna drag another thing in the editor
-
         Transform shardsContainer = transform.GetChild(0).transform;
         GetComponentInChildren<Renderer>().material.SetColor("_OutlineColor", new Vector4(0, 0, 0, 0));
 
@@ -230,6 +228,8 @@ public class ObstacleScript : MonoBehaviour
             score.DecreaseScore(_scoreLoss);
             //score.MultiplyScore(1 - _scoreLoss);
         }
+
+        GameObject.Find("Canvas").GetComponentInChildren<ShatterMultiplierVisualScript>().SetFollowObject(transform.GetChild(0)); // oof sorry, didn't wanna drag another thing in the editor
 
         Destroy(gameObject);
     }
