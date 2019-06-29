@@ -9,13 +9,10 @@ public class LoadingScreenScript : MonoBehaviour
     //Ref to the current loading operation in the background
     AsyncOperation _currentLoadingOperation;
 
-    bool _isLoading;
+    public bool IsLoading { get; private set; }
 
     [Header("The filled part of the loading bar")]
-    [SerializeField] RectTransform _barFill;
-
-    //Used to cache the scale, just in case.
-    Vector3 _barFillLocalScale;
+    [SerializeField] Image _barFill;
 
     [Header("The %")]
     [SerializeField] Text _percentLoadedText;
@@ -29,8 +26,13 @@ public class LoadingScreenScript : MonoBehaviour
     [SerializeField] bool _hideProgressBar = false;
     [SerializeField] bool _hidePercentage = false;
 
+    [Header("Hide when done loading")]
+    [SerializeField] bool _hideLoadingText = false;
+    [SerializeField] bool _hidePercentageWhenDone = false;
+
     [Header("Loading screen fade in/out")]
-    [SerializeField] bool _fade = true;
+    [SerializeField] bool _fadeIn = false;
+    [SerializeField] bool _fadeOut = true;
 
     [Header("Show loading progress only")]
     [SerializeField] bool _loadOnly = false;
@@ -44,15 +46,22 @@ public class LoadingScreenScript : MonoBehaviour
     [Header("Size 0 == any button")]
     [SerializeField] string[] _inputButtons;
 
+    /// <summary>
+    /// Can be used by external scripts to prevent level from starting (e.g have some time to preload videos)
+    /// </summary>
+    public static bool LevelReady { get; set; } = true;
+
     Animator _animator;
     bool _didFadeOut;
 
     Image _mainImage = null;
 
+    GameObject _loadingText = null;
+
     Transform _extra = null;
     Text[] _extraTexts;
     Image[] _extraImages;
-
+    RawImage[] _extraRawImages;
 
     void Awake()
     {
@@ -61,9 +70,9 @@ public class LoadingScreenScript : MonoBehaviour
 
     void Update()
     {
-        if (_isLoading)
+        if (IsLoading)
         {
-            if (_fade)
+            if (_fadeIn || _fadeOut)
             {
                 setExtraAlpha(_mainImage.color.a);
             }
@@ -77,18 +86,35 @@ public class LoadingScreenScript : MonoBehaviour
 
             if (_currentLoadingOperation.isDone)
             {
-                Time.timeScale = 0;
-
-                if (!_requireInput || (_requireInput && checkInput()))
+                if (LevelReady)
                 {
-                    if (_fade)
+                    if (_hideLoadingText)
                     {
-                        _animator.SetTrigger("Hide");
-                        _didFadeOut = true;
+                        _loadingText?.SetActive(false);
                     }
-                    else
+
+                    if (_hidePercentageWhenDone)
                     {
-                        Hide();
+                        _percentLoadedText.gameObject.SetActive(false);
+                    }
+
+                    //TO DO:
+                    /*
+                     * Loop through a list of GameObjects here and set them active
+                     * so that people can set a list of Objects that have to be shown when done loading
+                     */
+
+                    if (!_requireInput || (_requireInput && checkInput()))
+                    {
+                        if (_fadeOut)
+                        {
+                            _animator.SetTrigger("Hide");
+                            _didFadeOut = true;
+                        }
+                        else
+                        {
+                            Hide();
+                        }
                     }
                 }
             }
@@ -120,14 +146,16 @@ public class LoadingScreenScript : MonoBehaviour
 
         _mainImage = GetComponent<Image>();
 
+        _loadingText = transform.Find("LoadingText").gameObject;
+
         _extra = transform.Find("Extras");
         _extraTexts = _extra.GetComponentsInChildren<Text>();
         _extraImages = _extra.GetComponentsInChildren<Image>();
+        _extraRawImages = _extra.GetComponentsInChildren<RawImage>();
 
-        _barFillLocalScale = _barFill.localScale;
         _animator = GetComponent<Animator>();
 
-        _barFill.parent.gameObject.SetActive(!_hideProgressBar);
+        _barFill.gameObject.SetActive(!_hideProgressBar);
         _percentLoadedText.gameObject.SetActive(!_hidePercentage);
 
         Hide();
@@ -136,9 +164,7 @@ public class LoadingScreenScript : MonoBehaviour
     //Updates the UI
     void setProgress(float pProgress)
     {
-        _barFillLocalScale.x = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
-
-        _barFill.localScale = _barFillLocalScale;
+        _barFill.fillAmount = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
 
         _percentLoadedText.text = _loadOnly ? Mathf.Clamp(Mathf.CeilToInt(pProgress * 100 / 0.9f), 0, 100) + "%"
                                             : Mathf.CeilToInt(pProgress * 100) + "%";
@@ -148,6 +174,8 @@ public class LoadingScreenScript : MonoBehaviour
     {
         gameObject.SetActive(true);
 
+        Time.timeScale = 0;
+
         //Start loading
         StartCoroutine(load(pBuildIndex));
 
@@ -156,21 +184,23 @@ public class LoadingScreenScript : MonoBehaviour
 
         _timeElapsed = 0;
 
-        _currentLoadingOperation.allowSceneActivation = false;
-
-        if (_fade)
+        if (_fadeIn)
         {
+            setExtraAlpha(0);
+
             //Trigger animation
             _animator.SetTrigger("Show");
+        }
+        else
+        {
+            _animator.Play("Show", 0, 1);
         }
 
         _whenInput?.gameObject.SetActive(false);
 
-        setExtraAlpha(0);
-
         _didFadeOut = false;
 
-        _isLoading = true;
+        IsLoading = true;
     }
 
     public void Hide()
@@ -181,7 +211,7 @@ public class LoadingScreenScript : MonoBehaviour
 
         _currentLoadingOperation = null;
 
-        _isLoading = false;
+        IsLoading = false;
     }
 
     public static void Load(int pBuildIndex)
@@ -193,10 +223,12 @@ public class LoadingScreenScript : MonoBehaviour
     {
         _currentLoadingOperation = SceneManager.LoadSceneAsync(pBuildIndex);
 
+        _currentLoadingOperation.allowSceneActivation = false;
+
         while (!_currentLoadingOperation.isDone)
         {
             setProgress(_currentLoadingOperation.progress);
-            _timeElapsed += Time.deltaTime;
+            _timeElapsed += Time.unscaledDeltaTime;
 
             yield return null;
         }
@@ -238,6 +270,13 @@ public class LoadingScreenScript : MonoBehaviour
         }
 
         foreach (Image image in _extraImages)
+        {
+            colour = image.color;
+            colour.a = alpha;
+            image.color = colour;
+        }
+
+        foreach (RawImage image in _extraRawImages)
         {
             colour = image.color;
             colour.a = alpha;

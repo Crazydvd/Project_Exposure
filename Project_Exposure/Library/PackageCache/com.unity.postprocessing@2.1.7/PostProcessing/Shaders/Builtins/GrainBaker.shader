@@ -4,7 +4,7 @@ Shader "Hidden/PostProcessing/GrainBaker"
 
         #pragma exclude_renderers d3d11_9x
         #pragma target 3.0
-        #include "../StdLib.hlsl"
+        #include "Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\StdLib.hlsl"
 
         float _Phase;
         float3 _NoiseParameters;

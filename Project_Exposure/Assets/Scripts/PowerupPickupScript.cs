@@ -9,6 +9,7 @@ public class PowerupPickupScript : MonoBehaviour
     [SerializeField] bool _battery = false;
 
     PowerupManagerScript _powerupManagerScript;
+    TutorialZoneScript _tutorialZoneScript;
 
     void Start()
     {
@@ -17,21 +18,30 @@ public class PowerupPickupScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (LayerMask.LayerToName(other.gameObject.layer).ToUpper() == "PROJECTILES")
+        string layer = LayerMask.LayerToName(other.gameObject.layer).ToUpper();
+
+        if (layer == "PROJECTILES" || layer == "POSTPROCESSING")
         {
             if (_pierce)
             {
                 _powerupManagerScript.ActivatePierceShot();
             }
-            if (_overcharge)
+            else if (_overcharge)
             {
                 _powerupManagerScript.ActivateOvercharge();
             }
-            if (_battery)
+            else if (_battery)
             {
                 _powerupManagerScript.ActivateBattery();
             }
+
+            _tutorialZoneScript?.RemoveObstacle();
+
             Destroy(gameObject);
         }
+    }
+
+    public void SetTutorialZone(TutorialZoneScript pTutorialZoneScript){
+        _tutorialZoneScript = pTutorialZoneScript;
     }
 }

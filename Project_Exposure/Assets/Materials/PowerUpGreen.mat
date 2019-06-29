@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: PowerUpGreen
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -62,8 +62,8 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 0
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
@@ -74,5 +74,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.15641688, g: 0.8962264, b: 0.23100117, a: 0.8039216}
-    - _EmissionColor: {r: 0.05442873, g: 0.9056604, b: 0.029903898, a: 1}
+    - _Color: {r: 0.8980392, g: 0.7456999, b: 0.15686274, a: 1}
+    - _EmissionColor: {r: 0.8301887, g: 0.47398245, b: 0.16838734, a: 1}

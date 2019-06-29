@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SetLanguageSetting : MonoBehaviour
 {
-    [SerializeField] Language _language;
+    [SerializeField] Language _language = Language.NL;
 
     public void SetLanguage()
     {

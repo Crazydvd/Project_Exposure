@@ -16,6 +16,7 @@ public class StarScript : MonoBehaviour
     int _currentStar = 1; // indexer
     int _fillGoal = 0; // amount of stars to fill
     bool _fillStars = false; // boolean to start
+    int _points = 0;
 
     bool _starAnimationUpscale = false;
     bool _starAnimationDownscale = false;
@@ -32,7 +33,8 @@ public class StarScript : MonoBehaviour
         }
     }
 
-    public void CheckStarScore(float pScore){
+    public void CheckStarScore(float pScore, int pLevel){
+        setPointStats(pScore, pLevel);
         if(pScore > _scoreForThreeStars){
             _fillGoal = 3;
         }else if(pScore > _scoreForTwoStars){
@@ -50,6 +52,35 @@ public class StarScript : MonoBehaviour
         return _fillGoal;
     }
 
+    void setPointStats(float pScore, int pLevel){
+        int points = 0;
+
+        // calculate the points
+        if(pScore >= _scoreForThreeStars){
+            points = 50;
+        }else if(pScore >= _scoreForTwoStars){
+            points = 30 + (int) ((20 / (_scoreForThreeStars - _scoreForTwoStars) * (pScore - _scoreForTwoStars)));
+        }else if(pScore >= _scoreForOneStar){
+            points = 10 + (int) ((20 / (_scoreForTwoStars - _scoreForOneStar) * (pScore - _scoreForOneStar)));
+        }else{
+            points = (int)(10 / _scoreForOneStar * pScore);
+        }
+        _points = points;
+
+        switch(pLevel){
+            case 1:
+                StatsTrackerScript.PointsLevel1 = points;
+                break;
+            case 2:
+                StatsTrackerScript.PointsLevel2 = points;
+                break;
+            case 3:
+                StatsTrackerScript.PointsLevel3 = points;
+                break;
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -62,6 +93,8 @@ public class StarScript : MonoBehaviour
                 _starAnimationIndex = _currentStar;
                 _starAnimationUpscale = true;
 
+                //play the sound
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Star");
                 if(_currentStar < _fillGoal){
                     _currentStar++;
                 }

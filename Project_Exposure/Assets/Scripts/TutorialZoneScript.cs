@@ -11,6 +11,7 @@ public class TutorialZoneScript : MonoBehaviour
     [SerializeField] bool _enableGun = false;
     [SerializeField] GameObject _conveyorBelt;
     [SerializeField] ObstacleScript[] _obstacles;
+    [SerializeField] PowerupPickupScript[] _pickups;
 
     bool _rotateGun;
     int _obstacleCount;
@@ -21,10 +22,22 @@ public class TutorialZoneScript : MonoBehaviour
 
     void Start()
     {
-        foreach (ObstacleScript obstacle in _obstacles)
+        if (_obstacles != null && _obstacles.Length > 0)
         {
-            obstacle.SetTutorialZone(this);
-            _obstacleCount++;
+            foreach (ObstacleScript obstacle in _obstacles)
+            {
+                obstacle.SetTutorialZone(this);
+                _obstacleCount++;
+            }
+        }
+
+        if(_pickups != null && _pickups.Length > 0)
+        {
+            foreach (PowerupPickupScript powerup in _pickups)
+            {
+                powerup.SetTutorialZone(this);
+                _obstacleCount++;
+            }
         }
 
         if (_stopBelt)
