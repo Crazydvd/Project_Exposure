@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 2246578582994890152}
   - component: {fileID: 828787872735295243}
   - component: {fileID: 7825052512930720582}
+  - component: {fileID: 1023381350302722956}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -140,7 +141,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 43b39b1e9d219544a96c510dae230615, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a14fa04dab6117439f185e113f259cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -168,6 +169,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1023381350302722956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154022287868379637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a6d7f9856fcb54c85e847f05af0011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch:
+  - {fileID: 21300000, guid: 4a14fa04dab6117439f185e113f259cb, type: 3}
+  - {fileID: 21300000, guid: 9db4c227becf19640b674cdaae8fb2a1, type: 3}
+  - {fileID: 21300000, guid: 43b39b1e9d219544a96c510dae230615, type: 3}
+  - {fileID: 21300000, guid: 23fefb1e1f6395748a39a4b4816457f5, type: 3}
+  _english:
+  - {fileID: 21300000, guid: bee7aba873b7a874b8d088b63ff4adfd, type: 3}
+  - {fileID: 21300000, guid: 3f34b7da0e20e64409ca8c8539e9395f, type: 3}
+  - {fileID: 21300000, guid: ce5bdb25e96efa64c9ea278f4afb958a, type: 3}
+  - {fileID: 21300000, guid: 9de3ece740444d246859673c29353569, type: 3}
+  _german: []
 --- !u!1 &3267499102773375941
 GameObject:
   m_ObjectHideFlags: 0
