@@ -7319,7 +7319,7 @@ MonoBehaviour:
   _shatterForce: 10
   _shatterDelay: 0.5
   _shakeForce: 0.05
-  _frequency: 1
+  _frequency: 2
   _lowFreqMaterial: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
   _mediumFreqMaterial: {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
   _highFreqMaterial: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
@@ -7559,6 +7559,7 @@ GameObject:
   - component: {fileID: 7926708905056931459}
   - component: {fileID: 653200676078449896}
   - component: {fileID: 4237825825024689554}
+  - component: {fileID: 4504177852131707801}
   m_Layer: 10
   m_Name: ShardsContainer
   m_TagString: Untagged
@@ -7574,8 +7575,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4005519644612570210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.012, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.011413, z: 0}
+  m_LocalScale: {x: 0.38674, y: 0.38674, z: 0.38674}
   m_Children:
   - {fileID: 7750867630888360531}
   - {fileID: 8043520310926978972}
@@ -7755,7 +7756,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a79efb93d8249dc45a99603183b85311, type: 2}
+  - {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7817,6 +7818,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &4504177852131707801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005519644612570210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da792da4db060ca4283c5d2e09bf4d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4026989832728887719
 GameObject:
   m_ObjectHideFlags: 0
