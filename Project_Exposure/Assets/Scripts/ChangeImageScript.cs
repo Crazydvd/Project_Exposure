@@ -25,7 +25,21 @@ public class ChangeImageScript : MonoBehaviour
         _image = GetComponent<Image>();
         _index = 0;
 
-        switch (LanguageSettings.Language)
+        Language language = LanguageSettings.Language;
+        setArray(language);
+
+        while (language > 0 && _images.Length == 0)
+        {
+            language--;
+            setArray(language);
+        }
+
+        _image.sprite = getImage();
+    }
+
+    void setArray(Language pLanguage)
+    {
+        switch (pLanguage)
         {
             case Language.NL:
                 _images = _dutch;
@@ -37,15 +51,6 @@ public class ChangeImageScript : MonoBehaviour
                 _images = _german;
                 break;
         }
-
-        _image.sprite = getImage();
-    }
-
-    public void NextSprite()
-    {
-        _index++;
-
-        _image.sprite = getImage();
     }
 
     Sprite getImage()
@@ -58,5 +63,12 @@ public class ChangeImageScript : MonoBehaviour
         _index %= _images.Length;
 
         return _images[_index];
+    }
+
+    public void NextSprite()
+    {
+        _index++;
+
+        _image.sprite = getImage();
     }
 }
