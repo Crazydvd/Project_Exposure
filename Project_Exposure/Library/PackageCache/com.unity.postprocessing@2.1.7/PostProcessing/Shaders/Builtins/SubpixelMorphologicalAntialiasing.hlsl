@@ -1,5 +1,5 @@
 // Ported to Unity & tweaked by Thomas Hourdel (thomas@hourdel.com)
-#include "Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\Colors.hlsl"
+#include "../Colors.hlsl"
 
 /**
  * Copyright (C) 2013 Jorge Jimenez (jorge@iryoku.com)
