@@ -117,15 +117,15 @@ public class LoadingScreenScript : MonoBehaviour
                         }
                     }
                 }
-            }
-            else
+        }
+        else
+        {
+            if (_timeElapsed >= _minTime)
             {
-                if (_timeElapsed >= _minTime)
-                {
-                    _currentLoadingOperation.allowSceneActivation = true;
-                }
+                _currentLoadingOperation.allowSceneActivation = true;
             }
         }
+    }
     }
 
     void initialize()
