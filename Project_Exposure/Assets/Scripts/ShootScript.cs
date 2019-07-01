@@ -23,7 +23,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField] GameObject _bulletType2;
     [SerializeField] GameObject _bulletType3;
 
-    [Header("Paricles here")]
+    [Header("Particles here")]
     [SerializeField] GameObject _gunParticles;
     [SerializeField] GameObject _flashLow;
     [SerializeField] GameObject _flashMedium;
