@@ -34,6 +34,27 @@ public class BackgroundSounds : MonoBehaviour
             _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack 3");
             startSound();
         }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            stopSound();
+            _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack 4");
+            startSound();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            stopSound();
+            _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack 5");
+            startSound();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            stopSound();
+            _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack 6");
+            startSound();
+        }
     }
 
     void startSound()
