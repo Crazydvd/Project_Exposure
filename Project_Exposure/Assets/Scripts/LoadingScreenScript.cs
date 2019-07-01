@@ -77,15 +77,15 @@ public class LoadingScreenScript : MonoBehaviour
                 setExtraAlpha(_mainImage.color.a);
             }
 
-            //setProgress(_currentLoadingOperation.progress);
+            setProgress(_currentLoadingOperation.progress);
 
             if (_didFadeOut)
             {
                 return;
             }
 
-            //if (_currentLoadingOperation.isDone)
-            //{
+            if (_currentLoadingOperation.isDone)
+            {
                 if (LevelReady)
                 {
                     if (_hideLoadingText)
@@ -117,15 +117,15 @@ public class LoadingScreenScript : MonoBehaviour
                         }
                     }
                 }
-            //}
-            //else
-            //{
-            //    if (_timeElapsed >= _minTime)
-            //    {
-            //        _currentLoadingOperation.allowSceneActivation = true;
-            //    }
-            //}
         }
+        else
+        {
+            if (_timeElapsed >= _minTime)
+            {
+                _currentLoadingOperation.allowSceneActivation = true;
+            }
+        }
+    }
     }
 
     void initialize()
@@ -177,7 +177,7 @@ public class LoadingScreenScript : MonoBehaviour
         Time.timeScale = 0;
 
         //Start loading
-        //StartCoroutine(load(pBuildIndex));
+        StartCoroutine(load(pBuildIndex));
 
         //Settings stuff up
         setProgress(0.0f);
