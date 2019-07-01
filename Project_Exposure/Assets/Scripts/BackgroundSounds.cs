@@ -8,7 +8,7 @@ public class BackgroundSounds : MonoBehaviour
 
     void Start()
     {
-        _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack 1");
+        _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack 3");
         startSound();
     }
 
@@ -45,5 +45,10 @@ public class BackgroundSounds : MonoBehaviour
     void stopSound()
     {
         _sound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+    void OnDestroy()
+    {
+        stopSound();
     }
 }
