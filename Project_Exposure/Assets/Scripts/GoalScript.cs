@@ -8,6 +8,8 @@ public class GoalScript : MonoBehaviour
     [SerializeField] GameObject _endMenu;
     [SerializeField] GameObject _gameUI;
     [SerializeField] Text _endScoreText;
+    [SerializeField] Image _highscoreButton;
+    [SerializeField] Sprite _highlightHighscore;
     [SerializeField] ScoreScript _scoreScript;
     [SerializeField] StarScript _starScript;
     [SerializeField] ObstacleCountScript _obstacleCountScript;
@@ -73,7 +75,8 @@ public class GoalScript : MonoBehaviour
                 int place = _highscoreScript.CheckDailySpot(_score);
                 if (place < 11)
                 {
-                    _endScoreText.color = Color.yellow;
+                    _highscoreButton.sprite = _highlightHighscore;
+                    //_endScoreText.color = Color.yellow;
                 }
             }
         }
