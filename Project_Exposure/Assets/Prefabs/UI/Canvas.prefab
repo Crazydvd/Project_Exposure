@@ -5360,8 +5360,6 @@ MonoBehaviour:
   _dutch: {fileID: 21300000, guid: 5e4b5331a4c559a41b1a5f9fb2f4bcb0, type: 3}
   _english: {fileID: 21300000, guid: 9e327bc35898d7f48a47df6817521016, type: 3}
   _german: {fileID: 21300000, guid: 07a75784027678144a7145172f7cf4c8, type: 3}
-  _russian: {fileID: 0}
-  _bulgerian: {fileID: 0}
 --- !u!1 &1448723434441675817
 GameObject:
   m_ObjectHideFlags: 0
@@ -6055,7 +6053,6 @@ GameObject:
   - component: {fileID: 2682041990939806748}
   - component: {fileID: 714412098}
   - component: {fileID: 259975158}
-  - component: {fileID: 15698070}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6184,6 +6181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ba1c3c80e2def4fac554f33503526b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _secondsBeforeGoingBackToMenu: 180
 --- !u!114 &259975158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6197,18 +6195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FileName: Language.json
---- !u!114 &15698070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2682041990939806745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18c9109100c1c14d8bc9ec20eff0ff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2682041991065706450
 GameObject:
   m_ObjectHideFlags: 0
@@ -7494,7 +7480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7064822824256109087
 RectTransform:
   m_ObjectHideFlags: 0
