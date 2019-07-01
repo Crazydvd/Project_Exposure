@@ -544,6 +544,7 @@ GameObject:
   - component: {fileID: 359025380}
   - component: {fileID: 359025379}
   - component: {fileID: 359025378}
+  - component: {fileID: 1963049922}
   m_Layer: 5
   m_Name: Restart Level
   m_TagString: Untagged
@@ -663,6 +664,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1963049922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359025376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 7f3f43c3cd3f2af409a057848e80601e, type: 3}
+  _english: {fileID: 21300000, guid: e153471949f4af64da23335b11056de3, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &424129246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1217,7 @@ GameObject:
   - component: {fileID: 599550018}
   - component: {fileID: 599550017}
   - component: {fileID: 599550016}
+  - component: {fileID: 1991048452016153928}
   m_Layer: 5
   m_Name: Title Yearly
   m_TagString: Untagged
@@ -1264,6 +1281,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &1991048452016153928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599550015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 350575acb8f09e74ab33d0b71123635c, type: 3}
+  _english: {fileID: 21300000, guid: a62544e4aa4a83142961f978aa53d2bf, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &609891365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,7 +1653,8 @@ GameObject:
   m_Component:
   - component: {fileID: 763105667}
   - component: {fileID: 763105669}
-  - component: {fileID: 763105668}
+  - component: {fileID: 7123930936728947129}
+  - component: {fileID: 8889719366353768774}
   m_Layer: 5
   m_Name: Titel
   m_TagString: Untagged
@@ -1645,8 +1678,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000016167, y: 221}
-  m_SizeDelta: {x: 628.8, y: 65.7}
+  m_AnchoredPosition: {x: 0.000030518, y: 241}
+  m_SizeDelta: {x: 753, y: 140.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &763105669
 CanvasRenderer:
@@ -1656,7 +1689,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763105666}
   m_CullTransparentMesh: 0
---- !u!114 &763105668
+--- !u!114 &7123930936728947129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1665,7 +1698,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 763105666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1676,15 +1709,33 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fc06031783a102c4ab336304d7b571f0, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8e428a1166bf7644b80e222931cc4592, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 90
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '- Spel gepauzeerd -'
+--- !u!114 &8889719366353768774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763105666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324fd481385183048afff3af40d622df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textType: GAMEPAUSED
 --- !u!1 &764918152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2066,7 @@ GameObject:
   - component: {fileID: 1002387793}
   - component: {fileID: 1002387792}
   - component: {fileID: 1002387791}
+  - component: {fileID: 6970348586385958817}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -2145,6 +2197,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &6970348586385958817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002387789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 5ecbcaf62633c204087d6821a086b027, type: 3}
+  _english: {fileID: 21300000, guid: 80336a2b14a8a7348963cd69442a0a93, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &1022583194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,6 +3039,7 @@ GameObject:
   - component: {fileID: 1395390258}
   - component: {fileID: 1395390257}
   - component: {fileID: 1395390256}
+  - component: {fileID: 6500219731767096973}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -3091,6 +3159,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &6500219731767096973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395390254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: e7bcea93db40b734d8fd356e0ee2762f, type: 3}
+  _english: {fileID: 21300000, guid: 5096a52facdb6254183f037344cd6bec, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &1469157414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,6 +3186,7 @@ GameObject:
   - component: {fileID: 1469157418}
   - component: {fileID: 1469157417}
   - component: {fileID: 1469157416}
+  - component: {fileID: 8364150686478839334}
   m_Layer: 5
   m_Name: Yearly Highscore Button
   m_TagString: Untagged
@@ -3299,6 +3383,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &8364150686478839334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469157414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 350575acb8f09e74ab33d0b71123635c, type: 3}
+  _english: {fileID: 21300000, guid: a62544e4aa4a83142961f978aa53d2bf, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &1471424354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,6 +3489,7 @@ GameObject:
   - component: {fileID: 1492289140}
   - component: {fileID: 1492289139}
   - component: {fileID: 1492289138}
+  - component: {fileID: 4748978601394473054}
   m_Layer: 5
   m_Name: Daily Highscore Button
   m_TagString: Untagged
@@ -3586,6 +3686,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &4748978601394473054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492289136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 849324b28dcbeb24eaa0ccddd04a98d0, type: 3}
+  _english: {fileID: 21300000, guid: bd5d914e491b35040bca7c4a7c5a2612, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &1500386767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,6 +3902,7 @@ GameObject:
   - component: {fileID: 1649666462}
   - component: {fileID: 1649666461}
   - component: {fileID: 1649666460}
+  - component: {fileID: 1963049921}
   m_Layer: 5
   m_Name: Next Level
   m_TagString: Untagged
@@ -3906,6 +4022,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1963049921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649666458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 306bf3c817ca8e44ca71c6deb14cedcc, type: 3}
+  _english: {fileID: 21300000, guid: a60e1b67f49b90f48b65827b91b4ce54, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &1698517003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4221,6 +4352,7 @@ GameObject:
   - component: {fileID: 1774231400}
   - component: {fileID: 1774231399}
   - component: {fileID: 1774231398}
+  - component: {fileID: 8902220556313693786}
   m_Layer: 5
   m_Name: Back to menu
   m_TagString: Untagged
@@ -4340,6 +4472,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &8902220556313693786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774231396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 8272c23f36d60ca40a13e3058e1bbdac, type: 3}
+  _english: {fileID: 21300000, guid: be860404ff69d7f408aeda63c090d98e, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &1785334887
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,6 +4886,7 @@ GameObject:
   - component: {fileID: 1851667882}
   - component: {fileID: 1851667881}
   - component: {fileID: 1851667880}
+  - component: {fileID: 1801175418203041420}
   m_Layer: 5
   m_Name: Title Daily
   m_TagString: Untagged
@@ -4802,6 +4950,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &1801175418203041420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851667879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: 849324b28dcbeb24eaa0ccddd04a98d0, type: 3}
+  _english: {fileID: 21300000, guid: bd5d914e491b35040bca7c4a7c5a2612, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &1877041987
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,6 +6042,7 @@ GameObject:
   - component: {fileID: 6793853072501705853}
   - component: {fileID: 1861368742867433038}
   - component: {fileID: 6924352738173656250}
+  - component: {fileID: 4065188018765619493}
   m_Layer: 5
   m_Name: Back button
   m_TagString: Untagged
@@ -6009,6 +6173,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &4065188018765619493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862371227789002508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: ac6cb8c69c6917d4d81436e44bc2b799, type: 3}
+  _english: {fileID: 21300000, guid: 0816c5a785ae37d4bb6f57f628bfbaf8, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &2234002544636346189
 GameObject:
   m_ObjectHideFlags: 0
@@ -6262,6 +6441,7 @@ GameObject:
   - component: {fileID: 4513103644553026947}
   - component: {fileID: 3093098993775461498}
   - component: {fileID: 3140552448708910500}
+  - component: {fileID: 4368670261057226577}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -6330,6 +6510,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Rang
+--- !u!114 &4368670261057226577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575815442112998241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324fd481385183048afff3af40d622df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textType: RANK
 --- !u!1 &2606771718164640282
 GameObject:
   m_ObjectHideFlags: 0
@@ -6486,7 +6679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.4392157}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.75686276}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6907,8 +7100,9 @@ GameObject:
   - component: {fileID: 2682041991483124914}
   - component: {fileID: 2682041991483124915}
   - component: {fileID: 2682041991483124940}
+  - component: {fileID: 494984945642685055}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7026,6 +7220,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &494984945642685055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682041991483124941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229c85981d502ae43b15d22648ac7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dutch: {fileID: 21300000, guid: aa36f246401f5fb47aeedfaa56d37533, type: 3}
+  _english: {fileID: 21300000, guid: 40d7b7e17878ec8418e6f48533895d3d, type: 3}
+  _german: {fileID: 0}
 --- !u!1 &2682041991558249409
 GameObject:
   m_ObjectHideFlags: 0
@@ -8393,7 +8602,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 5.0000305, y: 0}
   m_SizeDelta: {x: 10, y: -25}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8559,6 +8768,7 @@ GameObject:
   - component: {fileID: 2646542465740662416}
   - component: {fileID: 660555584186896673}
   - component: {fileID: 2473341939642572895}
+  - component: {fileID: 8024304400767964076}
   m_Layer: 5
   m_Name: Text (2)
   m_TagString: Untagged
@@ -8627,6 +8837,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Naam
+--- !u!114 &8024304400767964076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7459617233277368688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324fd481385183048afff3af40d622df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textType: NAME
 --- !u!1 &7474070800315950392
 GameObject:
   m_ObjectHideFlags: 0
