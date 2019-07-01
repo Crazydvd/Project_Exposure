@@ -122,7 +122,7 @@ public class HighscoreScript : MonoBehaviour
                 name.text = "" + _leaderBoard[i].Name;
             }
 
-            if(_score == _leaderBoard[i].Score && !currentPlayerFound){
+            if((_score == _leaderBoard[i].Score && !currentPlayerFound) && !_autoLoop){ // set current score as yellow
                 score.transform.GetChild(0).GetComponent<Text>().color = Color.yellow;
                 score.transform.GetChild(1).GetComponent<Text>().color = Color.yellow;
                 score.transform.GetChild(2).GetComponent<Text>().color = Color.yellow;
