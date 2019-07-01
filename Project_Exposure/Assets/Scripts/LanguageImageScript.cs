@@ -32,6 +32,10 @@ public class LanguageImageScript : MonoBehaviour
         {
             return;
         }
+        if(!_image){
+            _image = GetComponent<Image>();
+        }
+        _image.sprite = null;
         _image.sprite = sprite;
     }
 
