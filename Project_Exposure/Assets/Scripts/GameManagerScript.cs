@@ -9,6 +9,11 @@ public class GameManagerScript : MonoBehaviour
     float _time;
     bool _loading;
 
+    void Start()
+    {
+        ShootScript.Multiplier = 0;
+    }
+
     void Update()
     {
         if (_loading)
