@@ -3,8 +3,8 @@ Shader "Hidden/PostProcessing/TemporalAntialiasing"
     HLSLINCLUDE
 
         #pragma exclude_renderers gles psp2
-        #include "../StdLib.hlsl"
-        #include "../Colors.hlsl"
+        #include "Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\StdLib.hlsl"
+        #include "Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\Colors.hlsl"
 
     #if UNITY_VERSION >= 201710
         #define _MainTexSampler sampler_LinearClamp
