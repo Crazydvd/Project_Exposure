@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{33cec386-91ba-41e8-b8e0-f6819bd42b7b}">
+		<property name="volume">
+			<value>-18.5</value>
+		</property>
+		<property name="name">
+			<value>forklift</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{62106207-9bdf-4d59-9f7f-222bc5124479}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{652c614b-7157-44f3-a9d5-acaada3a88bb}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{64b8258f-9799-4632-b8d1-d6bc4e1a5c16}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{62106207-9bdf-4d59-9f7f-222bc5124479}">
+		<relationship name="effects">
+			<destination>{9dcf2e68-4b4d-4ea0-a689-a42d984767d3}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{652c614b-7157-44f3-a9d5-acaada3a88bb}" />
+	<object class="MixerBusFader" id="{9dcf2e68-4b4d-4ea0-a689-a42d984767d3}" />
+</objects>
