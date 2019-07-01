@@ -4,7 +4,7 @@
 #pragma kernel KAutoExposureAvgLuminance_fixed MAIN=KAutoExposureAvgLuminance_fixed
 #pragma kernel KAutoExposureAvgLuminance_progressive MAIN=KAutoExposureAvgLuminance_progressive PROGRESSIVE
 
-#include "Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\StdLib.hlsl"
+#include "../StdLib.hlsl"
 #include "ExposureHistogram.hlsl"
 
 StructuredBuffer<uint> _HistogramBuffer;

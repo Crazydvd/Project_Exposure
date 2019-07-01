@@ -77,6 +77,7 @@ public class PillarBossScript : MonoBehaviour
         Vector3 force = ((_cameraTransform.position + _cameraTransform.right * - 1.75f * (10 / _hurlSpeed)) - _projectile.transform.position + new Vector3(0, -0.3f, 0)).normalized * _hurlSpeed;
         //launch the shit
         _projectile.transform.parent = null;
+        _projectile.transform.GetChild(0).gameObject.AddComponent<FollowPlayer>();
         Rigidbody rigidbody = _projectile.GetComponentInChildren<Rigidbody>();
         rigidbody.useGravity = _usesGravity;
         rigidbody.isKinematic = false;

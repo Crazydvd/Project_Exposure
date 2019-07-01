@@ -3,7 +3,7 @@ Shader "Hidden/PostProcessing/DeferredFog"
     HLSLINCLUDE
 
         #pragma multi_compile __ FOG_LINEAR FOG_EXP FOG_EXP2
-        #include "Library\PackageCache\com.unity.postprocessing@2.1.7\PostProcessing\Shaders\StdLib.hlsl"
+        #include "../StdLib.hlsl"
         #include "Fog.hlsl"
 
         TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
