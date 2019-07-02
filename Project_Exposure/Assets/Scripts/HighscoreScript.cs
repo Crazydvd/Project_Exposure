@@ -44,7 +44,7 @@ public class HighscoreScript : MonoBehaviour
     bool _entryAdded = false;
 
     float _autoLoopTimer = 0f;
-    float _autoLoopTimerMax = 3f;
+    float _autoLoopTimerMax = 5f;
 
     private void Start()
     {
@@ -91,42 +91,51 @@ public class HighscoreScript : MonoBehaviour
             Destroy(_highscoreContainer.transform.GetChild(i).gameObject);
         }
 
-        float count = _leaderBoard.Count < 10 ? _leaderBoard.Count : 10;
         bool currentPlayerFound = false;
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < 10; i++)
         {
+
             GameObject score = Instantiate(_highscoreTemplate, _highscoreContainer.transform);
             score.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -_offset * i);
 
             score.transform.GetChild(0).GetComponent<Text>().text = (i + 1) + "."; // place
-            score.transform.GetChild(1).GetComponent<Text>().text = "" + _leaderBoard[i].Score; // score
 
-            Text name = score.transform.GetChild(2).GetComponent<Text>();
-            if (_leaderBoard[i].Name == "Naamloos"){
-                switch (LanguageSettings.Language)
-                {
-                    case Language.NL:
-                        name.text = "Naamloos";
-                        break;
-                    case Language.EN:
-                        name.text = "Anonymous";
-                        break;
-                    case Language.DE:
-                        name.text = "Unbekannt";
-                        break;
-                }
-            }
-            else
+            if (i < _leaderBoard.Count)
             {
-                name.text = "" + _leaderBoard[i].Name;
-            }
+                score.transform.GetChild(1).GetComponent<Text>().text = "" + _leaderBoard[i].Score; // score
 
-            if((_score == _leaderBoard[i].Score && !currentPlayerFound) && !_autoLoop){ // set current score as yellow
-                score.transform.GetChild(0).GetComponent<Text>().color = Color.yellow;
-                score.transform.GetChild(1).GetComponent<Text>().color = Color.yellow;
-                score.transform.GetChild(2).GetComponent<Text>().color = Color.yellow;
-                currentPlayerFound = true;
+                Text name = score.transform.GetChild(2).GetComponent<Text>();
+                if (_leaderBoard[i].Name == "Naamloos")
+                {
+                    switch (LanguageSettings.Language)
+                    {
+                        case Language.NL:
+                            name.text = "Naamloos";
+                            break;
+                        case Language.EN:
+                            name.text = "Anonymous";
+                            break;
+                        case Language.DE:
+                            name.text = "Unbekannt";
+                            break;
+                    }
+                }
+                else
+                {
+                    name.text = "" + _leaderBoard[i].Name;
+                }
+
+                if ((_score == _leaderBoard[i].Score && !currentPlayerFound) && !_autoLoop)
+                { // set current score as yellow
+                    score.transform.GetChild(0).GetComponent<Text>().color = Color.yellow;
+                    score.transform.GetChild(1).GetComponent<Text>().color = Color.yellow;
+                    score.transform.GetChild(2).GetComponent<Text>().color = Color.yellow;
+                    currentPlayerFound = true;
+                }
+            }else{
+                score.transform.GetChild(1).GetComponent<Text>().text = "-";
+                score.transform.GetChild(2).GetComponent<Text>().text = "-";
             }
         }
     }
