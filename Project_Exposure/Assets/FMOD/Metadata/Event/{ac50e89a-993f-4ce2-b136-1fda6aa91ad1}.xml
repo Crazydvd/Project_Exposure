@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{ac50e89a-993f-4ce2-b136-1fda6aa91ad1}">
 		<property name="name">
-			<value>BOSS shooting</value>
+			<value>boss shooting</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -53,14 +53,14 @@
 			<destination>{37f9c0db-8c71-46ae-8436-68d8875d89c1}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{64b8258f-9799-4632-b8d1-d6bc4e1a5c16}</destination>
+			<destination>{79a934f6-1924-42c4-8fb1-a355780ae3dc}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{249363a5-0712-4a48-91ed-630b9920f9f8}" />
 	<object class="MarkerTrack" id="{9b76fe2d-46bc-4ad0-b18d-04bbf38d8621}" />
 	<object class="GroupTrack" id="{05e93593-48aa-4d38-99b9-fe469c8c0e74}">
 		<relationship name="modules">
-			<destination>{55845ee7-cc41-4080-ad83-2d9908378fbb}</destination>
+			<destination>{0020b6cb-e743-472f-99c5-037c1b1c3728}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{dee58f1e-dced-409a-bf8e-62e5ea0e95a2}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{379cd6c7-ef90-4970-b367-304134d243d5}">
 		<relationship name="modules">
-			<destination>{55845ee7-cc41-4080-ad83-2d9908378fbb}</destination>
+			<destination>{0020b6cb-e743-472f-99c5-037c1b1c3728}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{d892a85c-5f88-42cf-81fb-2b48731623b2}">
@@ -88,9 +88,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{37f9c0db-8c71-46ae-8436-68d8875d89c1}" />
-	<object class="SingleSound" id="{55845ee7-cc41-4080-ad83-2d9908378fbb}">
+	<object class="SingleSound" id="{0020b6cb-e743-472f-99c5-037c1b1c3728}">
 		<property name="length">
-			<value>2.7999999999999998</value>
+			<value>0.44999999999999968</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>2.3500000000000005</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{d036ce87-fe84-4477-8ebd-9057b563511e}</destination>

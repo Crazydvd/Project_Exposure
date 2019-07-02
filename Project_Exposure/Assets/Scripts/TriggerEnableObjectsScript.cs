@@ -50,6 +50,11 @@ public class TriggerEnableObjectsScript : MonoBehaviour
     {
         foreach (GameObject @object in _objects)
         {
+            if (@object == null)
+            {
+                continue;
+            }
+
             @object.SetActive(true);
         }
     }
