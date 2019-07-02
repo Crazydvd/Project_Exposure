@@ -52,6 +52,10 @@ public class StarScript : MonoBehaviour
         return _fillGoal;
     }
 
+    public int GetPoints(){
+        return _points;
+    }
+
     void setPointStats(float pScore, int pLevel){
         int points = 0;
 
