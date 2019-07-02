@@ -83,10 +83,6 @@ public class GoalScript : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F9)){
-            PlayerPrefs.DeleteAll();
-        }
-
         if(_startScoreAnimation){
             if (_currentAnimationScore < _score)
             {
