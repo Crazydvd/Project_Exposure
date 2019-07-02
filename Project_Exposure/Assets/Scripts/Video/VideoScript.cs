@@ -10,6 +10,9 @@ public class VideoScript : MonoBehaviour
     [SerializeField] VideoClip _english = null;
     [SerializeField] VideoClip _german = null;
 
+    [Space]
+    [SerializeField] GameObject _text = null;
+
     void Start()
     {
         LoadingScreenScript.LevelReady = false;
@@ -26,13 +29,20 @@ public class VideoScript : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         _video?.Play();
+        _video.loopPointReached += setTextActive;
     }
 
-    private void OnDestroy()
+    void setTextActive(VideoPlayer pPlayer)
+    {
+        _text.SetActive(true);
+    }
+
+    void OnDestroy()
     {
         if (gameObject && _video != null)
         {
             _video.Stop();
+            _text.SetActive(false);
         }
     }
 
