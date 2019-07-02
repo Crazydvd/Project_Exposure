@@ -15,7 +15,7 @@ public class DetectObstacleCol : MonoBehaviour
 
     public float ScoreLoss { get; set; }
 
-    void Start()
+    void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _obstacle = GetComponentInParent<ObstacleScript>();
