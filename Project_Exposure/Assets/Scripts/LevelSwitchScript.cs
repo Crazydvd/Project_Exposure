@@ -15,6 +15,10 @@ public class LevelSwitchScript : MonoBehaviour
         {
             _images.Add(transform.GetChild(i).GetComponent<Image>());
         }
+
+        if(transform.childCount == 2 && LanguageSettings.Language == Language.EN){
+            SetSelected(1);
+        }
     }
 
     void deselectEverything(){
