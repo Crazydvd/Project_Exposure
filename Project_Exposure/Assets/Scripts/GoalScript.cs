@@ -7,6 +7,7 @@ public class GoalScript : MonoBehaviour
 {
     [SerializeField] GameObject _endMenu;
     [SerializeField] GameObject _gameUI;
+    [SerializeField] GameObject _feedbackForm;
     [SerializeField] Text _endScoreText;
     [SerializeField] Image _highscoreButton;
     [SerializeField] Sprite _highlightHighscore;
@@ -27,28 +28,42 @@ public class GoalScript : MonoBehaviour
         {
             Time.timeScale = 0f;
             _score = _scoreScript.GetScore();
-            _currentAnimationScore = 0f;
-            _startScoreAnimation = true;
+
 
             other.transform.parent.GetComponent<Animator>().speed = 0;
             other.gameObject.GetComponentInChildren<ShootScript>().DisableGun();
             _gameUI.SetActive(false);
-            _endMenu.SetActive(true);
-
-            _starScript.CheckStarScore(_score, _level);
-            _highscoreScript.SetScore(_score);
-            _highscoreScript.SetLevel(_level);
-            _highscoreScript.AddEntry();
-
-            int starAmount = _starScript.GetStarScore();
-            if (starAmount > 0)
+            if (!StatsTrackerScript.FeedbackGiven)
             {
-                _scoreIncrease = _score / 100 / starAmount;
+                _feedbackForm.SetActive(true);
             }
-            else
-            {
-                _scoreIncrease = _score;
+            else{
+                ShowEndscreen();
             }
+
+        }
+    }
+
+    public void ShowEndscreen(){
+        _currentAnimationScore = 0f;
+        _startScoreAnimation = true;
+
+        _feedbackForm.SetActive(false);
+        _endMenu.SetActive(true);
+
+        _starScript.CheckStarScore(_score, _level);
+        _highscoreScript.SetScore(_score);
+        _highscoreScript.SetLevel(_level);
+        _highscoreScript.AddEntry();
+
+        int starAmount = _starScript.GetStarScore();
+        if (starAmount > 0)
+        {
+            _scoreIncrease = _score / 100 / starAmount;
+        }
+        else
+        {
+            _scoreIncrease = _score;
         }
     }
 

@@ -34,6 +34,7 @@ public class StarScript : MonoBehaviour
     }
 
     public void CheckStarScore(float pScore, int pLevel){
+        Debug.Log(pScore + " " + pLevel);
         setPointStats(pScore, pLevel);
         if(pScore > _scoreForThreeStars){
             _fillGoal = 3;
@@ -66,7 +67,7 @@ public class StarScript : MonoBehaviour
             points = (int)(10 / _scoreForOneStar * pScore);
         }
         _points = points;
-
+        Debug.Log(points);
         switch(pLevel){
             case 1:
                 StatsTrackerScript.PointsLevel1 = points;
