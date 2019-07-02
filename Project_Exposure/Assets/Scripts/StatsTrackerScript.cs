@@ -10,6 +10,7 @@ static public class StatsTrackerScript
     static public int PointsLevel2 = -1;
     static public int PointsLevel3 = -1;
     static public string Name = "Naamloos";
+    static public bool FeedbackGiven = false;
 
     static public void ResetStats(){
         StatsTrackerScript.TechnologyKnowledge = 3;
@@ -18,5 +19,6 @@ static public class StatsTrackerScript
         StatsTrackerScript.PointsLevel2 = -1;
         StatsTrackerScript.PointsLevel3 = -1;
         StatsTrackerScript.Name = "Naamloos";
+        StatsTrackerScript.FeedbackGiven = false;
     }
 }
