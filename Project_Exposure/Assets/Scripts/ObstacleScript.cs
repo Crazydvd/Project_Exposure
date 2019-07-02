@@ -94,7 +94,7 @@ public class ObstacleScript : MonoBehaviour
 
         transform.GetChild(0).localPosition = shakeVector;
 
-        _timeBeforeShatter += Time.deltaTime;
+        _timeBeforeShatter += Time.unscaledDeltaTime;
 
         if (_timeBeforeShatter > (pDestroy ? _shatterDelay : _shatterDelay / 2))
         {
