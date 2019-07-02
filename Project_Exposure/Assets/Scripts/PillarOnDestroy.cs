@@ -11,6 +11,6 @@ public class PillarOnDestroy : MonoBehaviour
             return;
         }
 
-        GetComponentInParent<PillarBossScript>().RemoveObstacle();
+        GetComponentInParent<PillarBossScript>()?.RemoveObstacle();
     }
 }
