@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BackgroundSounds : MonoBehaviour
 {
+    [SerializeField] float _soundTrackNumber = 1;
     FMOD.Studio.EventInstance _sound;
 
     void Start()
     {
-        _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack 3");
+        _sound = FMODUnity.RuntimeManager.CreateInstance("event:/Soundtrack " + _soundTrackNumber);
         startSound();
     }
 
