@@ -265,7 +265,7 @@ public class ShootScript : MonoBehaviour
     {
         if (_rotationDelay < _timeBeforeRotatingGunBack)
         {
-            _rotationDelay += Time.deltaTime;
+            _rotationDelay += Time.unscaledDeltaTime;
         }
         else
         {
