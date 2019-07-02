@@ -30,36 +30,36 @@ public class StarBarScript : MonoBehaviour
         float score = _scoreScript.GetScore();
 
         if(score < _oneStarScore){
-            _nextStar = 1;
-            if(_nextStar == 2) // went down
+            if (_nextStar == 2) // went down
             {
                 transform.GetChild(0).gameObject.SetActive(false);
-                _nextStar = 1;
             }
+            _nextStar = 1;
         }
         else if(score >= _oneStarScore && score < _twoStarScore){
-            if(_nextStar == 1) // went up
-            {
-                _fillChecking = true;
-                _fillCheckerIndex = 0;
-            }
-            else if (_nextStar == 3) // went down
+            if (_nextStar == 3) // went down
             {
                 transform.GetChild(1).gameObject.SetActive(false);
                 _nextStar = 2;
             }
-        }
-        else if(score >= _twoStarScore && score < _threeStarScore){
-            if (_nextStar == 2) // went up
+            else if (_nextStar == 1) // went up
             {
                 _fillChecking = true;
-                _fillCheckerIndex = 1;
+                _fillCheckerIndex = 0;
             }
-            else if(_nextStar == 4) // went down
+        }
+        else if(score >= _twoStarScore && score < _threeStarScore){
+            if (_nextStar == 4) // went down
             {
                 transform.GetChild(2).gameObject.SetActive(false);
                 _nextStar = 3;
             }
+            else if (_nextStar == 2) // went up
+            {
+                _fillChecking = true;
+                _fillCheckerIndex = 1;
+            }
+
         }
         else if(score >= _threeStarScore){
             if (_nextStar == 3) // went up
