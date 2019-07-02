@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 245024678}
-  m_IndirectSpecularColor: {r: 0.31319815, g: 0.25505766, b: 0.3515682, a: 1}
+  m_IndirectSpecularColor: {r: 0.3115725, g: 0.25324604, b: 0.3492236, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2108,11 +2108,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -2127,6 +2122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: 6e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -2657,26 +2657,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: -201129340
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 2.3703053e+17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: -1.3834887e+31
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 7.491096e+22
-      objectReference: {fileID: 0}
     - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -2696,6 +2676,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: 1.2125591e+9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: -201129340
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.3703053e+17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -1.3834887e+31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 7.491096e+22
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -3235,6 +3235,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -8.516723e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -3.1299573e-24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -8.880298e+36
+      objectReference: {fileID: 0}
     - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_Range
@@ -3259,26 +3279,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
       value: -1.474256e-39
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: -8.516723e-29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: -3.1299573e-24
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: -8.880298e+36
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -5103,16 +5103,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5166,6 +5156,16 @@ PrefabInstance:
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6167,16 +6167,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6230,6 +6220,16 @@ PrefabInstance:
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7269,7 +7269,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _pierceShotCounter
       value: 
-      objectReference: {fileID: 440078343}
+      objectReference: {fileID: 0}
     - target: {fileID: 3180561650494548360, guid: d8f4961a9e63bb741b744c6d2d5c1628,
         type: 3}
       propertyPath: _pierceShotAmmo
@@ -9893,11 +9893,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9963,16 +9958,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.3011
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -9998,6 +9988,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!4 &300577727 stripped
@@ -10539,6 +10539,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -8.516723e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -3.1299573e-24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -8.880298e+36
+      objectReference: {fileID: 0}
     - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_Range
@@ -10563,26 +10583,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
       value: -1.474256e-39
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: -8.516723e-29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: -3.1299573e-24
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: -8.880298e+36
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -10683,6 +10683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall_TileNormal (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 23742347535779178, guid: 4766a27ef7a9a2f4bb749229efba935e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23742347535779190, guid: 4766a27ef7a9a2f4bb749229efba935e,
         type: 3}
@@ -11078,11 +11083,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11148,16 +11148,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.3011
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -11183,6 +11178,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!4 &339347795 stripped
@@ -11744,11 +11749,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11804,16 +11804,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -11839,6 +11834,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7192263
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!1 &381449497
@@ -12494,22 +12499,22 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.000054538217
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
       value: 
       objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13804,21 +13809,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 1.9802849e+34
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: 7.150105e-11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: -8.002683e+13
-      objectReference: {fileID: 0}
     - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -13838,6 +13828,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: -1.5930099e-25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.9802849e+34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7.150105e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -8.002683e+13
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -14259,18 +14264,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eabd19395776ad1499a09903aa836151, type: 3}
---- !u!114 &440078343 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7712703677164910646, guid: eabd19395776ad1499a09903aa836151,
-    type: 3}
-  m_PrefabInstance: {fileID: 440078342}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &440078344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2682041992648453761, guid: eabd19395776ad1499a09903aa836151,
@@ -14546,21 +14539,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.00000059604673
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqStandard
-      value: 
-      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
@@ -14572,6 +14550,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqStandard
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -15623,22 +15616,22 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.000029951345
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
       value: 
       objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -17555,11 +17548,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17615,16 +17603,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 2
+      propertyPath: m_Name
+      value: Obstacle_cube (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -17645,6 +17628,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.18213049
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!1001 &569058907
@@ -23113,11 +23106,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1783671046}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23173,10 +23161,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: m_Controller
-      value: 
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
@@ -23222,6 +23210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.3350794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
@@ -24392,22 +24385,22 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.000029951345
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
       value: 
       objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -27849,11 +27842,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27908,6 +27896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
@@ -27989,6 +27982,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -8.516723e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -3.1299573e-24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -8.880298e+36
+      objectReference: {fileID: 0}
     - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_Range
@@ -28013,26 +28026,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
       value: -1.474256e-39
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: -8.516723e-29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: -3.1299573e-24
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: -8.880298e+36
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -28141,11 +28134,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28200,6 +28188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
@@ -29261,21 +29254,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.00000059604673
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqStandard
-      value: 
-      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
@@ -29287,6 +29265,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqStandard
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -29440,11 +29433,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1512012978}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29500,10 +29488,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: m_Controller
-      value: 
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
@@ -29549,6 +29537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.3350794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
@@ -29631,21 +29624,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: NaN
-      objectReference: {fileID: 0}
     - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -29665,6 +29643,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: -8.880298e+36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -30188,16 +30181,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30251,6 +30234,16 @@ PrefabInstance:
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -31804,16 +31797,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31867,6 +31850,16 @@ PrefabInstance:
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -32888,11 +32881,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32958,16 +32946,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.3011
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -32993,6 +32976,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!4 &1087970888 stripped
@@ -34417,11 +34410,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1937829824}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34476,6 +34464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
@@ -35530,11 +35523,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1342258218}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35590,10 +35578,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: m_Controller
-      value: 
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
@@ -35639,6 +35627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.3350794
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
@@ -36493,22 +36486,22 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.000054538217
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
       value: 
       objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -37428,22 +37421,22 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.000029951345
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
       value: 
       objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -38542,6 +38535,18 @@ PrefabInstance:
       propertyPath: m_DynamicOccludee
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 816438860004046284, guid: 0e4f9b013b391984ea3edbf86e1078e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -4868508218414741439, guid: cef1780e52ad12a4c8a80d4c434397d5,
+        type: 3}
+    - target: {fileID: 4308469023723999759, guid: 0e4f9b013b391984ea3edbf86e1078e8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -4868508218414741439, guid: cef1780e52ad12a4c8a80d4c434397d5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e4f9b013b391984ea3edbf86e1078e8, type: 3}
 --- !u!1001 &1330432681
@@ -40027,11 +40032,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40097,16 +40097,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.3011
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -40132,6 +40127,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!4 &1372934039 stripped
@@ -44427,11 +44432,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961868579}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44502,6 +44502,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!4 &1560710448 stripped
@@ -44517,11 +44522,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 457215390}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44577,20 +44577,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
-    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
@@ -44647,6 +44637,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.24069342
       objectReference: {fileID: 0}
+    - target: {fileID: 4361999126319016485, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!1001 &1572042433
@@ -45866,6 +45871,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -8.516723e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -3.1299573e-24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -8.880298e+36
+      objectReference: {fileID: 0}
     - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_Range
@@ -45890,26 +45915,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
       value: -1.474256e-39
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: NaN
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: -8.516723e-29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: -3.1299573e-24
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: -8.880298e+36
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -46616,26 +46621,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_glass1
       objectReference: {fileID: 0}
-    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
-        type: 3}
-      propertyPath: _highFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
-        type: 3}
-      propertyPath: _highFreqStandard
-      value: 
-      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
-    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
-        type: 3}
-      propertyPath: _lowFreqStandard
-      value: 
-      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
-    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
-        type: 3}
-      propertyPath: _mediumFreqStandard
-      value: 
-      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
     - target: {fileID: 415856021860949312, guid: ddb021489e9be494999d94d3cd1e92bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46691,6 +46676,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
+        type: 3}
+      propertyPath: _highFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
+        type: 3}
+      propertyPath: _highFreqStandard
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
+    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
+        type: 3}
+      propertyPath: _lowFreqStandard
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
+    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
+        type: 3}
+      propertyPath: _mediumFreqStandard
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
     - target: {fileID: 9167079290963193506, guid: ddb021489e9be494999d94d3cd1e92bc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -47038,16 +47043,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47101,6 +47096,16 @@ PrefabInstance:
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -50850,11 +50855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961868579}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50925,16 +50925,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 2
+      propertyPath: m_Name
+      value: Obstacle_cube (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -50965,6 +50960,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.982
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!1001 &1839826556
@@ -52404,21 +52409,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000003725293
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqStandard
-      value: 
-      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
@@ -52430,6 +52420,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqStandard
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -54530,11 +54535,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54589,6 +54589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
@@ -54790,6 +54795,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 1.600647e-39
+      objectReference: {fileID: 0}
     - target: {fileID: 5355174557666597268, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -54804,11 +54814,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: 1.054e-42
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686691996348663130, guid: a0bf698755b66614f83a4fbd984928ce,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 1.600647e-39
       objectReference: {fileID: 0}
     - target: {fileID: 1901471226552845134, guid: a0bf698755b66614f83a4fbd984928ce,
         type: 3}
@@ -55272,16 +55277,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55335,6 +55330,16 @@ PrefabInstance:
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -55508,11 +55513,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -55568,21 +55568,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: _lowFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -55603,6 +55593,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.075
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _lowFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!4 &1997434788 stripped
@@ -56501,16 +56506,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_glass1
       objectReference: {fileID: 0}
-    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
-        type: 3}
-      propertyPath: _highFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
-        type: 3}
-      propertyPath: _highFreqStandard
-      value: 
-      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
     - target: {fileID: 415856021860949312, guid: ddb021489e9be494999d94d3cd1e92bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56566,6 +56561,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
+        type: 3}
+      propertyPath: _highFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 4459506583399285758, guid: ddb021489e9be494999d94d3cd1e92bc,
+        type: 3}
+      propertyPath: _highFreqStandard
+      value: 
+      objectReference: {fileID: 2100000, guid: ddd4d94540a47f84bbb3cdc039f0f045, type: 2}
     - target: {fileID: 9167079290963193506, guid: ddb021489e9be494999d94d3cd1e92bc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -56826,22 +56831,22 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.000054538217
       objectReference: {fileID: 0}
-    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: _mediumFreqMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
-    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2981525841559452185, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: _mediumFreqMaterial
       value: 
       objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
     - target: {fileID: 2674330805598485364, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 8567805987796778285, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
+        type: 3}
+      propertyPath: _mediumFreqMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fee3bf38cc02ac04993d35126077e164, type: 2}
+    - target: {fileID: 3074627175068837243, guid: 73cb3aba6bc1a984796b6f9cb57f8ec5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -57987,11 +57992,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58047,16 +58047,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 2
+      propertyPath: m_Name
+      value: Obstacle_cube (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -58077,6 +58072,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.17210495
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73656681f98947e4ba30ee3c1b602d73, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!1 &2068503015
@@ -58377,11 +58382,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58437,16 +58437,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -58472,6 +58467,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7192263
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!1001 &2082567421
@@ -58481,11 +58486,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 244994042}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58541,16 +58541,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
-      propertyPath: _frequency
-      value: 0
+      propertyPath: m_Name
+      value: Obstacle_cube
       objectReference: {fileID: 0}
-    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     - target: {fileID: 2335814168085500289, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -58571,6 +58566,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6297263
       objectReference: {fileID: 0}
+    - target: {fileID: 1546177997534992544, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: _frequency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803833437627455949, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3032997d47faa34189a3de1cca9c106, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
 --- !u!1 &2082593885
@@ -59377,11 +59382,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961868579}
     m_Modifications:
-    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Obstacle_cube (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6321368275549158661, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59451,6 +59451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053018738946281238, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstacle_cube (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0220c2e3ecf52fc48abe8fb2f744c4b4, type: 3}
