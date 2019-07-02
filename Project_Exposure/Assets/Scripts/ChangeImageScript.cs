@@ -20,6 +20,11 @@ public class ChangeImageScript : MonoBehaviour
         Initialize();
     }
 
+    void OnEnable()
+    {
+        Initialize();
+    }
+
     void Initialize()
     {
         _image = GetComponent<Image>();
