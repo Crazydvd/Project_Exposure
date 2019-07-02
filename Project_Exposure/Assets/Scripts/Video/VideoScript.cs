@@ -39,7 +39,7 @@ public class VideoScript : MonoBehaviour
 
     void OnDestroy()
     {
-        if (gameObject && _video != null)
+        if (gameObject && _video != null && !LoadingScreenScript.Instance.IsLoading)
         {
             _video.Stop();
             _text.SetActive(false);
