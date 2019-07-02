@@ -10,6 +10,8 @@ public class SetFeedbackScript : MonoBehaviour
     [System.Serializable]
     struct FeedbackEntry
     {
+        public string Time;
+        public string Name;
         public int Knowledge;
         public int Learned;
         public int Level1Points;
@@ -38,7 +40,6 @@ public class SetFeedbackScript : MonoBehaviour
 
     static public void SetPointsLevel(int pLevel, int pAmount)
     {
-        Debug.Log(pLevel);
         switch(pLevel){
             case 1:
                 StatsTrackerScript.PointsLevel1 = pAmount;
@@ -53,7 +54,7 @@ public class SetFeedbackScript : MonoBehaviour
     }
 
     public void AddFeedBackEntry(){
-        FeedbackEntry entry = new FeedbackEntry { Knowledge = StatsTrackerScript.TechnologyKnowledge, Learned = StatsTrackerScript.KnowledgeLearned, Level1Points = StatsTrackerScript.PointsLevel1, Level2Points = StatsTrackerScript.PointsLevel2, Level3Points = StatsTrackerScript.PointsLevel3 };
+        FeedbackEntry entry = new FeedbackEntry {Time = System.DateTime.UtcNow.ToString("HH:mm dd MMMM, yyyy"), Name = StatsTrackerScript.Name, Knowledge = StatsTrackerScript.TechnologyKnowledge, Learned = StatsTrackerScript.KnowledgeLearned, Level1Points = StatsTrackerScript.PointsLevel1, Level2Points = StatsTrackerScript.PointsLevel2, Level3Points = StatsTrackerScript.PointsLevel3 };
         loadFeedback(); // load it again to be sure
 
         _feedback.Add(entry);
@@ -104,12 +105,14 @@ public class SetFeedbackScript : MonoBehaviour
         for (int i = 0; i < _feedback.Count; i++)
         {
             FeedbackEntry entry = _feedback[i];
-            textWriter.WriteLine("Wat vindt je van technologie: " + (entry.Knowledge > -1 ? entry.Knowledge + "" : "X")
-                                + " | Hoeveel heb je geleerd: " + (entry.Learned > -1 ? entry.Learned + "" : "X")
-                                + " | Punten level 1: " + (entry.Level1Points > -1 ? entry.Level1Points + "" : "X")
-                                + " | Punten level 2: " + (entry.Level2Points > -1 ? entry.Level2Points + "" : "X")
-                                + " | Punten level 3: " + (entry.Level3Points > -1 ? entry.Level3Points + "" : "X")
-                                + " | Punten Totaal: " + ((entry.Level1Points < 0 ? 0 : entry.Level1Points) 
+            textWriter.WriteLine(entry.Time
+                                + " | Name: " + entry.Name
+                                + " | Opinion game: " + (entry.Knowledge > -1 ? entry.Knowledge + "" : "X")
+                                + " | How much learned: " + (entry.Learned > -1 ? entry.Learned + "" : "X")
+                                + " | Points level 1: " + (entry.Level1Points > -1 ? entry.Level1Points + "" : "X")
+                                + " | Points level 2: " + (entry.Level2Points > -1 ? entry.Level2Points + "" : "X")
+                                + " | Points level 3: " + (entry.Level3Points > -1 ? entry.Level3Points + "" : "X")
+                                + " | Points Total: " + ((entry.Level1Points < 0 ? 0 : entry.Level1Points) 
                                                     + (entry.Level2Points < 0 ? 0 : entry.Level2Points)
                                                     + (entry.Level3Points < 0 ? 0 : entry.Level3Points))
                                 );
