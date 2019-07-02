@@ -52,6 +52,7 @@ public class SetFeedbackScript : MonoBehaviour
     }
 
     public void AddFeedback(){
+        StatsTrackerScript.FeedbackGiven = true;
         FeedbackEntry entry = new FeedbackEntry { Knowledge = StatsTrackerScript.TechnologyKnowledge, Learned = StatsTrackerScript.KnowledgeLearned, Level1Points = StatsTrackerScript.PointsLevel1, Level2Points = StatsTrackerScript.PointsLevel2, Level3Points = StatsTrackerScript.PointsLevel3 };
         loadFeedback(); // load it again to be sure
 
@@ -59,11 +60,10 @@ public class SetFeedbackScript : MonoBehaviour
 
         if (_feedback.Count > 500)
         {
-            _feedback.RemoveRange(500, _feedback.Count - 500); // cut off at 50
+            _feedback.RemoveRange(500, _feedback.Count - 500); // cut off at 500
         }
 
         saveFeedback();
-        saveTextFile();
     }
 
     void loadFeedback()
@@ -88,8 +88,14 @@ public class SetFeedbackScript : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    void saveTextFile()
-    {
+    public void saveTextFile()
+    {         
+        loadFeedback(); // to be sure
+        if(!StatsTrackerScript.FeedbackGiven){
+            AddFeedback();
+            StatsTrackerScript.FeedbackGiven = true;
+        }
+
         string path = Path.GetFullPath(".");
         string date = DateTime.Now.ToString("dd-MM-yyyy");
 
@@ -99,9 +105,9 @@ public class SetFeedbackScript : MonoBehaviour
             FeedbackEntry entry = _feedback[i];
             textWriter.WriteLine("Wat vindt je van technologie: " + entry.Knowledge
                                 + "| Hoeveel heb je geleerd: " + entry.Learned 
-                                + "| Punten level 1: " + (entry.Level1Points > -1 ? entry.Level1Points + "" : "Niet geweest")
-                                + "| Punten level 2: " + (entry.Level2Points > -1 ? entry.Level2Points + "" : "Niet geweest")
-                                + "| Punten level 3: " + (entry.Level3Points > -1 ? entry.Level3Points + "" : "Niet geweest")
+                                + "| Punten level 1: " + (entry.Level1Points > -1 ? entry.Level1Points + "" : "X")
+                                + "| Punten level 2: " + (entry.Level2Points > -1 ? entry.Level2Points + "" : "X")
+                                + "| Punten level 3: " + (entry.Level3Points > -1 ? entry.Level3Points + "" : "X")
                                 + "| Punten Totaal: " + ((entry.Level1Points < 0 ? 0 : entry.Level1Points) 
                                                     + (entry.Level2Points < 0 ? 0 : entry.Level2Points)
                                                     + (entry.Level3Points < 0 ? 0 : entry.Level3Points))
