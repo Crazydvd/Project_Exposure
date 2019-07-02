@@ -34,6 +34,11 @@ public class TriggerAnimationScript : MonoBehaviour
 
             for (int i = 0; i < _animators.Length; i++)
             {
+                if (_animators[i] == null)
+                {
+                    continue;
+                }
+
                 _animators[i].Play(_animationStates[i], 0);
             }
         }

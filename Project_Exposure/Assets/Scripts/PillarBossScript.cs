@@ -82,6 +82,7 @@ public class PillarBossScript : MonoBehaviour
         rigidbody.useGravity = _usesGravity;
         rigidbody.isKinematic = false;
         rigidbody.AddForce(force, ForceMode.Impulse);
+        PlayShootSound();
     }
 
     public void RemoveObstacle()
@@ -94,5 +95,10 @@ public class PillarBossScript : MonoBehaviour
             _platformShoot.SetActive(false);
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/boss falling down", gameObject);
         }
+    }
+
+    public void PlayShootSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/boss shooting", gameObject);
     }
 }
