@@ -91,7 +91,8 @@ public class PillarBossScript : MonoBehaviour
         {
             _animator.speed = 1f;
             _animator.SetBool("dead", true);
-            _platformShoot.SetActive(false);           
+            _platformShoot.SetActive(false);
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/boss falling down", gameObject);
         }
     }
 }

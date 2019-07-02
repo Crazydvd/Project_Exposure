@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="MixerGroup" id="{f53d0859-9183-4c4c-95bc-bbc996fbddca}">
+		<property name="volume">
+			<value>-18</value>
+		</property>
+		<property name="name">
+			<value>Boss falling</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{4e405441-77a9-4604-a02a-fc6d2e8f21c9}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{57964f39-a442-4b22-9542-f3ba4d2a1cc9}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{72403542-859b-4b7e-a721-91fb906cb79b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{4e405441-77a9-4604-a02a-fc6d2e8f21c9}">
+		<relationship name="effects">
+			<destination>{44aec1ee-759b-49dc-98b5-fe7782c5fa4c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{57964f39-a442-4b22-9542-f3ba4d2a1cc9}" />
+	<object class="MixerBusFader" id="{44aec1ee-759b-49dc-98b5-fe7782c5fa4c}" />
+</objects>
