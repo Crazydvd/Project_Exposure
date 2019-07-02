@@ -17,6 +17,11 @@ public class LanguageImageScript : MonoBehaviour
         LoadImage();
     }
 
+    void OnEnable()
+    {
+        Start();
+    }
+
     public void LoadImage()
     {
         Language language = LanguageSettings.Language;
