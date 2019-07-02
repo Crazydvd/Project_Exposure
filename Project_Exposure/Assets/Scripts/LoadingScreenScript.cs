@@ -166,7 +166,7 @@ public class LoadingScreenScript : MonoBehaviour
     {
         _barFill.fillAmount = _loadOnly ? Mathf.Clamp01(pProgress / 0.9f) : pProgress;
 
-        _percentLoadedText.text = _loadOnly ? Mathf.Clamp(Mathf.CeilToInt(pProgress * 100 / 0.9f), 0, 100) + "%"
+        _percentLoadedText.text = _loadOnly ? Mathf.Clamp(Mathf.CeilToInt(pProgress / 0.9f * 100), 0, 100) + "%"
                                             : Mathf.CeilToInt(pProgress * 100) + "%";
     }
 

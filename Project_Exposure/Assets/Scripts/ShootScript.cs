@@ -51,7 +51,6 @@ public class ShootScript : MonoBehaviour
     float _rotationDelay;
     bool _rotateGun;
 
-    [SerializeField] Text _pierceShotCounter;
     GameObject _pierceUI;
     //[SerializeField] Text _energyCounter; Not used
     //[SerializeField] Slider _overheatBar;
@@ -136,7 +135,9 @@ public class ShootScript : MonoBehaviour
                 bullet.GetComponent<BulletScript>().PierceShotMode = true;
 
                 _pierceShots--;
-                _pierceShotCounter.text = _pierceShots.ToString();
+
+                PowerUpIconScript.PierceShotsLeft = _pierceShots;
+
                 if (_pierceShots <= 0)
                 {
                     DisablePierceShot();
@@ -223,8 +224,8 @@ public class ShootScript : MonoBehaviour
 
         _pierceMode = true;
         _pierceShots = _pierceShotAmmo;
-        _pierceShotCounter.text = _pierceShots.ToString();
-        _pierceShotCounter.gameObject.SetActive(true);
+
+        PowerUpIconScript.MaxPierceShots = _pierceShotAmmo;
     }
 
     public void DisablePierceShot()
@@ -232,7 +233,6 @@ public class ShootScript : MonoBehaviour
         _pierceUI.SetActive(false);
 
         _pierceMode = false;
-        _pierceShotCounter.gameObject.SetActive(false);
     }
 
     public void EnableBattery()
