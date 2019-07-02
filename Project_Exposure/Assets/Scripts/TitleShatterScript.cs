@@ -12,6 +12,8 @@ public class TitleShatterScript : MonoBehaviour
     [SerializeField] float _delayBeforeMenu = 2f;
     [SerializeField] GameObject _menu;
     [SerializeField] GameObject _keyBoard;
+    [SerializeField] GameObject _starGameButton;
+    [SerializeField] GameObject _highScore;
 
     float _timeBeforeShatter = 0.0f;
     bool _shaking;
@@ -53,6 +55,8 @@ public class TitleShatterScript : MonoBehaviour
 
         Invoke("ContinueGame", _delayBeforeMenu);
         GetComponent<Renderer>().enabled = false;
+        _starGameButton.SetActive(false);
+        _highScore.SetActive(false);
     }
 
     void ContinueGame()
